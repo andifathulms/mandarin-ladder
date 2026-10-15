@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { hanChars } from '@/lib/zh/text';
 import type { WordInfo } from './ZhContext';
 import { Pinyin } from './Pinyin';
@@ -9,11 +9,14 @@ import { IconClose } from '../ui/Icon';
 import { PlayButton } from '../lesson/PlayButton';
 import { usePlay } from '../useSpeech';
 import { useSettings, useT } from '../ProgressProvider';
+import { StrokeOrder } from '../visuals/StrokeOrder';
+
+const defaultStrokes = (ch: string) => <StrokeOrder char={ch} size={180} autoplay />;
 
 type Props = {
   word: WordInfo;
   onClose: () => void;
-  /** Stroke order for one character ("Lihat goresan"), supplied where StrokeOrder is available. */
+  /** Stroke order for one character ("Lihat goresan"); StrokeOrder by default. */
   strokes?: (ch: string) => React.ReactNode;
 };
 
@@ -26,6 +29,7 @@ export function WordSheet({ word, onClose, strokes }: Props) {
   const play = usePlay();
   const { toneColours } = useSettings();
   const closeRef = useRef<HTMLButtonElement>(null);
+  const [open, setOpen] = useState<string | null>(null);
   const back = useRef<HTMLElement | null>(null);
 
   useEffect(() => {
@@ -84,13 +88,14 @@ export function WordSheet({ word, onClose, strokes }: Props) {
             </span>
           )}
         </p>
-        {strokes && (
-          <div className="flex flex-wrap gap-3">
-            {hanChars(word.zh).map((ch, i) => (
-              <div key={`${ch}${i}`}>{strokes(ch)}</div>
-            ))}
-          </div>
-        )}
+        <div className="flex flex-wrap gap-2">
+          {hanChars(word.zh).map((ch, i) => (
+            <button key={`${ch}${i}`} type="button" className="btn btn-ghost min-h-touch px-3" aria-expanded={open === ch} onClick={() => setOpen(open === ch ? null : ch)}>
+              {t('strokes.see', { ch })}
+            </button>
+          ))}
+        </div>
+        {open && <div className="fade-in flex justify-center">{(strokes ?? defaultStrokes)(open)}</div>}
       </div>
     </div>
   );

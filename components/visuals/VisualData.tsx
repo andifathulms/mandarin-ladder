@@ -2,6 +2,7 @@
 
 import { createContext, useContext } from 'react';
 import type { HanziCard, MeasureWord, Radical } from '@/lib/types';
+import type { StrokeName } from '@/lib/zh/trace';
 
 /** One syllable of the pinyin table with the tones that exist (and so may be recorded). */
 export type SyllableRow = { b: string; i: string; f: string; t: number[] };
@@ -12,9 +13,11 @@ export type VisualDataValue = {
   radicals: Radical[];
   /** Parts and notes for characters the page's visuals show. */
   hanzi: Record<string, HanziCard>;
+  /** Authored stroke names (content/data/stroke-names.yaml), which win over the heuristic. */
+  strokeNames: Record<string, StrokeName[]>;
 };
 
-const EMPTY: VisualDataValue = { syllables: [], measureWords: [], radicals: [], hanzi: {} };
+const EMPTY: VisualDataValue = { syllables: [], measureWords: [], radicals: [], hanzi: {}, strokeNames: {} };
 const Ctx = createContext<VisualDataValue>(EMPTY);
 
 /** Data for visuals, read at build time and handed down by the page. */

@@ -14,10 +14,12 @@ import {
   NamesSchema,
   PlacementSchema,
   RadicalsSchema,
+  StrokeNamesSchema,
   ReadingSchema,
   TestPoolSchema,
 } from './schema';
 import { parseSections } from './sections';
+import type { StrokeName } from '../zh/trace';
 import { fillItemPinyin, type Names } from './autopy';
 import { itemText } from '../check/text';
 import { parseInline } from '../markup';
@@ -72,6 +74,8 @@ export const getNames = once((): (Names[number] & { id: string })[] => (exists('
 export const getDasarPoints = once((): DasarPoint[] => (exists('data/dasar-points.yaml') ? DasarPointsSchema.parse(readYaml('data/dasar-points.yaml')) : []));
 export const getHokkien = once((): HokkienEntry[] => (exists('data/hokkien.yaml') ? HokkienSchema.parse(readYaml('data/hokkien.yaml')) : []));
 export const getRadicals = once((): Radical[] => (exists('data/radicals.yaml') ? RadicalsSchema.parse(readYaml('data/radicals.yaml')) : []));
+/** Authored stroke names per character (content/data/stroke-names.yaml), checked against the stroke counts. */
+export const getStrokeNames = once((): Record<string, StrokeName[]> => (exists('data/stroke-names.yaml') ? StrokeNamesSchema.parse(readYaml('data/stroke-names.yaml')) : {}));
 export const getMeasureWords = once((): MeasureWord[] => (exists('data/measure-words.yaml') ? MeasureWordsSchema.parse(readYaml('data/measure-words.yaml')) : []));
 
 export function getDeck(rungId: string): Deck | null {

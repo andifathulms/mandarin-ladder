@@ -1,6 +1,6 @@
 // Build-time only.
 import { getSyllables } from './hsk';
-import { getMeasureWords, getRadicals } from './load';
+import { getMeasureWords, getRadicals, getStrokeNames } from './load';
 import { hanziCard } from './lessonData';
 import type { HanziCard } from '../types';
 import type { VisualDataValue } from '@/components/visuals/VisualData';
@@ -17,5 +17,6 @@ export function visualData(chars: string[] = []): VisualDataValue {
     measureWords: getMeasureWords(),
     radicals: getRadicals(),
     hanzi,
+    strokeNames: getStrokeNames(),
   };
 }

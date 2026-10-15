@@ -13,6 +13,7 @@ import {
   getNames,
   getPlacement,
   getRadicals,
+  getStrokeNames,
   getReading,
   getTestPool,
   lessonFiles,
@@ -22,6 +23,7 @@ import {
 import { focusCount } from '../lib/markup';
 import type { CheckItem, Lesson } from '../lib/types';
 import { lintLessons } from '../lib/content/lint';
+import { getHanzi } from '../lib/content/hsk';
 import { usedChars } from '../lib/content/usedChars';
 import { missingAudio } from './audio-list';
 
@@ -78,6 +80,7 @@ for (const [file, get] of [
   ['data/hokkien.yaml', getHokkien],
   ['data/measure-words.yaml', getMeasureWords],
   ['data/radicals.yaml', getRadicals],
+  ['data/stroke-names.yaml', getStrokeNames],
 ] as const) {
   try {
     get();
@@ -195,6 +198,13 @@ for (const f of lintLessons(rungs, lessonsByRung)) (f.level === 'error' ? errors
 const strokesDir = path.join(process.cwd(), 'public', 'strokes');
 const noStrokes = [...usedChars().strokes].filter((c) => !fs.existsSync(path.join(strokesDir, `${c.codePointAt(0)!.toString(16)}.json`)));
 if (noStrokes.length) err(`public/strokes: ${noStrokes.length} characters have no stroke file (npm run strokes:extract): ${noStrokes.slice(0, 20).join('')}`);
+
+// 9b. Authored stroke names have one name per stroke.
+for (const [ch, names] of Object.entries(getStrokeNames())) {
+  const h = getHanzi()[ch];
+  if (!h) err(`data/stroke-names.yaml: ${ch} has no Make Me a Hanzi data`);
+  else if (h.matches.length !== names.length) err(`data/stroke-names.yaml: ${ch} has ${h.matches.length} strokes, ${names.length} names`);
+}
 
 // 10. Audio: every syllable a live rung plays has a recording; sentences may fall back to speech.
 const audio = missingAudio();

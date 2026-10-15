@@ -436,3 +436,28 @@
 .zh-ruby rt.tone-0 {
   color: var(--tone-0);
 }
+
+/* Tracing (DESIGN §6.7): a wrong stroke flashes and fades; the expected stroke pulses after two misses. */
+@keyframes trace-miss {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+.trace-miss {
+  animation: trace-miss 300ms var(--ease) both;
+}
+@keyframes hint-pulse {
+  0%,
+  100% {
+    opacity: 0.15;
+  }
+  50% {
+    opacity: 0.4;
+  }
+}
+.hint-pulse {
+  animation: hint-pulse 1200ms ease-in-out infinite;
+}

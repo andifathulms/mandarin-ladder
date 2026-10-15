@@ -348,5 +348,8 @@ export const RadicalsSchema = z
     });
   });
 
+/** Authored stroke names per character (DESIGN §8.5). */
+export const StrokeNamesSchema = z.record(z.string().length(1), z.array(z.enum(['heng', 'shu', 'pie', 'dian', 'na', 'ti', 'zhe', 'gou'])).min(1));
+
 export const SECTION_HEADINGS = ['concept.id', 'concept.en', 'contrast.id', 'contrast.en'] as const;
 

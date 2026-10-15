@@ -25,6 +25,7 @@ import { ZhTextProvider } from '../zh/ZhContext';
 import { CheckStep } from '../check/CheckStep';
 import { VisualStage } from '../visuals/VisualStage';
 import { STEP_KEYS } from './steps';
+import { StrokeOrder } from '../visuals/StrokeOrder';
 
 type Props = {
   lesson: Lesson;
@@ -230,7 +231,7 @@ export function LessonPlayer({ lesson, rung, rungLessons, next, hasTest, spiralR
             ))}
           </ul>
           {lesson.tone && <NadaCard tone={lesson.tone} />}
-          <HanziCard chars={hanzi} strokes={strokes} />
+          <HanziCard chars={hanzi} strokes={strokes ?? ((ch) => <StrokeOrder char={ch} size={200} autoplay />)} />
           {lesson.talk && <TalkCard talk={lesson.talk} />}
           <TirukanCard {...lesson.tirukan} />
         </>
