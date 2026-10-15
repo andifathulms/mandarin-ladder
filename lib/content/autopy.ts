@@ -71,16 +71,21 @@ export function wordReading(zh: string, glossary: GlossaryEntry[], names: Names)
     if (zs.length === ps.length && zs.includes(zh)) return ps[zs.indexOf(zh)];
   }
   if (DEFAULT_READING[zh]) return DEFAULT_READING[zh];
-  if ([...zh].every((c) => DIGITS[c])) return [...zh].map((c) => DIGITS[c]).join('');
+  if ([...zh].every((c) => DIGITS[c])) return joinSyllables([...zh].map((c) => DIGITS[c]));
   const r = readings().get(zh);
   if (r?.length) return r[0];
   // Fall back to character by character, only when every character is unambiguous.
   const chars = hanChars(zh);
   if (chars.length > 1 && chars.length === [...zh].length) {
     const each = chars.map((c) => DEFAULT_READING[c] ?? (readings().get(c)?.length === 1 ? readings().get(c)![0] : null));
-    if (each.every(Boolean)) return each.join('');
+    if (each.every(Boolean)) return joinSyllables(each as string[]);
   }
   return null;
+}
+
+/** Joins syllables into one pinyin word, with an apostrophe before a/o/e after the first (shí'èr). */
+export function joinSyllables(syls: string[]): string {
+  return syls.map((p, k) => (k > 0 && /^[aoeāáǎàōóǒòēéěè]/i.test(p.normalize('NFC')) ? `'${p}` : p)).join('');
 }
 
 /** Splits a run of hanzi with no spaces into known words, longest first. */
@@ -166,9 +171,7 @@ export function runPinyin(text: string, glossary: GlossaryEntry[], names: Names,
     const words = segment(run).map((w) => ({ zh: w, py: wordReading(w, glossary, names) }));
     if (words.some((w) => !w.py)) return null;
     // One token for the whole run, so it aligns as one ruby "word" inside Latin text.
-    out[run] = spoken(words as { zh: string; py: string }[])
-      .map((p, k) => (k > 0 && /^[aoeāáǎàōóǒòēéěè]/i.test(p) ? `'${p}` : p))
-      .join('');
+    out[run] = joinSyllables(spoken(words as { zh: string; py: string }[]));
   }
   return out;
 }

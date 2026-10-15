@@ -49,6 +49,7 @@ describe('item pinyin at build time', () => {
   it('fills token-for-token pinyin, with 一 and 不 spoken', () => {
     expect(pinyinFor('我 不 是 老师 。', [], [])).toBe('wǒ bú shì lǎoshī .');
     expect(pinyinFor('一 个 人', [], [])).toBe('yí gè rén');
+    expect(pinyinFor('十二 月', [], [])).toBe("shí'èr yuè");
     expect(pinyinFor('一 本 书', [], [])).toBe('yì běn shū');
   });
   it('uses the lesson glossary first', () => {
