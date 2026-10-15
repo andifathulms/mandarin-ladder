@@ -1,0 +1,31 @@
+# Dasar 2 capstone: Baca dan dengar (PRD §5.5). Only what Dasar 1–2 taught. Draft.
+rung: dasar-2
+title: { id: "Rina dan Pak Wang", en: "Rina and Mr Wang", zh: "我 是 丽娜", py: "wǒ shì Lìnà" }
+lines:
+  - { zh: "你 好 ！ 我 是 丽娜 。", py: "nǐ hǎo ! wǒ shì Lìnà .", id: "Halo! Aku Rina.", en: "Hello! I'm Rina." }
+  - { zh: "我 是 印尼人 ， 我 是 学生 。", py: "wǒ shì Yìnnírén , wǒ shì xuésheng .", id: "Aku orang Indonesia, aku pelajar.", en: "I'm Indonesian, I'm a student." }
+  - { zh: "他 是 王 明 。 他 是 中国 人 。", py: "tā shì Wáng Míng . tā shì Zhōngguó rén .", id: "Dia Wang Ming. Dia orang Tiongkok.", en: "He's Wang Ming. He's Chinese." }
+  - { zh: "他 不 是 学生 ， 他 是 老师 。", py: "tā bú shì xuésheng , tā shì lǎoshī .", id: "Dia bukan pelajar, dia guru.", en: "He isn't a student, he's a teacher." }
+  - { zh: "今天 是 十 月 十六 日 。", py: "jīntiān shì shí yuè shíliù rì .", id: "Hari ini tanggal 16 Oktober.", en: "Today is 16 October." }
+  - { zh: "谢谢 老师 ！ 再见 ！", py: "xièxie lǎoshī ! zàijiàn !", id: "Terima kasih, Pak Guru! Sampai jumpa!", en: "Thank you, teacher! Goodbye!" }
+glossary:
+  - { zh: "今天", py: "jīntiān", id: "hari ini", en: "today", hsk: "1" }
+items:
+  - id: d2-r-c1
+    type: choice
+    prompt: "Rina orang mana?"
+    options: ["orang Indonesia", "orang Tiongkok"]
+    answer: "orang Indonesia"
+    why: { id: "**我是印尼人**: aku orang Indonesia.", en: "**我是印尼人**: I'm Indonesian." }
+  - id: d2-r-c2
+    type: choice
+    prompt: "Siapa Wang Ming?"
+    options: ["guru", "pelajar", "orang Indonesia"]
+    answer: "guru"
+    why: { id: "**他不是学生，他是老师**: dia bukan pelajar, dia guru.", en: "**他不是学生，他是老师**: he isn't a student, he's a teacher." }
+  - id: d2-r-c3
+    type: choice
+    prompt: "Hari ini tanggal berapa?"
+    options: ["16 Oktober", "10 Juni", "6 Oktober"]
+    answer: "16 Oktober"
+    why: { id: "**十月十六日**: bulan 10, tanggal 16.", en: "**十月十六日**: month 10, day 16." }

@@ -1,0 +1,227 @@
+# Dasar 2 rung test: 14 items drawn from this pool of 28, pass at 11 (PRD §5.5). Draft.
+rung: dasar-2
+draw: 14
+pass: 11
+items:
+  # 01 Apa itu karakter
+  - id: d2-t-01
+    from: dasar2-01-apa-itu-karakter
+    type: choice
+    show_pinyin: false
+    prompt: "Karakter mana yang berasal dari gambar orang berjalan?"
+    options: ["人", "大", "口"]
+    answer: "人"
+    why: { id: "**人** rén: dua kaki orang yang berjalan.", en: "**人** rén: the two legs of someone walking." }
+  - id: d2-t-02
+    from: dasar2-01-apa-itu-karakter
+    type: choice
+    prompt: "Satu karakter Mandarin biasanya sama dengan …"
+    options: ["satu suku kata", "satu huruf", "satu kalimat"]
+    answer: "satu suku kata"
+    why: { id: "Satu karakter, satu suku kata: **妈** = **mā**.", en: "One character, one syllable: **妈** = **mā**." }
+
+  # 02 Delapan goresan
+  - id: d2-t-03
+    from: dasar2-02-delapan-goresan
+    type: choice
+    prompt: "Goresan pertama **大** adalah …"
+    options: ["横 (mendatar)", "撇 (miring ke kiri)", "点 (titik)"]
+    answer: "横 (mendatar)"
+    why: { id: "**大**: **横** dulu, lalu **撇**, lalu goresan yang turun ke kanan.", en: "**大**: **横** first, then **撇**, then the stroke falling to the right." }
+  - id: d2-t-04
+    from: dasar2-02-delapan-goresan
+    type: choice
+    prompt: "**撇** ditulis ke arah mana?"
+    options: ["turun ke kiri", "turun ke kanan", "naik ke kanan"]
+    answer: "turun ke kiri"
+    why: { id: "**撇** turun ke kiri dan makin tipis. Yang turun ke kanan adalah **nà**, yang naik adalah **提**.", en: "**撇** falls to the left and thins out. Falling right is **nà**, rising is **提**." }
+  - id: d2-t-05
+    from: dasar2-02-delapan-goresan
+    type: choice
+    show_pinyin: false
+    prompt: "Tambahkan satu **点** di bawah **大**. Karakter apa yang terbentuk?"
+    options: ["太", "天", "人"]
+    answer: "太"
+    why: { id: "**太** tài (terlalu) = **大** + satu titik. **天** punya satu **横** lagi di atas.", en: "**太** tài (too) = **大** + one dot. **天** has one more **横** on top." }
+
+  # 03 Urutan goresan
+  - id: d2-t-06
+    from: dasar2-03-urutan-goresan
+    type: choice
+    prompt: "Dalam **日**, goresan mana yang ditulis paling akhir?"
+    options: ["横 bawah", "横 tengah", "竖 kiri"]
+    answer: "横 bawah"
+    why: { id: "Masuk dulu, baru tutup pintu: **横** bawah menutup kotak paling akhir.", en: "Go in, then close the door: the bottom **横** closes the box last." }
+  - id: d2-t-07
+    from: dasar2-03-urutan-goresan
+    type: choice
+    prompt: "Dalam **小**, goresan mana yang ditulis pertama?"
+    options: ["goresan tengah yang berkait", "titik di kiri", "titik di kanan"]
+    answer: "goresan tengah yang berkait"
+    why: { id: "Tengah sebelum dua sisi: goresan tengah dulu, lalu kiri, lalu kanan.", en: "Middle before the two sides: the middle stroke first, then left, then right." }
+  - id: d2-t-08
+    from: dasar2-03-urutan-goresan
+    type: trace
+    char: "十"
+    guide: "off"
+    why: { id: "**先横后竖**: **横** dulu, lalu **竖**.", en: "**先横后竖**: **横** first, then **竖**." }
+
+  # 04 Kotak latihan
+  - id: d2-t-09
+    from: dasar2-04-kotak-latihan
+    type: trace
+    char: "口"
+    guide: "off"
+    why: { id: "**竖** kiri, **折**, lalu **横** bawah. Kecil di tengah kotak.", en: "Left **竖**, **折**, then the bottom **横**. Small in the middle of the square." }
+  - id: d2-t-10
+    from: dasar2-04-kotak-latihan
+    type: choice
+    prompt: "Garis putus-putus dalam 田字格 gunanya untuk …"
+    options: ["menjaga posisi dan proporsi", "menunjukkan urutan goresan", "memisahkan dua karakter"]
+    answer: "menjaga posisi dan proporsi"
+    why: { id: "Garis tengah membantumu meletakkan goresan di tempatnya, misalnya **竖** pada **中**.", en: "The centre lines help you place strokes, for example the **竖** of **中**." }
+  - id: d2-t-11
+    from: dasar2-04-kotak-latihan
+    type: choice
+    prompt: "Dalam **好**, bagian mana yang lebih lebar?"
+    options: ["子 di kanan", "女 di kiri"]
+    answer: "子 di kanan"
+    why: { id: "**女** di kiri dibuat sempit, **子** di kanan lebih lebar. Keduanya tetap dalam satu kotak.", en: "**女** on the left is narrow, **子** on the right wider. Both still fit one square." }
+
+  # 05 Radikal (1)
+  - id: d2-t-12
+    from: dasar2-05-radikal-1
+    type: build
+    prompt: "Bangun **好** (baik)."
+    char: "好"
+    parts: ["女", "子", "口", "木"]
+    answer: ["女", "子"]
+    why: { id: "**好** = **女** (perempuan) + **子** (anak).", en: "**好** = **女** (woman) + **子** (child)." }
+  - id: d2-t-13
+    from: dasar2-05-radikal-1
+    type: choice
+    show_pinyin: false
+    prompt: "Karakter mana yang punya radikal mulut?"
+    options: ["吃", "她", "洗"]
+    answer: "吃"
+    why: { id: "**吃** (makan) punya **口** di kiri. **她** punya **女**, **洗** punya **氵**.", en: "**吃** (eat) has **口** on the left. **她** has **女**, **洗** has **氵**." }
+  - id: d2-t-14
+    from: dasar2-05-radikal-1
+    type: choice
+    prompt: "Radikal **木** berarti …"
+    options: ["pohon, kayu", "air", "anak"]
+    answer: "pohon, kayu"
+    why: { id: "**木** mù: pohon, kayu, seperti dalam **杯** (cangkir) dan **休** (istirahat).", en: "**木** mù: tree, wood, as in **杯** (cup) and **休** (rest)." }
+
+  # 06 Radikal (2)
+  - id: d2-t-15
+    from: dasar2-06-radikal-2
+    type: choice
+    show_pinyin: false
+    prompt: "Karakter mana yang punya radikal tangan?"
+    options: ["找", "说", "想"]
+    answer: "找"
+    why: { id: "**找** (mencari) punya **扌** (tangan). **说** punya **讠**, **想** punya **心**.", en: "**找** (look for) has **扌** (hand). **说** has **讠**, **想** has **心**." }
+  - id: d2-t-16
+    from: dasar2-06-radikal-2
+    type: build
+    prompt: "Bangun **忙** (sibuk): hati di kiri, bunyi wáng di kanan."
+    char: "忙"
+    parts: ["忄", "亡", "心", "口"]
+    answer: ["忄", "亡"]
+    why: { id: "**忙** = **忄** (hati) + **亡** (wáng). Di kiri, **心** berdiri tegak menjadi **忄**.", en: "**忙** = **忄** (heart) + **亡** (wáng). On the left, **心** stands upright as **忄**." }
+  - id: d2-t-17
+    from: dasar2-06-radikal-2
+    type: choice
+    prompt: "Sebagai radikal, **月** bisa berarti bulan, atau …"
+    options: ["tubuh", "air", "api"]
+    answer: "tubuh"
+    why: { id: "**月** di karakter tentang tubuh berasal dari gambar daging, seperti dalam **脑** (otak).", en: "**月** in characters about the body comes from a picture of flesh, as in **脑** (brain)." }
+
+  # 07 Komponen
+  - id: d2-t-18
+    from: dasar2-07-komponen
+    type: build
+    prompt: "Bangun **妈** (ibu)."
+    char: "妈"
+    parts: ["女", "马", "口", "门"]
+    answer: ["女", "马"]
+    why: { id: "**妈** = **女** (arti) + **马** (mǎ, bunyi).", en: "**妈** = **女** (meaning) + **马** (mǎ, sound)." }
+  - id: d2-t-19
+    from: dasar2-07-komponen
+    type: choice
+    prompt: "Dalam **们**, bagian mana yang memberi bunyi?"
+    options: ["门 (mén) di kanan", "radikal orang di kiri"]
+    answer: "门 (mén) di kanan"
+    why: { id: "**门** mén memberi bunyi, **亻** memberi arti: orang.", en: "**门** mén gives the sound, **亻** the meaning: person." }
+  - id: d2-t-20
+    from: dasar2-07-komponen
+    type: choice
+    prompt: "**马** mǎ, **妈** mā dan **吗** ma punya bunyi dasar yang sama. Apa yang berbeda?"
+    options: ["nadanya", "huruf awalnya", "jumlah suku katanya"]
+    answer: "nadanya"
+    why: { id: "Komponen bunyi memberi suku kata, bukan nada. Selalu lihat pinyinnya.", en: "The sound component gives the syllable, not the tone. Always check the pinyin." }
+
+  # 08 Kata dua karakter
+  - id: d2-t-21
+    from: dasar2-08-kata-dua-karakter
+    type: order
+    cue: "guru dari Tiongkok"
+    tiles: ["老师", "中国"]
+    answer: ["中国", "老师"]
+    why: { id: "Yang menjelaskan di depan: **中国老师**.", en: "The describing word comes first: **中国老师**." }
+  - id: d2-t-22
+    from: dasar2-08-kata-dua-karakter
+    type: listen
+    audio: "朋友"
+    options: ["teman", "guru", "pelajar"]
+    answer: "teman"
+    why: { id: "**朋友** péngyou: teman.", en: "**朋友** péngyou: friend." }
+  - id: d2-t-23
+    from: dasar2-08-kata-dua-karakter
+    type: choice
+    show_pinyin: false
+    prompt: "Kata mana yang berarti *bahasa Mandarin*?"
+    options: ["汉语", "汉字", "中国"]
+    answer: "汉语"
+    why: { id: "**汉语** Hànyǔ: bahasa Mandarin. **汉字**: karakter Mandarin. **中国**: Tiongkok.", en: "**汉语** Hànyǔ: Chinese. **汉字**: Chinese characters. **中国**: China." }
+
+  # 09 Angka dan tanggal
+  - id: d2-t-24
+    from: dasar2-09-angka-tanggal
+    type: choice
+    py: { "十二": "shí'èr" }
+    prompt: "Bagaimana menulis *dua belas*?"
+    options: ["十二", "二十"]
+    answer: "十二"
+    why: { id: "Angka di belakang **十** menambah: 10 + 2. **二十** adalah 20.", en: "A number after **十** adds: 10 + 2. **二十** is 20." }
+  - id: d2-t-25
+    from: dasar2-09-angka-tanggal
+    type: gap
+    cue: "Oktober"
+    prompt: "十 ___"
+    options: ["月", "日", "年"]
+    answer: "月"
+    why: { id: "Bulan = angka + **月**: **十月**, bulan kesepuluh.", en: "A month = number + **月**: **十月**, the tenth month." }
+  - id: d2-t-26
+    from: dasar2-09-angka-tanggal
+    type: trace
+    char: "八"
+    guide: "on"
+    why: { id: "**撇** dulu, lalu goresan yang turun ke kanan. Keduanya tidak bersentuhan.", en: "**撇** first, then the stroke falling to the right. The two don't touch." }
+
+  # 10 Kalimat pertama
+  - id: d2-t-27
+    from: dasar2-10-kalimat-pertama
+    type: order
+    cue: "Aku pelajar."
+    tiles: ["学生", "我", "是"]
+    answer: ["我", "是", "学生"]
+    why: { id: "**我** **是** **学生**: aku, adalah, pelajar.", en: "**我** **是** **学生**: I, am, a student." }
+  - id: d2-t-28
+    from: dasar2-10-kalimat-pertama
+    type: listen
+    audio: "再见 ！"
+    options: ["Sampai jumpa!", "Terima kasih!", "Halo!"]
+    answer: "Sampai jumpa!"
+    why: { id: "**再见** zàijiàn: sampai jumpa.", en: "**再见** zàijiàn: goodbye." }
