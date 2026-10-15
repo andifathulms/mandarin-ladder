@@ -6,7 +6,7 @@ import type { ProgressState } from '@/lib/progress/types';
 import { lessonState } from '@/lib/progress/derive';
 import { placementHref, readHref, talkHref, testHref, rungHref } from '@/lib/routes';
 import { LessonRow } from './LessonRow';
-import { IconArrowLeft, IconChevron, IconFlag, IconReview } from '../ui/Icon';
+import { IconArrowLeft, IconCards, IconChevron, IconFlag, IconReview } from '../ui/Icon';
 import { CapstoneCard } from './CapstoneCard';
 import { ZhText } from '../zh/ZhText';
 import { Grid } from '../ui/Grid';
@@ -23,6 +23,8 @@ type Props = {
   test: TestInfo | null;
   reading?: ReadingInfo | null;
   dialogue?: DialogueInfo | null;
+  /** The word deck for this rung's HSK level. */
+  deck?: { count: number } | null;
   /** The rung page that offers the placement retake (Dasar 1). */
   placement?: boolean;
 };
@@ -31,7 +33,7 @@ export type TestInfo = { draw: number; pass: number };
 export type ReadingInfo = { title: { en: string; id: string }; items: number };
 export type DialogueInfo = { title: { en: string; id: string }; lines: number; items: number };
 
-export function RungDetail({ rung, rungs, lessons, progress, test, reading, dialogue, placement }: Props) {
+export function RungDetail({ rung, rungs, lessons, progress, test, reading, dialogue, deck, placement }: Props) {
   const { t, lang } = useT();
   const mine = lessons.filter((l) => l.rung === rung.id).sort((a, b) => a.order - b.order);
   const tests = progress.rungs[rung.id]?.tests ?? [];
@@ -144,6 +146,21 @@ export function RungDetail({ rung, rungs, lessons, progress, test, reading, dial
                 />
               )}
             </div>
+          )}
+          {deck && (
+            <Link
+              href="/words/#deck"
+              className="card mt-2 flex min-h-[64px] items-center gap-4 p-4 text-ink no-underline transition-colors duration-quick hover:bg-paper-2"
+            >
+              <span className="flex h-[44px] w-[44px] shrink-0 items-center justify-center rounded-md bg-rung-soft" style={{ color: 'var(--rung)' }}>
+                <IconCards />
+              </span>
+              <span className="flex min-w-0 flex-1 flex-col">
+                <span className="font-display text-card font-medium">{t('rung.deck', { hsk: rung.hsk })}</span>
+                <span className="text-small text-muted tnum">{t('rung.deckMeta', { n: deck.count, hsk: rung.hsk })}</span>
+              </span>
+              <IconChevron className="shrink-0 text-muted" />
+            </Link>
           )}
           {test && (
             <Link

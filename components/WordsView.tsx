@@ -1,7 +1,7 @@
 'use client';
 
 import Link from 'next/link';
-import { useMemo, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import type { GlossaryEntry, LessonSummary, Rung } from '@/lib/types';
 import { missedCount } from '@/lib/progress/derive';
 import { lessonHref } from '@/lib/routes';
@@ -14,6 +14,8 @@ import { IconBook, IconSearch } from './ui/Icon';
 import { usePlay } from './useSpeech';
 import { ZhText } from './zh/ZhText';
 import { Pinyin } from './zh/Pinyin';
+import { Segmented } from './ui/Segmented';
+import { DeckHome, type Deck } from './zh/DeckHome';
 
 /** Extra facts for a word, from the HSK data: traditional form, level, measure word. */
 export type WordFacts = Record<string, { trad?: string; hsk?: string; mw?: string }>;
@@ -36,9 +38,42 @@ export function matchesWord(g: GlossaryEntry, q: string): boolean {
   return plainPy(g.py).includes(plainPy(needle));
 }
 
-type Props = { lessons: LessonSummary[]; rungs: Rung[]; facts: WordFacts };
+type Props = { lessons: LessonSummary[]; rungs: Rung[]; facts: WordFacts; decks: Deck[] };
 
-export function WordsView({ lessons, rungs, facts }: Props) {
+type Tab = 'words' | 'deck';
+
+/** The Kata tab (DESIGN §6.8): Kata-kataku and Kartu kata as a two-segment control at the top. */
+export function WordsView({ lessons, rungs, facts, decks }: Props) {
+  const { t } = useT();
+  const [tab, setTab] = useState<Tab>('words');
+  // #deck opens the word deck (the rung page and the Saya page link there).
+  useEffect(() => {
+    const sync = () => setTab(window.location.hash === '#deck' ? 'deck' : 'words');
+    sync();
+    window.addEventListener('hashchange', sync);
+    return () => window.removeEventListener('hashchange', sync);
+  }, []);
+  const choose = (v: Tab) => {
+    setTab(v);
+    history.replaceState(null, '', v === 'deck' ? '#deck' : window.location.pathname);
+  };
+  return (
+    <PageShell title={t('words.tab')}>
+      <Segmented<Tab>
+        label={t('words.tab')}
+        value={tab}
+        onChange={choose}
+        options={[
+          { value: 'words', label: t('words.title') },
+          { value: 'deck', label: t('deck.tab') },
+        ]}
+      />
+      {tab === 'words' ? <MyWords lessons={lessons} rungs={rungs} facts={facts} /> : <DeckHome decks={decks} />}
+    </PageShell>
+  );
+}
+
+function MyWords({ lessons, rungs, facts }: Omit<Props, 'decks'>) {
   const { t, lang } = useT();
   const progress = useProgress();
   const play = usePlay();
@@ -67,7 +102,8 @@ export function WordsView({ lessons, rungs, facts }: Props) {
     }`;
 
   return (
-    <PageShell title={t('words.title')} subtitle={total > 0 ? t('words.subtitle', { n: total, l: opened.length }) : undefined}>
+    <>
+      {total > 0 && <p className="text-body text-muted">{t('words.subtitle', { n: total, l: opened.length })}</p>}
       {total === 0 ? (
         <div className="card flex flex-col items-start gap-3 p-5">
           <span className="flex h-[48px] w-[48px] items-center justify-center rounded-md bg-paper-2 text-muted">
@@ -159,6 +195,6 @@ export function WordsView({ lessons, rungs, facts }: Props) {
           )}
         </>
       )}
-    </PageShell>
+    </>
   );
 }

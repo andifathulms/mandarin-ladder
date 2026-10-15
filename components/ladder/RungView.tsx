@@ -13,9 +13,10 @@ type Props = {
   reading: ReadingInfo | null;
   dialogue: DialogueInfo | null;
   placement: boolean;
+  deck: { count: number } | null;
 };
 
-export function RungView({ rung, rungs, lessons, test, reading, dialogue, placement }: Props) {
+export function RungView({ rung, rungs, lessons, test, reading, dialogue, placement, deck }: Props) {
   const progress = useProgress();
   return (
     <AppShell>
@@ -29,6 +30,7 @@ export function RungView({ rung, rungs, lessons, test, reading, dialogue, placem
           reading={reading}
           dialogue={dialogue}
           placement={placement}
+          deck={deck}
         />
       </main>
     </AppShell>

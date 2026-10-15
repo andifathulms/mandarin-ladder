@@ -3,6 +3,7 @@ import type { Metadata } from 'next';
 import { getAllSummaries, getCurriculum, getDialogue, getPlacement, getReading, getRung, getTestPool } from '@/lib/content/load';
 import { RungView } from '@/components/ladder/RungView';
 import { hskLabel } from '@/components/ui/tier';
+import { getWords, rungLevel } from '@/lib/content/hsk';
 
 type Params = { params: { rung: string } };
 
@@ -30,6 +31,7 @@ export default function RungPage({ params }: Params) {
       reading={reading ? { title: reading.title, items: reading.items.length } : null}
       dialogue={dialogue ? { title: dialogue.title, lines: dialogue.lines.length, items: dialogue.items.length } : null}
       placement={rung.id === 'dasar-1' && !!getPlacement()}
+      deck={rung.status === 'live' && rung.hsk !== '—' ? { count: getWords().filter((w) => w.hsk === rungLevel(rung)).length } : null}
     />
   );
 }

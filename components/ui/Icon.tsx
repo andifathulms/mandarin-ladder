@@ -55,6 +55,12 @@ export const IconChat = ({ size = 22, className }: P) => (
     <path d="M8 9.5h8M8 12.5h5" />
   </svg>
 );
+export const IconCards = ({ size = 22, className }: P) => (
+  <svg {...base(size, className)}>
+    <rect x="6" y="7" width="12" height="14" rx="2" />
+    <path d="M9 4h10a2 2 0 0 1 2 2v12" />
+  </svg>
+);
 export const IconLadder = ({ size = 22, className }: P) => (
   <svg {...base(size, className)}>
     <path d="M7 3v18M17 3v18M7 7.5h10M7 12h10M7 16.5h10" />
