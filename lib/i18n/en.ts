@@ -143,7 +143,7 @@ export const en: Record<StringKey, string> = {
   'settings.resetWarn': 'This removes every lesson, test and word. It cannot be undone.',
   'settings.resetDone': 'Progress deleted.',
   'settings.storageOff': "Progress isn't being saved in this browser.",
-  'settings.speechOff': 'This browser has no Arabic voice. Recordings still play; other play buttons are hidden.',
+  'settings.speechOff': 'This browser has no Mandarin (zh-CN) voice. Recordings still play; other play buttons are hidden.',
   'settings.on': 'On',
   'settings.off': 'Off',
 

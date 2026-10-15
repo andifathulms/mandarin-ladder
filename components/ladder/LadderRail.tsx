@@ -6,7 +6,8 @@ import { rungState, type RungState } from '@/lib/progress/derive';
 import type { ProgressState } from '@/lib/progress/types';
 import { rungHref } from '@/lib/routes';
 import { useT } from '../ProgressProvider';
-import { hskLabel, tierName, tierRange } from '../ui/tier';
+import { tierName, tierRange } from '../ui/tier';
+import { HskChip } from '../ui/HskChip';
 import { ZhText } from '../zh/ZhText';
 import { NotchBar } from './NotchBar';
 
@@ -74,7 +75,7 @@ function LadderRow({ rung, state, here, viaPlacement }: { rung: Rung; state: Run
           <ZhText face="ui" className="hidden text-zh-small leading-none text-muted min-[380px]:inline">
             {rung.name_zh.zh.replace(/\s+/g, '')}
           </ZhText>
-          {rung.hsk !== '—' && <span className="label text-muted">{hskLabel(rung.hsk)}</span>}
+          <HskChip hsk={rung.hsk} />
           {rung.optional && <span className="label text-muted">· {t('rung.optional')}</span>}
           {climbed && viaPlacement && <span className="label text-muted">· {t('rung.viaPlacement')}</span>}
           {here && <span className="sr-only">· {t('home.youAreHere')}</span>}

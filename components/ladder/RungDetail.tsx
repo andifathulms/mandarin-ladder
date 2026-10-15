@@ -11,7 +11,8 @@ import { CapstoneCard } from './CapstoneCard';
 import { ZhText } from '../zh/ZhText';
 import { Grid } from '../ui/Grid';
 import { ProgressRing } from '../ui/ProgressRing';
-import { hskLabel, tierName } from '../ui/tier';
+import { tierName } from '../ui/tier';
+import { HskChip } from '../ui/HskChip';
 import { useT } from '../ProgressProvider';
 
 type Props = {
@@ -66,7 +67,8 @@ export function RungDetail({ rung, rungs, lessons, progress, test, reading, dial
           <div className="flex min-w-0 flex-col gap-3">
             <p className="label flex items-center gap-2 text-brass">
               <span aria-hidden className="h-[7px] w-[7px] rounded-full" style={{ background: `var(--${rung.tier})` }} />
-              {[tierName(rung.tier), hskLabel(rung.hsk)].filter(Boolean).join(' · ')}
+              {tierName(rung.tier)}
+              <HskChip hsk={rung.hsk} onBoard />
             </p>
             <h1 className="text-hero leading-none tracking-[-0.02em] text-board-ink">{rung.name}</h1>
             <p className="flex flex-wrap items-baseline gap-x-3 text-board-muted">

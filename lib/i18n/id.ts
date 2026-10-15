@@ -142,7 +142,7 @@ export const id = {
   'settings.resetWarn': 'Ini menghapus semua pelajaran, tes dan kata. Tidak bisa dibatalkan.',
   'settings.resetDone': 'Progres sudah dihapus.',
   'settings.storageOff': 'Progres tidak tersimpan di browser ini.',
-  'settings.speechOff': 'Browser ini tidak punya suara bahasa Arab. Rekaman tetap diputar; tombol putar lain disembunyikan.',
+  'settings.speechOff': 'Browser ini tidak punya suara bahasa Mandarin (zh-CN). Rekaman tetap diputar; tombol putar lain disembunyikan.',
   'settings.on': 'Nyala',
   'settings.off': 'Mati',
 
