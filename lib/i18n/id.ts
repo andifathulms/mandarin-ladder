@@ -372,6 +372,7 @@ export const id = {
   'parts.pos.outside': "luar",
   'parts.pos.inside': "dalam",
   'parts.pos.part': "bagian",
+  'place.compare': "Bandingkan dengan Indonesia",
 } as const;
 
 export type StringKey = keyof typeof id;

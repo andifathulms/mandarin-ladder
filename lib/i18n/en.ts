@@ -373,4 +373,5 @@ export const en: Record<StringKey, string> = {
   'parts.pos.outside': "outside",
   'parts.pos.inside': "inside",
   'parts.pos.part': "part",
+  'place.compare': "Compare with Indonesian",
 };

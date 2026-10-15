@@ -55,13 +55,13 @@ type DrawingProps = {
   from: Place | null;
   /** Text alternative for the scene. */
   alt: string;
-  /** Object labels drawn in the scene (e.g. table · طاولة · meja). */
+  /** Object labels drawn in the scene (e.g. 桌子 zhuōzi · meja). */
   labels: { table: React.ReactNode; box: React.ReactNode };
 };
 
 /**
- * English Ladder's table, box and ball, unchanged in drawing, draw order and motion. The Arabic
- * visual (PlaceSceneAr) supplies its own labels, controls and sentence.
+ * English Ladder's table, box and ball, unchanged in drawing, draw order and motion. The Chinese
+ * visual (PlaceSceneZh) supplies its own labels, controls and sentence.
  */
 export function PlaceDrawing({ place, from, alt, labels }: DrawingProps) {
   const slot: Slot = PLACE_SPEC[place].slot;

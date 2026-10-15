@@ -9,6 +9,9 @@ import { MouthPlaces } from '@/components/visuals/MouthPlaces';
 import { SandhiStrip } from '@/components/visuals/SandhiStrip';
 import { CharacterParts } from '@/components/visuals/CharacterParts';
 import { registry } from '@/components/visuals/registry';
+import { PlaceSceneZh, placeSentenceZh } from '@/components/visuals/PlaceSceneZh';
+import { MeasureWords } from '@/components/visuals/MeasureWords';
+import { alignPinyin } from '@/lib/zh/align';
 
 const data = visualData(['妈', '好'], { examples: true });
 const wrap = (ui: React.ReactNode) =>
@@ -104,9 +107,38 @@ describe('CharacterParts', () => {
   });
 });
 
+describe('PlaceSceneZh', () => {
+  it('puts the localiser after the noun, and every sentence aligns', () => {
+    for (const p of ['on', 'under', 'in', 'next to', 'behind', 'in front of'] as const) {
+      const s = placeSentenceZh(p);
+      expect(() => alignPinyin(s.zh, s.py)).not.toThrow();
+      expect(s.words[3].zh).toBe(s.zh.match(/\[\[(.+?)\]\]/)![1]);
+    }
+    expect(placeSentenceZh('under').zh).toBe('球 在 桌子 [[下]] 。');
+  });
+  it('moves the ball and compares with Indonesian word order', () => {
+    const { container } = wrap(<PlaceSceneZh lang="id" />);
+    fireEvent.click(screen.getByRole('radio', { name: /^下/ }));
+    expect(container.querySelector('[data-ball]')).toHaveAttribute('data-ball', 'under');
+    fireEvent.click(screen.getByRole('switch'));
+    const cmp = container.querySelector('[data-compare]')!;
+    expect(cmp).toHaveTextContent('Bola');
+    expect(cmp.querySelectorAll('line')).toHaveLength(4);
+  });
+});
+
+describe('MeasureWords', () => {
+  it('lifts the chosen object and shows its measure word with the Indonesian classifier', () => {
+    const { container } = wrap(<MeasureWords lang="id" />);
+    fireEvent.click(screen.getByRole('radio', { name: /一只猫/ }));
+    expect(container.querySelector('svg[role="img"]')).toHaveAttribute('aria-label', '一只猫: seekor kucing');
+    expect(screen.getByText('ekor')).toBeInTheDocument();
+  });
+});
+
 describe('registry', () => {
-  it('has the Dasar visuals', () => {
-    for (const id of ['tone-contour', 'syllable-builder', 'mouth-places', 'sandhi-strip', 'stroke-order', 'character-parts'] as const) {
+  it('has all eight visuals', () => {
+    for (const id of ['tone-contour', 'syllable-builder', 'mouth-places', 'sandhi-strip', 'stroke-order', 'character-parts', 'place-scene-zh', 'measure-words'] as const) {
       expect(registry[id]).toBeDefined();
     }
   });

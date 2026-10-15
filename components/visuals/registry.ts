@@ -6,17 +6,18 @@ import { SyllableBuilder } from './SyllableBuilder';
 import { MouthPlaces } from './MouthPlaces';
 import { SandhiStrip } from './SandhiStrip';
 import { CharacterParts } from './CharacterParts';
+import { PlaceSceneZh } from './PlaceSceneZh';
+import { MeasureWords } from './MeasureWords';
 
-/**
- * Visual id → component. Lesson frontmatter refers to visuals by id only. Partial until the Easy 1
- * visuals land; VisualStage renders nothing for a missing id.
- */
+/** Visual id → component. Lesson frontmatter refers to visuals by id only. */
 // Each visual takes VisualProps plus its own props from frontmatter.
-export const registry: Partial<Record<VisualId, ComponentType<never>>> = {
+export const registry = {
   'tone-contour': ToneContour,
   'syllable-builder': SyllableBuilder,
   'mouth-places': MouthPlaces,
   'sandhi-strip': SandhiStrip,
   'stroke-order': StrokeOrder,
   'character-parts': CharacterParts,
-};
+  'place-scene-zh': PlaceSceneZh,
+  'measure-words': MeasureWords,
+} satisfies Record<VisualId, ComponentType<never>>;
