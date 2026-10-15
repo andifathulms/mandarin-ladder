@@ -97,7 +97,8 @@ export function TestRunner({ rung, next, pool, lessons }: Props) {
     const i = phase.i;
     const item = items[i];
     const last = i === items.length - 1;
-    const answered = answers[item.id] !== undefined && (!Array.isArray(answers[item.id]) || (answers[item.id] as string[]).length === (item.type === 'order' ? item.tiles.length : 0));
+    const need = item.type === 'order' ? item.tiles.length : item.type === 'build' ? item.answer.length : 0;
+    const answered = answers[item.id] !== undefined && answers[item.id] !== '' && (!Array.isArray(answers[item.id]) || (answers[item.id] as string[]).length === need);
     return (
       <div className="flex min-h-[100dvh] flex-col">
         {header(i)}

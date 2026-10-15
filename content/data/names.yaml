@@ -1,0 +1,20 @@
+# Proper names allowed in content without an HSK entry (CLAUDE.md §6.1, §6.8). Chinese names are
+# written as two words, surname and given name ("王 明" / "Wáng Míng"), as pinyin spells them.
+# Indonesian names use common Chinese transcriptions.
+- { zh: "王 明", py: "Wáng Míng", id: "Wang Ming (nama orang)" }
+- { zh: "李 华", py: "Lǐ Huá", id: "Li Hua (nama orang)" }
+- { zh: "张 丽", py: "Zhāng Lì", id: "Zhang Li (nama orang)" }
+- { zh: "丽娜", py: "Lìnà", id: "Rina" }
+- { zh: "布迪", py: "Bùdí", id: "Budi" }
+- { zh: "安迪", py: "Āndí", id: "Andi" }
+- { zh: "西蒂", py: "Xīdì", id: "Siti" }
+- { zh: "印尼", py: "Yìnní", id: "Indonesia" }
+- { zh: "印尼人", py: "Yìnnírén", id: "orang Indonesia" }
+- { zh: "印尼语", py: "Yìnníyǔ", id: "bahasa Indonesia" }
+- { zh: "雅加达", py: "Yǎjiādá", id: "Jakarta" }
+- { zh: "棉兰", py: "Miánlán", id: "Medan" }
+- { zh: "泗水", py: "Sìshuǐ", id: "Surabaya" }
+- { zh: "万隆", py: "Wànlóng", id: "Bandung" }
+- { zh: "上海", py: "Shànghǎi", id: "Shanghai" }
+- { zh: "广州", py: "Guǎngzhōu", id: "Guangzhou" }
+- { zh: "微信", py: "Wēixìn", id: "WeChat" }

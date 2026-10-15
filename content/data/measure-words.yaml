@@ -1,0 +1,53 @@
+# Measure words for the MeasureWords visual and the Kata card (DESIGN §8.8). id_classifier is the
+# nearest Indonesian classifier, when there is one. Draft: checked with the Easy 1 lessons.
+- mw: "个"
+  py: "gè"
+  id_classifier: "sebuah / seorang"
+  note: { id: "Penggolong paling umum, untuk orang dan banyak benda. Kalau ragu, 个 sering masih bisa dipakai, tapi tidak selalu.", en: "The most general measure word, for people and many things. When unsure, 个 often still works, but not always." }
+  examples:
+    - { zh: "一 个 人", py: "yí gè rén", id: "seorang" }
+    - { zh: "一 个 苹果", py: "yí gè píngguǒ", id: "sebuah apel" }
+- mw: "本"
+  py: "běn"
+  id_classifier: "sebuah (buku)"
+  note: { id: "Untuk buku dan benda berjilid. Bahasa Indonesia memakai sebuah; Mandarin punya penggolong khusus.", en: "For books and bound things. Indonesian uses sebuah; Mandarin has its own word." }
+  examples:
+    - { zh: "一 本 书", py: "yì běn shū", id: "sebuah buku" }
+- mw: "只"
+  py: "zhī"
+  id_classifier: "seekor"
+  note: { id: "Untuk banyak hewan, seperti seekor. Ikan dan anjing sering memakai 条, nanti di Easy 2.", en: "For many animals, like seekor. Fish and dogs often take 条, in Easy 2." }
+  examples:
+    - { zh: "一 只 猫", py: "yì zhī māo", id: "seekor kucing" }
+- mw: "杯"
+  py: "bēi"
+  id_classifier: "secangkir / segelas"
+  note: { id: "Isi satu cangkir atau gelas: persis seperti secangkir.", en: "A cupful or glassful: just like secangkir." }
+  examples:
+    - { zh: "一 杯 茶", py: "yì bēi chá", id: "secangkir teh" }
+    - { zh: "一 杯 水", py: "yì bēi shuǐ", id: "segelas air" }
+- mw: "件"
+  py: "jiàn"
+  id_classifier: "sehelai / sepotong"
+  note: { id: "Untuk baju atasan dan juga urusan (一件事). Celana memakai 条.", en: "For tops, and for matters (一件事). Trousers take 条." }
+  examples:
+    - { zh: "一 件 衣服", py: "yí jiàn yīfu", id: "sehelai baju" }
+- mw: "张"
+  py: "zhāng"
+  id_classifier: "selembar"
+  note: { id: "Untuk benda datar: kertas, tiket, foto, juga meja dan tempat tidur.", en: "For flat things: paper, tickets, photos, and also tables and beds." }
+  examples:
+    - { zh: "一 张 纸", py: "yì zhāng zhǐ", id: "selembar kertas" }
+    - { zh: "一 张 桌子", py: "yì zhāng zhuōzi", id: "sebuah meja" }
+- mw: "口"
+  py: "kǒu"
+  id_classifier: "jiwa"
+  note: { id: "Untuk jumlah anggota keluarga: 我家有四口人, keluargaku empat jiwa.", en: "For the number of people in a family: 我家有四口人." }
+  examples:
+    - { zh: "四 口 人", py: "sì kǒu rén", id: "empat jiwa" }
+- mw: "块"
+  py: "kuài"
+  id_classifier: "sepotong"
+  note: { id: "Untuk potongan (sepotong kue) dan juga satuan uang yuan dalam percakapan.", en: "For pieces, and also the yuan in speech." }
+  examples:
+    - { zh: "一 块 钱", py: "yí kuài qián", id: "satu yuan" }

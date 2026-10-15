@@ -1,23 +1,28 @@
-/* Validates all content. Exits non-zero on any error. Run by `npm run build`. */
+/* Validates all content (CLAUDE.md §5–§6). Exits non-zero on any error. Run by `npm run build`. */
 import fs from 'node:fs';
 import path from 'node:path';
 import { ZodError } from 'zod';
 import {
   CONTENT_DIR,
   getCurriculum,
+  getDasarPoints,
+  getDeck,
   getDialogue,
-  getLetters,
-  getLexicon,
-  getMakhraj,
+  getHokkien,
+  getMeasureWords,
+  getNames,
   getPlacement,
+  getRadicals,
   getReading,
   getTestPool,
   lessonFiles,
+  missingPinyin,
   parseLessonFile,
 } from '../lib/content/load';
 import { focusCount } from '../lib/markup';
 import type { CheckItem, Lesson } from '../lib/types';
 import { lintLessons } from '../lib/content/lint';
+import { usedChars } from '../lib/content/usedChars';
 import { missingAudio } from './audio-list';
 
 const errors: string[] = [];
@@ -32,6 +37,7 @@ function fmtZod(file: string, e: unknown): string {
   return `${file}: ${(e as Error).message}`;
 }
 
+/** Strings that may carry one [[focus]]. */
 function sentencesOf(item: CheckItem): string[] {
   switch (item.type) {
     case 'choice':
@@ -40,17 +46,12 @@ function sentencesOf(item: CheckItem): string[] {
     case 'order':
       return [item.answer.join(' ')];
     case 'scene':
+    case 'listen':
       return item.options;
     case 'fix':
       return [item.wrong, ...item.options];
-    case 'listen':
-      return [item.audio, ...item.options];
-    case 'read':
-      return [item.ar, ...item.options];
-    case 'spell':
-      return [item.answer];
-    case 'mark':
-      return [item.ar];
+    default:
+      return [];
   }
 }
 
@@ -70,7 +71,22 @@ try {
 const rungIds = new Set(rungs.map((r) => r.id));
 if (rungIds.size !== rungs.length) err('curriculum.yaml: duplicate rung ids');
 
-// 2. Lessons
+// 2. Data files
+for (const [file, get] of [
+  ['data/names.yaml', getNames],
+  ['data/dasar-points.yaml', getDasarPoints],
+  ['data/hokkien.yaml', getHokkien],
+  ['data/measure-words.yaml', getMeasureWords],
+  ['data/radicals.yaml', getRadicals],
+] as const) {
+  try {
+    get();
+  } catch (e) {
+    err(fmtZod(file, e));
+  }
+}
+
+// 3. Lessons
 const lessonsByRung = new Map<string, Lesson[]>();
 const allLessonIds = new Set<string>();
 
@@ -84,18 +100,12 @@ for (const rung of rungs) {
       if (Number(file.slice(0, 2)) !== l.order) err(`${where}: order ${l.order} does not match file name`);
       if (allLessonIds.has(l.id)) err(`${where}: duplicate lesson id ${l.id}`);
       allLessonIds.add(l.id);
-      for (const inv of l.introduces) {
-        if (!rung.inventory.includes(inv)) err(`${where}: introduces "${inv}" not in rung inventory`);
-      }
-      if (rung.tier !== 'dasar' && l.glossary.length < 6) err(`${where}: needs 6–12 glossary entries`);
       for (const c of l.check) {
         claim(c.id, where);
         for (const s of sentencesOf(c)) if (focusCount(s) > 1) err(`${where}: ${c.id}: more than one [[focus]] in "${s}"`);
       }
-      const lines = [...l.examples.map((e) => e.ar), ...(l.talk?.lines ?? []).map((t) => t.ar), l.pair.natural.ar, l.pair.off.ar];
-      for (const s of lines) if (focusCount(s) > 1) err(`${where}: more than one [[focus]] in "${s}"`);
-      if (/[ﭐ-﷿ﹰ-﻿]/.test(fs.readFileSync(path.join(CONTENT_DIR, rung.id, file), 'utf8'))) {
-        err(`${where}: presentation-form code points (U+FB50–U+FEFF); store base letters`);
+      for (const s of [...l.examples.map((e) => e.zh), ...(l.talk?.lines ?? []).map((t) => t.zh), l.pair.natural.zh, l.pair.off.zh]) {
+        if (focusCount(s) > 1) err(`${where}: more than one [[focus]] in "${s}"`);
       }
       lessons.push(l);
     } catch (e) {
@@ -117,7 +127,7 @@ for (const lessons of lessonsByRung.values()) {
   }
 }
 
-// 3. Test pools
+// 4. Test pools
 for (const rung of rungs) {
   if (!fs.existsSync(path.join(CONTENT_DIR, rung.id, 'test.yaml'))) {
     if (rung.status === 'live') err(`${rung.id}: live rung has no test.yaml`);
@@ -140,30 +150,30 @@ for (const rung of rungs) {
   }
 }
 
-// 3b. Capstones: reading and dialogue
+// 5. Capstones and decks
 for (const rung of rungs) {
   for (const [file, get] of [
     ['reading.yaml', getReading],
     ['dialogue.yaml', getDialogue],
+    ['deck.yaml', getDeck],
   ] as const) {
     if (!fs.existsSync(path.join(CONTENT_DIR, rung.id, file))) continue;
     try {
       const doc = get(rung.id)!;
       if (doc.rung !== rung.id) err(`${rung.id}/${file}: rung "${doc.rung}" does not match folder`);
-      for (const item of doc.items) claim(item.id, `${rung.id}/${file}`);
+      if ('items' in doc) for (const item of doc.items) claim(item.id, `${rung.id}/${file}`);
     } catch (e) {
       err(fmtZod(`${rung.id}/${file}`, e));
     }
   }
 }
 
-// 3c. Placement
+// 6. Placement (PRD §5.2): 20 items in six sections, 17+ and 12+.
 if (fs.existsSync(path.join(CONTENT_DIR, 'placement.yaml'))) {
   try {
     const p = getPlacement()!;
     for (const item of p.items) {
       claim(item.id, 'placement.yaml');
-      if (item.match !== 'exact') err(`placement.yaml: ${item.id}: placement items need match: exact`);
       if (item.from && !allLessonIds.has(item.from)) err(`placement.yaml: ${item.id}: from "${item.from}" is not a lesson`);
     }
     const count = (s: string) => p.items.filter((i) => i.section === s).length;
@@ -175,34 +185,22 @@ if (fs.existsSync(path.join(CONTENT_DIR, 'placement.yaml'))) {
   }
 }
 
-// 4. Data
-try {
-  const letters = getLetters();
-  const seen = new Set<string>();
-  for (const l of letters) {
-    if (seen.has(l.letter)) err(`data/letters.yaml: duplicate letter ${l.letter}`);
-    seen.add(l.letter);
-    if (/[ﭐ-﷿ﹰ-﻿]/.test(Object.values(l.forms).join(''))) err(`data/letters.yaml: ${l.letter}: presentation forms`);
-  }
-  const makhraj = new Set(getMakhraj().map((m) => m.id));
-  for (const l of letters) if (makhraj.size && !makhraj.has(l.makhraj)) err(`data/letters.yaml: ${l.letter}: unknown makhraj "${l.makhraj}"`);
-} catch (e) {
-  err(fmtZod('data/letters.yaml or data/makhraj.yaml', e));
-}
-try {
-  const lex = getLexicon();
-  for (const e of lex) if (!rungIds.has(e.rung)) err(`lexicon/core.yaml: ${e.ar}: unknown rung "${e.rung}"`);
-} catch (e) {
-  err(fmtZod('lexicon/core.yaml', e));
-}
+// 7. Item pinyin that could not be filled in (an item's py map can supply it).
+for (const [where, missing] of missingPinyin) err(`${where}: no pinyin for ${missing.map((m) => `"${m}"`).join(', ')} (add it to the item's py map)`);
 
-// 5. Arabic lint: inventory, script, lexicon, harakat, reviewers
+// 8. Mandarin lint: HSK lists, grammar inventory, characters, pinyin, reviewers, sizes.
 for (const f of lintLessons(rungs, lessonsByRung)) (f.level === 'error' ? errors : warnings).push(f.message);
 
-// 7. Audio: every Arabic string in a live rung has a recording, or is accepted with fallback.
+// 9. Stroke data for every character a learner can open (CLAUDE.md §5.6, §7.5).
+const strokesDir = path.join(process.cwd(), 'public', 'strokes');
+const noStrokes = [...usedChars().strokes].filter((c) => !fs.existsSync(path.join(strokesDir, `${c.codePointAt(0)!.toString(16)}.json`)));
+if (noStrokes.length) err(`public/strokes: ${noStrokes.length} characters have no stroke file (npm run strokes:extract): ${noStrokes.slice(0, 20).join('')}`);
+
+// 10. Audio: every syllable a live rung plays has a recording; sentences may fall back to speech.
 const audio = missingAudio();
+if (audio.syllables.length) err(`${audio.syllables.length} syllables used in live rungs have no recording: ${audio.syllables.slice(0, 12).join(' ')}`);
 if (audio.missing.length) {
-  const msg = `${audio.missing.length} Arabic strings in live rungs have no recording (npm run audio:list)`;
+  const msg = `${audio.missing.length} Chinese strings in live rungs have no recording (npm run audio:list)`;
   if (audio.accepted) warn(`${msg}; accepted with browser-speech fallback by content/audio/fallback.yaml`);
   else err(msg);
 }

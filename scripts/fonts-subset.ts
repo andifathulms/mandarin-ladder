@@ -2,10 +2,10 @@
  * Subsets the Chinese fonts to the characters the site uses (CLAUDE.md §7.6) and writes
  * styles/fonts-zh.css with @font-face rules. Run by `npm run build` (and before `npm run dev`).
  *
- * Characters come from content/**, the UI (lib/i18n, components, app) and the HSK character and word
- * lists of every live rung (so the word deck can show every word). They are ordered by first
- * appearance along the curriculum and cut into slices with their own unicode-range, so a page
- * downloads only the slices it uses: the first lessons need the first slice or two.
+ * Characters come from lib/content/usedChars.ts: content/**, the UI and the HSK characters and words
+ * of every live rung (so the word deck can show every word), ordered by first appearance along the
+ * curriculum. They are cut into slices with their own unicode-range, so a page downloads only the
+ * slices it uses: the first lessons need the first slice or two.
  *
  * Fails if the WenKai Regular subset (all slices) exceeds the 450 KB budget.
  */
@@ -13,8 +13,7 @@ import crypto from 'node:crypto';
 import fs from 'node:fs';
 import path from 'node:path';
 import subsetFont from 'subset-font';
-import { getCurriculum } from '../lib/content/load';
-import { getChars, getWords, levelIndex, rungLevel, HSK_LEVELS } from '../lib/content/hsk';
+import { usedChars } from '../lib/content/usedChars';
 
 const ROOT = process.cwd();
 const SRC = path.join(ROOT, 'fonts-src');
@@ -25,7 +24,6 @@ export const BUDGET_WENKAI_REGULAR = 450 * 1024;
 
 /** CJK punctuation and ASCII always ship in the first slice, so mixed lines never fall back. */
 const ALWAYS = '，。！？、：；「」『』（）《》〈〉…—·～“”‘’' + Array.from({ length: 95 }, (_, i) => String.fromCharCode(32 + i)).join('');
-const HAN = /\p{Script=Han}/u;
 
 const FACES = [
   { family: 'Ladder WenKai', file: 'LXGWWenKai-Regular.ttf', weight: 400, slug: 'wenkai-400' },
@@ -34,48 +32,8 @@ const FACES = [
   { family: 'Ladder Noto SC', file: 'NotoSansSC-Medium.otf', weight: 500, slug: 'noto-500' },
 ] as const;
 
-function walk(dir: string, exts: RegExp): string[] {
-  if (!fs.existsSync(dir)) return [];
-  return fs
-    .readdirSync(dir, { withFileTypes: true })
-    .sort((a, b) => a.name.localeCompare(b.name))
-    .flatMap((d) => {
-      const p = path.join(dir, d.name);
-      if (d.isDirectory()) return d.name === 'data' ? [] : walk(p, exts);
-      return exts.test(d.name) ? [p] : [];
-    });
-}
-
-/** Every Han character the site may show, in order of first appearance along the curriculum. */
-export function collectChars(): string[] {
-  const order: string[] = [];
-  const seen = new Set<string>();
-  const add = (text: string) => {
-    for (const ch of text) {
-      if (HAN.test(ch) && !seen.has(ch)) {
-        seen.add(ch);
-        order.push(ch);
-      }
-    }
-  };
-  const rungs = getCurriculum();
-  // Lesson content in curriculum order, then the rest of content/ (placement, capstones, data files).
-  for (const r of rungs) for (const f of walk(path.join(ROOT, 'content', r.id), /\.(md|ya?ml)$/)) add(fs.readFileSync(f, 'utf8'));
-  for (const f of walk(path.join(ROOT, 'content'), /\.(md|ya?ml)$/)) add(fs.readFileSync(f, 'utf8'));
-  for (const f of ['measure-words.yaml', 'hokkien.yaml', 'names.yaml', 'dasar-points.yaml', 'radicals.yaml']) {
-    const p = path.join(ROOT, 'content', 'data', f);
-    if (fs.existsSync(p)) add(fs.readFileSync(p, 'utf8'));
-  }
-  // UI strings.
-  for (const dir of ['lib/i18n', 'components', 'app']) for (const f of walk(path.join(ROOT, dir), /\.(ts|tsx)$/)) add(fs.readFileSync(f, 'utf8'));
-  // Live rungs: every character and word of their HSK levels (the deck shows them all).
-  const live = rungs.filter((r) => r.status === 'live');
-  const max = Math.max(-1, ...live.map((r) => levelIndex(rungLevel(r))));
-  const chars = getChars();
-  for (const l of HSK_LEVELS.slice(0, max + 1)) add(chars[l]);
-  for (const w of getWords()) if (levelIndex(w.hsk) <= max) add(w.zh);
-  return order;
-}
+/** Every Han character the site may show, in curriculum order (lib/content/usedChars.ts). */
+export const collectChars = () => usedChars().ordered;
 
 /** "U+4E00-4E02,U+4E0A" for a set of characters. */
 export function unicodeRange(chars: string[]): string {

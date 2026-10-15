@@ -3,11 +3,11 @@
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import { useCallback, useEffect, useRef, useState } from 'react';
-import type { Lesson, LessonSummary, Rung } from '@/lib/types';
+import type { HanziCard as HanziCardData, HokkienEntry, Lesson, LessonSummary, Rung, WordInfo } from '@/lib/types';
 import * as store from '@/lib/progress/store';
 import { sfx } from '@/lib/speech/sfx';
 import { lessonHref, rungHref, testHref } from '@/lib/routes';
-import { useProgress, useT } from '../ProgressProvider';
+import { useProgress, useSettings, useT } from '../ProgressProvider';
 import { IconArrowLeft, IconArrowRight, IconCheck, IconClose } from '../ui/Icon';
 import { Badge } from '../ui/Badge';
 import { NotchBar } from '../ladder/NotchBar';
@@ -16,13 +16,12 @@ import { PairCard } from './PairCard';
 import { Prose } from './Prose';
 import { StepBar } from './StepBar';
 import { StepLabel } from './StepLabel';
-import { SoundCard, TalkCard, WordsCard } from './StrandCards';
+import { HanziCard, NadaCard, TalkCard, WordsCard } from './StrandCards';
 import { TirukanCard } from './TirukanCard';
 import { GlossaryChips } from './GlossaryChips';
 import { LessonTopToggles } from './LessonTopToggles';
-import { ArIsland } from '../ar/ArIsland';
-import { ArSentence } from '../ar/ArSentence';
-import { LessonTextProvider } from '../ar/LessonText';
+import { ZhSentence } from '../zh/ZhSentence';
+import { ZhTextProvider } from '../zh/ZhContext';
 import { CheckStep } from '../check/CheckStep';
 import { VisualStage } from '../visuals/VisualStage';
 import { STEP_KEYS } from './steps';
@@ -34,16 +33,28 @@ type Props = {
   next: LessonSummary | null;
   hasTest: boolean;
   spiralRung: string | null;
+  /** Word information for the tap-a-word sheet. */
+  words: WordInfo[];
+  /** Glossary words of this lesson and the previous two (the "new" fade). */
+  recent: string[];
+  /** Hanzi card data for the lesson's new characters. */
+  hanzi: HanziCardData[];
+  hokkien: HokkienEntry[];
+  /** Stroke order for a character, where available. */
+  strokes?: (ch: string) => React.ReactNode;
 };
 
-export function LessonPlayer({ lesson, rung, rungLessons, next, hasTest, spiralRung }: Props) {
+export function LessonPlayer({ lesson, rung, rungLessons, next, hasTest, spiralRung, words, recent, hanzi, hokkien, strokes }: Props) {
   const { t, lang } = useT();
   const progress = useProgress();
   // Lesson-scoped supports (CLAUDE.md §7.2): plain state, so they reset when the lesson closes.
+  const settings = useSettings();
   const [pinyinOn, setPinyinOn] = useState(false);
+  // Nada mirrors the setting (or the rung's default) for this lesson only.
   const [toneOn, setToneOn] = useState<boolean | null>(null);
-  const [holdHint, setHoldHint] = useState(rung.pinyin === 'on-request');
-  const showTranslit = rung.pinyin === 'always' || pinyinOn;
+  const toneDefault = settings.toneColours === 'rung' ? rung.tone_colours_default : settings.toneColours;
+  const tones = toneOn ?? toneDefault;
+  const [holdHint, setHoldHint] = useState(rung.pinyin === 'on-request' || rung.pinyin === 'new');
   const router = useRouter();
   const [step, setStep] = useState(0);
   const [dir, setDir] = useState<'fwd' | 'back'>('fwd');
@@ -174,9 +185,7 @@ export function LessonPlayer({ lesson, rung, rungLessons, next, hasTest, spiralR
                 {lesson.title.id}
               </p>
             )}
-            <ArIsland block as="p" size="title" face="display" className="text-muted">
-              {lesson.title.ar}
-            </ArIsland>
+            <ZhSentence zh={lesson.title.zh} py={lesson.title.py} size="body" play={false} wordSheet={false} className="text-muted" />
           </div>
           {explain(lesson.concept)}
         </>
@@ -193,8 +202,8 @@ export function LessonPlayer({ lesson, rung, rungLessons, next, hasTest, spiralR
               <h3 className="eyebrow">{t('lesson.worked')}</h3>
               <ul className="flex flex-col gap-4">
                 {lesson.worked!.map((w) => (
-                  <li key={w.ar}>
-                    <ArSentence ar={w.ar} tr={w.tr} id={w.id} en={w.en} />
+                  <li key={w.zh}>
+                    <ZhSentence zh={w.zh} py={w.py} id={w.id} en={w.en} note={w.note} />
                   </li>
                 ))}
               </ul>
@@ -215,14 +224,13 @@ export function LessonPlayer({ lesson, rung, rungLessons, next, hasTest, spiralR
           )}
           <ul className="flex flex-col gap-6">
             {lesson.examples.map((ex) => (
-              <li key={ex.ar}>
-                <ArSentence ar={ex.ar} tr={ex.tr} id={ex.id} en={ex.en} note={ex.display_only ? undefined : (ex.note ?? true)} />
+              <li key={ex.zh}>
+                <ZhSentence zh={ex.zh} py={ex.py} id={ex.id} en={ex.en} note={ex.note ?? true} />
               </li>
             ))}
           </ul>
-          {lesson.sound && (
-            <SoundCard sound={lesson.sound} />
-          )}
+          {lesson.tone && <NadaCard tone={lesson.tone} />}
+          <HanziCard chars={hanzi} strokes={strokes} />
           {lesson.talk && <TalkCard talk={lesson.talk} />}
           <TirukanCard {...lesson.tirukan} />
         </>
@@ -234,7 +242,7 @@ export function LessonPlayer({ lesson, rung, rungLessons, next, hasTest, spiralR
           <StepLabel>{t('step.contrast')}</StepLabel>
           {explain(lesson.contrast)}
           <PairCard off={lesson.pair.off} natural={lesson.pair.natural} />
-          {lesson.words && <WordsCard words={lesson.words} />}
+          <WordsCard words={lesson.words} hokkien={hokkien} />
         </>
       );
       break;
@@ -329,7 +337,7 @@ export function LessonPlayer({ lesson, rung, rungLessons, next, hasTest, spiralR
           <LessonTopToggles
             pinyin={rung.pinyin}
             pinyinOn={pinyinOn}
-            toneOn={toneOn ?? rung.tone_colours_default}
+            toneOn={tones}
             onPinyin={setPinyinOn}
             onTone={setToneOn}
           />
@@ -346,7 +354,7 @@ export function LessonPlayer({ lesson, rung, rungLessons, next, hasTest, spiralR
       <main className="flex-1 bg-paper py-5 sm:py-7">
         <p ref={announceRef} className="sr-only" aria-live="polite" />
         <div className="page max-w-lesson sm:rounded-lg sm:bg-surface sm:px-7 sm:py-7 sm:shadow-e2">
-          <LessonTextProvider harakat="full" showTranslit={showTranslit}>
+          <ZhTextProvider pinyin={rung.pinyin} pinyinOn={pinyinOn} toneColours={tones} recentWords={recent} words={words}>
             <div
               key={step}
               ref={headingRef}
@@ -354,7 +362,7 @@ export function LessonPlayer({ lesson, rung, rungLessons, next, hasTest, spiralR
             >
               {body}
             </div>
-          </LessonTextProvider>
+          </ZhTextProvider>
         </div>
       </main>
 

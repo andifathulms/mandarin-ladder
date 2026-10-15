@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { compare, grade, matchOf, sameOrder } from '@/lib/check/grade';
+import { compare, grade, parseTones, sameOrder } from '@/lib/check/grade';
 import { drawReview, drawTest } from '@/lib/check/draw';
 import { nextBox } from '@/lib/check/leitner';
 import { emptyState } from '@/lib/progress/defaults';
@@ -8,77 +8,82 @@ import type { CheckItem } from '@/lib/types';
 const why = { id: 'x', en: 'y' };
 
 describe('grade', () => {
-  it('grades choice, gap, scene and fix by exact option', () => {
-    const c: CheckItem = { id: 'a', type: 'choice', prompt: 'p', options: ['in', 'on'], answer: 'on', why };
-    expect(grade(c, 'on').correct).toBe(true);
-    expect(grade(c, 'in').correct).toBe(false);
-    expect(grade(c, ['on']).correct).toBe(false);
-    const f: CheckItem = { id: 'b', type: 'fix', wrong: 'She have', options: ['She [[has]] two cats.', 'x'], answer: 'She [[has]] two cats.', why };
-    expect(grade(f, 'She has two cats.').correct).toBe(true);
+  it('grades choice, gap, scene and fix by the option chosen', () => {
+    const c: CheckItem = { id: 'a', type: 'choice', prompt: 'p', options: ['meja', 'kursi'], answer: 'meja', why };
+    expect(grade(c, 'meja').correct).toBe(true);
+    expect(grade(c, 'Meja').correct).toBe(true);
+    expect(grade(c, 'kursi').correct).toBe(false);
+    expect(grade(c, ['meja']).correct).toBe(false);
+    const f: CheckItem = { id: 'b', type: 'fix', wrong: '我 是 忙 。', options: ['我 [[很]] 忙 。', '我 是 很 忙 。'], answer: '我 [[很]] 忙 。', why };
+    expect(grade(f, '我很忙。').correct).toBe(true);
+    expect(grade(f, '我是很忙。').correct).toBe(false);
+  });
+
+  it('compares Chinese with normZh: spaces, markup and punctuation width do not matter', () => {
+    expect(compare('你好 ，我 是 Rina 。', '你好,我是Rina.')).toBe(true);
+    expect(compare('书 在 桌子 [[上]]', '书在桌子上')).toBe(true);
+    expect(compare('书在桌子上', '书在桌子下')).toBe(false);
   });
 
   it('grades listen items by the option chosen, not the audio text', () => {
-    const l: CheckItem = { id: 'l', type: 'listen', variety: 'fusha', audio: 'The doctors are busy.', options: ['The doctors are busy.', 'The doctor is busy.'], answer: 'The doctors are busy.', why };
-    expect(grade(l, 'The doctors are busy.').correct).toBe(true);
-    expect(grade(l, 'The doctor is busy.').correct).toBe(false);
+    const l: CheckItem = { id: 'l', type: 'listen', audio: '我 很 忙 。', options: ['Aku sibuk.', 'Aku lapar.'], answer: 'Aku sibuk.', why };
+    expect(grade(l, 'Aku sibuk.').correct).toBe(true);
+    expect(grade(l, 'Aku lapar.').correct).toBe(false);
   });
 
-  it('grades order against answer and accept alternatives', () => {
-    const o: CheckItem = {
-      id: 'c',
-      type: 'order',
-      tiles: ['I', 'am', 'tired', "I'm"],
-      answer: ['I', 'am', 'tired'],
-      accept: [["I'm", 'tired']],
-      why,
-    };
-    expect(grade(o, ['I', 'am', 'tired']).correct).toBe(true);
-    expect(grade(o, ["I'm", 'tired.']).correct).toBe(true);
-    expect(grade(o, ['am', 'I', 'tired']).correct).toBe(false);
+  it('grades order against answer and accept alternatives, joined without spaces', () => {
+    const o: CheckItem = { id: 'c', type: 'order', tiles: ['我', '明天', '去', '北京'], answer: ['我', '明天', '去', '北京'], accept: [['明天', '我', '去', '北京']], why };
+    expect(grade(o, ['我', '明天', '去', '北京']).correct).toBe(true);
+    expect(grade(o, ['明天', '我', '去', '北京。']).correct).toBe(true);
+    expect(grade(o, ['我', '去', '北京', '明天']).correct).toBe(false);
   });
 
-  it('order comparison has no case rule and ignores trailing punctuation in both scripts', () => {
-    expect(sameOrder(['the', 'ball'], ['The', 'ball'])).toBe(true);
-    expect(sameOrder(['The', 'ball?'], ['The', 'ball'])).toBe(true);
-    expect(sameOrder(['هٰذَا', 'كِتَابٌ.'], ['هٰذَا', 'كِتَابٌ'])).toBe(true);
-    expect(sameOrder(['مَا', 'هٰذَا؟'], ['مَا', 'هٰذَا'])).toBe(true);
-    expect(sameOrder(['كِتَابٌ', 'هٰذَا'], ['هٰذَا', 'كِتَابٌ'])).toBe(false);
+  it('order comparison ignores trailing punctuation of either width', () => {
+    expect(sameOrder(['你', '好。'], ['你', '好'])).toBe(true);
+    expect(sameOrder(['你', '好.'], ['你', '好'])).toBe(true);
+    expect(sameOrder(['好', '你'], ['你', '好'])).toBe(false);
   });
 });
 
-describe('Arabic grading', () => {
-  it('exact keeps harakat; loose ignores harakat and hamza seats', () => {
-    expect(compare('كِتَابٌ', 'كتاب', 'loose')).toBe(true);
-    expect(compare('كِتَابٌ', 'كتاب', 'exact')).toBe(false);
-    expect(compare('إِلَى', 'الي', 'loose')).toBe(true);
-    expect(compare('بَ', 'بِ', 'exact')).toBe(false);
-    expect(compare('كِتَابٌ', 'كِتَابٌ', 'exact')).toBe(true);
+describe('Mandarin item types', () => {
+  it('tone compares sequences, in any input form', () => {
+    const t: CheckItem = { id: 't', type: 'tone', audio: '你好', audio_py: 'nǐhǎo', ask: 'spoken', options: [[3, 3], [2, 3]], answer: [2, 3], why };
+    expect(grade(t, '2,3').correct).toBe(true);
+    expect(grade(t, ['2', '3']).correct).toBe(true);
+    expect(grade(t, '3,3').correct).toBe(false);
+    expect(grade(t, '2').correct).toBe(false);
   });
-  it('normalises Arabic punctuation and tatweel', () => {
-    expect(compare('ما هذا؟', 'ما هـذا?', 'exact')).toBe(true);
+
+  it('pinyin accepts tone numbers or marks, v or u: for ü, and accept alternatives', () => {
+    const p: CheckItem = { id: 'p', type: 'pinyin', audio: 'syl-lv4', answer: 'lǜ', why };
+    expect(grade(p, 'lv4').correct).toBe(true);
+    expect(grade(p, 'lu:4').correct).toBe(true);
+    expect(grade(p, 'LǛ').correct).toBe(true);
+    expect(grade(p, 'lu4').correct).toBe(false);
+    const x: CheckItem = { id: 'x', type: 'pinyin', audio: '谢谢', answer: 'xièxie', accept: ['xièxiè'], why };
+    expect(grade(x, 'xie4 xie5').correct).toBe(true);
+    expect(grade(x, 'xie4xie4').correct).toBe(true);
+    expect(grade(x, 'xie3xie5').correct).toBe(false);
   });
-  it('never lets a harakat-only difference pass in a loose item', () => {
-    const c: CheckItem = { id: 'h', type: 'choice', prompt: 'p', options: ['بَ', 'بِ', 'بُ'], answer: 'بِ', why };
-    expect(matchOf(c)).toBe('exact');
-    expect(grade(c, 'بَ').correct).toBe(false);
-    expect(grade(c, 'بِ').correct).toBe(true);
+
+  it('build compares the chosen parts as a set', () => {
+    const b: CheckItem = { id: 'b', type: 'build', char: '好', parts: ['女', '子', '马', '口'], answer: ['女', '子'], why };
+    expect(grade(b, ['子', '女']).correct).toBe(true);
+    expect(grade(b, ['女', '马']).correct).toBe(false);
+    expect(grade(b, ['女']).correct).toBe(false);
   });
-  it('treats transliteration options as Latin: case-insensitive, ʿ ʾ and apostrophes equal', () => {
-    const r: CheckItem = { id: 'r', type: 'read', ar: 'سَأَلَ', options: ['saʾala', 'salla'], answer: 'saʾala', why };
-    expect(grade(r, 'saʾala').correct).toBe(true);
-    expect(compare("Sa'ala", 'saʾala')).toBe(true);
-    expect(grade(r, 'salla').correct).toBe(false);
+
+  it('trace passes with two misses or fewer (CLAUDE.md §7.5)', () => {
+    const tr: CheckItem = { id: 'tr', type: 'trace', char: '人', guide: 'on', why };
+    expect(grade(tr, 'misses:0').correct).toBe(true);
+    expect(grade(tr, 'misses:2').correct).toBe(true);
+    expect(grade(tr, 'misses:3').correct).toBe(false);
+    expect(grade(tr, 'nonsense').correct).toBe(false);
   });
-  it('grades spell by the joined, normalised letters', () => {
-    const s: CheckItem = { id: 's', type: 'spell', letters: ['ك', 'ت', 'ا', 'ب'], distractors: ['ن'], answer: 'كتاب', why };
-    expect(grade(s, ['ك', 'ت', 'ا', 'ب']).correct).toBe(true);
-    expect(grade(s, 'كتاب').correct).toBe(true);
-    expect(grade(s, ['ك', 'ا', 'ت', 'ب']).correct).toBe(false);
-  });
-  it('grades mark by the mark name', () => {
-    const m: CheckItem = { id: 'm', type: 'mark', ar: 'دَرْسٌ', target: 1, options: ['fatha', 'sukun', 'kasra'], answer: 'sukun', why };
-    expect(grade(m, 'sukun').correct).toBe(true);
-    expect(grade(m, 'fatha').correct).toBe(false);
+
+  it('parses tone responses', () => {
+    expect(parseTones('3 + 3')).toEqual([3, 3]);
+    expect(parseTones(['2', '0'])).toEqual([2, 0]);
   });
 });
 
@@ -158,17 +163,16 @@ describe('placement scoring', () => {
     const mk = (i: number, section: 'tones' | 'pinyin' | 'sandhi' | 'radicals', from?: string): CheckItem => ({
       id: `p${i}`,
       type: 'choice',
-      match: 'exact',
       section,
       from,
       prompt: 'x',
-      options: ['بَ', 'بِ'],
-      answer: 'بَ',
+      options: ['a', 'b'],
+      answer: 'a',
       why,
     });
     const items = [mk(1, 'tones', 'a'), mk(2, 'pinyin', 'b'), mk(3, 'sandhi', 'b'), mk(4, 'radicals', 'c')];
     const p = { items, thresholds: { easy1: 4, dasar2: 3 } } as unknown as Placement;
-    const s = scorePlacement(p, { p1: 'بَ', p2: 'بِ', p3: 'بِ', p4: 'بَ' });
+    const s = scorePlacement(p, { p1: 'a', p2: 'b', p3: 'b', p4: 'a' });
     expect(s.score).toBe(2);
     expect(s.bySection.pinyin).toEqual({ score: 0, total: 1 });
     expect(s.missed).toEqual(['b']);

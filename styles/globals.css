@@ -177,6 +177,13 @@
     text-decoration-thickness: 1.5px;
     text-underline-offset: 3px;
   }
+  /* Chinese on the red board: board ink, pinyin in board-muted. */
+  .on-board .zh-line {
+    color: var(--board-ink);
+  }
+  .on-board .zh-ruby rt {
+    color: var(--board-muted);
+  }
   /* 田字格: a square with a dashed cross (DESIGN §8.5). */
   .tianzige {
     background-image:

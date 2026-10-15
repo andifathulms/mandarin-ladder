@@ -22,8 +22,13 @@ export function useCanPlay(text: string): boolean {
   return ok;
 }
 
-/** Plays Chinese with the learner's pace and voice settings. onWord gets character offsets or word indexes. */
+export type PlayHandlers = { onWord?: (index: number) => void; onChar?: (charIndex: number) => void };
+
+/**
+ * Plays Chinese (or a syllable key) with the learner's pace and voice settings. Recordings report word
+ * indexes, browser speech character offsets.
+ */
 export function usePlay() {
   const { voice, rate } = useSettings();
-  return useCallback((text: string, onWord?: (i: number) => void) => play(text, { rate, gender: voice, onWord }), [voice, rate]);
+  return useCallback((text: string, h: PlayHandlers = {}) => play(text, { rate, gender: voice, ...h }), [voice, rate]);
 }

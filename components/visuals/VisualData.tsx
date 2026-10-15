@@ -1,13 +1,23 @@
 'use client';
 
 import { createContext, useContext } from 'react';
-import type { Letter, MakhrajPoint } from '@/lib/types';
+import type { HanziCard, MeasureWord, Radical } from '@/lib/types';
 
-export type VisualDataValue = { letters: Letter[]; makhraj: MakhrajPoint[] };
+/** One syllable of the pinyin table with the tones that exist (and so may be recorded). */
+export type SyllableRow = { b: string; i: string; f: string; t: number[] };
 
-const Ctx = createContext<VisualDataValue>({ letters: [], makhraj: [] });
+export type VisualDataValue = {
+  syllables: SyllableRow[];
+  measureWords: MeasureWord[];
+  radicals: Radical[];
+  /** Parts and notes for characters the page's visuals show. */
+  hanzi: Record<string, HanziCard>;
+};
 
-/** Letter and makhraj data for visuals, read at build time and handed down by the page. */
+const EMPTY: VisualDataValue = { syllables: [], measureWords: [], radicals: [], hanzi: {} };
+const Ctx = createContext<VisualDataValue>(EMPTY);
+
+/** Data for visuals, read at build time and handed down by the page. */
 export function VisualDataProvider({ value, children }: { value: VisualDataValue; children: React.ReactNode }) {
   return <Ctx.Provider value={value}>{children}</Ctx.Provider>;
 }

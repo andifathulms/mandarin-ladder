@@ -1,28 +1,37 @@
 'use client';
 
-import { useEffect, useRef, useState } from 'react';
-import { stripMarkup } from '@/lib/markup';
+import { useEffect, useMemo, useRef, useState } from 'react';
 import { audioFor, loadManifest } from '@/lib/speech/audio';
-import { ArSentence } from '../ar/ArSentence';
+import { tryAlign } from '@/lib/zh/align';
+import { spokenTones } from '@/lib/zh/sandhi';
+import { plainZh } from '@/lib/zh/text';
+import { ZhSentence } from '../zh/ZhSentence';
+import { ToneContourMini } from '../visuals/ToneContourMini';
+import { useZhText } from '../zh/ZhContext';
 import { IconPlay } from '../ui/Icon';
 import { useReducedMotion, useSettings, useT } from '../ProgressProvider';
 import { useCanPlay, usePlay } from '../useSpeech';
 
 type Phase = 'idle' | 'first' | 'turn' | 'second';
 
-/** Rough speaking time when there is no recording: about 75ms per character at 1×. */
-const estimate = (text: string, rate: number) => (stripMarkup(text).length * 75) / rate;
+/** Rough speaking time when there is no recording: about 260ms per hanzi at 1×. */
+const estimate = (text: string, rate: number) => (plainZh(text).length * 260) / rate;
 
 /**
  * Tirukan (repeat after): plays the sentence, leaves a pause as long as the sentence plus a second
  * for the learner to say it aloud, then plays it again. Nothing is recorded or scored (PRD §5.3).
  */
-export function TirukanCard({ ar, tr, id, en }: { ar: string; tr: string; id: string; en?: string }) {
+export function TirukanCard({ zh, py, id, en }: { zh: string; py: string; id: string; en?: string }) {
   const { t } = useT();
+  const { toneColours } = useZhText();
+  const tones = useMemo(() => {
+    const a = tryAlign(zh, py);
+    return a ? spokenTones(a) : [];
+  }, [zh, py]);
   const { rate } = useSettings();
   const reduced = useReducedMotion();
   const play = usePlay();
-  const can = useCanPlay(ar);
+  const can = useCanPlay(zh);
   const [phase, setPhase] = useState<Phase>('idle');
   const [pause, setPause] = useState(0);
   const alive = useRef(true);
@@ -36,17 +45,17 @@ export function TirukanCard({ ar, tr, id, en }: { ar: string; tr: string; id: st
   const run = async () => {
     if (phase !== 'idle') return;
     await loadManifest();
-    const rec = audioFor(stripMarkup(ar));
-    const ms = (rec ? rec.dur / rate : estimate(ar, rate)) + 1000;
+    const rec = audioFor(zh);
+    const ms = (rec ? rec.dur / rate : estimate(zh, rate)) + 1000;
     setPhase('first');
-    await play(ar);
+    await play(zh);
     if (!alive.current) return;
     setPause(ms);
     setPhase('turn');
     await new Promise((r) => setTimeout(r, ms));
     if (!alive.current) return;
     setPhase('second');
-    await play(ar);
+    await play(zh);
     if (alive.current) setPhase('idle');
   };
 
@@ -55,7 +64,9 @@ export function TirukanCard({ ar, tr, id, en }: { ar: string; tr: string; id: st
       <h3 id="tirukan-title" className="eyebrow">
         {t('lesson.tirukan')}
       </h3>
-      <ArSentence ar={ar} tr={tr} id={id} en={en} play={false} />
+      {/* The whole phrase's spoken contour above the sentence (DESIGN §6.6). */}
+      {tones.length > 0 && <ToneContourMini tones={tones} width={Math.min(320, 40 * tones.length + 12)} colours={toneColours} />}
+      <ZhSentence zh={zh} py={py} id={id} en={en} play={false} />
       <div className="flex items-center gap-4">
         {can && (
           <button

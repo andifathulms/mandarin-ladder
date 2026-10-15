@@ -9,9 +9,10 @@ import { useT } from '../ProgressProvider';
 import { STEP_KEYS } from '../lesson/steps';
 import { Lattice } from '../ui/Lattice';
 import type { Quote } from '@/lib/types';
-import { hasArabic } from '@/lib/arabic/text';
-import { ArIsland } from '../ar/ArIsland';
-import { Translit } from '../ar/Translit';
+import { hasHan } from '@/lib/zh/text';
+import { ZhSentence } from '../zh/ZhSentence';
+import { ZhText } from '../zh/ZhText';
+import { ZhTextOverride } from '../zh/ZhContext';
 import { TwoDoorWelcome } from './TwoDoorWelcome';
 
 /** Sets the last word in brass italic, the way the board marks what matters. */
@@ -37,10 +38,10 @@ function Blank({ width }: { width: string }) {
 }
 
 /**
- * The quoted resume line. Arabic is set in Naskh at --t-ar-body in an RTL island, with the
- * transliteration beneath when the rung shows it; Latin lines keep the display serif.
+ * The quoted resume line. Chinese is set in WenKai at --t-zh-body with ruby pinyin in --board-muted
+ * when the rung shows pinyin (DESIGN §6.2); Latin lines keep the display serif. A ___ is a brass line.
  */
-function BoardSentence({ quote, showTr }: { quote: Quote; showTr: boolean }) {
+function BoardSentence({ quote, showPinyin }: { quote: Quote; showPinyin: boolean }) {
   const parts = quote.text.split('___');
   const withBlanks = (w: string) =>
     parts.map((p, i) => (
@@ -49,14 +50,20 @@ function BoardSentence({ quote, showTr }: { quote: Quote; showTr: boolean }) {
         {i < parts.length - 1 && <Blank width={w} />}
       </span>
     ));
-  if (hasArabic(quote.text)) {
+  if (quote.zh && quote.py) {
     return (
-      <div className="flex flex-col gap-1">
-        <ArIsland block as="p" size="body" className="text-board-ink">
-          {withBlanks('w-[3em]')}
-        </ArIsland>
-        {showTr && quote.tr && <Translit text={quote.tr} onBoard />}
+      <div className="on-board">
+        <ZhTextOverride showPinyin={showPinyin} toneColours={false}>
+          <ZhSentence zh={quote.zh} py={quote.py} size="body" play={false} wordSheet={false} />
+        </ZhTextOverride>
       </div>
+    );
+  }
+  if (hasHan(quote.text)) {
+    return (
+      <ZhText as="p" className="text-zh-body text-board-ink">
+        {withBlanks('w-[2em]')}
+      </ZhText>
     );
   }
   return (
@@ -117,7 +124,7 @@ export function ContinueCard({ target, firstLessonHref, placementHref, rungs }: 
         <span aria-hidden> · {t(STEP_KEYS[step])}</span>
         {step > 0 && <span className="sr-only"> · {t('home.step', { n: step + 1 })}</span>}
       </p>
-      <BoardSentence quote={text} showTr={rung?.pinyin === 'always'} />
+      <BoardSentence quote={text} showPinyin={rung?.pinyin === 'always'} />
       <p className={`text-small text-board-muted ${lang === 'en' ? '' : 'italic'}`} lang={lang}>
         {lang === 'en' ? lesson.title.en : lesson.title.id}
       </p>

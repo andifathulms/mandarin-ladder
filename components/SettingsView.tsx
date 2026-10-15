@@ -43,7 +43,7 @@ export function SettingsView() {
   useEffect(() => {
     const check = () => {
       setCanSpeak(browserCanSpeak());
-      setVoiceName(chosenVoiceName('fusha', s.voice));
+      setVoiceName(chosenVoiceName(s.voice));
     };
     check();
     return onVoicesChanged(check) as () => void;

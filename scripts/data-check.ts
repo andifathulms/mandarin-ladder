@@ -40,6 +40,9 @@ for (const [band, n] of Object.entries(STANDARD.handwriting)) {
   const got = [...hw[band as keyof typeof hw]].length;
   if (got !== n) err(`handwriting.yaml: ${band} has ${got} characters; the standard has ${n}`);
 }
+const gids = grammar.map((g) => g.id);
+for (const id of gids) if (!/^g(1|2|3|4|5|6|79)-\d{2,3}$/.test(id)) err(`grammar.yaml: malformed id ${id}`);
+if (new Set(gids).size !== gids.length) err('grammar.yaml: duplicate grammar ids');
 const allChars = Object.values(chars).join('');
 if (new Set(allChars).size !== [...allChars].length) err('chars.yaml: a character appears in two levels');
 const low = new Set([...chars['1'], ...chars['2'], ...chars['3']]);

@@ -1,0 +1,8 @@
+# Sentence recordings (PRD §5.6). Commissioned recordings of the Easy 1 examples and dialogues are
+# planned; until they are ingested (npm run audio:list → record → npm run audio:ingest), Chinese text
+# plays with the browser's zh-CN voice, and play buttons hide where there is none.
+# Syllables are different: they never fall back to speech, and content-check fails on any syllable a
+# live rung uses without a recording.
+accept_all: true
+note: "v1: sentences use the browser's zh-CN voice until recordings exist."
+keys: []

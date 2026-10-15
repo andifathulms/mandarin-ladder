@@ -1,0 +1,21 @@
+# Inventory ids for the Dasar rungs, which have no HSK grammar list (CLAUDE.md §5.1, §6.2).
+- { id: d1-intro, rung: dasar-1, title: { id: "Mandarin dan bahasa Indonesia; apa itu pinyin", en: "Mandarin and Indonesian; what pinyin is" } }
+- { id: d1-tones, rung: dasar-1, title: { id: "Empat nada dan nada netral", en: "The four tones and the neutral tone" } }
+- { id: d1-initials-easy, rung: dasar-1, title: { id: "Inisial yang mirip bahasa Indonesia; vokal a o e i u", en: "Initials like Indonesian; vowels a o e i u" } }
+- { id: d1-aspiration, rung: dasar-1, title: { id: "b/p, d/t, g/k: hembusan udara", en: "b/p, d/t, g/k: aspiration" } }
+- { id: d1-jqx, rung: dasar-1, title: { id: "j q x dan ü", en: "j q x and ü" } }
+- { id: d1-retroflex, rung: dasar-1, title: { id: "z c s dan zh ch sh r", en: "z c s and zh ch sh r" } }
+- { id: d1-finals, rung: dasar-1, title: { id: "Final: diftong dan sengau", en: "Finals: diphthongs and nasals" } }
+- { id: d1-sandhi, rung: dasar-1, title: { id: "Perubahan nada: 3 + 3, 不 dan 一", en: "Tone sandhi: 3 + 3, 不 and 一" } }
+- { id: d1-pairs, rung: dasar-1, title: { id: "Dua puluh pasangan nada", en: "The twenty tone pairs" } }
+- { id: d1-reading, rung: dasar-1, title: { id: "Membaca pinyin dan aturan ejaan", en: "Reading pinyin and spelling rules" } }
+- { id: d2-what, rung: dasar-2, title: { id: "Apa itu karakter", en: "What characters are" } }
+- { id: d2-strokes, rung: dasar-2, title: { id: "Delapan goresan dasar", en: "The eight basic strokes" } }
+- { id: d2-order, rung: dasar-2, title: { id: "Aturan urutan goresan", en: "Stroke order rules" } }
+- { id: d2-grid, rung: dasar-2, title: { id: "Kotak latihan 田字格", en: "The practice grid" } }
+- { id: d2-radicals-1, rung: dasar-2, title: { id: "Radikal (1)", en: "Radicals (1)" } }
+- { id: d2-radicals-2, rung: dasar-2, title: { id: "Radikal (2)", en: "Radicals (2)" } }
+- { id: d2-components, rung: dasar-2, title: { id: "Komponen arti dan bunyi", en: "Meaning and sound components" } }
+- { id: d2-words, rung: dasar-2, title: { id: "Karakter sebagai kata, kata dua karakter", en: "Characters as words, two-character words" } }
+- { id: d2-numbers, rung: dasar-2, title: { id: "Angka dan tanggal", en: "Numbers and dates" } }
+- { id: d2-sentences, rung: dasar-2, title: { id: "Kalimat pertama dalam karakter", en: "First sentences in characters" } }

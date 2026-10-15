@@ -6,7 +6,7 @@ import type { ProgressState } from '@/lib/progress/types';
 import { lessonState, type LessonState } from '@/lib/progress/derive';
 import { lessonHref } from '@/lib/routes';
 import { useT, type T } from '../ProgressProvider';
-import { ArIsland } from '../ar/ArIsland';
+import { ZhText } from '../zh/ZhText';
 
 export function stateWord(s: LessonState, t: T, minutes: number): string {
   switch (s.kind) {
@@ -70,9 +70,9 @@ export function LessonStrip({ lessons, progress, currentId }: { lessons: LessonS
                 <span className="font-display text-card font-medium" lang={lang}>
                   {lang === 'en' ? l.title.en : l.title.id}
                 </span>
-                <ArIsland block size="small" className="text-muted">
-                  {l.title.ar}
-                </ArIsland>
+                <ZhText as="span" className="text-zh-small text-muted">
+                  {l.title.zh.replace(/\s+|\[\[|\]\]/g, '')}
+                </ZhText>
               </span>
               <span className="flex items-center justify-between gap-2 border-t border-rule px-4 py-3">
                 <span className="min-w-0 truncate text-small text-muted" lang={lang}>

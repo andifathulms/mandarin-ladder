@@ -36,9 +36,10 @@ function files(): [string, string][] {
   out.push(['hsk/License.md', raw(h.repo, h.sha, 'License.md')]);
   for (let l = 1; l <= 7; l++) out.push([`ckv/new-${l}.json`, raw(PINS.ckv.repo, PINS.ckv.sha, `wordlists/exclusive/new/${l}.json`)]);
   out.push(['ckv/LICENSE', raw(PINS.ckv.repo, PINS.ckv.sha, 'LICENSE')]);
-  for (const f of ['graphics.txt', 'dictionary.txt', 'APL', 'LGPL', 'COPYING', 'README.md']) {
+  for (const f of ['graphics.txt', 'dictionary.txt', 'LGPL', 'COPYING', 'README.md']) {
     out.push([`mmah/${f}`, raw(PINS.mmah.repo, PINS.mmah.sha, f)]);
   }
+  out.push(['mmah/APL/ARPHICPL.TXT', raw(PINS.mmah.repo, PINS.mmah.sha, 'APL/english/ARPHICPL.TXT')]);
   out.push(['cedict/cedict.txt.gz', 'https://www.mdbg.net/chinese/export/cedict/cedict_1_0_ts_utf-8_mdbg.txt.gz']);
   return out;
 }

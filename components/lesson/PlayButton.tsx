@@ -3,12 +3,11 @@
 import { IconPlay } from '../ui/Icon';
 import { useT } from '../ProgressProvider';
 import { useCanPlay } from '../useSpeech';
-import type { Variety } from '@/lib/speech/audio';
 
-type Props = { text: string; variety?: Variety; onPlay: () => void; playing?: boolean; small?: boolean; label?: string };
+type Props = { text: string; onPlay: () => void; playing?: boolean; small?: boolean; label?: string };
 
-/** 44px icon-only play button. Renders nothing when there is no recording and no Arabic voice. */
-export function PlayButton({ text, variety = 'fusha', onPlay, playing, small, label }: Props) {
+/** 44px icon-only play button. Renders nothing when there is no recording and no Chinese voice. */
+export function PlayButton({ text, onPlay, playing, small, label }: Props) {
   const { t } = useT();
   const ok = useCanPlay(text);
   if (!ok) return null;

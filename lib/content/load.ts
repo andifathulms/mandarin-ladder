@@ -5,27 +5,36 @@ import matter from 'gray-matter';
 import yaml from 'js-yaml';
 import {
   CurriculumSchema,
+  DasarPointsSchema,
+  DeckSchema,
   DialogueSchema,
+  HokkienSchema,
   LessonFrontmatterSchema,
-  LettersSchema,
-  LexiconSchema,
-  MakhrajSchema,
+  MeasureWordsSchema,
+  NamesSchema,
   PlacementSchema,
+  RadicalsSchema,
   ReadingSchema,
   TestPoolSchema,
 } from './schema';
 import { parseSections } from './sections';
+import { fillItemPinyin, type Names } from './autopy';
 import { itemText } from '../check/text';
-import { parseInline, stripMarkup } from '../markup';
+import { parseInline } from '../markup';
+import { plainZh } from '../zh/text';
 import type {
+  CheckItem,
+  DasarPoint,
+  Deck,
   Dialogue,
+  GlossaryEntry,
+  HokkienEntry,
   Lesson,
   LessonSummary,
-  Letter,
-  LexiconEntry,
-  MakhrajPoint,
+  MeasureWord,
   Placement,
   Quote,
+  Radical,
   Reading,
   Rung,
   TestPool,
@@ -52,6 +61,26 @@ export function getRung(id: string): Rung | undefined {
   return getCurriculum().find((r) => r.id === id);
 }
 
+// ---------- data files ----------
+
+const once = <T>(fn: () => T) => {
+  let v: T | undefined;
+  return () => (v ??= fn());
+};
+
+export const getNames = once((): (Names[number] & { id: string })[] => (exists('data/names.yaml') ? NamesSchema.parse(readYaml('data/names.yaml')) : []));
+export const getDasarPoints = once((): DasarPoint[] => (exists('data/dasar-points.yaml') ? DasarPointsSchema.parse(readYaml('data/dasar-points.yaml')) : []));
+export const getHokkien = once((): HokkienEntry[] => (exists('data/hokkien.yaml') ? HokkienSchema.parse(readYaml('data/hokkien.yaml')) : []));
+export const getRadicals = once((): Radical[] => (exists('data/radicals.yaml') ? RadicalsSchema.parse(readYaml('data/radicals.yaml')) : []));
+export const getMeasureWords = once((): MeasureWord[] => (exists('data/measure-words.yaml') ? MeasureWordsSchema.parse(readYaml('data/measure-words.yaml')) : []));
+
+export function getDeck(rungId: string): Deck | null {
+  if (!exists(`${rungId}/deck.yaml`)) return null;
+  return DeckSchema.parse(readYaml(`${rungId}/deck.yaml`));
+}
+
+// ---------- lessons ----------
+
 export function lessonFiles(rungId: string): string[] {
   const dir = path.join(CONTENT_DIR, rungId);
   if (!fs.existsSync(dir)) return [];
@@ -61,6 +90,17 @@ export function lessonFiles(rungId: string): string[] {
     .sort();
 }
 
+/** Pinyin for unresolved item strings, per file, for content-check to report. */
+export const missingPinyin = new Map<string, string[]>();
+
+function withPinyin(items: CheckItem[], glossary: GlossaryEntry[], where: string): CheckItem[] {
+  return items.map((c) => {
+    const { item, missing } = fillItemPinyin(c, glossary, getNames());
+    if (missing.length) missingPinyin.set(`${where}: ${c.id}`, missing);
+    return item;
+  });
+}
+
 export function parseLessonFile(rungId: string, file: string): Lesson {
   const raw = fs.readFileSync(path.join(CONTENT_DIR, rungId, file), 'utf8');
   const { data, content } = matter(raw, {
@@ -68,7 +108,27 @@ export function parseLessonFile(rungId: string, file: string): Lesson {
   });
   const fm = LessonFrontmatterSchema.parse(data);
   const sections = parseSections(content, `${rungId}/${file}`);
-  return { ...fm, ...sections, slug: file.replace(/\.md$/, '') };
+  const glossary = [...fm.glossary, ...rungGlossary(rungId, fm.order)];
+  return { ...fm, check: withPinyin(fm.check, glossary, `${rungId}/${file}`), ...sections, slug: file.replace(/\.md$/, '') };
+}
+
+/** Glossary entries of a rung's lessons before `order` (and earlier rungs), for item pinyin. */
+function rungGlossary(rungId: string, order = Infinity): GlossaryEntry[] {
+  const rungs = getCurriculum();
+  const upTo = rungs.findIndex((r) => r.id === rungId);
+  const out: GlossaryEntry[] = [];
+  for (const r of rungs.slice(0, upTo + 1)) {
+    for (const f of lessonFiles(r.id)) {
+      const n = Number(f.slice(0, 2));
+      if (r.id === rungId && n >= order) continue;
+      const { data } = matter(fs.readFileSync(path.join(CONTENT_DIR, r.id, f), 'utf8'), {
+        engines: { yaml: (s) => yaml.load(s, { schema: yaml.JSON_SCHEMA }) as object },
+      });
+      const g = (data as { glossary?: GlossaryEntry[] }).glossary;
+      if (Array.isArray(g)) out.push(...g.filter((x) => x && typeof x.zh === 'string' && typeof x.py === 'string'));
+    }
+  }
+  return out;
 }
 
 const lessonCache = new Map<string, Lesson[]>();
@@ -90,13 +150,12 @@ export function getLesson(rungId: string, slug: string): Lesson | undefined {
   return getLessons(rungId).find((l) => l.slug === slug);
 }
 
-const quoteOf = (e: { ar: string; tr: string } | undefined, fallback: string): Quote =>
-  e ? { text: stripMarkup(e.ar), tr: stripMarkup(e.tr) } : { text: fallback };
+const quoteOf = (e: { zh: string; py: string } | undefined, fallback: string): Quote =>
+  e ? { text: plainZh(e.zh), zh: e.zh, py: e.py } : { text: fallback };
 
 export function summarize(l: Lesson): LessonSummary {
-  const readable = l.examples.filter((e) => !e.display_only);
-  const first = readable[0] ?? l.examples[0];
-  const focus = parseInline(first.ar).find((t) => t.t === 'focus')?.v ?? null;
+  const first = l.examples[0];
+  const focus = parseInline(first.zh).find((t) => t.t === 'focus')?.v.replace(/\s+/g, '') ?? l.hanzi?.[0] ?? null;
   return {
     id: l.id,
     slug: l.slug,
@@ -125,40 +184,28 @@ export function getAllSummaries(): LessonSummary[] {
   return getCurriculum().flatMap((r) => getLessons(r.id).map(summarize));
 }
 
+// ---------- tests, capstones, placement ----------
+
 export function getTestPool(rungId: string): TestPool | null {
   if (!exists(`${rungId}/test.yaml`)) return null;
-  return TestPoolSchema.parse(readYaml(`${rungId}/test.yaml`));
+  const p = TestPoolSchema.parse(readYaml(`${rungId}/test.yaml`));
+  return { ...p, items: withPinyin(p.items, rungGlossary(rungId), `${rungId}/test.yaml`) };
 }
 
 export function getReading(rungId: string): Reading | null {
   if (!exists(`${rungId}/reading.yaml`)) return null;
-  return ReadingSchema.parse(readYaml(`${rungId}/reading.yaml`));
+  const r = ReadingSchema.parse(readYaml(`${rungId}/reading.yaml`));
+  return { ...r, items: withPinyin(r.items, [...r.glossary, ...rungGlossary(rungId)], `${rungId}/reading.yaml`) };
 }
 
 export function getDialogue(rungId: string): Dialogue | null {
   if (!exists(`${rungId}/dialogue.yaml`)) return null;
-  return DialogueSchema.parse(readYaml(`${rungId}/dialogue.yaml`));
+  const d = DialogueSchema.parse(readYaml(`${rungId}/dialogue.yaml`));
+  return { ...d, items: withPinyin(d.items, rungGlossary(rungId), `${rungId}/dialogue.yaml`) };
 }
 
 export function getPlacement(): Placement | null {
   if (!exists('placement.yaml')) return null;
-  return PlacementSchema.parse(readYaml('placement.yaml'));
-}
-
-export function getLetters(): Letter[] {
-  if (!exists('data/letters.yaml')) return [];
-  return LettersSchema.parse(readYaml('data/letters.yaml'));
-}
-
-export function getMakhraj(): MakhrajPoint[] {
-  if (!exists('data/makhraj.yaml')) return [];
-  return MakhrajSchema.parse(readYaml('data/makhraj.yaml'));
-}
-
-/** core.yaml plus any per-rung lexicon files beside it (lexicon/<rung>.yaml). */
-export function getLexicon(): LexiconEntry[] {
-  const dir = path.join(CONTENT_DIR, 'lexicon');
-  if (!fs.existsSync(dir)) return [];
-  const files = fs.readdirSync(dir).filter((f) => f.endsWith('.yaml')).sort((a, b) => (a === 'core.yaml' ? -1 : b === 'core.yaml' ? 1 : a.localeCompare(b)));
-  return files.flatMap((f) => LexiconSchema.parse(readYaml(`lexicon/${f}`) ?? []));
+  const p = PlacementSchema.parse(readYaml('placement.yaml'));
+  return { ...p, items: withPinyin(p.items, rungGlossary('easy-1'), 'placement.yaml') };
 }

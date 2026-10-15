@@ -7,7 +7,7 @@ import { lessonHref } from '@/lib/routes';
 import { IconArrowRight } from '../ui/Icon';
 import { useT } from '../ProgressProvider';
 import { StatusPill } from './LessonStrip';
-import { ArIsland } from '../ar/ArIsland';
+import { ZhText } from '../zh/ZhText';
 
 /** One lesson in the rung's list: a big serif numeral, the title, state as dot + word. */
 type RowProps = { lesson: LessonSummary; state: LessonState; current?: boolean; flagged?: boolean };
@@ -70,9 +70,9 @@ export function LessonRow({ lesson, state, current, flagged }: RowProps) {
           )}
         </span>
         {lesson.keyword && (
-          <ArIsland aria-hidden className="mt-1 rounded-sm bg-paper-2 px-2 text-ar-small leading-[1.6] text-ink">
+          <ZhText aria-hidden className="mt-1 rounded-sm bg-paper-2 px-2 text-zh-small leading-[1.6] text-ink">
             «{lesson.keyword}»
-          </ArIsland>
+          </ZhText>
         )}
       </Link>
     </li>

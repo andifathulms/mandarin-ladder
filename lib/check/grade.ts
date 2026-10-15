@@ -1,59 +1,65 @@
 import type { CheckItem } from '../types';
 import { stripMarkup } from '../markup';
-import { hasArabic, looseKey, normalise, translitKey } from '../arabic';
+import { hasHan, normZh } from '../zh/text';
+import { samePinyin } from '../zh/pinyin';
 
 export type Response = string | string[];
-export type Match = 'exact' | 'loose';
 
-const trimPunct = (s: string) => s.replace(/[.,!?;:،؛؟]+$/u, '');
+const trimPunct = (s: string) => s.replace(/[，。！？、：；,.!?;:]+$/u, '');
 
 /**
- * Compares two answers (CLAUDE.md §7.3). Arabic: exact → normalised text with harakat;
- * loose → no harakat, unified alef/hamza seats. Latin (transliteration or Indonesian):
- * case-insensitive, ʿ ʾ and apostrophes equal.
+ * Compares two answers (CLAUDE.md §7.3). Chinese: normZh equality (full-width punctuation unified,
+ * spaces and markup removed). Latin (Indonesian, English, pinyin options): case-insensitive, trimmed.
  */
-export function compare(a: string, b: string, match: Match = 'loose'): boolean {
+export function compare(a: string, b: string): boolean {
   const x = stripMarkup(a);
   const y = stripMarkup(b);
-  if (!hasArabic(x) && !hasArabic(y)) return translitKey(x) === translitKey(y);
-  return match === 'exact' ? normalise(x) === normalise(y) : looseKey(x) === looseKey(y);
+  if (hasHan(x) || hasHan(y)) return normZh(x) === normZh(y);
+  return x.trim().toLowerCase().normalize('NFC') === y.trim().toLowerCase().normalize('NFC');
 }
 
-/** Token-by-token comparison for order items. No case rule; trailing punctuation ignored in both scripts. */
-export function sameOrder(given: string[], expected: string[], match: Match = 'loose'): boolean {
-  const norm = (a: string[]) => a.map((w) => trimPunct(w.trim())).filter(Boolean);
+/** Token-by-token comparison for order items; trailing punctuation ignored. No case rule. */
+export function sameOrder(given: string[], expected: string[]): boolean {
+  const norm = (a: string[]) => a.map((w) => trimPunct(normZh(w))).filter(Boolean);
   const g = norm(given);
   const e = norm(expected);
   if (g.length !== e.length) return false;
-  return g.every((w, i) => compare(w, e[i], match));
+  return g.every((w, i) => w === e[i]);
 }
 
-/**
- * The match mode for an item. Loose is the default, but an item whose options differ only in
- * harakat or hamza seats is always graded exactly, so a wrong option can never pass as right.
- */
-export function matchOf(item: CheckItem): Match {
-  const declared = (item as { match?: Match }).match ?? 'loose';
-  if (declared === 'exact') return 'exact';
-  const opts = 'options' in item ? item.options : [];
-  const keys = opts.filter(hasArabic).map(looseKey);
-  return new Set(keys).size < keys.length ? 'exact' : 'loose';
-}
+/** "3,3" or "3+3" → [3, 3]. */
+export const parseTones = (r: Response): number[] =>
+  (Array.isArray(r) ? r : r.split(/[\s,+]+/)).filter((x) => x !== '').map((x) => Number(x));
+
+/** Trace responses carry the misses: "misses:1". Two or fewer total misses is correct (CLAUDE.md §7.5). */
+export const TRACE_PASS_MISSES = 2;
+export const traceMisses = (r: Response): number => {
+  const m = /^misses:(\d+)$/.exec(Array.isArray(r) ? r.join('') : r);
+  return m ? Number(m[1]) : Infinity;
+};
 
 export function grade(item: CheckItem, response: Response): { correct: boolean } {
-  const match = matchOf(item);
   switch (item.type) {
     case 'order':
       if (!Array.isArray(response)) return { correct: false };
-      return { correct: [item.answer, ...(item.accept ?? [])].some((a) => sameOrder(response, a, match)) };
-    case 'spell': {
-      const joined = Array.isArray(response) ? response.join('') : response;
-      return { correct: normalise(joined) === normalise(item.answer) };
+      return { correct: [item.answer, ...(item.accept ?? [])].some((a) => sameOrder(response, a)) };
+    case 'tone': {
+      const t = parseTones(response);
+      return { correct: t.length === item.answer.length && t.every((x, i) => x === item.answer[i]) };
     }
-    case 'mark':
-      return { correct: typeof response === 'string' && response === item.answer };
+    case 'pinyin': {
+      const r = Array.isArray(response) ? response.join(' ') : response;
+      return { correct: [item.answer, ...(item.accept ?? [])].some((a) => samePinyin(r, a)) };
+    }
+    case 'trace':
+      return { correct: traceMisses(response) <= TRACE_PASS_MISSES };
+    case 'build': {
+      if (!Array.isArray(response)) return { correct: false };
+      const want = [...item.answer].sort().join('|');
+      return { correct: [...response].sort().join('|') === want };
+    }
     default:
       if (typeof response !== 'string') return { correct: false };
-      return { correct: compare(response, item.answer, match) };
+      return { correct: compare(response, item.answer) };
   }
 }

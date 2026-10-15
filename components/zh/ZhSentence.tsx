@@ -91,9 +91,14 @@ export function ZhSentence({ zh, py, id, en, size = 'sentence', play = true, not
   const offs = offsets(words);
   const onPlay = async () => {
     setPlaying(true);
-    await playText(plain, (charIndex) => {
-      const k = offs.findIndex((o) => charIndex >= o.start && charIndex < o.end);
-      if (k >= 0) setSpokenIdx(k);
+    // Recordings count words (punctuation aside); speech reports character offsets in the joined text.
+    const wordIdx = words.map((w, i) => (w.kind === 'punct' ? -1 : i)).filter((i) => i >= 0);
+    await playText(plain, {
+      onWord: (k) => setSpokenIdx(wordIdx[k] ?? null),
+      onChar: (charIndex) => {
+        const k = offs.findIndex((o) => charIndex >= o.start && charIndex < o.end);
+        if (k >= 0) setSpokenIdx(k);
+      },
     });
     setPlaying(false);
     setSpokenIdx(null);

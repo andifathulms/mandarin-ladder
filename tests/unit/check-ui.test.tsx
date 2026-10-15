@@ -1,189 +1,173 @@
 import { describe, expect, it, vi } from 'vitest';
-import { fireEvent, render, screen } from '@testing-library/react';
+import { act, fireEvent, render, screen } from '@testing-library/react';
 import { OptionPill } from '@/components/check/OptionPill';
 import { CheckItemView } from '@/components/check/CheckItemView';
 import { ProgressProvider } from '@/components/ProgressProvider';
 import { BottomActionBar } from '@/components/lesson/BottomActionBar';
+import { ZhTextProvider } from '@/components/zh/ZhContext';
 import type { CheckItem } from '@/lib/types';
 
-const wrap = (ui: React.ReactNode) => render(<ProgressProvider>{ui}</ProgressProvider>);
-const why = { id: 'Di atas: عَلَى.', en: 'On top: عَلَى.' };
+const wrap = (ui: React.ReactNode) =>
+  render(
+    <ProgressProvider>
+      <ZhTextProvider pinyin="always">{ui}</ZhTextProvider>
+    </ProgressProvider>,
+  );
+const why = { id: 'Di atas: 上 (shàng), sesudah bendanya.', en: 'On top: 上, after the thing.' };
 const item: CheckItem = {
   id: 'x1',
   type: 'gap',
-  cue: 'Kuncinya di atas meja.',
-  prompt: 'المِفْتَاحُ ___ الطَّاوِلَةِ.',
-  options: ['فِي', 'عَلَى', 'تَحْتَ'],
-  answer: 'عَلَى',
+  cue: 'Bukunya di atas meja.',
+  prompt: '书 在 桌子 ___ 。',
+  options: ['上', '下', '里'],
+  answer: '上',
   why,
+  py: { '书 在 桌子 ___ 。': 'shū zài zhuōzi ___ .', 上: 'shàng', 下: 'xià', 里: 'lǐ' },
 };
-const name = (ar: string) => ({ name: new RegExp(ar) });
+const opt = (c: HTMLElement, label: string) => c.querySelector<HTMLButtonElement>(`[data-option="${label}"]`)!;
 
 describe('OptionPill', () => {
-  it.each(['idle', 'correct', 'wrong', 'selected'] as const)('renders %s state with the Arabic in an RTL island', (state) => {
-    const { container } = wrap(<OptionPill label="عَلَى" state={state} index={0} onClick={() => {}} badge />);
-    const b = screen.getByRole('button', name('عَلَى'));
+  it.each(['idle', 'correct', 'wrong', 'selected'] as const)('renders %s with the hanzi in lang="zh-Hans" and ruby pinyin', (state) => {
+    const { container } = wrap(<OptionPill label="上" py={{ 上: 'shàng' }} state={state} index={0} onClick={() => {}} badge />);
+    const b = opt(container, '上');
     expect(b).toHaveAttribute('data-state', state);
-    const island = container.querySelector('[lang="ar"][dir="rtl"]')!;
-    expect(island.textContent).toBe('عَلَى');
+    expect(b.querySelector('[lang="zh-Hans"]')).not.toBeNull();
+    expect(b.querySelector('rt')!.textContent!.normalize('NFC')).toBe('shàng');
   });
-  it('marks transliteration options as ar-Latn and Indonesian as id', () => {
-    wrap(
-      <>
-        <OptionPill label="al-qamaru" state="idle" index={0} onClick={() => {}} />
-        <OptionPill label="ʿalā" state="idle" index={1} onClick={() => {}} />
-        <OptionPill label="buku" state="idle" index={2} onClick={() => {}} />
-      </>,
-    );
-    expect(screen.getByRole('button', { name: 'ʿalā' })).toHaveAttribute('lang', 'ar-Latn');
-    expect(screen.getByRole('button', { name: 'buku' })).toHaveAttribute('lang', 'id');
+  it('marks Indonesian options as id and strikes wrong ones', () => {
+    const { container } = wrap(<OptionPill label="meja" state="wrong" index={0} onClick={() => {}} />);
+    expect(opt(container, 'meja')).toHaveAttribute('lang', 'id');
+    expect(opt(container, 'meja').querySelector('.line-through')).not.toBeNull();
   });
-  it('is disabled when told', () => {
-    wrap(<OptionPill label="فِي" state="wrong" index={0} disabled onClick={() => {}} />);
-    expect(screen.getByRole('button', name('فِي'))).toBeDisabled();
+  it('hides the ruby when the item hides pinyin (reading items)', () => {
+    const { container } = wrap(<OptionPill label="上" py={{ 上: 'shàng' }} showPinyin={false} state="idle" index={0} onClick={() => {}} />);
+    expect(opt(container, '上').querySelector('rt')).toHaveClass('rt-hidden');
   });
 });
 
 describe('CheckItemView (practice)', () => {
   it('keeps the item open on a wrong answer, then solves with firstTry=false', () => {
     const onSolved = vi.fn();
-    wrap(<CheckItemView mode="practice" item={item} onSolved={onSolved} />);
-    fireEvent.click(screen.getByRole('button', name('فِي')));
+    const { container } = wrap(<CheckItemView mode="practice" item={item} onSolved={onSolved} />);
+    fireEvent.click(opt(container, '下'));
     expect(screen.getByText('Belum tepat, coba lagi.')).toBeInTheDocument();
-    expect(screen.getByRole('button', name('فِي'))).toBeDisabled();
+    expect(opt(container, '下')).toBeDisabled();
     expect(onSolved).not.toHaveBeenCalled();
-    fireEvent.click(screen.getByRole('button', name('عَلَى')));
+    fireEvent.click(opt(container, '上'));
     expect(onSolved).toHaveBeenCalledWith(false);
     expect(screen.getByText(why.id)).toBeInTheDocument();
+  });
+
+  it('fills the gap with the answer when solved', () => {
+    const { container } = wrap(<CheckItemView mode="practice" item={item} onSolved={() => {}} />);
+    fireEvent.click(opt(container, '上'));
+    expect(container.querySelector('.zh-focus')!.textContent).toContain('上');
   });
 
   it('shows the why line as a hint after two misses', () => {
-    wrap(<CheckItemView mode="practice" item={item} onSolved={() => {}} />);
-    fireEvent.click(screen.getByRole('button', name('فِي')));
-    expect(screen.queryByText(why.id)).toBeNull();
-    fireEvent.click(screen.getByRole('button', name('تَحْتَ')));
-    expect(screen.getByText(why.id)).toBeInTheDocument();
+    const { container } = wrap(<CheckItemView mode="practice" item={item} onSolved={() => {}} />);
+    fireEvent.click(opt(container, '下'));
+    expect(screen.queryByText('Petunjuk:')).toBeNull();
+    fireEvent.click(opt(container, '里'));
+    expect(screen.getByText('Petunjuk:')).toBeInTheDocument();
   });
 
-  it('picks answers with number keys', () => {
+  it('answers with number keys 1–4', () => {
     const onSolved = vi.fn();
     wrap(<CheckItemView mode="practice" item={item} onSolved={onSolved} />);
-    fireEvent.keyDown(window, { key: '2' });
+    act(() => {
+      fireEvent.keyDown(window, { key: '1' });
+    });
     expect(onSolved).toHaveBeenCalledWith(true);
   });
-});
 
-describe('feedback sheet', () => {
-  it('leaves the why line to the sheet when whyInSheet is set', () => {
-    wrap(<CheckItemView mode="practice" item={item} onSolved={() => {}} whyInSheet />);
-    fireEvent.click(screen.getByRole('button', name('عَلَى')));
-    expect(screen.queryByText(why.id)).toBeNull();
-  });
-
-  it('still shows the hint after two misses with whyInSheet', () => {
-    wrap(<CheckItemView mode="practice" item={item} onSolved={() => {}} whyInSheet />);
-    fireEvent.click(screen.getByRole('button', name('فِي')));
-    fireEvent.click(screen.getByRole('button', name('تَحْتَ')));
-    expect(screen.getByText(why.id)).toBeInTheDocument();
-  });
-
-  it('shows Tepat and the why line in the bottom bar', () => {
-    wrap(
-      <BottomActionBar feedback={why}>
-        <button type="button">Lanjut</button>
-      </BottomActionBar>,
-    );
-    expect(screen.getByText('Tepat')).toBeInTheDocument();
-    expect(screen.getByText(why.id)).toBeInTheDocument();
-  });
-});
-
-describe('CheckItemView (listen)', () => {
-  const listen: CheckItem = {
-    id: 'l1',
-    type: 'listen',
-    variety: 'fusha',
-    audio: 'أَنَا تَعْبَانُ.',
-    options: ['أَنَا تَعْبَانُ.', 'أَنْتَ تَعْبَانُ.'],
-    answer: 'أَنَا تَعْبَانُ.',
-    why,
-  };
-  it('shows the text when nothing can play it, and still grades', () => {
+  it('shows a listen item as text without pinyin when nothing can play it', () => {
+    const listen: CheckItem = { id: 'l', type: 'listen', audio: '我 很 忙 。', options: ['Aku sibuk.', 'Aku lapar.'], answer: 'Aku sibuk.', why, py: { '我 很 忙 。': 'wǒ hěn máng .' } };
     const onSolved = vi.fn();
-    wrap(<CheckItemView mode="practice" item={listen} onSolved={onSolved} />);
+    const { container } = wrap(<CheckItemView mode="practice" item={listen} onSolved={onSolved} />);
     expect(screen.getByText(/Tidak ada rekaman atau suara bahasa Mandarin/)).toBeInTheDocument();
-    fireEvent.click(screen.getByRole('button', name('أَنَا تَعْبَانُ')));
+    for (const rt of container.querySelectorAll('rt')) expect(rt).toHaveClass('rt-hidden');
+    fireEvent.click(opt(container, 'Aku sibuk.'));
     expect(onSolved).toHaveBeenCalledWith(true);
   });
-});
 
-describe('Arabic item types', () => {
-  it('spell: the answer line is one joined island, and tapping it removes the last letter', () => {
-    const spell: CheckItem = { id: 's1', type: 'spell', match: 'exact', letters: ['ك', 'ت', 'ا', 'ب'], distractors: ['ن'], answer: 'كتاب', why };
+  it('builds an order item from word tiles and shows the joined sentence', () => {
+    const order: CheckItem = { id: 'o', type: 'order', tiles: ['北京', '我', '去', '明天'], answer: ['我', '明天', '去', '北京'], why, py: { 北京: 'Běijīng', 我: 'wǒ', 去: 'qù', 明天: 'míngtiān' } };
     const onSolved = vi.fn();
-    const { container } = wrap(<CheckItemView mode="practice" item={spell} onSolved={onSolved} />);
-    for (const l of ['ك', 'ت', 'ا']) fireEvent.click(container.querySelector(`[data-tile="${l}"]`)!);
-    const line = container.querySelector('[data-answer-line]')!;
-    const islands = line.querySelectorAll('[lang="ar"]');
-    expect(islands).toHaveLength(1);
-    expect(islands[0].textContent).toBe('كتا');
-    expect(islands[0].children).toHaveLength(0);
-    fireEvent.click(line);
-    expect(line.querySelector('[lang="ar"]')!.textContent).toBe('كت');
-    fireEvent.click(container.querySelector('[data-tile="ا"]')!);
-    fireEvent.click(container.querySelector('[data-tile="ب"]')!);
+    const { container } = wrap(<CheckItemView mode="practice" item={order} onSolved={onSolved} />);
+    for (const w of ['我', '明天', '去', '北京']) fireEvent.click(container.querySelector(`[data-tile="${w}"]`)!);
+    expect(screen.getByText('我明天去北京')).toBeInTheDocument();
     fireEvent.click(screen.getByRole('button', { name: 'Periksa' }));
     expect(onSolved).toHaveBeenCalledWith(true);
   });
 
-  it('spell tiles have letter names as accessible names', () => {
-    const spell: CheckItem = { id: 's2', type: 'spell', match: 'exact', letters: ['ك', 'ت'], distractors: [], answer: 'كت', why };
-    wrap(<CheckItemView mode="practice" item={spell} onSolved={() => {}} />);
-    expect(screen.getByRole('button', { name: 'kaf' })).toBeInTheDocument();
-    expect(screen.getByRole('button', { name: 'ta' })).toBeInTheDocument();
-  });
-
-  it('read: shows the Arabic without transliteration and grades the Latin option', () => {
-    const read: CheckItem = { id: 'r1', type: 'read', match: 'exact', ar: 'الْقَمَرُ', options: ['al-qamaru', 'qamarun'], answer: 'al-qamaru', why };
+  it('shows tone options as contours with numbers and grades the sequence', () => {
+    const tone: CheckItem = { id: 't', type: 'tone', audio: '你好', audio_py: 'nǐhǎo', ask: 'spoken', options: [[3, 3], [2, 3], [2, 2]], answer: [2, 3], why };
     const onSolved = vi.fn();
-    const { container } = wrap(<CheckItemView mode="practice" item={read} onSolved={onSolved} />);
-    expect(container.querySelector('p[lang="ar"]')!.textContent).toBe('الْقَمَرُ');
-    expect(container.querySelector('p[lang="ar-Latn"]')).toBeNull();
-    fireEvent.click(screen.getByRole('button', { name: 'al-qamaru' }));
-    expect(onSolved).toHaveBeenCalledWith(true);
-  });
-
-  it('mark: hides the target mark and picks by mark name', () => {
-    const mark: CheckItem = { id: 'm1', type: 'mark', match: 'exact', ar: 'دَرْسٌ', target: 1, options: ['fatha', 'sukun', 'kasra'], answer: 'sukun', why };
-    const onSolved = vi.fn();
-    const { container } = wrap(<CheckItemView mode="practice" item={mark} onSolved={onSolved} />);
-    const word = container.querySelector('p[lang="ar"]')!;
-    expect(word.textContent).toBe('دَرسٌ');
-    fireEvent.click(screen.getByRole('button', { name: 'fathah' }));
+    const { container } = wrap(<CheckItemView mode="practice" item={tone} onSolved={onSolved} />);
+    const opts = container.querySelectorAll('[data-tones]');
+    expect(opts).toHaveLength(3);
+    expect(opts[0].querySelector('svg')).not.toBeNull();
+    expect(opts[0]).toHaveTextContent('3 + 3');
+    fireEvent.click(container.querySelector('[data-tones="3,3"]')!);
     expect(onSolved).not.toHaveBeenCalled();
-    fireEvent.click(screen.getByRole('button', { name: 'sukun' }));
+    fireEvent.click(container.querySelector('[data-tones="2,3"]')!);
     expect(onSolved).toHaveBeenCalledWith(false);
   });
 
-  it('order: Arabic word tiles flow right to left', () => {
-    const order: CheckItem = { id: 'o1', type: 'order', tiles: ['كَبِيرٌ', 'البَيْتُ'], answer: ['البَيْتُ', 'كَبِيرٌ'], why };
+  it('converts tone numbers live in the pinyin input and grades on Enter', () => {
+    const p: CheckItem = { id: 'p', type: 'pinyin', audio: '你好', answer: 'nǐhǎo', why, py: { 你好: 'nǐhǎo' } };
     const onSolved = vi.fn();
-    const { container } = wrap(<CheckItemView mode="practice" item={order} onSolved={onSolved} />);
-    expect(container.querySelector('[role="group"][dir="rtl"]')).not.toBeNull();
-    fireEvent.click(container.querySelector('[data-tile="البَيْتُ"]')!);
-    fireEvent.click(container.querySelector('[data-tile="كَبِيرٌ"]')!);
+    const { container } = wrap(<CheckItemView mode="practice" item={p} onSolved={onSolved} />);
+    const input = container.querySelector<HTMLInputElement>('[data-pinyin-input]')!;
+    fireEvent.change(input, { target: { value: 'ni3 hao3' } });
+    expect(container.querySelector('[data-pinyin-preview]')!.textContent!.normalize('NFC')).toBe('nǐ hǎo');
+    fireEvent.keyDown(input, { key: 'Enter' });
+    expect(onSolved).toHaveBeenCalledWith(true);
+  });
+
+  it('inserts tone numbers and ü from the helper keys', () => {
+    const p: CheckItem = { id: 'p2', type: 'pinyin', audio: 'syl-lv4', answer: 'lǜ', why };
+    const { container } = wrap(<CheckItemView mode="practice" item={p} onSolved={() => {}} />);
+    const input = container.querySelector<HTMLInputElement>('[data-pinyin-input]')!;
+    fireEvent.change(input, { target: { value: 'l' } });
+    fireEvent.click(screen.getByRole('button', { name: 'ü' }));
+    fireEvent.click(screen.getByRole('button', { name: 'nada 4' }));
+    expect(input.value).toBe('lü4');
+  });
+
+  it('assembles a build item from component tiles', () => {
+    const b: CheckItem = { id: 'b', type: 'build', char: '好', parts: ['女', '马', '子', '口'], answer: ['女', '子'], why };
+    const onSolved = vi.fn();
+    const { container } = wrap(<CheckItemView mode="practice" item={b} onSolved={onSolved} />);
+    fireEvent.click(container.querySelector('[data-part="女"]')!);
+    fireEvent.click(container.querySelector('[data-part="子"]')!);
     fireEvent.click(screen.getByRole('button', { name: 'Periksa' }));
     expect(onSolved).toHaveBeenCalledWith(true);
+    expect(screen.getByText('好')).toBeInTheDocument();
   });
 });
 
-describe('mixed prompts', () => {
-  it('keeps an Indonesian question LTR and puts the quoted Arabic in an island', () => {
-    const q: CheckItem = { id: 'q1', type: 'choice', match: 'exact', prompt: 'Huruf ini namanya apa? ذ', options: ['dal', 'dzal'], answer: 'dzal', why };
-    const { container } = wrap(<CheckItemView mode="practice" item={q} onSolved={() => {}} />);
-    const p = container.querySelector('p[lang="id"].text-sentence')!;
-    expect(p.textContent).toContain('Huruf ini namanya apa?');
-    expect(p.querySelector('bdi[dir="rtl"]')!.textContent).toBe('ذ');
-    expect(container.querySelector('p[dir="rtl"]')).toBeNull();
+describe('CheckItemView (test mode)', () => {
+  it('reports the choice without grading or feedback', () => {
+    const onChange = vi.fn();
+    const { container } = wrap(<CheckItemView mode="test" item={item} onChange={onChange} />);
+    fireEvent.click(opt(container, '下'));
+    expect(onChange).toHaveBeenCalledWith('下');
+    expect(screen.queryByText('Belum tepat, coba lagi.')).toBeNull();
+  });
+});
+
+describe('BottomActionBar', () => {
+  it('shows the feedback sheet with the why line', () => {
+    render(
+      <ProgressProvider>
+        <BottomActionBar feedback={why}>
+          <button type="button">Lanjut</button>
+        </BottomActionBar>
+      </ProgressProvider>,
+    );
+    expect(screen.getByText('Tepat')).toBeInTheDocument();
+    expect(screen.getByText(why.id)).toBeInTheDocument();
   });
 });

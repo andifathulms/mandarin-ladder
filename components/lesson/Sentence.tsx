@@ -7,7 +7,7 @@ import { useT } from '../ProgressProvider';
 
 type Seg = { text: string; start: number; kind: 'text' | 'focus' | 'strong' | 'em'; group: number };
 
-/** Latin sentences only (Indonesian, transliteration). Arabic goes through ArSentence. */
+/** Latin sentences only (Indonesian). Chinese goes through ZhSentence. */
 
 /** Splits markup into word-level segments carrying their offset in the plain string. */
 export function segments(src: string): Seg[] {

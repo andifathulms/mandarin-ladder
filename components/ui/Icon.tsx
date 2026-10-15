@@ -49,6 +49,12 @@ export const IconBook = ({ size = 22, className }: P) => (
     <path d="M5 4.5h10a3 3 0 0 1 3 3V20H8a3 3 0 0 1-3-3zM5 17a3 3 0 0 1 3-3h10" />
   </svg>
 );
+export const IconChat = ({ size = 22, className }: P) => (
+  <svg {...base(size, className)}>
+    <path d="M4 5.5h16v10H9l-5 4z" />
+    <path d="M8 9.5h8M8 12.5h5" />
+  </svg>
+);
 export const IconLadder = ({ size = 22, className }: P) => (
   <svg {...base(size, className)}>
     <path d="M7 3v18M17 3v18M7 7.5h10M7 12h10M7 16.5h10" />

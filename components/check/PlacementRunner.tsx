@@ -15,9 +15,8 @@ import { BottomActionBar } from '../lesson/BottomActionBar';
 import { QuestionBar } from '../lesson/QuestionBar';
 import { CheckItemView } from './CheckItemView';
 import { WhyLine } from './WhyLine';
-import { ArIsland } from '../ar/ArIsland';
 import { ZhText } from '../zh/ZhText';
-import { LessonTextProvider } from '../ar/LessonText';
+import { ZhTextProvider } from '../zh/ZhContext';
 
 type Props = { placement: Placement; rungs: Rung[]; lessons: LessonSummary[] };
 type Phase = { kind: 'intro' } | { kind: 'run'; i: number } | { kind: 'result'; score: PlacementScore; review: boolean };
@@ -98,7 +97,7 @@ export function PlacementRunner({ placement, rungs, lessons }: Props) {
     const item = items[i];
     const last = i === items.length - 1;
     const a = answers[item.id];
-    const need = item.type === 'order' ? item.tiles.length : item.type === 'spell' ? item.letters.length : 0;
+    const need = item.type === 'order' ? item.tiles.length : item.type === 'build' ? item.answer.length : 0;
     const answered = a !== undefined && (!Array.isArray(a) || a.length === need);
     return (
       <div className="flex min-h-[100dvh] flex-col">
@@ -111,10 +110,10 @@ export function PlacementRunner({ placement, rungs, lessons }: Props) {
             <p className="sr-only" aria-live="polite">
               {t('test.progress', { n: i + 1, total: items.length })}
             </p>
-            {/* Reading is what's being checked: no transliteration anywhere. */}
-            <LessonTextProvider harakat="full" showTranslit={false}>
+            {/* Pinyin shows unless the item tests reading characters (show_pinyin: false). */}
+            <ZhTextProvider pinyin="always" toneColours={false}>
               <CheckItemView key={item.id} mode="test" item={item} value={a} onChange={(r) => setAnswers((x) => ({ ...x, [item.id]: r }))} />
-            </LessonTextProvider>
+            </ZhTextProvider>
           </div>
         </main>
         <BottomActionBar>
@@ -199,7 +198,7 @@ export function PlacementRunner({ placement, rungs, lessons }: Props) {
                     <p className="flex items-start gap-2">
                       {ok ? <IconCheck className="mt-1 shrink-0 text-good" /> : <IconClose className="mt-1 shrink-0 text-off" />}
                       <span className="sr-only">{ok ? t('check.correct') : t('check.wrong')}</span>
-                      <ArIsland className="text-ar-body">{answerText(item)}</ArIsland>
+                      <ZhText className="text-zh-small">{answerText(item)}</ZhText>
                     </p>
                     {!ok && (
                       <p className="text-small">

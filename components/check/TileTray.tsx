@@ -1,6 +1,8 @@
 'use client';
 
 import { useLayoutEffect, useRef } from 'react';
+import { hasHan, joinZh } from '@/lib/zh/text';
+import { ZhInline } from '../zh/ZhInline';
 import { useReducedMotion, useT } from '../ProgressProvider';
 
 type Props = {
@@ -10,10 +12,15 @@ type Props = {
   onChange: (placed: number[]) => void;
   locked?: boolean;
   tone?: 'idle' | 'good' | 'off';
+  py?: Record<string, string>;
+  showPinyin?: boolean;
 };
 
-/** Word tiles that fly between the tray and the answer line (FLIP, --m-object). */
-export function TileTray({ tiles, placed, onChange, locked, tone = 'idle' }: Props) {
+/**
+ * Word tiles that fly between the tray and the answer line (FLIP, --m-object). Chinese has no spaces,
+ * so the answer line also shows the sentence joined (DESIGN §6.7).
+ */
+export function TileTray({ tiles, placed, onChange, locked, tone = 'idle', py, showPinyin }: Props) {
   const { t } = useT();
   const reduced = useReducedMotion();
   const els = useRef(new Map<number, HTMLButtonElement>());
@@ -49,6 +56,7 @@ export function TileTray({ tiles, placed, onChange, locked, tone = 'idle' }: Pro
     onChange(placed.includes(i) ? placed.filter((x) => x !== i) : [...placed, i]);
   };
 
+  const zh = tiles.some(hasHan);
   const tile = (i: number, inLine: boolean) => (
     <button
       key={i}
@@ -57,31 +65,36 @@ export function TileTray({ tiles, placed, onChange, locked, tone = 'idle' }: Pro
         else els.current.delete(i);
       }}
       type="button"
-      lang="en"
+      lang={zh ? undefined : 'id'}
       onClick={() => move(i)}
       disabled={locked}
-      className="min-h-pill min-w-touch rounded-sm border-2 px-4 font-body text-body font-semibold"
+      data-tile={tiles[i]}
+      className={`min-h-pill min-w-touch rounded-sm border-2 px-4 font-body font-semibold ${zh ? 'text-zh-body font-normal' : 'text-body'}`}
       style={{
         background: inLine && tone === 'good' ? 'var(--good-bg)' : 'var(--surface)',
         borderColor: inLine && tone === 'good' ? 'var(--good)' : inLine && tone === 'off' ? 'var(--off)' : 'var(--rule)',
         color: inLine && tone === 'good' ? 'var(--good)' : 'var(--ink)',
       }}
     >
-      {tiles[i]}
+      {zh ? <ZhInline text={tiles[i]} py={py} showPinyin={showPinyin} /> : tiles[i]}
     </button>
   );
 
   const tray = tiles.map((_, i) => i).filter((i) => !placed.includes(i));
+  const joined = joinZh(placed.map((i) => ({ text: tiles[i] })));
   return (
     <div className="flex flex-col gap-4">
       <p className="text-small text-muted">{t('check.tapTiles')}</p>
-      <div
-        aria-label={t('check.answerLine')}
-        role="group"
-        className="flex min-h-[64px] flex-wrap items-center gap-2 border-b-2 border-rule pb-2"
-      >
+      <div aria-label={t('check.answerLine')} role="group" className="flex min-h-[64px] flex-wrap items-center gap-2 border-b-2 border-rule pb-2">
         {placed.map((i) => tile(i, true))}
       </div>
+      {zh && placed.length > 0 && (
+        <p className="text-small text-muted" aria-live="polite">
+          <span lang="zh-Hans" className="zh font-zh text-zh-small text-ink">
+            {joined}
+          </span>
+        </p>
+      )}
       <div aria-label={t('check.tray')} role="group" className="flex min-h-[52px] flex-wrap gap-2">
         {tray.map((i) => tile(i, false))}
       </div>

@@ -5,38 +5,40 @@ import { useMemo, useState } from 'react';
 import type { GlossaryEntry, LessonSummary, Rung } from '@/lib/types';
 import { missedCount } from '@/lib/progress/derive';
 import { lessonHref } from '@/lib/routes';
-import { looseKey, hasArabic } from '@/lib/arabic/text';
-import { translitKey } from '@/lib/arabic/translit';
+import { hasHan, normZh } from '@/lib/zh/text';
+import { normPinyin, stripTone } from '@/lib/zh/pinyin';
 import { useProgress, useT } from './ProgressProvider';
 import { PageShell } from './ui/PageShell';
 import { PlayButton } from './lesson/PlayButton';
 import { IconBook, IconSearch } from './ui/Icon';
 import { usePlay } from './useSpeech';
-import { ArIsland } from './ar/ArIsland';
-import { Translit } from './ar/Translit';
-import { EgChip } from './ar/EgChip';
+import { ZhText } from './zh/ZhText';
+import { Pinyin } from './zh/Pinyin';
 
-/** Search accepts Arabic with or without harakat, transliteration, or Indonesian (PRD §5.7). */
+/** Extra facts for a word, from the HSK data: traditional form, level, measure word. */
+export type WordFacts = Record<string, { trad?: string; hsk?: string; mw?: string }>;
+
+const plainPy = (s: string) => stripTone(s.normalize('NFC').toLowerCase()).replace(/[\s'’-]/g, '').replace(/v|u:/g, 'ü');
+
+/** Search accepts hanzi, pinyin with or without tones (marks or numbers), or Indonesian (PRD §5.7). */
 export function matchesWord(g: GlossaryEntry, q: string): boolean {
   const needle = q.trim();
   if (!needle) return true;
-  if (hasArabic(needle)) {
-    const k = looseKey(needle);
-    return looseKey(g.ar).includes(k) || (!!g.eg && looseKey(g.eg).includes(k));
+  if (hasHan(needle)) return normZh(g.zh).includes(normZh(needle));
+  const lower = needle.toLowerCase();
+  if (g.id.toLowerCase().includes(lower) || (g.en ?? '').toLowerCase().includes(lower)) return true;
+  // With tones (marks or digits): compare tone for tone; without: ignore tones.
+  if (/[1-5]|[āáǎàēéěèīíǐìōóǒòūúǔùǖǘǚǜ]/.test(needle.normalize('NFC'))) {
+    const a = normPinyin(g.py);
+    const b = normPinyin(needle);
+    return !!a && !!b && a.includes(b);
   }
-  const n = translitKey(needle);
-  const plain = (s: string) => translitKey(s).normalize('NFD').replace(/[̀-ͯ]/g, '');
-  return (
-    translitKey(g.tr).includes(n) ||
-    plain(g.tr).includes(plain(needle)) ||
-    g.id.toLowerCase().includes(needle.toLowerCase()) ||
-    (g.en ?? '').toLowerCase().includes(needle.toLowerCase())
-  );
+  return plainPy(g.py).includes(plainPy(needle));
 }
 
-type Props = { lessons: LessonSummary[]; rungs: Rung[]; rootsFrom?: string };
+type Props = { lessons: LessonSummary[]; rungs: Rung[]; facts: WordFacts };
 
-export function WordsView({ lessons, rungs, rootsFrom = 'easy-3' }: Props) {
+export function WordsView({ lessons, rungs, facts }: Props) {
   const { t, lang } = useT();
   const progress = useProgress();
   const play = usePlay();
@@ -46,11 +48,6 @@ export function WordsView({ lessons, rungs, rootsFrom = 'easy-3' }: Props) {
 
   const rungIndex = (id: string) => rungs.findIndex((r) => r.id === id);
   const rungName = (id: string) => rungs.find((r) => r.id === id)?.name ?? id;
-  // Roots are shown once Easy 3 has introduced them.
-  const showRoots = Object.keys(progress.lessons).some((id) => {
-    const l = lessons.find((x) => x.id === id);
-    return l && rungIndex(l.rung) >= rungIndex(rootsFrom);
-  });
   const opened = lessons
     .filter((l) => progress.opened.includes(l.id))
     .sort((a, b) => rungIndex(a.rung) - rungIndex(b.rung) || a.order - b.order);
@@ -89,7 +86,6 @@ export function WordsView({ lessons, rungs, rootsFrom = 'easy-3' }: Props) {
                 value={q}
                 onChange={(e) => setQ(e.target.value)}
                 placeholder={t('words.searchPlaceholder')}
-                dir="auto"
                 className="min-h-touch min-w-0 flex-1 bg-transparent text-ink outline-none placeholder:text-muted"
               />
             </label>
@@ -120,35 +116,43 @@ export function WordsView({ lessons, rungs, rootsFrom = 'easy-3' }: Props) {
             groups.map(({ l, words }) => (
               <section key={l.id} className="flex flex-col gap-2">
                 <h2 className="eyebrow">
+                  {/* Groups are labelled by rung (fixes English Ladder issue 16). */}
                   <Link href={lessonHref(l)} className="text-muted no-underline hover:text-accent">
                     {t('words.group', { rung: rungName(l.rung), n: l.order })} · {lang === 'en' ? l.title.en : l.title.id}
                   </Link>
                 </h2>
                 <ul className="card flex flex-col divide-y divide-rule overflow-hidden">
-                  {words.map((w) => (
-                    <li key={w.ar} className="flex min-h-[64px] items-center gap-3 px-4 py-2">
-                      <span className="flex min-w-0 flex-1 flex-col">
-                        <span className="flex flex-wrap items-baseline gap-x-3">
-                          {/* Always fully vowelled here, whatever the rung's harakat level. */}
-                          <ArIsland size="small">{w.ar}</ArIsland>
-                          <Translit text={w.tr} />
-                          <span lang={lang === 'en' && w.en ? 'en' : 'id'} className="id-text text-small">
-                            {lang === 'en' ? (w.en ?? w.id) : w.id}
+                  {words.map((w) => {
+                    const f = facts[w.zh] ?? {};
+                    const mw = w.mw ?? f.mw;
+                    const hsk = w.hsk ?? f.hsk;
+                    return (
+                      <li key={`${w.zh}${w.py}`} className="flex min-h-[64px] items-center gap-3 px-4 py-2">
+                        <span className="flex min-w-0 flex-1 flex-col">
+                          <span className="flex flex-wrap items-baseline gap-x-3">
+                            <ZhText className="text-zh-small">{w.zh.replace(/\s+/g, '')}</ZhText>
+                            {/* My words always shows pinyin, whatever the rung's fade. */}
+                            <Pinyin text={w.py} tones />
+                            <span lang={lang === 'en' && w.en ? 'en' : 'id'} className="id-text text-small">
+                              {lang === 'en' ? (w.en ?? w.id) : w.id}
+                            </span>
                           </span>
+                          {f.trad && f.trad !== w.zh && (
+                            <span className="label text-muted">
+                              {t('words.trad')} <ZhText face="ui">{f.trad}</ZhText>
+                            </span>
+                          )}
                         </span>
-                        {w.eg && (
-                          <span className="flex flex-wrap items-center gap-2">
-                            <EgChip />
-                            <ArIsland size="small" variety="eg">
-                              {w.eg}
-                            </ArIsland>
-                            {w.eg_tr && <Translit text={w.eg_tr} />}
-                          </span>
+                        {mw && (
+                          <ZhText face="ui" className="label rounded-sm bg-accent-soft px-2 py-[2px] text-accent" title={t('words.mw')}>
+                            {`一${mw}`}
+                          </ZhText>
                         )}
-                      </span>
-                      <PlayButton text={w.ar} onPlay={() => void play(w.ar)} small />
-                    </li>
-                  ))}
+                        {hsk && <span className="label rounded-sm bg-paper-2 px-2 py-[2px] text-muted">HSK {hsk.replace('-', '–')}</span>}
+                        <PlayButton text={w.zh} onPlay={() => void play(w.zh)} small />
+                      </li>
+                    );
+                  })}
                 </ul>
               </section>
             ))

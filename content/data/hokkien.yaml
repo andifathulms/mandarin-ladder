@@ -1,0 +1,68 @@
+# Hokkien loanwords Indonesians know, with their Mandarin forms (CLAUDE.md §6.7, PRD §1). Only the
+# Kata card uses them. Draft: each entry needs `reviewed_by` from someone who knows the Hokkien form
+# before it shows outside draft builds.
+- id_word: "bakmi"
+  hokkien: "bah-mī (肉麵)"
+  zh: "肉 面"
+  py: "ròu miàn"
+  meaning: { id: "mi dengan daging; dalam Mandarin 面 sendiri sudah berarti mi", en: "noodles with meat; in Mandarin 面 alone already means noodles" }
+- id_word: "bakpao"
+  hokkien: "bah-pau (肉包)"
+  zh: "肉包"
+  py: "ròubāo"
+  meaning: { id: "bakpao isi daging; 包子 bāozi untuk bakpao pada umumnya", en: "meat bun; 包子 bāozi for buns in general" }
+- id_word: "angpao"
+  hokkien: "âng-pau (紅包)"
+  zh: "红包"
+  py: "hóngbāo"
+  meaning: { id: "amplop merah berisi uang", en: "red envelope with money" }
+- id_word: "cepek"
+  hokkien: "chit-pah (一百)"
+  zh: "一百"
+  py: "yìbǎi"
+  meaning: { id: "seratus", en: "one hundred" }
+- id_word: "gopek"
+  hokkien: "gō͘-pah (五百)"
+  zh: "五百"
+  py: "wǔbǎi"
+  meaning: { id: "lima ratus", en: "five hundred" }
+- id_word: "cuan"
+  hokkien: "thàn (趁) / choān (賺)"
+  zh: "赚 钱"
+  py: "zhuàn qián"
+  meaning: { id: "untung, dapat uang", en: "to make money" }
+- id_word: "tahu"
+  hokkien: "tāu-hū (豆腐)"
+  zh: "豆腐"
+  py: "dòufu"
+  meaning: { id: "tahu", en: "tofu" }
+- id_word: "taoge"
+  hokkien: "tāu-gê (豆芽)"
+  zh: "豆芽"
+  py: "dòuyá"
+  meaning: { id: "tauge", en: "bean sprouts" }
+- id_word: "kuaci"
+  hokkien: "koa-chí (瓜子)"
+  zh: "瓜子"
+  py: "guāzǐ"
+  meaning: { id: "kuaci, biji semangka atau bunga matahari", en: "melon or sunflower seeds" }
+- id_word: "cici"
+  hokkien: "chí-chí (姊姊)"
+  zh: "姐姐"
+  py: "jiějie"
+  meaning: { id: "kakak perempuan", en: "older sister" }
+- id_word: "koko"
+  hokkien: "ko-ko (哥哥)"
+  zh: "哥哥"
+  py: "gēge"
+  meaning: { id: "kakak laki-laki", en: "older brother" }
+- id_word: "gua"
+  hokkien: "goá (我)"
+  zh: "我"
+  py: "wǒ"
+  meaning: { id: "aku, saya", en: "I, me" }
+- id_word: "lu"
+  hokkien: "lí (汝)"
+  zh: "你"
+  py: "nǐ"
+  meaning: { id: "kamu", en: "you" }

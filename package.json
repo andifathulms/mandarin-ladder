@@ -15,6 +15,7 @@
     "content:check": "tsx scripts/content-check.ts",
     "fonts:fetch": "tsx scripts/fonts-fetch.ts",
     "fonts:subset": "tsx scripts/fonts-subset.ts",
+    "strokes:extract": "tsx scripts/strokes-extract.ts",
     "audio:list": "tsx scripts/audio-list.ts",
     "audio:ingest": "tsx scripts/audio-ingest.ts",
     "test": "vitest run",

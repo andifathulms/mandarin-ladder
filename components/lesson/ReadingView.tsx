@@ -8,13 +8,14 @@ import { rungHref } from '@/lib/routes';
 import { useT } from '../ProgressProvider';
 import { IconArrowLeft } from '../ui/Icon';
 import { CheckItemView } from '../check/CheckItemView';
-import { ArSentence } from '../ar/ArSentence';
-import { ArIsland } from '../ar/ArIsland';
+import { ZhSentence } from '../zh/ZhSentence';
+import { ZhTextProvider, useRungTones } from '../zh/ZhContext';
 import { GlossaryChips } from './GlossaryChips';
 
 /** The rung's Read & listen capstone: one short text read aloud, then a few questions. */
 export function ReadingView({ rung, reading }: { rung: Rung; reading: Reading }) {
   const { t, lang } = useT();
+  const tones = useRungTones(rung);
   const [solved, setSolved] = useState<string[]>([]);
   const allDone = solved.length === reading.items.length;
   // Capstone completion is saved (fixes English Ladder issue 4).
@@ -39,23 +40,28 @@ export function ReadingView({ rung, reading }: { rung: Rung; reading: Reading })
         </div>
       </header>
 
+      <ZhTextProvider pinyin={rung.pinyin} toneColours={tones}>
       <main className="page flex max-w-lesson flex-1 flex-col gap-6 py-7">
         <div className="flex flex-col gap-1">
           <p className="eyebrow">{t('read.title')}</p>
           <h1 className="text-h1" lang={lang}>
             {lang === 'en' ? reading.title.en : reading.title.id}
           </h1>
-          <ArIsland block as="p" size="title" face="display" className="text-muted">
-            {reading.title.ar}
-          </ArIsland>
+          <ZhSentence zh={reading.title.zh} py={reading.title.py} size="body" play={false} wordSheet={false} />
         </div>
 
         <section className="card flex flex-col gap-4 p-5" aria-label={reading.title.id}>
-          <ArSentence ar={reading.ar} tr={rung.pinyin === 'always' ? reading.tr : undefined} size="body" />
+          <ol className="flex flex-col gap-3">
+            {reading.lines.map((line, i) => (
+              <li key={i}>
+                <ZhSentence zh={line.zh} py={line.py} size="body" />
+              </li>
+            ))}
+          </ol>
           <details>
             <summary className="label cursor-pointer py-2 text-accent">{t('read.translation')}</summary>
-            <p lang={lang === 'en' && reading.en ? 'en' : 'id'} className="id-text">
-              {lang === 'en' ? (reading.en ?? reading.id) : reading.id}
+            <p lang={lang} className="id-text">
+              {reading.lines.map((l) => (lang === 'en' ? (l.en ?? l.id) : l.id)).join(' ')}
             </p>
           </details>
         </section>
@@ -94,6 +100,7 @@ export function ReadingView({ rung, reading }: { rung: Rung; reading: Reading })
           {t('lesson.backToRung', { rung: rung.name })}
         </Link>
       </main>
+      </ZhTextProvider>
     </div>
   );
 }

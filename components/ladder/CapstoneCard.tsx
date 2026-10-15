@@ -1,8 +1,7 @@
 'use client';
 
 import Link from 'next/link';
-import { IconBook, IconCheck, IconChevron } from '../ui/Icon';
-import { EgChip } from '../ar/EgChip';
+import { IconBook, IconChat, IconCheck, IconChevron } from '../ui/Icon';
 import { useT } from '../ProgressProvider';
 
 type Props = {
@@ -14,23 +13,17 @@ type Props = {
   done?: string;
 };
 
-/** A rung capstone: Baca dan dengar (Fusha reading) or Ngobrol · Mesir (Egyptian dialogue). */
+/** A rung capstone: Baca dan dengar (a reading) or Ngobrol (a dialogue). */
 export function CapstoneCard({ href, kind, title, meta, done }: Props) {
   const { t, lang } = useT();
   const date = done ? new Date(done).toLocaleDateString(lang === 'en' ? 'en-GB' : 'id-ID', { day: 'numeric', month: 'short' }) : null;
   return (
     <Link
       href={href}
-      className={`card flex min-h-[72px] items-center gap-4 p-4 text-ink no-underline transition-colors duration-quick hover:bg-paper-2 ${
-        kind === 'dialogue' ? 'border-s-[3px] border-eg' : ''
-      }`}
+      className="card flex min-h-[72px] items-center gap-4 p-4 text-ink no-underline transition-colors duration-quick hover:bg-paper-2"
     >
-      <span
-        className={`flex h-[44px] w-[44px] shrink-0 items-center justify-center rounded-md ${
-          kind === 'dialogue' ? 'bg-eg-soft text-eg' : 'bg-accent-soft text-accent'
-        }`}
-      >
-        {kind === 'dialogue' ? <EgChip /> : <IconBook />}
+      <span className="flex h-[44px] w-[44px] shrink-0 items-center justify-center rounded-md bg-accent-soft text-accent">
+        {kind === 'dialogue' ? <IconChat /> : <IconBook />}
       </span>
       <span className="flex min-w-0 flex-1 flex-col">
         <span className="font-display text-card font-medium">{title}</span>

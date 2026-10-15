@@ -1,19 +1,10 @@
 'use client';
 
 import { createContext, useContext, useEffect, useMemo, useState } from 'react';
-import type { Rung } from '@/lib/types';
+import type { Rung, WordInfo } from '@/lib/types';
+import { useSettings } from '../ProgressProvider';
 
-/** What the tap-a-word sheet shows for a word (DESIGN §6.4). */
-export type WordInfo = {
-  zh: string;
-  py: string;
-  id: string;
-  en?: string;
-  /** Measure word for a noun (一本书 → 本). */
-  mw?: string;
-  hsk?: string;
-  trad?: string;
-};
+export type { WordInfo };
 
 export type PinyinMode = Rung['pinyin'];
 
@@ -118,4 +109,10 @@ export function ZhTextOverride({ showPinyin, toneColours, children }: { showPiny
     ...(toneColours === undefined ? {} : { toneColours }),
   };
   return <Ctx.Provider value={value}>{children}</Ctx.Provider>;
+}
+
+/** Tone colours for a rung: the setting, or the rung's default when the setting follows the rung. */
+export function useRungTones(rung: Pick<Rung, 'tone_colours_default'> | null | undefined): boolean {
+  const { toneColours } = useSettings();
+  return toneColours === 'rung' ? (rung?.tone_colours_default ?? true) : toneColours;
 }

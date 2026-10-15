@@ -46,21 +46,19 @@ describe('check item schema', () => {
     const r = CheckItemSchema.safeParse({ id: 'a', type: 'listen', audio: 'x', options: ['a', 'b'], answer: 'x', why });
     expect(r.success).toBe(false);
   });
-  it('requires a spell answer to be exactly the joined letters', () => {
-    const ok = CheckItemSchema.safeParse({ id: 'a', type: 'spell', letters: ['ب', 'ي', 'ت'], answer: 'بيت', why });
-    expect(ok.success).toBe(true);
-    const bad = CheckItemSchema.safeParse({ id: 'a', type: 'spell', letters: ['ب', 'ي', 'ت'], answer: 'تيب', why });
-    expect(bad.success).toBe(false);
+  it('requires a tone answer among the options, and audio_py for Chinese audio', () => {
+    const base = { id: 'a', type: 'tone', audio: '你好', audio_py: 'nǐhǎo', options: [[3, 3], [2, 3]], why };
+    expect(CheckItemSchema.safeParse({ ...base, answer: [2, 3] }).success).toBe(true);
+    expect(CheckItemSchema.safeParse({ ...base, answer: [1, 1] }).success).toBe(false);
+    const { audio_py: _, ...noPy } = base;
+    expect(CheckItemSchema.safeParse({ ...noPy, answer: [2, 3] }).success).toBe(false);
+    expect(CheckItemSchema.safeParse({ ...noPy, audio: 'syl-ma3', options: [[3], [2]], answer: [3] }).success).toBe(true);
   });
-  it('requires dictation to have audio', () => {
-    const r = CheckItemSchema.safeParse({ id: 'a', type: 'spell', letters: ['ب', 'ي', 'ت'], answer: 'بيت', dictation: true, why });
-    expect(r.success).toBe(false);
-  });
-  it('checks a mark answer against the word itself', () => {
-    const base = { id: 'a', type: 'mark', ar: 'دَرْسٌ', target: 1, options: ['fatha', 'sukun'], why };
-    expect(CheckItemSchema.safeParse({ ...base, answer: 'sukun' }).success).toBe(true);
-    expect(CheckItemSchema.safeParse({ ...base, answer: 'fatha' }).success).toBe(false);
-    expect(CheckItemSchema.safeParse({ ...base, target: 9, answer: 'sukun' }).success).toBe(false);
+  it('requires build answers among the parts and trace items to name one character', () => {
+    expect(CheckItemSchema.safeParse({ id: 'a', type: 'build', char: '好', parts: ['女', '子', '马'], answer: ['女', '子'], why }).success).toBe(true);
+    expect(CheckItemSchema.safeParse({ id: 'a', type: 'build', char: '好', parts: ['女', '子', '马'], answer: ['女', '口'], why }).success).toBe(false);
+    expect(CheckItemSchema.safeParse({ id: 'a', type: 'trace', char: '你好', why }).success).toBe(false);
+    expect(CheckItemSchema.safeParse({ id: 'a', type: 'trace', char: '你', why }).success).toBe(true);
   });
   it('requires order answers to use the tiles', () => {
     const r = CheckItemSchema.safeParse({ id: 'a', type: 'order', tiles: ['a', 'b'], answer: ['a', 'c'], why });

@@ -254,8 +254,9 @@ function importGrammar(): GrammarPoint[] {
       // The transcription sometimes closes the code with ］ instead of 】 (【四29］).
       const m = /^【([^】］]+)[】］]\s*(.*)$/.exec(line);
       if (m) {
-        const num = m[1].replace(LEVEL_CHAR[level], '');
-        cur = { id: `g${level.replace('-', '')}-${num.padStart(level === '7-9' ? 3 : 2, '0')}`, hsk: level, code: m[1], title: m[2].trim(), examples: [] };
+        // The level comes from the file: the transcription sometimes writes 二 for 三 in the code (【二35】 in level 3).
+        const num = m[1].replace(/\D/g, '');
+        cur = { id: `g${level.replace('-', '')}-${num.padStart(level === '7-9' ? 3 : 2, '0')}`, hsk: level, code: `${LEVEL_CHAR[level]}${num}`, title: m[2].trim(), examples: [] };
         out.push(cur);
         continue;
       }

@@ -1,8 +1,7 @@
 // Web Speech API wrapper: the fallback when no recording exists. Resolves silently when speech is unavailable.
 
-export type Variety = 'fusha' | 'eg';
 export type VoiceGender = 'female' | 'male';
-type Opts = { variety?: Variety; gender?: VoiceGender; rate?: number; onBoundary?: (charIndex: number) => void };
+type Opts = { gender?: VoiceGender; rate?: number; onBoundary?: (charIndex: number) => void };
 
 let voices: SpeechSynthesisVoice[] = [];
 let listening = false;
@@ -36,21 +35,22 @@ export function onVoicesChanged(l: () => void) {
 const NOVELTY = /\b(albert|bad news|bahh|bells|boing|bubbles|cellos|good news|jester|organ|superstar|trinoids|whisper|wobble|zarvox|junior|ralph|fred|kathy|grandma|grandpa|rocko|shelley|eddy|flo|reed|sandy|espeak|compact)\b/i;
 // Markers of the clearer neural or network voices.
 const CLEAR = /\b(natural|neural|online|enhanced|premium|siri)\b|^google\b/i;
-const FEMALE = /\b(female|woman|hoda|salma|zariyah|laila|layla|amina|amira|mariam|sana|fatima|rana|lana|mouna|mona|reem|iman|nour|yasmin|sara)\b/i;
-const MALE = /\b(male|man|maged|majed|naayf|shakir|hamed|tarik|tariq|omar|hamdan|fahed|bassel|moaz|taim|rami|jamal|karim)\b/i;
+// Mainland Mandarin voice names on common platforms (macOS, Windows, Android, Edge).
+const FEMALE = /\b(female|woman|ting-?ting|xiaoxiao|xiaoyi|xiaohan|xiaomeng|xiaomo|xiaorui|xiaoshuang|xiaoxuan|xiaoyan|huihui|yaoyao|lili|yu-?shu|mei-?jia|sin-?ji)\b/i;
+const MALE = /\b(male|man|yunxi|yunyang|yunjian|yunze|yunfeng|yunhao|yunye|kangkang|li-?mu)\b/i;
 
 const norm = (v: SpeechSynthesisVoice) => v.lang.replace('_', '-').toLowerCase();
 
 /**
- * Higher is better. Arabic only. Egyptian prefers ar-EG; Fusha prefers ar-SA, then any ar-*.
- * Then a clear voice, then the preferred gender.
+ * Higher is better. Mandarin only: zh-CN first, then cmn-* and other zh-* except Hong Kong and
+ * Taiwan (Cantonese, or Taiwanese Mandarin with different tones and vocabulary); never yue.
+ * Then a clear voice, then the preferred gender; novelty voices are pushed out.
  */
-export function scoreVoice(v: SpeechSynthesisVoice, variety: Variety = 'fusha', gender: VoiceGender = 'female'): number {
+export function scoreVoice(v: SpeechSynthesisVoice, gender: VoiceGender = 'female'): number {
   const lang = norm(v);
-  if (!lang.startsWith('ar')) return -Infinity;
-  let score = 100;
-  if (variety === 'eg') score = lang === 'ar-eg' ? 300 : 150;
-  else score = lang === 'ar-sa' ? 300 : lang === 'ar' || lang === 'ar-001' ? 260 : lang === 'ar-eg' ? 180 : 200;
+  if (lang.startsWith('yue') || lang === 'zh-hk' || lang === 'zh-tw' || lang === 'zh-mo') return -Infinity;
+  if (!(lang.startsWith('zh') || lang.startsWith('cmn'))) return -Infinity;
+  let score = lang === 'zh-cn' || lang === 'cmn-hans-cn' || lang === 'cmn-cn' ? 300 : lang.startsWith('cmn') ? 260 : lang === 'zh' || lang === 'zh-hans' ? 240 : 150;
   const name = v.name;
   if (NOVELTY.test(name)) score -= 1000;
   if (CLEAR.test(name)) score += 60;
@@ -63,15 +63,11 @@ export function scoreVoice(v: SpeechSynthesisVoice, variety: Variety = 'fusha', 
   return score;
 }
 
-export function pickVoice(
-  list: SpeechSynthesisVoice[],
-  variety: Variety = 'fusha',
-  gender: VoiceGender = 'female',
-): SpeechSynthesisVoice | null {
+export function pickVoice(list: SpeechSynthesisVoice[], gender: VoiceGender = 'female'): SpeechSynthesisVoice | null {
   let best: SpeechSynthesisVoice | null = null;
   let bestScore = -Infinity;
   for (const v of list) {
-    const s = scoreVoice(v, variety, gender);
+    const s = scoreVoice(v, gender);
     if (s > bestScore) {
       best = v;
       bestScore = s;
@@ -80,11 +76,11 @@ export function pickVoice(
   return bestScore > -Infinity ? best : null;
 }
 
-/** Splits long text at sentence ends (Latin and Arabic): some engines cut off or slur long utterances. */
-export function chunks(text: string, max = 160): { text: string; start: number }[] {
+/** Splits long text at sentence ends (。！？； and Latin): some engines cut off or slur long utterances. */
+export function chunks(text: string, max = 80): { text: string; start: number }[] {
   if (text.length <= max) return [{ text, start: 0 }];
   const out: { text: string; start: number }[] = [];
-  const re = /[^.!?؟۔]+[.!?؟۔]+["')\]»]*\s*|[^.!?؟۔]+$/g;
+  const re = /[^。！？；.!?;]+[。！？；.!?;]+[”’」』)）]*\s*|[^。！？；.!?;]+$/g;
   let m: RegExpExecArray | null;
   while ((m = re.exec(text))) {
     const last = out[out.length - 1];
@@ -95,13 +91,13 @@ export function chunks(text: string, max = 160): { text: string; start: number }
 }
 
 /** The voice speak() would use now, for showing in Settings. */
-export function chosenVoiceName(variety: Variety = 'fusha', gender: VoiceGender = 'female'): string | null {
+export function chosenVoiceName(gender: VoiceGender = 'female'): string | null {
   if (!synth()) return null;
   refreshVoices();
-  return pickVoice(voices, variety, gender)?.name ?? null;
+  return pickVoice(voices, gender)?.name ?? null;
 }
 
-/** True when the browser can speak Arabic. */
+/** True when the browser can speak Mandarin. */
 export function canSpeak(): boolean {
   if (!synth()) return false;
   refreshVoices();
@@ -122,7 +118,7 @@ export function speak(text: string, opts: Opts = {}): Promise<void> {
   const s = synth();
   if (!s) return Promise.resolve();
   refreshVoices();
-  const voice = pickVoice(voices, opts.variety, opts.gender);
+  const voice = pickVoice(voices, opts.gender);
   if (!voice) return Promise.resolve();
   s.cancel();
   const mine = ++generation;

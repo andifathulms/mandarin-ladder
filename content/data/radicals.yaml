@@ -1,0 +1,77 @@
+# Common radicals and components with their meanings, for the Hanzi card, CharacterParts and build
+# items. `forms` are the shapes a component takes inside a character (水 → 氵). Draft: Claude wrote
+# these from standard references; a Mandarin teacher checks them with the Dasar 2 lessons.
+- { part: "人", forms: ["亻"], py: "rén", id: "orang", en: "person" }
+- { part: "口", py: "kǒu", id: "mulut", en: "mouth" }
+- { part: "女", py: "nǚ", id: "perempuan", en: "woman" }
+- { part: "子", py: "zǐ", id: "anak", en: "child" }
+- { part: "木", py: "mù", id: "pohon, kayu", en: "tree, wood" }
+- { part: "水", forms: ["氵"], py: "shuǐ", id: "air", en: "water" }
+- { part: "心", forms: ["忄"], py: "xīn", id: "hati, perasaan", en: "heart, feeling" }
+- { part: "手", forms: ["扌"], py: "shǒu", id: "tangan", en: "hand" }
+- { part: "言", forms: ["讠"], py: "yán", id: "kata, bicara", en: "speech" }
+- { part: "日", py: "rì", id: "matahari, hari", en: "sun, day" }
+- { part: "月", py: "yuè", id: "bulan; juga daging (tubuh)", en: "moon; also flesh (body)" }
+- { part: "火", forms: ["灬"], py: "huǒ", id: "api", en: "fire" }
+- { part: "土", py: "tǔ", id: "tanah", en: "earth" }
+- { part: "山", py: "shān", id: "gunung", en: "mountain" }
+- { part: "田", py: "tián", id: "sawah", en: "field" }
+- { part: "目", py: "mù", id: "mata", en: "eye" }
+- { part: "门", py: "mén", id: "pintu", en: "door" }
+- { part: "马", py: "mǎ", id: "kuda", en: "horse" }
+- { part: "鸟", py: "niǎo", id: "burung", en: "bird" }
+- { part: "鱼", py: "yú", id: "ikan", en: "fish" }
+- { part: "金", forms: ["钅"], py: "jīn", id: "logam, emas", en: "metal, gold" }
+- { part: "竹", forms: ["⺮"], py: "zhú", id: "bambu", en: "bamboo" }
+- { part: "艹", py: "cǎo", id: "rumput, tanaman", en: "grass, plant" }
+- { part: "宀", py: "mián", id: "atap", en: "roof" }
+- { part: "广", py: "guǎng", id: "bangunan beratap", en: "shelter" }
+- { part: "疒", py: "nè", id: "sakit", en: "sickness" }
+- { part: "辶", py: "chuò", id: "berjalan", en: "walking" }
+- { part: "足", forms: ["⻊"], py: "zú", id: "kaki", en: "foot" }
+- { part: "走", py: "zǒu", id: "berjalan", en: "walk" }
+- { part: "车", py: "chē", id: "kendaraan", en: "vehicle" }
+- { part: "贝", py: "bèi", id: "kerang, uang", en: "shell, money" }
+- { part: "雨", py: "yǔ", id: "hujan", en: "rain" }
+- { part: "食", forms: ["饣"], py: "shí", id: "makanan", en: "food" }
+- { part: "糸", forms: ["纟"], py: "mì", id: "benang, sutra", en: "silk, thread" }
+- { part: "示", forms: ["礻"], py: "shì", id: "altar, upacara", en: "altar, ritual" }
+- { part: "衣", forms: ["衤"], py: "yī", id: "pakaian", en: "clothing" }
+- { part: "王", forms: ["玉"], py: "wáng", id: "raja; giok", en: "king; jade" }
+- { part: "大", py: "dà", id: "besar", en: "big" }
+- { part: "小", py: "xiǎo", id: "kecil", en: "small" }
+- { part: "力", py: "lì", id: "tenaga", en: "strength" }
+- { part: "刀", forms: ["刂"], py: "dāo", id: "pisau", en: "knife" }
+- { part: "又", py: "yòu", id: "tangan kanan; lagi", en: "right hand; again" }
+- { part: "寸", py: "cùn", id: "satuan kecil, tangan", en: "inch, hand" }
+- { part: "工", py: "gōng", id: "kerja, alat", en: "work, tool" }
+- { part: "犬", forms: ["犭"], py: "quǎn", id: "anjing, hewan", en: "dog, animal" }
+- { part: "石", py: "shí", id: "batu", en: "stone" }
+- { part: "米", py: "mǐ", id: "beras", en: "rice" }
+- { part: "白", py: "bái", id: "putih", en: "white" }
+- { part: "见", py: "jiàn", id: "melihat", en: "see" }
+- { part: "耳", py: "ěr", id: "telinga", en: "ear" }
+- { part: "冫", py: "bīng", id: "es, dingin", en: "ice, cold" }
+- { part: "囗", py: "wéi", id: "pagar keliling", en: "enclosure" }
+- { part: "夕", py: "xī", id: "senja", en: "evening" }
+- { part: "牛", forms: ["牜"], py: "niú", id: "sapi", en: "cow" }
+- { part: "羊", py: "yáng", id: "kambing, domba", en: "sheep" }
+- { part: "文", py: "wén", id: "tulisan", en: "writing" }
+- { part: "方", py: "fāng", id: "persegi, arah", en: "square, direction" }
+- { part: "欠", py: "qiàn", id: "membuka mulut", en: "open mouth" }
+- { part: "攵", py: "pū", id: "memukul, berbuat", en: "strike, act" }
+- { part: "彳", py: "chì", id: "langkah", en: "step" }
+- { part: "阝", py: "fù", id: "bukit; kota", en: "mound; city" }
+- { part: "尸", py: "shī", id: "tubuh", en: "body" }
+- { part: "巾", py: "jīn", id: "kain", en: "cloth" }
+- { part: "气", py: "qì", id: "udara, uap", en: "air, steam" }
+- { part: "页", py: "yè", id: "kepala; halaman", en: "head; page" }
+- { part: "皿", py: "mǐn", id: "wadah", en: "dish" }
+- { part: "立", py: "lì", id: "berdiri", en: "stand" }
+- { part: "一", py: "yī", id: "satu", en: "one" }
+- { part: "十", py: "shí", id: "sepuluh", en: "ten" }
+- { part: "八", py: "bā", id: "delapan; membelah", en: "eight; divide" }
+- { part: "儿", py: "ér", id: "anak; kaki", en: "child; legs" }
+- { part: "生", py: "shēng", id: "hidup, lahir", en: "life, birth" }
+- { part: "也", py: "yě", id: "juga", en: "also" }
+- { part: "中", py: "zhōng", id: "tengah", en: "middle" }

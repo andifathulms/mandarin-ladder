@@ -89,7 +89,7 @@ describe('derived state', () => {
     order: n,
     status: 'draft',
     minutes: 6,
-    title: { en: `L${n}`, id: `L${n}`, ar: 'ا' },
+    title: { en: `L${n}`, id: `L${n}`, zh: '好', py: 'hǎo' },
     keyword: null,
     checkIds: [`L${n}-c1`],
     resume: ['s0', 's1', 's2', 's3', 's4', 's5'].map((s) => ({ text: `${s}-${n}` })),

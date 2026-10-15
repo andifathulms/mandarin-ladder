@@ -1,13 +1,15 @@
 import type { z } from 'zod';
 import type {
   CheckItemSchema,
+  DasarPointsSchema,
+  DeckSchema,
   DialogueSchema,
   GlossaryEntry as GlossaryEntrySchema,
+  HokkienSchema,
   LessonFrontmatterSchema,
-  LetterSchema,
-  LexiconEntry as LexiconEntrySchema,
-  MakhrajSchema,
+  MeasureWordsSchema,
   PlacementSchema,
+  RadicalsSchema,
   ReadingSchema,
   RungSchema,
 } from './content/schema';
@@ -18,17 +20,19 @@ export type CheckItem = z.infer<typeof CheckItemSchema>;
 export type Rung = z.infer<typeof RungSchema>;
 export type LessonFrontmatter = z.infer<typeof LessonFrontmatterSchema>;
 export type GlossaryEntry = z.infer<typeof GlossaryEntrySchema>;
-export type Letter = z.infer<typeof LetterSchema>;
-export type MakhrajPoint = z.infer<typeof MakhrajSchema>[number];
-export type LexiconEntry = z.infer<typeof LexiconEntrySchema>;
+export type HokkienEntry = z.infer<typeof HokkienSchema>[number];
+export type MeasureWord = z.infer<typeof MeasureWordsSchema>[number];
+export type DasarPoint = z.infer<typeof DasarPointsSchema>[number];
+export type Deck = z.infer<typeof DeckSchema>;
+export type Radical = z.infer<typeof RadicalsSchema>[number];
 
 export type LessonSections = { concept: Bilingual; contrast: Bilingual };
 
 /** Plain JSON handed to client components. */
 export type Lesson = LessonFrontmatter & LessonSections & { slug: string };
 
-/** A line to quote on the continue card: Arabic (with transliteration) or Latin. */
-export type Quote = { text: string; tr?: string };
+/** A line to quote on the continue card: Chinese with its pinyin, or Latin text. */
+export type Quote = { text: string; zh?: string; py?: string };
 
 /** Lightweight lesson info for lists, the ladder and the continue card. */
 export type LessonSummary = {
@@ -38,8 +42,8 @@ export type LessonSummary = {
   order: number;
   status: 'draft' | 'reviewed';
   minutes: number;
-  title: { id: string; en: string; ar: string };
-  /** The lesson's Arabic keyword, for the chip on the rung page (the first example's focus). */
+  title: { id: string; en: string; zh: string; py: string };
+  /** The lesson's key character or word, for the chip on the rung page (the first example's focus). */
   keyword: string | null;
   checkIds: string[];
   /** Step resume text: index 0..5 → a line to quote on the continue card. */
@@ -54,3 +58,38 @@ export type Dialogue = z.infer<typeof DialogueSchema>;
 export type Placement = z.infer<typeof PlacementSchema>;
 
 export type TestPool = { rung: string; draw: number; pass: number; items: CheckItem[] };
+
+/** What the tap-a-word sheet shows for a word (DESIGN §6.4). */
+export type WordInfo = {
+  zh: string;
+  py: string;
+  id: string;
+  en?: string;
+  /** Measure word for a noun (一本书 → 本). */
+  mw?: string;
+  hsk?: string;
+  trad?: string;
+};
+
+/** One part of a character in the Hanzi card and CharacterParts (DESIGN §8.6). */
+export type HanziPart = {
+  part: string;
+  /** meaning: the semantic component (the radical, usually); sound: the phonetic component. */
+  role: 'meaning' | 'sound' | 'part';
+  /** Its meaning in Indonesian and English, when known; its reading for a sound part. */
+  label?: Bilingual;
+  py?: string;
+};
+
+/** What the Hanzi card shows for a new character. */
+export type HanziCard = {
+  ch: string;
+  py: string;
+  strokes: number;
+  radical: string;
+  /** Layout of the decomposition: ⿰ left-right, ⿱ top-bottom, ⿴ enclosure… (Make Me a Hanzi). */
+  layout: string | null;
+  parts: HanziPart[];
+  /** A one-line memory note: 妈 = 女 (perempuan) + 马 (bunyi mǎ). */
+  note: Bilingual | null;
+};

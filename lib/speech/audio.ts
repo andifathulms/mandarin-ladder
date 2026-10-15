@@ -1,18 +1,20 @@
 // Recorded audio first, browser speech second (CLAUDE.md §7.7, PRD §5.6).
-import { normalise, tokenise } from '../arabic/text';
 import { stripMarkup } from '../markup';
 import { withBase } from '../basePath';
+import { normZh, plainZh } from '../zh/text';
 import { sha1 } from './sha1';
-import { canSpeak, speak, stopSpeaking, type Variety, type VoiceGender } from './speak';
-
-export type { Variety };
+import { canSpeak, speak, stopSpeaking, type VoiceGender } from './speak';
 
 export type ManifestEntry = { file: string; dur: number; words?: number[] };
 export type Manifest = Record<string, ManifestEntry>;
 
-/** The audio key for a string: sha1(normalise(text) + '|' + variety), first 12 hex digits. */
-export function audioKey(text: string, variety: Variety = 'fusha'): string {
-  return sha1(`${normalise(stripMarkup(text))}|${variety}`).slice(0, 12);
+/** A syllable's recording key: syl-<base><tone>, e.g. syl-ma3, syl-lü4. */
+export const syllableKey = (base: string, tone: number) => `syl-${base}${tone}`;
+export const isSyllableKey = (s: string) => /^syl-[a-zü]+[0-4]$/.test(s);
+
+/** The audio key for Chinese text: sha1(normZh(text)), first 12 hex digits. */
+export function audioKey(text: string): string {
+  return isSyllableKey(text) ? text : sha1(normZh(stripMarkup(text))).slice(0, 12);
 }
 
 let manifest: Manifest | null = null;
@@ -50,16 +52,27 @@ export function __setManifest(m: Manifest | null) {
   for (const l of listeners) l();
 }
 
-export function audioFor(text: string, variety: Variety = 'fusha'): ManifestEntry | null {
-  return manifest?.[audioKey(text, variety)] ?? null;
+export function audioFor(text: string): ManifestEntry | null {
+  return manifest?.[audioKey(text)] ?? null;
 }
 
-/** True if a recording exists or the browser has an Arabic voice. Play buttons hide otherwise. */
-export function canPlay(text: string, variety: Variety = 'fusha'): boolean {
-  return !!audioFor(text, variety) || canSpeak();
+/**
+ * True if a recording exists, or (for text) the browser has a Chinese voice. Isolated syllables
+ * never fall back to speech: their play button hides without a recording (CLAUDE.md §7.7).
+ */
+export function canPlay(text: string): boolean {
+  if (audioFor(text)) return true;
+  return !isSyllableKey(text) && canSpeak();
 }
 
-type PlayOpts = { variety?: Variety; rate?: number; gender?: VoiceGender; onWord?: (index: number) => void };
+type PlayOpts = {
+  rate?: number;
+  gender?: VoiceGender;
+  /** Recordings with word timings: the index of the word being spoken. */
+  onWord?: (index: number) => void;
+  /** Browser speech: the character offset of the boundary in the played text. */
+  onChar?: (charIndex: number) => void;
+};
 
 let el: HTMLAudioElement | null = null;
 let stopCurrent: (() => void) | null = null;
@@ -71,16 +84,14 @@ export function stop() {
 }
 
 /**
- * Plays a string. A recording goes through one shared audio element with pitch preserved at the
- * chosen rate, reporting word indexes from the manifest timings. Otherwise browser speech, which
- * reports word indexes from boundary events when the engine fires them.
+ * Plays text (or a syllable key). A recording goes through one shared audio element with pitch
+ * preserved at the chosen rate, reporting word indexes from the manifest timings. Otherwise browser
+ * speech reads the characters, reporting character offsets from boundary events.
  */
 export async function play(text: string, opts: PlayOpts = {}): Promise<void> {
-  const variety = opts.variety ?? 'fusha';
-  const plain = stripMarkup(text);
   await loadManifest();
   stop();
-  const entry = audioFor(plain, variety);
+  const entry = audioFor(text);
   if (entry && typeof Audio !== 'undefined') {
     el ??= new Audio();
     const a = el;
@@ -113,16 +124,6 @@ export async function play(text: string, opts: PlayOpts = {}): Promise<void> {
       a.play().catch(finish);
     });
   }
-  const words = tokenise(plain);
-  return speak(plain, {
-    variety,
-    rate: opts.rate,
-    gender: opts.gender,
-    onBoundary: opts.onWord
-      ? (ci) => {
-          const k = words.findIndex((w) => ci >= w.start && ci < w.end);
-          if (k >= 0) opts.onWord!(k);
-        }
-      : undefined,
-  });
+  if (isSyllableKey(text)) return;
+  return speak(plainZh(stripMarkup(text)), { rate: opts.rate, gender: opts.gender, onBoundary: opts.onChar });
 }
