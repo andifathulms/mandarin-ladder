@@ -12,3 +12,6 @@ recordings/
 vendor/
 fonts-src/*.ttf
 fonts-src/*.otf
+styles/fonts-zh/
+styles/fonts-zh.css
+styles/fonts-zh.json

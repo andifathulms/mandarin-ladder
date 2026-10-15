@@ -1,5 +1,8 @@
-Self-hosted font files (latin subset), served by `next/font/local` from `app/fonts.ts`.
+Self-hosted Latin font files, served by `next/font/local` from `app/fonts.ts`.
 
-- `AtkinsonNext-*.woff2` — Atkinson Hyperlegible Next, Braille Institute of America, SIL Open Font License 1.1
+- `AtkinsonNext-*.woff2` — Atkinson Hyperlegible Next, Braille Institute of America, SIL Open Font License 1.1.
+  The full upstream variable webfonts (Latin and Latin Extended) from
+  [googlefonts/atkinson-hyperlegible-next](https://github.com/googlefonts/atkinson-hyperlegible-next) at `7925f50`
+  (`fonts/webfonts/`), so pinyin's tone vowels never fall back.
 
-Source: Google Fonts. `next/font/google` in Next 14 doesn't list these families yet, so they live here.
+The hanzi faces (LXGW WenKai, Noto Sans SC) are not here: `npm run fonts:subset` builds them into `styles/fonts-zh/`.

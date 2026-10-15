@@ -1,8 +1,8 @@
 import localFont from 'next/font/local';
-import { Amiri, IBM_Plex_Mono, IBM_Plex_Sans_Arabic, Newsreader, Noto_Naskh_Arabic } from 'next/font/google';
+import { IBM_Plex_Mono, Newsreader } from 'next/font/google';
 
-// Self-hosted at build: no runtime requests to Google.
-// Latin faces load latin + latin-ext so transliteration (ā ī ū ḥ ṣ ḍ ṭ ẓ ʿ ʾ) never falls back.
+// Self-hosted at build: no runtime requests to Google. Hanzi faces are not here: they are subset at
+// build time by scripts/fonts-subset.ts into styles/fonts-zh.css (CLAUDE.md §7.6).
 export const display = Newsreader({
   subsets: ['latin', 'latin-ext'],
   axes: ['opsz'],
@@ -14,7 +14,9 @@ export const display = Newsreader({
   adjustFontFallback: false,
 });
 
-// Atkinson Hyperlegible Next isn't in next/font/google for Next 14, so it ships from app/font-files.
+// Atkinson Hyperlegible Next (full Latin and Latin Extended, from the upstream webfonts) also sets
+// pinyin. It has the combining macron, acute, caron and grave with mark positioning but not every
+// precomposed tone vowel (ǎ ǚ…), so pinyin is rendered decomposed (NFD): see components/zh/Pinyin.
 export const body = localFont({
   src: [
     { path: './font-files/AtkinsonNext-Variable.woff2', weight: '200 800', style: 'normal' },
@@ -32,36 +34,4 @@ export const mono = IBM_Plex_Mono({
   display: 'swap',
 });
 
-// Arabic text: every sentence, word, tile, option and glossary entry (DESIGN §4.1).
-export const arabic = Noto_Naskh_Arabic({
-  subsets: ['arabic'],
-  weight: ['400', '500', '600', '700'],
-  variable: '--font-ar',
-  display: 'swap',
-  fallback: ['serif'],
-  adjustFontFallback: false,
-});
-
-// Arabic display: big single letters, the سُلَّم wordmark, rung subtitles, the climb moment.
-// Its Latin also sets transliteration: Atkinson Hyperlegible Next and Newsreader both lack
-// ḥ ṣ ḍ ṭ ẓ ʿ ʾ, and Amiri covers them all (an upright serif, never a system fallback).
-export const arabicDisplay = Amiri({
-  subsets: ['arabic', 'latin', 'latin-ext'],
-  weight: ['400', '700'],
-  variable: '--font-ar-display',
-  display: 'swap',
-  fallback: ['serif'],
-  adjustFontFallback: false,
-});
-
-// Arabic UI: tiny Arabic inside chrome where Naskh is too tall (SVG labels, chips, filters).
-export const arabicUi = IBM_Plex_Sans_Arabic({
-  subsets: ['arabic'],
-  weight: ['400', '500'],
-  variable: '--font-ar-ui',
-  display: 'swap',
-  fallback: ['sans-serif'],
-  adjustFontFallback: false,
-});
-
-export const fontVariables = [display, body, mono, arabic, arabicDisplay, arabicUi].map((f) => f.variable).join(' ');
+export const fontVariables = [display, body, mono].map((f) => f.variable).join(' ');
