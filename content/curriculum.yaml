@@ -7,7 +7,7 @@ rungs:
     name_zh: { zh: "拼音", py: "pīnyīn" }
     tier: dasar
     hsk: "—"
-    status: soon
+    status: live
     optional: true
     lessons: 10
     pinyin: always
@@ -36,7 +36,7 @@ rungs:
     name_zh: { zh: "笔画", py: "bǐhuà" }
     tier: dasar
     hsk: "—"
-    status: soon
+    status: live
     optional: true
     lessons: 10
     pinyin: always
@@ -65,7 +65,7 @@ rungs:
     name_zh: { zh: "初级 一", py: "chūjí yī" }
     tier: easy
     hsk: "1"
-    status: soon
+    status: live
     optional: false
     lessons: 18
     pinyin: always
