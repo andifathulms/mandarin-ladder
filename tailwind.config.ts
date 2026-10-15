@@ -36,8 +36,8 @@ const config: Config = {
       'easy-soft': v('easy-soft'),
       'medium-soft': v('medium-soft'),
       'hard-soft': v('hard-soft'),
-      huruf: v('huruf'),
-      'huruf-soft': v('huruf-soft'),
+      dasar: v('dasar'),
+      'dasar-soft': v('dasar-soft'),
       harakat: v('harakat'),
       eg: v('eg'),
       'eg-soft': v('eg-soft'),
@@ -46,6 +46,9 @@ const config: Config = {
       display: ['var(--font-display)', 'Georgia', 'serif'],
       body: ['var(--font-body)', 'system-ui', 'sans-serif'],
       mono: ['var(--font-mono)', 'ui-monospace', 'monospace'],
+      // Hanzi faces (DESIGN §4.1): WenKai for teaching text, Noto Sans SC for small UI hanzi.
+      zh: ['var(--font-zh)', 'var(--font-zh-ui)', 'system-ui', 'sans-serif'],
+      'zh-ui': ['var(--font-zh-ui)', 'system-ui', 'sans-serif'],
       // Arabic faces (DESIGN §4.1). Never apply these outside ArIsland.
       ar: ['var(--font-ar)', 'serif'],
       'ar-display': ['var(--font-ar-display)', 'var(--font-ar)', 'serif'],
@@ -68,6 +71,10 @@ const config: Config = {
       'ar-glyph': ['var(--t-ar-glyph)', { lineHeight: '1.4' }],
       'ar-title': ['var(--t-ar-title)', { lineHeight: '1.6' }],
       tr: ['var(--t-tr)', { lineHeight: '1.5' }],
+      'zh-sentence': ['var(--t-zh-sentence)', { lineHeight: '2.4' }],
+      'zh-body': ['var(--t-zh-body)', { lineHeight: '2.2' }],
+      'zh-small': ['var(--t-zh-small)', { lineHeight: '1.9' }],
+      'zh-glyph': ['var(--t-zh-glyph)', { lineHeight: '1.2' }],
     },
     spacing: {
       0: '0',

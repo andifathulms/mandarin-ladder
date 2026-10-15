@@ -10,7 +10,7 @@ import { IconChevron, IconReview } from '../ui/Icon';
 import { Accented, ContinueCard } from './ContinueCard';
 import { LadderRail } from './LadderRail';
 import { LessonStrip } from './LessonStrip';
-import { cefrLabel } from '../ui/tier';
+import { hskLabel } from '../ui/tier';
 
 type Props = { rungs: Rung[]; lessons: LessonSummary[]; testRungs: string[]; hasPlacement: boolean };
 
@@ -29,9 +29,9 @@ export function HomeView({ rungs, lessons, hasPlacement }: Props) {
   const target = continueTarget(rungs, lessons, progress);
   // While a learner works in an optional rung (Starter), the board and strip follow that rung.
   const here = (target.kind === 'lesson' && rungs.find((r) => r.id === target.lesson.rung)) || currentRung(rungs, progress);
-  // Door 1 opens Huruf 1, lesson 1; door 2 opens the placement check.
-  const huruf = rungs.find((r) => r.tier === 'huruf' && r.status === 'live');
-  const first = huruf && lessons.filter((l) => l.rung === huruf.id).sort((a, b) => a.order - b.order)[0];
+  // Door 1 opens Dasar 1, lesson 1; door 2 opens the placement check.
+  const dasar = rungs.find((r) => r.tier === 'dasar' && r.status === 'live');
+  const first = dasar && lessons.filter((l) => l.rung === dasar.id).sort((a, b) => a.order - b.order)[0];
   const showReview = completedCount(lessons, progress) >= 2;
   const mine = lessons.filter((l) => l.rung === here.id).sort((a, b) => a.order - b.order);
   const done = doneCount(here.id, lessons, progress);
@@ -46,8 +46,8 @@ export function HomeView({ rungs, lessons, hasPlacement }: Props) {
       headerAside={
         <Link href={rungHref(here.id)} className="label flex min-h-touch items-center gap-2 rounded-full px-3 text-ink no-underline">
           <span aria-hidden className="h-[8px] w-[8px] rounded-full" style={{ background: `var(--${here.tier})` }} />
-          {cefrLabel(here.cefr, lang)}
-          <span className="sr-only">· {here.name}</span>
+          {hskLabel(here.hsk) || here.name}
+          {here.hsk !== '—' && <span className="sr-only">· {here.name}</span>}
         </Link>
       }
     >
@@ -58,7 +58,7 @@ export function HomeView({ rungs, lessons, hasPlacement }: Props) {
               {date ?? ' '}
             </p>
             <h1 className="text-hero tracking-[-0.02em]">
-              {now ? <Accented text={greeting(t, now)} tone="text-accent" /> : 'Arabic Ladder'}
+              {now ? <Accented text={greeting(t, now)} tone="text-accent" /> : 'Mandarin Ladder'}
             </h1>
           </header>
 

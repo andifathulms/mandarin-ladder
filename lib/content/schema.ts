@@ -16,7 +16,7 @@ const itemBase = {
   /** exact keeps harakat and hamza seats; loose (default) ignores them. */
   match: z.enum(['exact', 'loose']).optional(),
   /** Placement items only: which part of the check the item belongs to. */
-  section: z.enum(['forms', 'reading', 'harakat', 'sounds']).optional(),
+  section: z.enum(['tones', 'pinyin', 'sandhi', 'strokes', 'radicals', 'chars']).optional(),
 };
 
 const optionsMsg = { message: 'answer must be one of the options' };
@@ -231,22 +231,28 @@ export const LessonFrontmatterSchema = z
   })
   .refine((l) => l.status !== 'reviewed' || !!l.review, { message: 'a reviewed lesson needs review.by and review.date' });
 
+/** A Chinese label with its pinyin, e.g. { zh: "初级 一", py: "chūjí yī" }. */
+const ZhLabel = z.object({ zh: z.string().min(1), py: z.string().min(1) }).strict();
+
 export const RungSchema = z
   .object({
     id: z.string(),
     name: z.string(),
-    name_ar: z.string().min(1),
-    tier: z.enum(['huruf', 'easy', 'medium', 'hard']),
-    cefr: z.string(),
+    name_zh: ZhLabel,
+    tier: z.enum(['dasar', 'easy', 'medium', 'hard']),
+    /** HSK 3.0 level: "—" for the Dasar rungs, "1"–"6", or "7-9" for the Hard rungs. */
+    hsk: z.string().regex(/^(—|[1-6]|7-9)$/, 'hsk is "—", "1"–"6" or "7-9"'),
     status: z.enum(['live', 'soon']),
-    /** An optional rung (Huruf) never becomes the learner's current rung on its own. */
+    /** An optional rung (Dasar) never becomes the learner's current rung on its own. */
     optional: z.boolean().default(false),
     /** Notch count; must equal the number of lesson files once live. */
     lessons: z.number().int(),
-    harakat: z.enum(['full', 'partial', 'none']),
-    translit: z.enum(['always', 'on-request', 'off']),
-    /** New glossary words for the rung; content:check warns outside ±20%. */
-    words_target: z.number().int().min(0),
+    /** The pinyin fade (PRD §4.5). */
+    pinyin: z.enum(['always', 'new', 'on-request', 'off']),
+    tone_colours_default: z.boolean(),
+    /** Cumulative HSK 3.0 targets; checked against the imported lists. */
+    words_cum: z.number().int().min(0),
+    chars_cum: z.number().int().min(0),
     description: Bilingual,
     topics: z.array(z.string()).min(1),
     threads: z.array(z.string()).default([]),
@@ -290,12 +296,12 @@ export const DialogueSchema = z
   })
   .strict();
 
-export const PLACEMENT_SECTIONS = ['forms', 'reading', 'harakat', 'sounds'] as const;
+export const PLACEMENT_SECTIONS = ['tones', 'pinyin', 'sandhi', 'strokes', 'radicals', 'chars'] as const;
 
 export const PlacementSchema = z
   .object({
     items: z.array(CheckItemSchema).length(20),
-    thresholds: z.object({ easy1: z.number().int(), huruf2: z.number().int() }).strict(),
+    thresholds: z.object({ easy1: z.number().int(), dasar2: z.number().int() }).strict(),
   })
   .strict()
   .superRefine((p, ctx) => {

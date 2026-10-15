@@ -81,7 +81,7 @@ describe('store', () => {
 });
 
 describe('derived state', () => {
-  const rung = { id: 'easy-1', name: 'Easy 1', name_ar: 'x', status: 'live', lessons: 8, tier: 'easy', cefr: 'A1', harakat: 'full', translit: 'always', words_target: 0, description: { id: '', en: '' }, topics: ['x'], threads: [], inventory: [], optional: false } as Rung;
+  const rung = { id: 'easy-1', name: 'Easy 1', name_zh: { zh: '初级 一', py: 'chūjí yī' }, status: 'live', lessons: 8, tier: 'easy', hsk: '1', pinyin: 'always', tone_colours_default: true, words_cum: 500, chars_cum: 300, description: { id: '', en: '' }, topics: ['x'], threads: [], inventory: [], optional: false } as Rung;
   const mk = (n: number): LessonSummary => ({
     id: `L${n}`,
     slug: `0${n}-x`,
@@ -157,25 +157,25 @@ describe('derived state', () => {
 
 describe('placement and capstones', () => {
   it('marks Huruf rungs climbed via placement and never un-climbs', () => {
-    store.recordTest('huruf-1', { score: 14, total: 14, seed: 1, date: 'x' }, true);
+    store.recordTest('dasar-1', { score: 14, total: 14, seed: 1, date: 'x' }, true);
     store.applyPlacement({ score: 19, total: 20, result: 'easy-1', missed: [] });
     let s = store.getState();
-    expect(s.rungs['huruf-1']).toMatchObject({ climbed: true, via: 'test' });
-    expect(s.rungs['huruf-2']).toMatchObject({ climbed: true, via: 'placement' });
+    expect(s.rungs['dasar-1']).toMatchObject({ climbed: true, via: 'test' });
+    expect(s.rungs['dasar-2']).toMatchObject({ climbed: true, via: 'placement' });
     expect(s.placement).toMatchObject({ score: 19, result: 'easy-1' });
     // A lower retake never un-climbs.
-    store.applyPlacement({ score: 5, total: 20, result: 'huruf-1', missed: [] });
+    store.applyPlacement({ score: 5, total: 20, result: 'dasar-1', missed: [] });
     s = store.getState();
-    expect(s.rungs['huruf-2'].climbed).toBe(true);
-    expect(s.placement?.result).toBe('huruf-1');
+    expect(s.rungs['dasar-2'].climbed).toBe(true);
+    expect(s.placement?.result).toBe('dasar-1');
   });
 
   it('places 14–17 at Huruf 2 with Huruf 1 climbed', () => {
-    store.applyPlacement({ score: 15, total: 20, result: 'huruf-2', missed: ['huruf2-07-sounds'] });
+    store.applyPlacement({ score: 15, total: 20, result: 'dasar-2', missed: ['dasar2-07-components'] });
     const s = store.getState();
-    expect(s.rungs['huruf-1']).toMatchObject({ climbed: true, via: 'placement' });
-    expect(s.rungs['huruf-2']).toBeUndefined();
-    expect(s.placement?.missed).toEqual(['huruf2-07-sounds']);
+    expect(s.rungs['dasar-1']).toMatchObject({ climbed: true, via: 'placement' });
+    expect(s.rungs['dasar-2']).toBeUndefined();
+    expect(s.placement?.missed).toEqual(['dasar2-07-components']);
   });
 
   it('saves capstone completion once, and it persists', () => {
@@ -190,8 +190,8 @@ describe('placement and capstones', () => {
   });
 
   it('keeps capstones and placement through migration, dropping bad placement', () => {
-    const s = migrate({ schemaVersion: 1, capstones: { 'huruf-2': { reading: 'd' } }, placement: { score: 'x' } });
-    expect(s.capstones['huruf-2'].reading).toBe('d');
+    const s = migrate({ schemaVersion: 1, capstones: { 'dasar-2': { reading: 'd' } }, placement: { score: 'x' } });
+    expect(s.capstones['dasar-2'].reading).toBe('d');
     expect(s.placement).toBeNull();
   });
 });

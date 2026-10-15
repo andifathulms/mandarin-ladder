@@ -84,7 +84,7 @@ export function ContinueCard({ target, firstLessonHref, placementHref, rungs }: 
   const shell = 'board flex flex-col gap-4 p-6 min-[900px]:gap-5 min-[900px]:p-9';
 
   if (target.kind === 'welcome') {
-    return <TwoDoorWelcome hurufHref={firstLessonHref} placementHref={placementHref} />;
+    return <TwoDoorWelcome dasarHref={firstLessonHref} placementHref={placementHref} />;
   }
 
   if (target.kind === 'test') {
@@ -117,7 +117,7 @@ export function ContinueCard({ target, firstLessonHref, placementHref, rungs }: 
         <span aria-hidden> · {t(STEP_KEYS[step])}</span>
         {step > 0 && <span className="sr-only"> · {t('home.step', { n: step + 1 })}</span>}
       </p>
-      <BoardSentence quote={text} showTr={rung?.translit === 'always'} />
+      <BoardSentence quote={text} showTr={rung?.pinyin === 'always'} />
       <p className={`text-small text-board-muted ${lang === 'en' ? '' : 'italic'}`} lang={lang}>
         {lang === 'en' ? lesson.title.en : lesson.title.id}
       </p>

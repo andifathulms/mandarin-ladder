@@ -111,7 +111,7 @@ describe('CheckItemView (listen)', () => {
   it('shows the text when nothing can play it, and still grades', () => {
     const onSolved = vi.fn();
     wrap(<CheckItemView mode="practice" item={listen} onSolved={onSolved} />);
-    expect(screen.getByText(/Tidak ada rekaman atau suara bahasa Arab/)).toBeInTheDocument();
+    expect(screen.getByText(/Tidak ada rekaman atau suara bahasa Mandarin/)).toBeInTheDocument();
     fireEvent.click(screen.getByRole('button', name('أَنَا تَعْبَانُ')));
     expect(onSolved).toHaveBeenCalledWith(true);
   });

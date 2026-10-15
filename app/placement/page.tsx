@@ -4,7 +4,7 @@ import { PlacementRunner } from '@/components/check/PlacementRunner';
 import { VisualDataProvider } from '@/components/visuals/VisualData';
 import { visualData } from '@/lib/content/visualData';
 
-export const metadata = { title: 'Cek huruf' };
+export const metadata = { title: 'Cek dasar' };
 
 export default function PlacementPage() {
   const placement = getPlacement();

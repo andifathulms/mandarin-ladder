@@ -16,9 +16,8 @@ import { PairCard } from './PairCard';
 import { Prose } from './Prose';
 import { StepBar } from './StepBar';
 import { StepLabel } from './StepLabel';
-import { MesirCard, SoundCard, TalkCard, WordsCard } from './StrandCards';
+import { SoundCard, TalkCard, WordsCard } from './StrandCards';
 import { TirukanCard } from './TirukanCard';
-import { MakhrajThumb } from '../visuals/Makhraj';
 import { GlossaryChips } from './GlossaryChips';
 import { LessonTopToggles } from './LessonTopToggles';
 import { ArIsland } from '../ar/ArIsland';
@@ -41,10 +40,10 @@ export function LessonPlayer({ lesson, rung, rungLessons, next, hasTest, spiralR
   const { t, lang } = useT();
   const progress = useProgress();
   // Lesson-scoped supports (CLAUDE.md §7.2): plain state, so they reset when the lesson closes.
-  const [latinOn, setLatinOn] = useState(false);
-  const [harakatOn, setHarakatOn] = useState(false);
-  const [holdHint, setHoldHint] = useState(rung.harakat !== 'full');
-  const showTranslit = rung.translit === 'always' || (rung.translit === 'on-request' && latinOn);
+  const [pinyinOn, setPinyinOn] = useState(false);
+  const [toneOn, setToneOn] = useState<boolean | null>(null);
+  const [holdHint, setHoldHint] = useState(rung.pinyin === 'on-request');
+  const showTranslit = rung.pinyin === 'always' || pinyinOn;
   const router = useRouter();
   const [step, setStep] = useState(0);
   const [dir, setDir] = useState<'fwd' | 'back'>('fwd');
@@ -221,9 +220,8 @@ export function LessonPlayer({ lesson, rung, rungLessons, next, hasTest, spiralR
               </li>
             ))}
           </ul>
-          <MesirCard examples={lesson.examples} note={lesson.eg_note} />
           {lesson.sound && (
-            <SoundCard sound={lesson.sound} thumb={<MakhrajThumb letters={[lesson.sound.focus, lesson.sound.compare ?? ''].filter((c) => c.length === 1)} />} />
+            <SoundCard sound={lesson.sound} />
           )}
           {lesson.talk && <TalkCard talk={lesson.talk} />}
           <TirukanCard {...lesson.tirukan} />
@@ -329,12 +327,11 @@ export function LessonPlayer({ lesson, rung, rungLessons, next, hasTest, spiralR
             </div>
           </div>
           <LessonTopToggles
-            translit={rung.translit}
-            harakat={rung.harakat}
-            latinOn={latinOn}
-            harakatOn={harakatOn}
-            onLatin={setLatinOn}
-            onHarakat={setHarakatOn}
+            pinyin={rung.pinyin}
+            pinyinOn={pinyinOn}
+            toneOn={toneOn ?? rung.tone_colours_default}
+            onPinyin={setPinyinOn}
+            onTone={setToneOn}
           />
           <Link
             href={rungHref(rung.id)}
@@ -349,7 +346,7 @@ export function LessonPlayer({ lesson, rung, rungLessons, next, hasTest, spiralR
       <main className="flex-1 bg-paper py-5 sm:py-7">
         <p ref={announceRef} className="sr-only" aria-live="polite" />
         <div className="page max-w-lesson sm:rounded-lg sm:bg-surface sm:px-7 sm:py-7 sm:shadow-e2">
-          <LessonTextProvider harakat={rung.harakat} showTranslit={showTranslit} harakatOn={harakatOn}>
+          <LessonTextProvider harakat="full" showTranslit={showTranslit}>
             <div
               key={step}
               ref={headingRef}

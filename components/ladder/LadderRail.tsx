@@ -6,31 +6,29 @@ import { rungState, type RungState } from '@/lib/progress/derive';
 import type { ProgressState } from '@/lib/progress/types';
 import { rungHref } from '@/lib/routes';
 import { useT } from '../ProgressProvider';
-import { cefrLabel, tierName, tierRange } from '../ui/tier';
-import { ArIsland } from '../ar/ArIsland';
-import { stripHarakat } from '@/lib/arabic/text';
+import { hskLabel, tierName, tierRange } from '../ui/tier';
+import { ZhText } from '../zh/ZhText';
 import { NotchBar } from './NotchBar';
 
 type Props = { rungs: Rung[]; lessons: LessonSummary[]; progress: ProgressState; hereId: string; label: string };
 
-const TIERS: Rung['tier'][] = ['hard', 'medium', 'easy', 'huruf'];
+const TIERS: Rung['tier'][] = ['hard', 'medium', 'easy', 'dasar'];
 
 /**
- * The whole climb as a map: grouped by tier, top (Hard 3) to bottom (Huruf 1), drawn between
+ * The whole climb as a map: grouped by tier, top (Hard 3) to bottom (Dasar 1), drawn between
  * two wooden rails. Future rungs stay fully visible but compact; your rung is the big row.
  */
 export function LadderRail({ rungs, lessons, progress, hereId, label }: Props) {
-  const { lang } = useT();
   return (
     <nav aria-label={label} className="flex flex-col gap-4">
       {TIERS.map((tier) => {
         const inTier = rungs.filter((r) => r.tier === tier).reverse();
         if (!inTier.length) return null;
         return (
-          <section key={tier} aria-label={`${tierName(tier)} · ${tierRange(rungs, tier, lang)}`} className="flex flex-col gap-1">
+          <section key={tier} aria-label={[tierName(tier), tierRange(rungs, tier)].filter(Boolean).join(' · ')} className="flex flex-col gap-1">
             <p aria-hidden className="eyebrow flex items-center gap-2 px-2">
               <span className="h-[8px] w-[8px] rounded-full" style={{ background: `var(--${tier})` }} />
-              {tierName(tier)} · {tierRange(rungs, tier, lang)}
+              {[tierName(tier), tierRange(rungs, tier)].filter(Boolean).join(' · ')}
             </p>
             <ol className="flex flex-col">
               {inTier.map((r) => (
@@ -51,7 +49,7 @@ export function LadderRail({ rungs, lessons, progress, hereId, label }: Props) {
 }
 
 function LadderRow({ rung, state, here, viaPlacement }: { rung: Rung; state: RungState; here: boolean; viaPlacement: boolean }) {
-  const { t, lang } = useT();
+  const { t } = useT();
   const soon = state.kind === 'soon';
   const climbed = state.kind === 'climbed';
   const bar = climbed ? 'var(--rung)' : here ? 'var(--accent)' : 'var(--wood-dark)';
@@ -72,10 +70,11 @@ function LadderRow({ rung, state, here, viaPlacement }: { rung: Rung; state: Run
         </span>
         <span className="flex min-w-0 flex-wrap items-baseline gap-x-2">
           <span className={`font-display text-body ${soon ? 'text-muted' : 'font-semibold'}`}>{rung.name}</span>
-          <ArIsland face="ui" className="hidden text-[1.05rem] leading-none text-muted min-[380px]:inline">
-            {stripHarakat(rung.name_ar)}
-          </ArIsland>
-          <span className="label text-muted">{cefrLabel(rung.cefr, lang)}</span>
+          {/* The Chinese subtitle is hidden below 380px (DESIGN §6.3). */}
+          <ZhText face="ui" className="hidden text-zh-small leading-none text-muted min-[380px]:inline">
+            {rung.name_zh.zh.replace(/\s+/g, '')}
+          </ZhText>
+          {rung.hsk !== '—' && <span className="label text-muted">{hskLabel(rung.hsk)}</span>}
           {rung.optional && <span className="label text-muted">· {t('rung.optional')}</span>}
           {climbed && viaPlacement && <span className="label text-muted">· {t('rung.viaPlacement')}</span>}
           {here && <span className="sr-only">· {t('home.youAreHere')}</span>}

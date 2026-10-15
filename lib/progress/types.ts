@@ -42,7 +42,7 @@ export type RungProgress = {
 export type CapstoneProgress = { reading?: string; dialogue?: string };
 export type CapstoneKind = keyof CapstoneProgress;
 
-export type PlacementResult = 'easy-1' | 'huruf-2' | 'huruf-1';
+export type PlacementResult = 'easy-1' | 'dasar-2' | 'dasar-1';
 export type PlacementRecord = {
   score: number;
   total: number;

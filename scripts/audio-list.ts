@@ -11,7 +11,6 @@ import {
   getCurriculum,
   getDialogue,
   getLessons,
-  getLetters,
   getPlacement,
   getReading,
   getTestPool,
@@ -23,8 +22,6 @@ import { hasArabic } from '../lib/arabic/text';
 import type { CheckItem } from '../lib/types';
 
 export type AudioRow = { key: string; variety: 'fusha' | 'eg'; text: string; where: string };
-
-const VOWELS = ['َ', 'ِ', 'ُ'];
 
 function itemAudio(c: CheckItem): { text: string; variety: 'fusha' | 'eg' }[] {
   if (c.type === 'listen') return [{ text: stripMarkup(c.audio), variety: c.variety }];
@@ -42,13 +39,6 @@ export function allAudio(): AudioRow[] {
     if (!rows.has(key)) rows.set(key, { key, variety, text: stripMarkup(text).trim(), where });
   };
   const live = getCurriculum().filter((r) => r.status === 'live');
-  // Letters and letter + short-vowel syllables for the Huruf rungs.
-  if (live.some((r) => r.tier === 'huruf')) {
-    for (const l of getLetters()) {
-      add(l.letter, 'fusha', `letters/${l.name_id}`);
-      if (l.letter !== 'ا' && l.letter !== 'ى' && l.letter !== 'ة') for (const v of VOWELS) add(l.letter + v, 'fusha', `letters/${l.name_id}`);
-    }
-  }
   for (const r of live) {
     for (const l of getLessons(r.id, { includeDrafts: true })) {
       for (const s of audioStrings(l)) add(s.text, s.variety, `${r.id}/${l.slug}`);

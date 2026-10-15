@@ -167,9 +167,9 @@ export function recordTest(rungId: string, attempt: TestAttempt, passed: boolean
 
 /** Rungs each placement result marks as climbed (PRD §5.2). */
 export const PLACEMENT_CLIMBS: Record<PlacementResult, string[]> = {
-  'easy-1': ['huruf-1', 'huruf-2'],
-  'huruf-2': ['huruf-1'],
-  'huruf-1': [],
+  'easy-1': ['dasar-1', 'dasar-2'],
+  'dasar-2': ['dasar-1'],
+  'dasar-1': [],
 };
 
 /**

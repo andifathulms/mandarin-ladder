@@ -24,7 +24,7 @@ function validPlacement(v: unknown): PlacementRecord | null {
     typeof v.score === 'number' &&
     typeof v.total === 'number' &&
     typeof v.date === 'string' &&
-    (v.result === 'easy-1' || v.result === 'huruf-2' || v.result === 'huruf-1');
+    (v.result === 'easy-1' || v.result === 'dasar-2' || v.result === 'dasar-1');
   if (!ok) return null;
   return { ...(v as PlacementRecord), missed: Array.isArray(v.missed) ? v.missed.filter((x): x is string => typeof x === 'string') : [] };
 }

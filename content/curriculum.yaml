@@ -1,0 +1,286 @@
+# The Mandarin Ladder: two Dasar rungs, then HSK 3.0 levels 1–9 (PRD §4.2).
+# words_cum and chars_cum are the standard's cumulative targets; data:check compares them with
+# the imported lists in content/data/hsk/.
+rungs:
+  - id: dasar-1
+    name: Dasar 1
+    name_zh: { zh: "拼音", py: "pīnyīn" }
+    tier: dasar
+    hsk: "—"
+    status: soon
+    optional: true
+    lessons: 10
+    pinyin: always
+    tone_colours_default: true
+    words_cum: 30
+    chars_cum: 0
+    description:
+      id: "Pinyin dan nada. Kamu belajar membaca setiap suku kata Mandarin dengan nada yang tepat, sebelum satu karakter pun."
+      en: "Pinyin and tones. You learn to read every Mandarin syllable with the right tone, before a single character."
+    topics:
+      - "Mandarin itu lebih dekat dari yang kamu kira"
+      - "Empat nada dan nada netral"
+      - "Inisial yang mirip bahasa Indonesia: m f n l s"
+      - "b/p, d/t, g/k: bedanya hembusan udara"
+      - "j q x dan vokal ü"
+      - "z c s dan zh ch sh r"
+      - "Final: ai ei ao ou, an en ang eng ong"
+      - "Perubahan nada: 3 + 3, 不 dan 一"
+      - "Dua puluh pasangan nada"
+      - "Membaca kalimat pinyin"
+    threads: [tones, sandhi, pinyin, numbers]
+    inventory: []
+
+  - id: dasar-2
+    name: Dasar 2
+    name_zh: { zh: "笔画", py: "bǐhuà" }
+    tier: dasar
+    hsk: "—"
+    status: soon
+    optional: true
+    lessons: 10
+    pinyin: always
+    tone_colours_default: true
+    words_cum: 60
+    chars_cum: 80
+    description:
+      id: "Goresan dan radikal. Cara karakter dibangun: goresan, urutan goresan, radikal dan komponen."
+      en: "Strokes and radicals. How characters are built: strokes, stroke order, radicals and components."
+    topics:
+      - "Apa itu karakter: gambar, ide, bunyi + arti"
+      - "Delapan goresan dasar"
+      - "Aturan urutan goresan"
+      - "Kotak latihan 田字格"
+      - "Radikal (1): 人 口 女 子 木 水"
+      - "Radikal (2): 心 手 言 日 月 火"
+      - "Komponen arti + komponen bunyi"
+      - "Karakter sebagai kata, dan kata dua karakter"
+      - "Angka dan tanggal dalam karakter"
+      - "Kalimat pertamamu dalam karakter"
+    threads: [strokes, radicals, numbers, word-order]
+    inventory: []
+
+  - id: easy-1
+    name: Easy 1
+    name_zh: { zh: "初级 一", py: "chūjí yī" }
+    tier: easy
+    hsk: "1"
+    status: soon
+    optional: false
+    lessons: 18
+    pinyin: always
+    tone_colours_default: true
+    words_cum: 500
+    chars_cum: 300
+    description:
+      id: "HSK 1. Perkenalan, angka, waktu, harga, keluarga, kesukaan dan permintaan sederhana, dengan 500 kata dan 300 karakter."
+      en: "HSK 1. Introductions, numbers, time, prices, family, likes and simple requests, with 500 words and 300 characters."
+    topics:
+      - "Perkenalan: 是"
+      - "Pertanyaan dengan 吗 dan kata tanya"
+      - "Keluarga dan 的"
+      - "Angka dan umur"
+      - "Kata penggolong (1): 个 本 只"
+      - "有 dan 没有"
+      - "很 + kata sifat"
+      - "Waktu sebelum kata kerja"
+      - "Tempat dengan 在"
+      - "Letak benda: 上 下 里"
+      - "想, 要, 喜欢"
+      - "Uang dan belanja"
+      - "不 dan 没"
+      - "会 dan 能"
+      - "去, 来 dan 坐"
+      - "了: sesuatu sudah terjadi"
+      - "Cuaca dan perasaan"
+      - "Percakapan di kafe"
+    threads: [word-order, measure-words, questions, negation, time-place, numbers, aspect, tones]
+    inventory: []
+
+  - id: easy-2
+    name: Easy 2
+    name_zh: { zh: "初级 二", py: "chūjí èr" }
+    tier: easy
+    hsk: "2"
+    status: soon
+    optional: false
+    lessons: 18
+    pinyin: new
+    tone_colours_default: false
+    words_cum: 1272
+    chars_cum: 600
+    description:
+      id: "HSK 2. Aspek 了 dan 过, perbandingan dengan 比, pelengkap hasil, dan cerita pendek tentang hari-harimu."
+      en: "HSK 2. The aspects 了 and 过, comparison with 比, result complements, and short stories about your days."
+    topics:
+      - "了 dan 过"
+      - "正在…呢"
+      - "Perbandingan dengan 比"
+      - "Pelengkap hasil: 看见, 听懂"
+      - "还是 dan 或者"
+      - "因为…所以"
+      - "Durasi"
+      - "Pelengkap arah (dasar)"
+      - "就 dan 才"
+      - "Kata penggolong (3)"
+    threads: [aspect, comparison, complements, measure-words, time-place]
+    inventory: []
+
+  - id: easy-3
+    name: Easy 3
+    name_zh: { zh: "初级 三", py: "chūjí sān" }
+    tier: easy
+    hsk: "3"
+    status: soon
+    optional: false
+    lessons: 20
+    pinyin: new
+    tone_colours_default: false
+    words_cum: 2245
+    chars_cum: 900
+    description:
+      id: "HSK 3. Kalimat 把 dan 被, pelengkap potensial dan derajat, dan menyambung kalimat dengan 虽然…但是."
+      en: "HSK 3. 把 and 被 sentences, potential and degree complements, and linking clauses with 虽然…但是."
+    topics:
+      - "Pelengkap potensial: 听得懂"
+      - "Kalimat 把"
+      - "Pasif 被 (dasar)"
+      - "Pelengkap derajat: 说得很好"
+      - "越来越"
+      - "一边…一边"
+      - "虽然…但是"
+      - "除了…以外"
+      - "Pengulangan kata"
+      - "Pelengkap arah (lanjutan)"
+    threads: [complements, aspect, comparison, register]
+    inventory: []
+
+  - id: medium-1
+    name: Medium 1
+    name_zh: { zh: "中级 一", py: "zhōngjí yī" }
+    tier: medium
+    hsk: "4"
+    status: soon
+    optional: false
+    lessons: 20
+    pinyin: on-request
+    tone_colours_default: false
+    words_cum: 3245
+    chars_cum: 1200
+    description:
+      id: "HSK 4. Pelengkap yang lebih rumit, 连…都, dan teks tentang kerja dan kuliah."
+      en: "HSK 4. More complex complements, 连…都, and texts about work and study."
+    topics:
+      - "Pelengkap kompleks"
+      - "连…都"
+      - "Pertanyaan retoris"
+      - "Penghubung ragam tulis"
+    threads: [complements, register, comparison]
+    inventory: []
+
+  - id: medium-2
+    name: Medium 2
+    name_zh: { zh: "中级 二", py: "zhōngjí èr" }
+    tier: medium
+    hsk: "5"
+    status: soon
+    optional: false
+    lessons: 20
+    pinyin: on-request
+    tone_colours_default: false
+    words_cum: 4316
+    chars_cum: 1500
+    description:
+      id: "HSK 5. Ragam resmi, frasa empat karakter pertama, dan berita sederhana."
+      en: "HSK 5. Formal register, the first four-character phrases, and simple news."
+    topics:
+      - "Ragam resmi"
+      - "Frasa empat karakter (成语) mulai"
+      - "Membaca berita"
+    threads: [register, complements]
+    inventory: []
+
+  - id: medium-3
+    name: Medium 3
+    name_zh: { zh: "中级 三", py: "zhōngjí sān" }
+    tier: medium
+    hsk: "6"
+    status: soon
+    optional: false
+    lessons: 20
+    pinyin: on-request
+    tone_colours_default: false
+    words_cum: 5456
+    chars_cum: 1800
+    description:
+      id: "HSK 6. Teks kantor, surel dan esai pendek."
+      en: "HSK 6. Workplace texts, email and short essays."
+    topics:
+      - "Teks kantor"
+      - "Surel dan esai"
+      - "Penghubung ragam tulis (lanjutan)"
+    threads: [register]
+    inventory: []
+
+  - id: hard-1
+    name: Hard 1
+    name_zh: { zh: "高级 一", py: "gāojí yī" }
+    tier: hard
+    hsk: "7-9"
+    status: soon
+    optional: false
+    lessons: 20
+    pinyin: off
+    tone_colours_default: false
+    words_cum: 7300
+    chars_cum: 2200
+    description:
+      id: "HSK 7–9, bagian 1. Bahasa tulis resmi dan 成语."
+      en: "HSK 7–9, part 1. Formal written Chinese and 成语."
+    topics:
+      - "Bahasa tulis resmi"
+      - "成语 dan 歇后语"
+    threads: [register]
+    inventory: []
+
+  - id: hard-2
+    name: Hard 2
+    name_zh: { zh: "高级 二", py: "gāojí èr" }
+    tier: hard
+    hsk: "7-9"
+    status: soon
+    optional: false
+    lessons: 20
+    pinyin: off
+    tone_colours_default: false
+    words_cum: 9200
+    chars_cum: 2600
+    description:
+      id: "HSK 7–9, bagian 2. Jejak bahasa klasik dalam teks modern, dan teks akademik."
+      en: "HSK 7–9, part 2. Classical traces in modern text, and academic texts."
+    topics:
+      - "Jejak klasik: 之, 其, 以"
+      - "Teks akademik dan profesional"
+    threads: [register]
+    inventory: []
+
+  - id: hard-3
+    name: Hard 3
+    name_zh: { zh: "高级 三", py: "gāojí sān" }
+    tier: hard
+    hsk: "7-9"
+    status: soon
+    optional: false
+    lessons: 20
+    pinyin: off
+    tone_colours_default: false
+    words_cum: 11092
+    chars_cum: 3000
+    description:
+      id: "HSK 7–9, bagian 3. Mendengar dengan kecepatan alami, dan menerjemahkan antara bahasa Indonesia dan Mandarin."
+      en: "HSK 7–9, part 3. Listening at natural speed, and translating between Indonesian and Chinese."
+    topics:
+      - "Mendengar dengan kecepatan alami"
+      - "Menerjemahkan Indonesia ↔ Mandarin"
+    threads: [register]
+    inventory: []

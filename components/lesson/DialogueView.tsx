@@ -43,9 +43,7 @@ export function DialogueView({ rung, dialogue }: { rung: Rung; dialogue: Dialogu
 
       <main className="page flex max-w-lesson flex-1 flex-col gap-6 py-7">
         <div className="flex flex-col gap-1">
-          <p className="eyebrow">
-            {t('talk.title')} · {t('lesson.mesir')}
-          </p>
+          <p className="eyebrow">{t('talk.title')}</p>
           <h1 className="text-h1" lang={lang}>
             {lang === 'en' ? dialogue.title.en : dialogue.title.id}
           </h1>

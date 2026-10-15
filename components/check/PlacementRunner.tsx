@@ -16,6 +16,7 @@ import { QuestionBar } from '../lesson/QuestionBar';
 import { CheckItemView } from './CheckItemView';
 import { WhyLine } from './WhyLine';
 import { ArIsland } from '../ar/ArIsland';
+import { ZhText } from '../zh/ZhText';
 import { LessonTextProvider } from '../ar/LessonText';
 
 type Props = { placement: Placement; rungs: Rung[]; lessons: LessonSummary[] };
@@ -24,7 +25,7 @@ type Phase = { kind: 'intro' } | { kind: 'run'; i: number } | { kind: 'result'; 
 const show = (r: Response | undefined) => (r === undefined ? '—' : Array.isArray(r) ? r.join(' ') : r);
 
 /**
- * Cek huruf (PRD §5.2, DESIGN §6.9): 20 items, no feedback until the end, then a placement.
+ * Cek dasar (PRD §5.2, DESIGN §6.10): 20 items, no feedback until the end, then a placement.
  * Built on the rung test's frame. Placement never plays the climb moment and never un-climbs.
  */
 export function PlacementRunner({ placement, rungs, lessons }: Props) {
@@ -140,7 +141,7 @@ export function PlacementRunner({ placement, rungs, lessons }: Props) {
   const { score } = phase;
   const placed = rungs.find((r) => r.id === score.result)!;
   const first = lessons.filter((l) => l.rung === placed.id).sort((a, b) => a.order - b.order)[0];
-  const fragment = ['easy-1', 'huruf-2', 'huruf-1'].map((id) => rungs.find((r) => r.id === id)).filter(Boolean) as Rung[];
+  const fragment = ['easy-1', 'dasar-2', 'dasar-1'].map((id) => rungs.find((r) => r.id === id)).filter(Boolean) as Rung[];
 
   return (
     <div className="flex min-h-[100dvh] flex-col">
@@ -162,9 +163,9 @@ export function PlacementRunner({ placement, rungs, lessons }: Props) {
               >
                 <span className="flex items-baseline gap-2">
                   <span className="font-display font-semibold">{r.name}</span>
-                  <ArIsland face="ui" className="text-ar-small leading-none text-muted">
-                    {r.name_ar}
-                  </ArIsland>
+                  <ZhText face="ui" className="text-zh-small leading-none text-muted">
+                    {r.name_zh.zh.replace(/\s+/g, '')}
+                  </ZhText>
                 </span>
                 {here ? (
                   <span className="label text-accent">● {t('home.youAreHere')}</span>

@@ -1,16 +1,14 @@
 'use client';
 
 import type { Rung } from '@/lib/types';
-import { ArIsland } from '../ar/ArIsland';
 import { useT } from '../ProgressProvider';
 
 type Props = {
-  translit: Rung['translit'];
-  harakat: Rung['harakat'];
-  latinOn: boolean;
-  harakatOn: boolean;
-  onLatin: (v: boolean) => void;
-  onHarakat: (v: boolean) => void;
+  pinyin: Rung['pinyin'];
+  pinyinOn: boolean;
+  toneOn: boolean;
+  onPinyin: (v: boolean) => void;
+  onTone: (v: boolean) => void;
 };
 
 function Pill({ on, onClick, label, children }: { on: boolean; onClick: () => void; label: string; children: React.ReactNode }) {
@@ -30,31 +28,36 @@ function Pill({ on, onClick, label, children }: { on: boolean; onClick: () => vo
   );
 }
 
+/** Four tiny dots in the tone colours, the Nada pill's mark. */
+function ToneDots() {
+  return (
+    <span aria-hidden className="grid grid-cols-2 gap-[2px]">
+      {[1, 2, 3, 4].map((n) => (
+        <span key={n} className="h-[5px] w-[5px] rounded-full" style={{ background: `var(--tone-${n})` }} />
+      ))}
+    </span>
+  );
+}
+
 /**
- * Latin and Harakat switches for the lesson top bar (DESIGN §6.5). Each appears only when the rung
- * thins that support out, and both are lesson-scoped: they live in LessonPlayer state, never in
- * settings, so they reset when the lesson closes (fixes English Ladder issue 5).
+ * Pinyin and Nada (tone colours) switches for the lesson top bar (DESIGN §6.5). Pinyin appears only
+ * when the rung fades it (new or on-request); Nada is always there. Both are lesson-scoped: they live
+ * in LessonPlayer state, never in settings, so they reset when the lesson closes.
  */
-export function LessonTopToggles({ translit, harakat, latinOn, harakatOn, onLatin, onHarakat }: Props) {
+export function LessonTopToggles({ pinyin, pinyinOn, toneOn, onPinyin, onTone }: Props) {
   const { t } = useT();
-  const showLatin = translit === 'on-request';
-  const showHarakat = harakat !== 'full';
-  if (!showLatin && !showHarakat) return null;
+  const showPinyin = pinyin === 'new' || pinyin === 'on-request';
   return (
     <div role="group" aria-label={t('toggle.group')} className="flex shrink-0 items-center gap-1">
-      {showLatin && (
-        <Pill on={latinOn} onClick={() => onLatin(!latinOn)} label={t('toggle.latinLong')}>
-          {t('toggle.latin')}
+      {showPinyin && (
+        <Pill on={pinyinOn} onClick={() => onPinyin(!pinyinOn)} label={t('toggle.pinyinLong')}>
+          {t('toggle.pinyin')}
         </Pill>
       )}
-      {showHarakat && (
-        <Pill on={harakatOn} onClick={() => onHarakat(!harakatOn)} label={t('toggle.harakatLong')}>
-          <ArIsland face="ui" aria-hidden className="text-[1.1rem] leading-none">
-            {'◌َ'}
-          </ArIsland>
-          {t('toggle.harakat')}
-        </Pill>
-      )}
+      <Pill on={toneOn} onClick={() => onTone(!toneOn)} label={t('toggle.toneLong')}>
+        <ToneDots />
+        {t('toggle.tone')}
+      </Pill>
     </div>
   );
 }

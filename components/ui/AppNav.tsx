@@ -44,7 +44,7 @@ export function AppNav() {
       <Link
         href="/"
         className="hidden border-b border-board-2 px-2 pb-5 no-underline min-[900px]:flex"
-        aria-label="Arabic Ladder"
+        aria-label="Mandarin Ladder"
       >
         <Wordmark onBoard />
       </Link>

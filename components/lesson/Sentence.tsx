@@ -26,7 +26,7 @@ export function segments(src: string): Seg[] {
 type Props = {
   en: string;
   id?: string;
-  /** Kept for call sites; Latin sentences have no audio in Arabic Ladder. */
+  /** Kept for call sites; Latin sentences have no audio in Mandarin Ladder. */
   play?: boolean;
   /** Style: the big taught sentence, or inline/body size. */
   size?: 'sentence' | 'body';

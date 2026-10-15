@@ -18,7 +18,6 @@ import {
 import { focusCount } from '../lib/markup';
 import type { CheckItem, Lesson } from '../lib/types';
 import { lintLessons } from '../lib/content/lint';
-import { lintPhysical } from './lint-physical';
 import { missingAudio } from './audio-list';
 
 const errors: string[] = [];
@@ -88,7 +87,7 @@ for (const rung of rungs) {
       for (const inv of l.introduces) {
         if (!rung.inventory.includes(inv)) err(`${where}: introduces "${inv}" not in rung inventory`);
       }
-      if (rung.tier !== 'huruf' && l.glossary.length < 6) err(`${where}: needs 6–12 glossary entries`);
+      if (rung.tier !== 'dasar' && l.glossary.length < 6) err(`${where}: needs 6–12 glossary entries`);
       for (const c of l.check) {
         claim(c.id, where);
         for (const s of sentencesOf(c)) if (focusCount(s) > 1) err(`${where}: ${c.id}: more than one [[focus]] in "${s}"`);
@@ -168,9 +167,9 @@ if (fs.existsSync(path.join(CONTENT_DIR, 'placement.yaml'))) {
       if (item.from && !allLessonIds.has(item.from)) err(`placement.yaml: ${item.id}: from "${item.from}" is not a lesson`);
     }
     const count = (s: string) => p.items.filter((i) => i.section === s).length;
-    const want = { forms: 6, reading: 6, harakat: 4, sounds: 4 };
+    const want = { tones: 6, pinyin: 4, sandhi: 2, strokes: 2, radicals: 3, chars: 3 };
     for (const [s, n] of Object.entries(want)) if (count(s) !== n) err(`placement.yaml: ${count(s)} ${s} items, want ${n}`);
-    if (!(p.thresholds.easy1 > p.thresholds.huruf2)) err('placement.yaml: thresholds.easy1 must be above thresholds.huruf2');
+    if (!(p.thresholds.easy1 > p.thresholds.dasar2)) err('placement.yaml: thresholds.easy1 must be above thresholds.dasar2');
   } catch (e) {
     err(fmtZod('placement.yaml', e));
   }
@@ -199,9 +198,6 @@ try {
 
 // 5. Arabic lint: inventory, script, lexicon, harakat, reviewers
 for (const f of lintLessons(rungs, lessonsByRung)) (f.level === 'error' ? errors : warnings).push(f.message);
-
-// 6. No physical CSS in Arabic-bearing components (CLAUDE.md §6.3)
-for (const f of lintPhysical()) err(`${f.file}:${f.line}: physical CSS "${f.match}" (use a logical property)`);
 
 // 7. Audio: every Arabic string in a live rung has a recording, or is accepted with fallback.
 const audio = missingAudio();

@@ -1,8 +1,8 @@
 {
-  "name": "arabic-ladder",
+  "name": "mandarin-ladder",
   "version": "0.1.0",
   "private": true,
-  "description": "A calm, levelled Arabic course for Indonesian speakers, from the first letter.",
+  "description": "A calm, levelled Mandarin course for Indonesian speakers, from zero to HSK 9.",
   "scripts": {
     "dev": "next dev",
     "prebuild": "npm run content:check",
@@ -11,7 +11,6 @@
     "content:check": "tsx scripts/content-check.ts",
     "audio:list": "tsx scripts/audio-list.ts",
     "audio:ingest": "tsx scripts/audio-ingest.ts",
-    "translit:check": "tsx scripts/translit-check.ts",
     "test": "vitest run",
     "test:watch": "vitest",
     "test:e2e": "playwright test",

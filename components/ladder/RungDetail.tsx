@@ -8,10 +8,10 @@ import { placementHref, readHref, talkHref, testHref, rungHref } from '@/lib/rou
 import { LessonRow } from './LessonRow';
 import { IconArrowLeft, IconChevron, IconFlag, IconReview } from '../ui/Icon';
 import { CapstoneCard } from './CapstoneCard';
-import { ArIsland } from '../ar/ArIsland';
+import { ZhText } from '../zh/ZhText';
 import { Lattice } from '../ui/Lattice';
 import { ProgressRing } from '../ui/ProgressRing';
-import { cefrLabel, tierName } from '../ui/tier';
+import { hskLabel, tierName } from '../ui/tier';
 import { useT } from '../ProgressProvider';
 
 type Props = {
@@ -22,7 +22,7 @@ type Props = {
   test: TestInfo | null;
   reading?: ReadingInfo | null;
   dialogue?: DialogueInfo | null;
-  /** The rung page that offers the placement retake (Huruf 1). */
+  /** The rung page that offers the placement retake (Dasar 1). */
   placement?: boolean;
 };
 
@@ -66,12 +66,15 @@ export function RungDetail({ rung, rungs, lessons, progress, test, reading, dial
           <div className="flex min-w-0 flex-col gap-3">
             <p className="label flex items-center gap-2 text-brass">
               <span aria-hidden className="h-[7px] w-[7px] rounded-full" style={{ background: `var(--${rung.tier})` }} />
-              {tierName(rung.tier)} · {cefrLabel(rung.cefr, lang)}
+              {[tierName(rung.tier), hskLabel(rung.hsk)].filter(Boolean).join(' · ')}
             </p>
             <h1 className="text-hero leading-none tracking-[-0.02em] text-board-ink">{rung.name}</h1>
-            <ArIsland block as="p" size="title" face="display" className="text-board-muted">
-              {rung.name_ar}
-            </ArIsland>
+            <p className="flex flex-wrap items-baseline gap-x-3 text-board-muted">
+              <ZhText className="text-zh-body leading-none">{rung.name_zh.zh.replace(/\s+/g, '')}</ZhText>
+              <span lang="zh-Latn-pinyin" className="text-small">
+                {rung.name_zh.py}
+              </span>
+            </p>
           </div>
           {rung.status === 'live' && (
             <ProgressRing
@@ -86,7 +89,7 @@ export function RungDetail({ rung, rungs, lessons, progress, test, reading, dial
         </div>
         <p className="max-w-measure text-body text-board-ink">{lang === 'en' ? rung.description.en : rung.description.id}</p>
         <p className="text-small text-board-muted">
-          {t(`rung.translit.${rung.translit}`)} · {t(`rung.harakat.${rung.harakat}`)}
+          {t(`rung.pinyin.${rung.pinyin}`)} · {t(rung.tone_colours_default ? 'rung.toneColours.on' : 'rung.toneColours.off')}
         </p>
       </header>
 
@@ -94,7 +97,7 @@ export function RungDetail({ rung, rungs, lessons, progress, test, reading, dial
         <section className="flex flex-col gap-3">
           <h2 className="text-h2">{t('rung.soonTitle', { rung: rung.name })}</h2>
           <p className="text-muted">{t('rung.soonBody')}</p>
-          <ul className="flex flex-wrap gap-2" lang="en">
+          <ul className="flex flex-wrap gap-2" lang="id">
             {rung.topics.map((topic) => (
               <li key={topic} className="card px-3 py-1 text-small">
                 {topic}
@@ -133,7 +136,7 @@ export function RungDetail({ rung, rungs, lessons, progress, test, reading, dial
                 <CapstoneCard
                   href={talkHref(rung.id)}
                   kind="dialogue"
-                  title={`${t('talk.title')} · ${t('lesson.mesir')}: ${lang === 'en' ? dialogue.title.en : dialogue.title.id}`}
+                  title={`${t('talk.title')}: ${lang === 'en' ? dialogue.title.en : dialogue.title.id}`}
                   meta={t('talk.meta', { n: dialogue.lines, k: dialogue.items })}
                   done={caps.dialogue}
                 />

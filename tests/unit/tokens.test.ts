@@ -39,7 +39,7 @@ describe.each([
     ['good', 'good-bg'],
     ['off', 'off-bg'],
     ['eg', 'eg-soft'],
-    ['huruf', 'huruf-soft'],
+    ['dasar', 'dasar-soft'],
   ])('%s reaches 4.5:1 on %s', (fg, bg) => {
     expect(contrast(t[fg], t[bg])).toBeGreaterThanOrEqual(4.5);
   });

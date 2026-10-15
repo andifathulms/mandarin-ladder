@@ -2,7 +2,7 @@ import type { CheckItem, Placement } from '../types';
 import type { PlacementResult } from '../progress/types';
 import { grade, type Response } from './grade';
 
-export const SECTIONS = ['forms', 'reading', 'harakat', 'sounds'] as const;
+export const SECTIONS = ['tones', 'pinyin', 'sandhi', 'strokes', 'radicals', 'chars'] as const;
 export type Section = (typeof SECTIONS)[number];
 
 export type PlacementScore = {
@@ -14,11 +14,11 @@ export type PlacementScore = {
   missed: string[];
 };
 
-/** 18+ → Easy 1; 14–17 → Huruf 2; under 14 → Huruf 1 (PRD §5.2). */
+/** 17+ → Easy 1; 12–16 → Dasar 2; under 12 → Dasar 1 (PRD §5.2). */
 export function placementResult(score: number, t: Placement['thresholds']): PlacementResult {
   if (score >= t.easy1) return 'easy-1';
-  if (score >= t.huruf2) return 'huruf-2';
-  return 'huruf-1';
+  if (score >= t.dasar2) return 'dasar-2';
+  return 'dasar-1';
 }
 
 export function scorePlacement(p: Placement, answers: Record<string, Response | undefined>): PlacementScore {
@@ -26,7 +26,7 @@ export function scorePlacement(p: Placement, answers: Record<string, Response | 
   const missed: string[] = [];
   let score = 0;
   for (const item of p.items as CheckItem[]) {
-    const sec = (item.section ?? 'forms') as Section;
+    const sec = (item.section ?? 'tones') as Section;
     bySection[sec].total += 1;
     const a = answers[item.id];
     const ok = a !== undefined && grade(item, a).correct;

@@ -1,12 +1,29 @@
-# Upstream: English Ladder
+# Upstream: English Ladder (via Arabic Ladder)
 
-Arabic Ladder started as a copy of [English Ladder](https://github.com/andifathulms/english-ladder) at commit **`58eab3c`** ("feat(speech): clearer voice selection, female by default"). It is not a fork on GitHub and shares no git history.
+Mandarin Ladder started from [English Ladder](https://github.com/andifathulms/english-ladder) at commit
+**`58eab3c`** ("feat(speech): clearer voice selection, female by default"). It is not a fork on GitHub
+and shares no git history.
 
-Every file copied from English Ladder is listed below:
+CLAUDE.md §2.5 asks for Arabic Ladder's generic additions to be ported rather than rewritten. Arabic
+Ladder already carries them on top of the same English Ladder commit, so the files were taken from
+[Arabic Ladder](https://github.com/andifathulms/arabic-ladder) at **`aedfae7`** ("fix(lesson): render
+markup in focus, Mesir, talk and dialogue notes"). The generic additions ported that way:
+
+| From Arabic Ladder | Files here |
+|---|---|
+| Two-door welcome | `components/ladder/TwoDoorWelcome.tsx` |
+| Placement runner and scoring | `components/check/PlacementRunner.tsx`, `lib/check/placement.ts`, `applyPlacement` in `lib/progress/store.ts` |
+| Capstone cards, reading and dialogue pages, saved capstones | `components/ladder/CapstoneCard.tsx`, `components/lesson/ReadingView.tsx`, `components/lesson/DialogueView.tsx`, `completeCapstone` |
+| Lesson-scoped toggles | `components/lesson/LessonTopToggles.tsx` (Pinyin + Nada here) |
+| Tirukan card | `components/lesson/TirukanCard.tsx` |
+| Audio manifest pipeline | `lib/speech/audio.ts`, `scripts/audio-list.ts`, `scripts/audio-ingest.ts` |
+| English Ladder fixes 3–7, 13–15 | quick review exit, capstones saved, lesson-scoped toggles, test progress by question, notch counts from data, climb title translated, theme-color follows the app, glossary audio on the Done screen |
+
+Every English Ladder file is listed below:
 
 - **verbatim**: identical to English Ladder at `58eab3c`. When English Ladder changes it, copy the new version across and run the tests.
-- **adapted**: copied, then changed for Arabic. Port English Ladder fixes by hand and add a line to the log below.
-- **replaced**: removed, with an Arabic counterpart (or nothing) in its place.
+- **adapted**: copied, then changed (for Mandarin, or by Arabic Ladder's generic additions). Port English Ladder fixes by hand and add a line to the log below.
+- **replaced**: removed, with a Mandarin counterpart (or nothing) in its place.
 
 Regenerate the table after adapting files:
 
@@ -15,12 +32,13 @@ git clone https://github.com/andifathulms/english-ladder /tmp/el && git -C /tmp/
 node scripts/upstream.mjs /tmp/el
 ```
 
-Once both apps have been stable for a month after v1.0, the verbatim set is extracted into a shared `ladder-core` package (CLAUDE.md §12). Not before.
+Once the three apps have been stable for a month after v1.0, the verbatim set is extracted into a
+shared `ladder-core` package. Not before.
 
 ## Files
 
 <!-- table -->
-| English Ladder file | Status | Arabic Ladder counterpart |
+| English Ladder file | Status | Mandarin Ladder counterpart |
 |---|---|---|
 | `.eslintrc.json` | verbatim | |
 | `.github/workflows/deploy.yml` | verbatim | |
@@ -82,7 +100,7 @@ Once both apps have been stable for a month after v1.0, the verbatim set is extr
 | `components/ui/AppNav.tsx` | adapted | |
 | `components/ui/AppShell.tsx` | verbatim | |
 | `components/ui/Badge.tsx` | verbatim | |
-| `components/ui/Contours.tsx` | replaced | components/ui/Lattice.tsx |
+| `components/ui/Contours.tsx` | replaced | components/ui/Grid.tsx |
 | `components/ui/Icon.tsx` | verbatim | |
 | `components/ui/Mark.tsx` | adapted | |
 | `components/ui/PageShell.tsx` | verbatim | |
@@ -145,7 +163,7 @@ Once both apps have been stable for a month after v1.0, the verbatim set is extr
 | `styles/tokens.css` | adapted | |
 | `tailwind.config.ts` | adapted | |
 | `tests/e2e/a11y.spec.ts` | adapted | |
-| `tests/e2e/flows.spec.ts` | replaced | tests/e2e/flows.spec.ts (Arabic flows) |
+| `tests/e2e/flows.spec.ts` | replaced | (removed) |
 | `tests/e2e/helpers.ts` | adapted | |
 | `tests/setup.ts` | verbatim | |
 | `tests/unit/Sentence.test.tsx` | verbatim | |
@@ -157,13 +175,13 @@ Once both apps have been stable for a month after v1.0, the verbatim set is extr
 | `tests/unit/progress.test.ts` | adapted | |
 | `tests/unit/speech.test.ts` | adapted | |
 | `tests/unit/tier.test.ts` | adapted | |
-| `tests/unit/visuals.test.tsx` | replaced | tests/unit/visuals.test.tsx (Arabic visuals) |
+| `tests/unit/visuals.test.tsx` | replaced | (removed) |
 | `tsconfig.json` | verbatim | |
 | `vitest.config.ts` | verbatim | |
 <!-- /table -->
 
 ## Port log
 
-| Date | English Ladder commit | Files | Note |
+| Date | Source | Files | Note |
 |---|---|---|---|
-| 2026-10-15 | `58eab3c` | all | Initial copy |
+| 2026-10-16 | English Ladder `58eab3c` via Arabic Ladder `aedfae7` | all | Initial copy |

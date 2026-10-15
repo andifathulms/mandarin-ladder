@@ -51,7 +51,7 @@ export function ReadingView({ rung, reading }: { rung: Rung; reading: Reading })
         </div>
 
         <section className="card flex flex-col gap-4 p-5" aria-label={reading.title.id}>
-          <ArSentence ar={reading.ar} tr={rung.translit === 'always' ? reading.tr : undefined} size="body" />
+          <ArSentence ar={reading.ar} tr={rung.pinyin === 'always' ? reading.tr : undefined} size="body" />
           <details>
             <summary className="label cursor-pointer py-2 text-accent">{t('read.translation')}</summary>
             <p lang={lang === 'en' && reading.en ? 'en' : 'id'} className="id-text">

@@ -146,16 +146,16 @@ import { placementResult, scorePlacement } from '@/lib/check/placement';
 import type { Placement } from '@/lib/types';
 
 describe('placement scoring', () => {
-  const th = { easy1: 18, huruf2: 14 };
-  it('places by thresholds', () => {
+  const th = { easy1: 17, dasar2: 12 };
+  it('places by thresholds (PRD §5.2: 17+, 12–16, under 12)', () => {
     expect(placementResult(20, th)).toBe('easy-1');
-    expect(placementResult(18, th)).toBe('easy-1');
-    expect(placementResult(17, th)).toBe('huruf-2');
-    expect(placementResult(14, th)).toBe('huruf-2');
-    expect(placementResult(13, th)).toBe('huruf-1');
+    expect(placementResult(17, th)).toBe('easy-1');
+    expect(placementResult(16, th)).toBe('dasar-2');
+    expect(placementResult(12, th)).toBe('dasar-2');
+    expect(placementResult(11, th)).toBe('dasar-1');
   });
   it('scores by section and collects the lessons behind misses', () => {
-    const mk = (i: number, section: 'forms' | 'reading' | 'harakat' | 'sounds', from?: string): CheckItem => ({
+    const mk = (i: number, section: 'tones' | 'pinyin' | 'sandhi' | 'radicals', from?: string): CheckItem => ({
       id: `p${i}`,
       type: 'choice',
       match: 'exact',
@@ -166,12 +166,12 @@ describe('placement scoring', () => {
       answer: 'بَ',
       why,
     });
-    const items = [mk(1, 'forms', 'a'), mk(2, 'reading', 'b'), mk(3, 'harakat', 'b'), mk(4, 'sounds', 'c')];
-    const p = { items, thresholds: { easy1: 4, huruf2: 3 } } as unknown as Placement;
+    const items = [mk(1, 'tones', 'a'), mk(2, 'pinyin', 'b'), mk(3, 'sandhi', 'b'), mk(4, 'radicals', 'c')];
+    const p = { items, thresholds: { easy1: 4, dasar2: 3 } } as unknown as Placement;
     const s = scorePlacement(p, { p1: 'بَ', p2: 'بِ', p3: 'بِ', p4: 'بَ' });
     expect(s.score).toBe(2);
-    expect(s.bySection.reading).toEqual({ score: 0, total: 1 });
+    expect(s.bySection.pinyin).toEqual({ score: 0, total: 1 });
     expect(s.missed).toEqual(['b']);
-    expect(s.result).toBe('huruf-1');
+    expect(s.result).toBe('dasar-1');
   });
 });

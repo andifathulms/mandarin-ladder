@@ -9,3 +9,6 @@ next-env.d.ts
 .DS_Store
 .env*.local
 recordings/
+vendor/
+fonts-src/*.ttf
+fonts-src/*.otf

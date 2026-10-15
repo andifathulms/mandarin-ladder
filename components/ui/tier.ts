@@ -4,14 +4,14 @@ type Tier = Rung['tier'];
 
 export const tierName = (tier: Tier) => tier.charAt(0).toUpperCase() + tier.slice(1);
 
-/** CEFR labels as shown: Indonesian says "Pra-A1" for Pre-A1. */
-export const cefrLabel = (cefr: string, lang: 'id' | 'en' = 'id') => (lang === 'id' ? cefr.replace(/^Pre-/, 'Pra-') : cefr);
+/** "HSK 1", "HSK 7–9"; the Dasar rungs have no HSK level and no label. */
+export const hskLabel = (hsk: string): string => (hsk === '—' ? '' : `HSK ${hsk.replace('-', '–')}`);
 
-/** "A1–A2−" for the rungs of one tier, in curriculum order. */
-export function tierRange(rungs: Rung[], tier: Tier, lang: 'id' | 'en' = 'en'): string {
-  const inTier = rungs.filter((r) => r.tier === tier);
+/** "HSK 1–3" for the rungs of one tier, in curriculum order; empty for Dasar. */
+export function tierRange(rungs: Rung[], tier: Tier): string {
+  const inTier = rungs.filter((r) => r.tier === tier && r.hsk !== '—');
   if (!inTier.length) return '';
-  const first = cefrLabel(inTier[0].cefr, lang);
-  const last = cefrLabel(inTier[inTier.length - 1].cefr, lang);
-  return first === last ? first : `${first}–${last}`;
+  const first = inTier[0].hsk;
+  const last = inTier[inTier.length - 1].hsk;
+  return first === last ? hskLabel(first) : `HSK ${first}–${last.replace('-', '–')}`;
 }

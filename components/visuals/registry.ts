@@ -1,21 +1,9 @@
 import type { ComponentType } from 'react';
 import type { VisualId } from '@/lib/visualIds';
-import { LetterForms } from './LetterForms';
-import { WordJoiner } from './WordJoiner';
-import { HarakatBuilder } from './HarakatBuilder';
-import { Makhraj } from './Makhraj';
-import { SunMoon } from './SunMoon';
-import { PlaceSceneAr } from './PlaceSceneAr';
-import { Agreement } from './Agreement';
 
-/** Visual id → component. Lesson frontmatter refers to visuals by id only. */
+/**
+ * Visual id → component. Lesson frontmatter refers to visuals by id only. Partial while the
+ * Mandarin visuals are built (CLAUDE.md §10, M8–M9); VisualStage renders nothing for a missing id.
+ */
 // Each visual takes VisualProps plus its own props from frontmatter.
-export const registry = {
-  'letter-forms': LetterForms,
-  'word-joiner': WordJoiner,
-  'harakat-builder': HarakatBuilder,
-  makhraj: Makhraj,
-  'sun-moon': SunMoon,
-  'place-scene-ar': PlaceSceneAr,
-  agreement: Agreement,
-} satisfies Record<VisualId, ComponentType<never>>;
+export const registry: Partial<Record<VisualId, ComponentType<never>>> = {};

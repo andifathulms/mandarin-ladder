@@ -61,39 +61,6 @@ export function SoundCard({ sound, thumb }: { sound: NonNullable<Lesson['sound']
   );
 }
 
-/** Mesir: how Egyptians say the examples, Fusha and Egyptian side by side. */
-export function MesirCard({ examples, note }: { examples: Lesson['examples']; note?: Bilingual }) {
-  const { t, lang } = useT();
-  const pairs = examples.filter((e) => e.eg && e.eg_tr);
-  if (!pairs.length) return null;
-  return (
-    <section className="card flex flex-col gap-4 border-s-[3px] border-eg p-5" aria-labelledby="mesir-title">
-      <h3 id="mesir-title" className="label flex items-center gap-2 text-eg">
-        <span aria-hidden>●</span> {t('lesson.mesir')}
-      </h3>
-      <ul className="flex flex-col gap-5">
-        {pairs.map((e) => (
-          <li key={e.ar} className="grid gap-3 min-[640px]:grid-cols-2">
-            <div className="flex flex-col gap-1">
-              <span className="label text-muted">{t('lesson.fusha')}</span>
-              <ArSentence ar={e.ar} tr={e.tr} size="body" showTranslit />
-            </div>
-            <div className="flex flex-col gap-1">
-              <span className="label text-eg">{t('lesson.mesirRow')}</span>
-              <ArSentence ar={e.eg!} tr={e.eg_tr} size="body" variety="eg" chip={false} showTranslit />
-            </div>
-          </li>
-        ))}
-      </ul>
-      {note && (
-        <div className="text-small text-ink">
-          <Prose text={lang === 'en' ? note.en : note.id} lang={lang} />
-        </div>
-      )}
-    </section>
-  );
-}
-
 /** Kata: loanword meaning shifts between Indonesian and Arabic. */
 export function WordsCard({ words }: { words: Bilingual }) {
   const { t, lang } = useT();
@@ -117,7 +84,7 @@ export function TalkCard({ talk }: { talk: NonNullable<Lesson['talk']> }) {
       aria-labelledby="talk-title"
     >
       <h3 id="talk-title" className="eyebrow flex items-center gap-2">
-        {t('lesson.talk')} {eg ? <EgChip /> : <span className="text-muted">· {t('lesson.fusha')}</span>}
+        {t('lesson.talk')} {eg && <EgChip />}
       </h3>
       <ol className="flex flex-col gap-4">
         {talk.lines.map((line, i) => (

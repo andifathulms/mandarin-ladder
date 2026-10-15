@@ -101,6 +101,13 @@
     text-underline-offset: 6px;
     text-decoration-skip-ink: none;
   }
+  /* Hanzi: never italic, letter-spaced, uppercased or synthesised bold (DESIGN §4.4). */
+  .zh {
+    letter-spacing: normal;
+    text-transform: none;
+    font-style: normal;
+    font-synthesis: none;
+  }
   /* Transliteration: upright, muted, under the Arabic. */
   .tr-text {
     font-family: var(--font-ar-display), Georgia, serif;

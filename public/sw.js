@@ -1,13 +1,13 @@
-/* Arabic Ladder service worker. Bump CACHE_VERSION on every release. */
+/* Mandarin Ladder service worker. Bump CACHE_VERSION on every release. */
 const CACHE_VERSION = 'v0.1.0';
-const CACHE = `arabic-ladder-${CACHE_VERSION}`;
+const CACHE = `mandarin-ladder-${CACHE_VERSION}`;
 // Works under any base path: everything is relative to the registration scope.
 const SCOPE = self.registration.scope;
 // The shell plus the v1 rungs and the placement check. Audio is never precached (CLAUDE.md §7.9).
 const SHELL = [
   '',
-  'rung/huruf-1/',
-  'rung/huruf-2/',
+  'rung/dasar-1/',
+  'rung/dasar-2/',
   'rung/easy-1/',
   'placement/',
   'review/',
@@ -33,7 +33,7 @@ self.addEventListener('activate', (event) => {
   event.waitUntil(
     caches
       .keys()
-      .then((keys) => Promise.all(keys.filter((k) => k.startsWith('arabic-ladder-') && k !== CACHE).map((k) => caches.delete(k))))
+      .then((keys) => Promise.all(keys.filter((k) => k.startsWith('mandarin-ladder-') && k !== CACHE).map((k) => caches.delete(k))))
       .then(() => self.clients.claim()),
   );
 });

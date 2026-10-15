@@ -145,17 +145,7 @@ export function WordsView({ lessons, rungs, rootsFrom = 'easy-3' }: Props) {
                             {w.eg_tr && <Translit text={w.eg_tr} />}
                           </span>
                         )}
-                        {showRoots && w.root && (
-                          <span className="label text-muted">
-                            {t('words.root')} <ArIsland face="ui">{w.root}</ArIsland>
-                          </span>
-                        )}
                       </span>
-                      {w.gender && (
-                        <span className="label rounded-sm bg-accent-soft px-2 py-[2px] text-accent" title={t(w.gender === 'm' ? 'words.genderM' : 'words.genderF')}>
-                          {w.gender}
-                        </span>
-                      )}
                       <PlayButton text={w.ar} onPlay={() => void play(w.ar)} small />
                     </li>
                   ))}

@@ -8,7 +8,7 @@ import { rungHref } from '@/lib/routes';
 import { useReducedMotion, useT } from '../ProgressProvider';
 import { NotchBar } from '../ladder/NotchBar';
 import { Lattice } from '../ui/Lattice';
-import { ArIsland } from '../ar/ArIsland';
+import { ZhText } from '../zh/ZhText';
 import { Accented } from '../ladder/ContinueCard';
 
 type Props = { rung: Rung; next: Rung | null; onReview: () => void };
@@ -74,9 +74,9 @@ export function ClimbMoment({ rung, next, onReview }: Props) {
         </div>
 
         <div className="flex flex-col items-center gap-3 text-center">
-          <ArIsland block as="p" size="title" face="display" className="text-center text-brass">
-            {rung.name_ar}
-          </ArIsland>
+          <ZhText as="p" className="text-center text-zh-body text-brass">
+            {rung.name_zh.zh.replace(/\s+/g, '')}
+          </ZhText>
           {/* Translated, not English (fixes English Ladder issue 13). */}
           <h1 id="climb-title" className="text-hero text-board-ink" lang={lang}>
             {t('climb.title', { rung: rung.name })}
@@ -84,9 +84,13 @@ export function ClimbMoment({ rung, next, onReview }: Props) {
           <p className="font-display text-h2 text-board-ink">
             <Accented text={t('climb.line')} />
           </p>
-          <ArIsland block as="p" size="title" face="display" className="text-center text-board-muted" title="sullaman sullaman: setapak demi setapak">
-            سُلَّمًا سُلَّمًا
-          </ArIsland>
+          {/* 一步一步 yí bù yí bù: step by step (DESIGN §6.9). */}
+          <p className="flex flex-col items-center gap-1 text-board-muted">
+            <ZhText className="text-zh-body">一步一步</ZhText>
+            <span lang="zh-Latn-pinyin" className="text-small">
+              yí bù yí bù
+            </span>
+          </p>
         </div>
 
         <div className="flex flex-col items-center gap-3">

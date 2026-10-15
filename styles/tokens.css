@@ -34,8 +34,8 @@
   --card-side: #B79E77;
   --subject: #C2533A;
   --shadow-rgb: 15 45 35;
-  --huruf: #865A22;
-  --huruf-soft: #F3E8D6;
+  --dasar: #865A22;
+  --dasar-soft: #F3E8D6;
   --harakat: #1E6B4F;
   --eg: #22668C;
   --eg-soft: #E2EEF5;
@@ -63,6 +63,14 @@
   --t-ar-small: calc(1.25rem * var(--ar-scale));
   --t-ar-glyph: calc(var(--t-ar-glyph-base) * var(--ar-scale));
   --t-ar-title: calc(1.75rem * var(--ar-scale));
+  /* Hanzi type (DESIGN §4.2). --zh-scale is the Ukuran hanzi setting (100 / 120 / 140). */
+  --zh-scale: 1;
+  --t-zh-sentence-base: 2rem;
+  --t-zh-glyph-base: 6rem;
+  --t-zh-sentence: calc(var(--t-zh-sentence-base) * var(--zh-scale));
+  --t-zh-body: calc(1.5rem * var(--zh-scale));
+  --t-zh-small: calc(1.2rem * var(--zh-scale));
+  --t-zh-glyph: calc(var(--t-zh-glyph-base) * var(--zh-scale));
   /* Transliteration is set in Amiri's Latin, whose x-height is small: one step up from --t-small. */
   --t-tr: calc(var(--t-small) * 1.12);
 
@@ -151,8 +159,8 @@
     --card-side: #8E7956;
     --subject: #E06A4F;
     --shadow-rgb: 0 0 0;
-    --huruf: #D9AE6E;
-    --huruf-soft: #2A2216;
+    --dasar: #D9AE6E;
+    --dasar-soft: #2A2216;
     --harakat: #7FCBA8;
     --eg: #8EC3E0;
     --eg-soft: #152836;
@@ -194,8 +202,8 @@
   --card-side: #8E7956;
   --subject: #E06A4F;
   --shadow-rgb: 0 0 0;
-  --huruf: #D9AE6E;
-  --huruf-soft: #2A2216;
+  --dasar: #D9AE6E;
+  --dasar-soft: #2A2216;
   --harakat: #7FCBA8;
   --eg: #8EC3E0;
   --eg-soft: #152836;
