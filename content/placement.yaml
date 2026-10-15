@@ -1,0 +1,190 @@
+# Cek dasar (PRD §5.2): 20 items, no feedback until the end.
+# 17+ → Easy 1 (Dasar 1 and 2 marked "lewat cek"); 12–16 → Dasar 2; under 12 → Dasar 1.
+# Sections: tones 6, pinyin 4, sandhi 2, strokes 2, radicals 3, chars 3.
+# Draft: written by Claude, to be checked by a Mandarin teacher.
+thresholds: { easy1: 17, dasar2: 12 }
+items:
+  # ---------- tones (6) ----------
+  - id: pl-01
+    section: tones
+    from: dasar1-02-empat-nada
+    type: tone
+    audio: "syl-ma3"
+    options: [[1], [2], [3], [4]]
+    answer: [3]
+    why: { id: "**mǎ**: nada ketiga, rendah dan turun lalu naik sedikit.", en: "**mǎ**: third tone, low, dipping and rising a little." }
+  - id: pl-02
+    section: tones
+    from: dasar1-02-empat-nada
+    type: tone
+    audio: "syl-qu4"
+    options: [[1], [2], [3], [4]]
+    answer: [4]
+    why: { id: "**qù**: nada keempat, turun tajam dari atas.", en: "**qù**: fourth tone, falling sharply from the top." }
+  - id: pl-03
+    section: tones
+    from: dasar1-02-empat-nada
+    type: tone
+    audio: "syl-xue2"
+    options: [[1], [2], [3], [4]]
+    answer: [2]
+    why: { id: "**xué**: nada kedua, naik seperti bertanya *hah?*", en: "**xué**: second tone, rising like a surprised *huh?*" }
+  - id: pl-04
+    section: tones
+    from: dasar1-02-empat-nada
+    type: tone
+    audio: "syl-shu1"
+    options: [[1], [2], [3], [4]]
+    answer: [1]
+    why: { id: "**shū**: nada pertama, tinggi dan datar.", en: "**shū**: first tone, high and level." }
+  - id: pl-05
+    section: tones
+    from: dasar1-09-pasangan-nada
+    type: tone
+    audio: "中国"
+    audio_py: "Zhōngguó"
+    options: [[1, 2], [1, 4], [4, 2], [2, 1]]
+    answer: [1, 2]
+    why: { id: "**Zhōngguó**: tinggi datar, lalu naik.", en: "**Zhōngguó**: high and level, then rising." }
+  - id: pl-06
+    section: tones
+    from: dasar1-09-pasangan-nada
+    type: tone
+    audio: "谢谢"
+    audio_py: "xièxie"
+    options: [[4, 0], [4, 4], [1, 0], [3, 0]]
+    answer: [4, 0]
+    why: { id: "**xièxie**: nada keempat, lalu nada netral yang ringan dan pendek.", en: "**xièxie**: fourth tone, then a light, short neutral tone." }
+
+  # ---------- pinyin (4) ----------
+  - id: pl-07
+    section: pinyin
+    from: dasar1-04-hembusan
+    type: choice
+    prompt: "Apa beda **b** dan **p** dalam pinyin?"
+    options: ["**p** diucapkan dengan hembusan udara", "**b** bersuara, **p** tidak", "tidak ada bedanya"]
+    answer: "**p** diucapkan dengan hembusan udara"
+    why: { id: "Keduanya tidak bersuara. **p** punya hembusan udara, **b** tidak. Ini beda dengan *b/p* bahasa Indonesia.", en: "Neither is voiced. **p** has a puff of air, **b** doesn't. That differs from Indonesian *b/p*." }
+  - id: pl-08
+    section: pinyin
+    from: dasar1-05-jqx
+    type: pinyin
+    audio: "syl-lü4"
+    answer: "lǜ"
+    why: { id: "**lǜ**: vokal **ü**, bibir bulat seperti *u* tapi lidah seperti *i*. Ketik **lv4** atau **lü4**.", en: "**lǜ**: the vowel **ü**, lips rounded as for *u* with the tongue as for *i*. Type **lv4** or **lü4**." }
+  - id: pl-09
+    section: pinyin
+    from: dasar1-06-lidah-melengkung
+    type: pinyin
+    audio: "syl-zhi1"
+    answer: "zhī"
+    why: { id: "**zhī**: ujung lidah melengkung ke belakang. **zi** lidahnya datar di belakang gigi.", en: "**zhī**: tongue tip curled back. In **zi** the tongue is flat behind the teeth." }
+  - id: pl-10
+    section: pinyin
+    from: dasar1-05-jqx
+    type: choice
+    prompt: "Dalam **ju**, **qu** dan **xu**, huruf **u** dibaca sebagai apa?"
+    options: ["**ü**", "**u** biasa", "**o**"]
+    answer: "**ü**"
+    why: { id: "Setelah **j q x** (dan **y**), **u** selalu berarti **ü**. Titiknya tidak ditulis.", en: "After **j q x** (and **y**), **u** always means **ü**. The dots are left off." }
+
+  # ---------- sandhi (2) ----------
+  - id: pl-11
+    section: sandhi
+    from: dasar1-08-perubahan-nada
+    type: tone
+    ask: spoken
+    audio: "你 好"
+    audio_py: "nǐ hǎo"
+    prompt: "Ditulis **nǐ hǎo** (3 + 3). Bagaimana diucapkan?"
+    options: [[3, 3], [2, 3], [3, 2]]
+    answer: [2, 3]
+    why: { id: "Dua nada ketiga berturut-turut: yang pertama diucapkan naik. **nǐ hǎo** terdengar *ní hǎo*.", en: "Two third tones in a row: the first is said rising. **nǐ hǎo** sounds like *ní hǎo*." }
+  - id: pl-12
+    section: sandhi
+    from: dasar1-08-perubahan-nada
+    type: choice
+    prompt: "**不** sebelum nada keempat (**不是**) dibaca…"
+    options: ["**bú**", "**bù**", "**bǔ**"]
+    answer: "**bú**"
+    why: { id: "**不** biasanya **bù**, tapi sebelum nada keempat menjadi **bú**: **bú shì**.", en: "**不** is normally **bù**, but before a fourth tone it becomes **bú**: **bú shì**." }
+
+  # ---------- strokes (2) ----------
+  - id: pl-13
+    section: strokes
+    from: dasar2-03-urutan-goresan
+    type: choice
+    show_pinyin: false
+    prompt: "Dalam **十**, goresan mana yang ditulis lebih dulu?"
+    options: ["横 (mendatar)", "竖 (tegak)"]
+    answer: "横 (mendatar)"
+    why: { id: "Aturan: mendatar sebelum tegak. **十** = **横** lalu **竖**.", en: "The rule: horizontal before vertical. **十** = **横** then **竖**." }
+  - id: pl-14
+    section: strokes
+    from: dasar2-03-urutan-goresan
+    type: choice
+    show_pinyin: false
+    prompt: "Dalam **国**, kapan garis bawah kotaknya ditulis?"
+    options: ["paling akhir", "paling awal", "setelah sisi kiri"]
+    answer: "paling akhir"
+    why: { id: "Luar dulu, lalu isi, lalu tutup: garis bawah kotak ditulis terakhir.", en: "Outside first, then the inside, then close: the bottom line comes last." }
+
+  # ---------- radicals (3) ----------
+  - id: pl-15
+    section: radicals
+    from: dasar2-05-radikal-1
+    type: choice
+    show_pinyin: false
+    prompt: "Karakter mana yang punya radikal **女** (perempuan)?"
+    options: ["她", "他", "们"]
+    answer: "她"
+    why: { id: "**她** tā = dia (perempuan): **女** + **也**. **他** dan **们** memakai **亻** (orang).", en: "**她** tā = she: **女** + **也**. **他** and **们** use **亻** (person)." }
+  - id: pl-16
+    section: radicals
+    from: dasar2-06-radikal-2
+    type: choice
+    show_pinyin: false
+    py: { "讠": "yán" }
+    prompt: "Radikal **讠** dalam **说** dan **语** berhubungan dengan…"
+    options: ["bicara, kata-kata", "air", "tangan"]
+    answer: "bicara, kata-kata"
+    why: { id: "**讠** adalah bentuk ringkas **言** (kata, bicara): **说** berbicara, **语** bahasa.", en: "**讠** is the short form of **言** (speech): **说** speak, **语** language." }
+  - id: pl-17
+    section: radicals
+    from: dasar2-07-komponen
+    type: build
+    prompt: "Bangun **好** (baik)."
+    char: "好"
+    parts: ["女", "子", "口", "马"]
+    answer: ["女", "子"]
+    why: { id: "**好** = **女** + **子**.", en: "**好** = **女** + **子**." }
+
+  # ---------- characters (3) ----------
+  - id: pl-18
+    section: chars
+    from: dasar2-08-kata-dua-karakter
+    type: choice
+    show_pinyin: false
+    prompt: "**老师** artinya…"
+    options: ["guru", "murid", "teman"]
+    answer: "guru"
+    why: { id: "**老师** lǎoshī: guru.", en: "**老师** lǎoshī: teacher." }
+  - id: pl-19
+    section: chars
+    from: dasar2-09-angka-tanggal
+    type: choice
+    show_pinyin: false
+    prompt: "Angka berapa **八**?"
+    options: ["8", "6", "9"]
+    answer: "8"
+    why: { id: "**八** bā: delapan.", en: "**八** bā: eight." }
+  - id: pl-20
+    section: chars
+    from: dasar2-10-kalimat-pertama
+    type: choice
+    show_pinyin: false
+    cue: "Apa artinya?"
+    prompt: "我 是 印尼人 。"
+    options: ["Aku orang Indonesia.", "Kamu orang Indonesia.", "Aku orang Tiongkok."]
+    answer: "Aku orang Indonesia."
+    why: { id: "**我** aku, **是** adalah, **印尼人** orang Indonesia.", en: "**我** I, **是** am, **印尼人** Indonesian." }
