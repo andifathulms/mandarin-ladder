@@ -10,10 +10,10 @@ import { Toggle } from './ui/Toggle';
 import { usePlay } from './useSpeech';
 import { IconPlay } from './ui/Icon';
 import { canSpeak as browserCanSpeak, chosenVoiceName, onVoicesChanged } from '@/lib/speech/speak';
-import { ArIsland } from './ar/ArIsland';
+import { ZhText } from './zh/ZhText';
 
-/** أَهْلًا وَسَهْلًا: the sample line for “Coba suara”. */
-const VOICE_SAMPLE = 'أَهْلًا وَسَهْلًا';
+/** 你好，欢迎！: the sample line for “Coba suara”. */
+const VOICE_SAMPLE = '你好，欢迎！';
 
 function Group({ title, children }: { title: string; children: React.ReactNode }) {
   return (
@@ -146,11 +146,11 @@ export function SettingsView() {
             ]}
           />
         </Row>
-        <Row label={t('settings.arabicSize')}>
+        <Row label={t('settings.zhSize')}>
           <Segmented
-            label={t('settings.arabicSize')}
-            value={s.arabicSize}
-            onChange={(v) => set({ arabicSize: v })}
+            label={t('settings.zhSize')}
+            value={s.zhSize}
+            onChange={(v) => set({ zhSize: v })}
             options={[
               { value: 100, label: '100%' },
               { value: 120, label: '120%' },
@@ -158,14 +158,11 @@ export function SettingsView() {
             ]}
           />
           <div className="flex flex-col gap-1 rounded-md bg-paper-2 px-4 py-2" aria-live="polite">
-            <ArIsland block size="sentence">
-              كِتَابٌ جَدِيدٌ
-            </ArIsland>
+            <ZhText as="p" className="text-zh-sentence font-medium">
+              我很好。
+            </ZhText>
             <p className="text-small">
-              <span lang="ar-Latn" className="tr-text">
-                kitābun jadīdun
-              </span>{' '}
-              · <span className="id-text">{t('settings.arabicSizePreview')}</span>
+              <span lang="zh-Latn-pinyin">{'wǒ hěn hǎo'.normalize('NFD')}</span> · <span className="id-text">{t('settings.zhSizePreview')}</span>
             </p>
           </div>
         </Row>

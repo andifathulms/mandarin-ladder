@@ -16,8 +16,8 @@ function applySettings(s: Settings) {
   else d.setAttribute('data-theme', s.theme);
   if (s.textSize === 100) d.removeAttribute('data-text-size');
   else d.setAttribute('data-text-size', String(s.textSize));
-  if (s.arabicSize === 100) d.removeAttribute('data-ar-size');
-  else d.setAttribute('data-ar-size', String(s.arabicSize));
+  if (s.zhSize === 100) d.removeAttribute('data-zh-size');
+  else d.setAttribute('data-zh-size', String(s.zhSize));
   if (s.motion === 'reduce') d.setAttribute('data-motion', 'reduce');
   else d.removeAttribute('data-motion');
   d.setAttribute('lang', s.uiLang);

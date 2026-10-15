@@ -5,7 +5,7 @@ import type { Config } from 'tailwindcss';
 const v = (name: string) => `var(--${name})`;
 
 const config: Config = {
-  content: ['./app/**/*.{ts,tsx}', './components/**/*.{ts,tsx}'],
+  content: ['./app/**/*.{ts,tsx}', './components/**/*.{ts,tsx}', './lib/**/*.ts'],
   theme: {
     colors: {
       transparent: 'transparent',
@@ -38,6 +38,12 @@ const config: Config = {
       'hard-soft': v('hard-soft'),
       dasar: v('dasar'),
       'dasar-soft': v('dasar-soft'),
+      'tone-0': v('tone-0'),
+      'tone-1': v('tone-1'),
+      'tone-2': v('tone-2'),
+      'tone-3': v('tone-3'),
+      'tone-4': v('tone-4'),
+      'grid-line': v('grid-line'),
       harakat: v('harakat'),
       eg: v('eg'),
       'eg-soft': v('eg-soft'),

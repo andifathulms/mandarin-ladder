@@ -7,7 +7,10 @@ export const DEFAULT_SETTINGS: Settings = {
   rate: 1,
   sfx: true,
   textSize: 100,
-  arabicSize: 100,
+  zhSize: 100,
+  toneColours: 'rung',
+  deckDaily: 10,
+  deckFace: 'hanzi',
   theme: 'light',
   motion: 'system',
 };

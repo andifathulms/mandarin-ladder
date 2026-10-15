@@ -26,6 +26,17 @@ export function contrast(a: string, b: string): number {
   return (x + 0.05) / (y + 0.05);
 }
 
+function hue(hex: string): number {
+  const n = hex.replace('#', '');
+  const [r, g, b] = [0, 2, 4].map((i) => parseInt(n.slice(i, i + 2), 16) / 255);
+  const max = Math.max(r, g, b);
+  const min = Math.min(r, g, b);
+  if (max === min) return 0;
+  const d = max - min;
+  const h = max === r ? ((g - b) / d) % 6 : max === g ? (b - r) / d + 2 : (r - g) / d + 4;
+  return (h * 60 + 360) % 360;
+}
+
 describe.each([
   ['light', light],
   ['dark', dark],
@@ -34,11 +45,17 @@ describe.each([
     expect(contrast(t[fg], t.paper)).toBeGreaterThanOrEqual(4.5);
     expect(contrast(t[fg], t.surface)).toBeGreaterThanOrEqual(4.5);
   });
+  it.each(['tone-1', 'tone-2', 'tone-3', 'tone-4'])('%s reaches 4.5:1 on paper and surface (DESIGN §3.2)', (fg) => {
+    expect(contrast(t[fg], t.paper)).toBeGreaterThanOrEqual(4.5);
+    expect(contrast(t[fg], t.surface)).toBeGreaterThanOrEqual(4.5);
+  });
+  it('neutral tone is the muted colour', () => {
+    expect(t['tone-0']).toBe('var(--muted)');
+  });
   it.each([
     ['accent', 'accent-soft'],
     ['good', 'good-bg'],
     ['off', 'off-bg'],
-    ['eg', 'eg-soft'],
     ['dasar', 'dasar-soft'],
   ])('%s reaches 4.5:1 on %s', (fg, bg) => {
     expect(contrast(t[fg], t[bg])).toBeGreaterThanOrEqual(4.5);
@@ -47,13 +64,13 @@ describe.each([
     expect(contrast(t['board-ink'], t.board)).toBeGreaterThanOrEqual(7);
     expect(contrast(t.brass, t.board)).toBeGreaterThanOrEqual(3);
   });
-  it('harakat marks reach 3:1 on surface and paper-2', () => {
-    expect(contrast(t.harakat, t.surface)).toBeGreaterThanOrEqual(3);
-    expect(contrast(t.harakat, t['paper-2'])).toBeGreaterThanOrEqual(3);
-  });
-  it('keeps the brand emerald and the correct-answer green apart', () => {
-    // Different hues (DESIGN §3.3): accent leans blue, good leans yellow.
-    expect(t.accent).not.toBe(t.good);
+  it('keeps red-for-brand apart from red-for-wrong (DESIGN §3.3)', () => {
+    // Cinnabar accent leans orange, raspberry wrong leans blue: at least 20° of hue apart.
+    const a = hue(t.accent);
+    const o = hue(t.off);
+    const gap = Math.min(Math.abs(a - o), 360 - Math.abs(a - o));
+    expect(gap).toBeGreaterThanOrEqual(20);
+    expect(o).toBeGreaterThan(300);
   });
 });
 

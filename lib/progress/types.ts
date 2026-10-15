@@ -4,8 +4,14 @@ export type Settings = {
   rate: 0.75 | 1;
   sfx: boolean;
   textSize: 100 | 115 | 130;
-  /** Ukuran teks Arab: multiplies only Arabic type. */
-  arabicSize: 100 | 120 | 140;
+  /** Ukuran hanzi: multiplies only Chinese type. */
+  zhSize: 100 | 120 | 140;
+  /** Tone colours: follow each rung's default ('rung'), or always on or off. */
+  toneColours: boolean | 'rung';
+  /** New word-deck cards a day. */
+  deckDaily: 5 | 10 | 20;
+  /** What the deck card shows first. */
+  deckFace: 'hanzi' | 'meaning' | 'audio';
   theme: 'system' | 'light' | 'dark';
   motion: 'system' | 'reduce';
 };

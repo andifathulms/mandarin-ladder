@@ -1,26 +1,26 @@
-/* Every token from DESIGN.md §3 (Mushaf green and cream). Components never use literal colours. */
+/* Every token from DESIGN.md §3 (lacquer red, gold and cream). Components never use literal colours. */
 :root {
   color-scheme: light;
   --paper: #F6F2E9;
   --paper-2: #EDE6D6;
   --surface: #FFFDF8;
-  --ink: #14241E;
-  --muted: #56655E;
+  --ink: #241514;
+  --muted: #67585A;
   --rule: #E2D9C6;
-  --accent: #1E6B4F;
+  --accent: #A3271C;
   --accent-ink: #FFFFFF;
-  --accent-soft: #E0EEE6;
-  --board: #0F3B2E;
-  --board-2: #17503F;
+  --accent-soft: #F6E3DD;
+  --board: #6B1A16;
+  --board-2: #84261F;
   --board-ink: #F6F2E9;
-  --board-muted: #B5CBBF;
-  --brass: #D2AE72;
+  --board-muted: #DDBFB8;
+  --brass: #D9B26A;
   --rung: #B8862E;
   --rung-soft: #F7EBCF;
-  --good: #356F25;
-  --good-bg: #E7F0DA;
-  --off: #A84432;
-  --off-bg: #F8E4DD;
+  --good: #2F6B45;
+  --good-bg: #E3F0E4;
+  --off: #9B3254;
+  --off-bg: #F6E2E8;
   --easy: #2D7480;
   --easy-soft: #E1EEF0;
   --medium: #2A4A7F;
@@ -32,13 +32,20 @@
   --card: #D9C3A0;
   --card-top: #E8D7BA;
   --card-side: #B79E77;
-  --subject: #C2533A;
-  --shadow-rgb: 15 45 35;
+  --subject: #2E7D6B;
+  --shadow-rgb: 60 20 18;
   --dasar: #865A22;
   --dasar-soft: #F3E8D6;
-  --harakat: #1E6B4F;
-  --eg: #22668C;
-  --eg-soft: #E2EEF5;
+  --tone-1: #2B5FA8;
+  --tone-2: #2E7A40;
+  --tone-3: #94610F; /* DESIGN says #9A6510, which is 4.43:1 on --paper; darkened to reach 4.5 */
+  --tone-4: #B03A2E;
+  --tone-0: var(--muted);
+  --grid-line: color-mix(in srgb, var(--accent) 22%, transparent);
+  /* Dormant Arabic lesson layer, removed with it. */
+  --harakat: #A3271C;
+  --eg: #2A4A7F;
+  --eg-soft: #E4E9F2;
 
   /* Type scale (DESIGN §4.1), rem so the text-size setting scales everything */
   --t-hero: 3rem;
@@ -65,8 +72,12 @@
   --t-ar-title: calc(1.75rem * var(--ar-scale));
   /* Hanzi type (DESIGN §4.2). --zh-scale is the Ukuran hanzi setting (100 / 120 / 140). */
   --zh-scale: 1;
+  --font-zh: 'Ladder WenKai';
+  --font-zh-ui: 'Ladder Noto SC';
   --t-zh-sentence-base: 2rem;
   --t-zh-glyph-base: 6rem;
+  /* Pinyin over hanzi: 0.42em of the hanzi size (DESIGN §4.2). */
+  --t-py-ruby: 0.42em;
   --t-zh-sentence: calc(var(--t-zh-sentence-base) * var(--zh-scale));
   --t-zh-body: calc(1.5rem * var(--zh-scale));
   --t-zh-small: calc(1.2rem * var(--zh-scale));
@@ -108,6 +119,9 @@
   --m-check-d: 250ms;
   --m-shift: 12px;
   --m-settle-d: 1400ms;
+  /* Mandarin motion (DESIGN §5) */
+  --m-stroke-d: 450ms;
+  --m-contour-d: 600ms;
 
   /* Illustration (DESIGN §10) */
   --glass-opacity: 0.45;
@@ -120,32 +134,34 @@
     --t-hero: 2.25rem;
     --t-ar-sentence-base: 1.875rem;
     --t-ar-glyph-base: 4rem;
+    --t-zh-sentence-base: 1.75rem;
+    --t-zh-glyph-base: 4.5rem;
   }
 }
 
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme='light']) {
     color-scheme: dark;
-    --paper: #0B1914;
-    --paper-2: #10221B;
-    --surface: #142A21;
-    --ink: #ECE9DE;
-    --muted: #A2B4AB;
-    --rule: #22382E;
-    --accent: #7FCBA8;
-    --accent-ink: #0B1914;
-    --accent-soft: #173427;
-    --board: #123A2D;
-    --board-2: #1B4C3B;
+    --paper: #170F0E;
+    --paper-2: #201514;
+    --surface: #281A18;
+    --ink: #F0E6DE;
+    --muted: #B9A7A2;
+    --rule: #3A2723;
+    --accent: #F08A74;
+    --accent-ink: #170F0E;
+    --accent-soft: #3A1E19;
+    --board: #4A1411;
+    --board-2: #5E1D18;
     --board-ink: #F2ECDF;
-    --board-muted: #A8C1B5;
+    --board-muted: #D3B5AD;
     --brass: #DDBA7E;
     --rung: #E2B45A;
     --rung-soft: #2C2516;
-    --good: #A6D68F;
-    --good-bg: #1B2A17;
-    --off: #EE9A84;
-    --off-bg: #331F1B;
+    --good: #8FCB9F;
+    --good-bg: #16281F;
+    --off: #F08FB0;
+    --off-bg: #3A1B26;
     --easy: #7CC4CF;
     --easy-soft: #13282B;
     --medium: #9DB8E6;
@@ -157,38 +173,44 @@
     --card: #B39C78;
     --card-top: #C3AE8C;
     --card-side: #8E7956;
-    --subject: #E06A4F;
+    --subject: #5FBFA7;
     --shadow-rgb: 0 0 0;
     --dasar: #D9AE6E;
     --dasar-soft: #2A2216;
-    --harakat: #7FCBA8;
-    --eg: #8EC3E0;
-    --eg-soft: #152836;
+    --tone-1: #8DB4EE;
+    --tone-2: #8FD09B;
+    --tone-3: #E6B45C;
+    --tone-4: #F2907F;
+    --tone-0: var(--muted);
+    --grid-line: color-mix(in srgb, var(--accent) 22%, transparent);
+    --harakat: #F08A74;
+    --eg: #9DB8E6;
+    --eg-soft: #1E2C4B;
   }
 }
 
 :root[data-theme='dark'] {
   color-scheme: dark;
-  --paper: #0B1914;
-  --paper-2: #10221B;
-  --surface: #142A21;
-  --ink: #ECE9DE;
-  --muted: #A2B4AB;
-  --rule: #22382E;
-  --accent: #7FCBA8;
-  --accent-ink: #0B1914;
-  --accent-soft: #173427;
-  --board: #123A2D;
-  --board-2: #1B4C3B;
+  --paper: #170F0E;
+  --paper-2: #201514;
+  --surface: #281A18;
+  --ink: #F0E6DE;
+  --muted: #B9A7A2;
+  --rule: #3A2723;
+  --accent: #F08A74;
+  --accent-ink: #170F0E;
+  --accent-soft: #3A1E19;
+  --board: #4A1411;
+  --board-2: #5E1D18;
   --board-ink: #F2ECDF;
-  --board-muted: #A8C1B5;
+  --board-muted: #D3B5AD;
   --brass: #DDBA7E;
   --rung: #E2B45A;
   --rung-soft: #2C2516;
-  --good: #A6D68F;
-  --good-bg: #1B2A17;
-  --off: #EE9A84;
-  --off-bg: #331F1B;
+  --good: #8FCB9F;
+  --good-bg: #16281F;
+  --off: #F08FB0;
+  --off-bg: #3A1B26;
   --easy: #7CC4CF;
   --easy-soft: #13282B;
   --medium: #9DB8E6;
@@ -200,13 +222,19 @@
   --card: #B39C78;
   --card-top: #C3AE8C;
   --card-side: #8E7956;
-  --subject: #E06A4F;
+  --subject: #5FBFA7;
   --shadow-rgb: 0 0 0;
   --dasar: #D9AE6E;
   --dasar-soft: #2A2216;
-  --harakat: #7FCBA8;
-  --eg: #8EC3E0;
-  --eg-soft: #152836;
+  --tone-1: #8DB4EE;
+  --tone-2: #8FD09B;
+  --tone-3: #E6B45C;
+  --tone-4: #F2907F;
+  --tone-0: var(--muted);
+  --grid-line: color-mix(in srgb, var(--accent) 22%, transparent);
+  --harakat: #F08A74;
+  --eg: #9DB8E6;
+  --eg-soft: #1E2C4B;
 }
 
 /* Text-size setting (100 / 115 / 130) */
@@ -225,6 +253,14 @@
   --ar-scale: 1.4;
 }
 
+/* Ukuran hanzi (100 / 120 / 140): multiplies only the --t-zh-* tokens */
+:root[data-zh-size='120'] {
+  --zh-scale: 1.2;
+}
+:root[data-zh-size='140'] {
+  --zh-scale: 1.4;
+}
+
 /* Reduced motion: everything becomes a quick cross-fade */
 @media (prefers-reduced-motion: reduce) {
   :root:not([data-motion='full']) {
@@ -232,6 +268,8 @@
     --m-object-d: 0ms;
     --m-moment-d: 120ms;
     --m-shift: 0px;
+    --m-stroke-d: 0ms;
+    --m-contour-d: 0ms;
   }
 }
 :root[data-motion='reduce'] {
@@ -239,4 +277,6 @@
   --m-object-d: 0ms;
   --m-moment-d: 120ms;
   --m-shift: 0px;
+  --m-stroke-d: 0ms;
+  --m-contour-d: 0ms;
 }
