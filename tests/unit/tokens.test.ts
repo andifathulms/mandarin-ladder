@@ -45,9 +45,8 @@ describe.each([
     expect(contrast(t[fg], t.paper)).toBeGreaterThanOrEqual(4.5);
     expect(contrast(t[fg], t.surface)).toBeGreaterThanOrEqual(4.5);
   });
-  it.each(['tone-1', 'tone-2', 'tone-3', 'tone-4'])('%s reaches 4.5:1 on paper and surface (DESIGN §3.2)', (fg) => {
-    expect(contrast(t[fg], t.paper)).toBeGreaterThanOrEqual(4.5);
-    expect(contrast(t[fg], t.surface)).toBeGreaterThanOrEqual(4.5);
+  it.each(['tone-1', 'tone-2', 'tone-3', 'tone-4'])('%s reaches 4.5:1 on every background hanzi sit on (DESIGN §3.2)', (fg) => {
+    for (const bg of ['paper', 'surface', 'paper-2', 'accent-soft']) expect(contrast(t[fg], t[bg]), bg).toBeGreaterThanOrEqual(4.5);
   });
   it('neutral tone is the muted colour', () => {
     expect(t['tone-0']).toBe('var(--muted)');

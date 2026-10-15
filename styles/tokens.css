@@ -37,8 +37,8 @@
   --dasar: #865A22;
   --dasar-soft: #F3E8D6;
   --tone-1: #2B5FA8;
-  --tone-2: #2E7A40;
-  --tone-3: #94610F; /* DESIGN says #9A6510, which is 4.43:1 on --paper; darkened to reach 4.5 */
+  --tone-2: #2B733C; /* DESIGN #2E7A40, darkened to reach 4.5:1 on --paper-2 and --accent-soft */
+  --tone-3: #8D5C0E; /* DESIGN #9A6510 is 4.43:1 on --paper; darkened to reach 4.5:1 on --paper-2 and --accent-soft too */
   --tone-4: #B03A2E;
   --tone-0: var(--muted);
   --grid-line: color-mix(in srgb, var(--accent) 22%, transparent);
