@@ -18,6 +18,7 @@
     "strokes:extract": "tsx scripts/strokes-extract.ts",
     "audio:list": "tsx scripts/audio-list.ts",
     "audio:ingest": "tsx scripts/audio-ingest.ts",
+    "audio:syllables": "tsx scripts/audio-syllables.ts",
     "test": "vitest run",
     "test:watch": "vitest",
     "test:e2e": "playwright test",
