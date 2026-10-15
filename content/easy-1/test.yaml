@@ -1,0 +1,337 @@
+# Easy 1 (HSK 1) rung test: 20 items drawn from this pool of 40, pass at 15 (PRD §5.5). Draft.
+rung: easy-1
+draw: 20
+pass: 15
+items:
+  # 01 Perkenalan
+  - id: e1-t-01
+    from: easy1-01-perkenalan
+    type: order
+    cue: "Aku juga pelajar."
+    tiles: ["学生", "也", "我", "是"]
+    answer: ["我", "也", "是", "学生"]
+    why: { id: "**也** berdiri sebelum kata kerja: **我也是学生**.", en: "**也** goes before the verb: **我也是学生**." }
+  - id: e1-t-02
+    from: easy1-01-perkenalan
+    type: tone
+    audio: "老师"
+    audio_py: "lǎoshī"
+    options: [[3, 1], [2, 1], [3, 0]]
+    answer: [3, 1]
+    why: { id: "**lǎo** rendah, lalu **shī** tinggi datar: 3 + 1.", en: "**lǎo** low, then **shī** high and level: 3 + 1." }
+
+  # 02 Pertanyaan
+  - id: e1-t-03
+    from: easy1-02-pertanyaan
+    type: gap
+    cue: "Dia siapa?"
+    prompt: "她 是 ___ ？"
+    options: ["谁", "什么", "吗"]
+    answer: "谁"
+    why: { id: "**谁** (siapa) berdiri di tempat jawabannya: **她是谁？** Tidak perlu **吗**.", en: "**谁** (who) sits where the answer goes: **她是谁？** No **吗** needed." }
+  - id: e1-t-04
+    from: easy1-02-pertanyaan
+    type: choice
+    show_pinyin: false
+    prompt: "Kamu ingin tahu seseorang berasal dari negara mana. Mana yang tepat?"
+    options: ["你 是 哪 国 人 ？", "你 是 哪 国 人 吗 ？", "哪 国 人 你 是 ？"]
+    answer: "你 是 哪 国 人 ？"
+    why: { id: "Kata tanya **哪** sudah membuat pertanyaan, jadi tanpa **吗**. Urutannya tetap seperti kalimat biasa.", en: "The question word **哪** already makes the question, so no **吗**. The order stays as in a statement." }
+
+  # 03 Keluarga
+  - id: e1-t-05
+    from: easy1-03-keluarga
+    type: fix
+    wrong: "这 是 书 我 的 。"
+    options: ["这 是 我 的 书 。", "这 是 的 我 书 。"]
+    answer: "这 是 我 的 书 。"
+    why: { id: "Pemilik dulu, lalu **的**, lalu bendanya: **我的书**. Kebalikan dari *buku saya*.", en: "Owner first, then **的**, then the thing: **我的书**. The reverse of Indonesian *buku saya*." }
+  - id: e1-t-06
+    from: easy1-03-keluarga
+    type: trace
+    char: "妈"
+    guide: "on"
+    why: { id: "**女** dulu di kiri, sempit; lalu **马** di kanan.", en: "**女** first on the left, narrow; then **马** on the right." }
+
+  # 04 Angka dan umur
+  - id: e1-t-07
+    from: easy1-04-angka-umur
+    type: choice
+    prompt: "Kamu bertanya umur anak kecil. Mana yang pas?"
+    options: ["你 几 岁 ？", "你 多 大 ？"]
+    answer: "你 几 岁 ？"
+    why: { id: "**几** untuk angka kecil, jadi **你几岁？** cocok untuk anak-anak. **你多大？** untuk orang dewasa muda.", en: "**几** is for small numbers, so **你几岁？** suits children. **你多大？** is for young adults." }
+  - id: e1-t-08
+    from: easy1-04-angka-umur
+    type: listen
+    audio: "我 爸爸 四十九 岁 。"
+    options: ["Papaku 49 tahun.", "Papaku 94 tahun.", "Papaku 9 tahun."]
+    answer: "Papaku 49 tahun."
+    why: { id: "**四十九**: empat kali sepuluh, tambah sembilan, 49.", en: "**四十九**: four tens plus nine, 49." }
+
+  # 05 Kata penggolong (1)
+  - id: e1-t-09
+    from: easy1-05-penggolong-1
+    type: gap
+    cue: "Ini sebuah ponsel."
+    prompt: "这 是 一 ___ 手机 。"
+    options: ["个", "本", "只"]
+    answer: "个"
+    why: { id: "Ponsel memakai penggolong umum **个**. **本** untuk buku, **只** untuk hewan.", en: "A phone takes the general measure word **个**. **本** is for books, **只** for animals." }
+  - id: e1-t-10
+    from: easy1-05-penggolong-1
+    type: choice
+    show_pinyin: false
+    prompt: "Mana yang berarti *dua ekor kucing*?"
+    options: ["两 只 猫", "二 只 猫", "两 本 猫"]
+    answer: "两 只 猫"
+    why: { id: "Sebelum penggolong, *dua* adalah **两**, bukan **二**. Hewan memakai **只**, seperti *seekor*.", en: "Before a measure word, *two* is **两**, not **二**. Animals take **只**." }
+  - id: e1-t-11
+    from: easy1-05-penggolong-1
+    type: fix
+    wrong: "那 是 三 书 。"
+    options: ["那 是 三 本 书 。", "那 是 书 三 本 。", "那 是 本 三 书 。"]
+    answer: "那 是 三 本 书 。"
+    why: { id: "Angka, penggolong, lalu benda: **三本书**. Penggolong wajib, tidak seperti *tiga buku*.", en: "Number, measure word, then the noun: **三本书**. The measure word is required." }
+
+  # 06 Punya dan ada
+  - id: e1-t-12
+    from: easy1-06-punya
+    type: order
+    cue: "Aku punya dua teman Tiongkok."
+    tiles: ["朋友", "两", "我", "中国", "有", "个"]
+    answer: ["我", "有", "两", "个", "中国", "朋友"]
+    why: { id: "**我有** lalu jumlah dan penggolong, lalu **中国朋友**: yang menjelaskan di depan.", en: "**我有**, then number and measure word, then **中国朋友**: the describing word comes first." }
+  - id: e1-t-13
+    from: easy1-06-punya
+    type: choice
+    show_pinyin: false
+    prompt: "Bagaimana bilang *keluargaku empat orang*?"
+    options: ["我 家 有 四 口 人 。", "我 家 是 四 口 人 。", "我 家 没有 四 人 。"]
+    answer: "我 家 有 四 口 人 。"
+    why: { id: "Jumlah anggota keluarga dihitung dengan **有** dan penggolong **口**: **四口人**.", en: "Family members are counted with **有** and the measure word **口**: **四口人**." }
+
+  # 07 Kata sifat
+  - id: e1-t-14
+    from: easy1-07-sifat
+    type: fix
+    wrong: "这 个 学校 是 大 。"
+    options: ["这 个 学校 很 大 。", "这 个 学校 大 是 。"]
+    answer: "这 个 学校 很 大 。"
+    why: { id: "Kata sifat tidak memakai **是**. Pakai **很** sebelum kata sifat: **很大**.", en: "Adjectives don't take **是**. Use **很** before the adjective: **很大**." }
+  - id: e1-t-15
+    from: easy1-07-sifat
+    type: trace
+    char: "好"
+    guide: "off"
+    why: { id: "Kiri dulu, lalu kanan: **女**, lalu **子**.", en: "Left before right: **女**, then **子**." }
+
+  # 08 Waktu
+  - id: e1-t-16
+    from: easy1-08-waktu
+    type: order
+    cue: "Kita ketemu besok jam tiga sore."
+    tiles: ["见", "下午", "我们", "明天", "三", "点"]
+    answer: ["我们", "明天", "下午", "三", "点", "见"]
+    accept: [["明天", "我们", "下午", "三", "点", "见"]]
+    why: { id: "Waktu sebelum kata kerja, dari besar ke kecil: **明天下午三点**, lalu **见**.", en: "Time comes before the verb, from big to small: **明天下午三点**, then **见**." }
+  - id: e1-t-17
+    from: easy1-08-waktu
+    type: gap
+    cue: "Hari ini tanggal 5 Oktober."
+    prompt: "今天 是 十 月 五 ___ 。"
+    options: ["号", "点", "岁"]
+    answer: "号"
+    why: { id: "Tanggal memakai **号**: bulan dulu, lalu tanggal, **十月五号**. **点** untuk jam.", en: "Dates take **号**: month first, then the day, **十月五号**. **点** is for clock times." }
+
+  # 09 Tempat
+  - id: e1-t-18
+    from: easy1-09-tempat
+    type: fix
+    wrong: "我 工作 在 医院 。"
+    options: ["我 在 医院 工作 。", "我 医院 在 工作 。"]
+    answer: "我 在 医院 工作 。"
+    why: { id: "Tempat sebelum kata kerja: **在医院** dulu, lalu **工作**. Kebalikan dari *bekerja di rumah sakit*.", en: "Place comes before the verb: **在医院** first, then **工作**." }
+  - id: e1-t-19
+    from: easy1-09-tempat
+    type: listen
+    audio: "安迪 在 饭店 吃饭 。"
+    options: ["Andi makan di restoran.", "Andi bekerja di restoran.", "Andi makan di rumah."]
+    answer: "Andi makan di restoran."
+    why: { id: "**在饭店** (di restoran) lalu **吃饭** (makan).", en: "**在饭店** (at a restaurant), then **吃饭** (eat)." }
+
+  # 10 Letak
+  - id: e1-t-20
+    from: easy1-10-letak
+    type: scene
+    prompt: "Lihat gambarnya. 球 在 桌子 ___ 。"
+    visual: { id: place-scene-zh, props: { state: under } }
+    options: ["下", "上", "里"]
+    answer: "下"
+    why: { id: "Bolanya di bawah meja: **桌子下**. Kata letak datang sesudah bendanya.", en: "The ball is under the table: **桌子下**. The place word comes after the noun." }
+  - id: e1-t-21
+    from: easy1-10-letak
+    type: scene
+    prompt: "Bolanya di dalam kotak. Kata letak mana yang dipakai sesudah kata bendanya?"
+    visual: { id: place-scene-zh, props: { state: in } }
+    options: ["里", "上", "下"]
+    answer: "里"
+    why: { id: "*Di dalam* adalah **里**, dan letaknya sesudah benda: benda + **里**.", en: "*Inside* is **里**, and it follows the noun: noun + **里**." }
+  - id: e1-t-22
+    from: easy1-10-letak
+    type: order
+    cue: "Tokonya di depan sekolah."
+    tiles: ["前边", "商店", "学校", "在"]
+    answer: ["商店", "在", "学校", "前边"]
+    why: { id: "**在**, lalu bendanya, lalu kata letak: **在学校前边**. Bukan *在前边学校*.", en: "**在**, then the noun, then the place word: **在学校前边**. Not *在前边学校*." }
+
+  # 11 Ingin dan suka
+  - id: e1-t-23
+    from: easy1-11-ingin-suka
+    type: fix
+    wrong: "我 喜欢 电影 看 。"
+    options: ["我 喜欢 看 电影 。", "我 看 喜欢 电影 。"]
+    answer: "我 喜欢 看 电影 。"
+    why: { id: "**喜欢** + kata kerja + benda: **喜欢看电影**, suka menonton film.", en: "**喜欢** + verb + object: **喜欢看电影**, like watching films." }
+  - id: e1-t-24
+    from: easy1-11-ingin-suka
+    type: listen
+    audio: "弟弟 想 吃 什么 ？"
+    options: ["Adik laki-laki ingin makan apa?", "Adik laki-laki suka makan apa?", "Adik laki-laki ingin minum apa?"]
+    answer: "Adik laki-laki ingin makan apa?"
+    why: { id: "**想** berarti *ingin*, **喜欢** berarti *suka*. **吃** makan, **喝** minum.", en: "**想** means *want*, **喜欢** means *like*. **吃** is eat, **喝** drink." }
+
+  # 12 Belanja
+  - id: e1-t-25
+    from: easy1-12-belanja
+    type: listen
+    audio: "这 件 衣服 七十 块 。"
+    options: ["Baju ini 70 yuan.", "Baju ini 17 yuan.", "Baju ini 7 yuan."]
+    answer: "Baju ini 70 yuan."
+    why: { id: "**七十**: tujuh kali sepuluh. **块** adalah yuan dalam bahasa lisan.", en: "**七十**: seven tens. **块** is the spoken word for yuan." }
+  - id: e1-t-26
+    from: easy1-12-belanja
+    type: gap
+    cue: "Kamu minum teh atau air?"
+    prompt: "你 喝 茶 ___ 喝 水 ？"
+    options: ["还是", "和", "也"]
+    answer: "还是"
+    why: { id: "*Atau* dalam pertanyaan pilihan adalah **还是**. **和** berarti *dan*.", en: "*Or* in a choice question is **还是**. **和** means *and*." }
+
+  # 13 Tidak dan belum
+  - id: e1-t-27
+    from: easy1-13-tidak-belum
+    type: gap
+    cue: "Kemarin Siti tidak pergi ke sekolah."
+    prompt: "西蒂 昨天 ___ 去 学校 。"
+    options: ["没", "不", "也"]
+    answer: "没"
+    why: { id: "Untuk hal yang tidak terjadi, pakai **没**: **昨天没去**.", en: "For something that didn't happen, use **没**: **昨天没去**." }
+  - id: e1-t-28
+    from: easy1-13-tidak-belum
+    type: choice
+    show_pinyin: false
+    prompt: "Siti memang tidak minum susu, itu kebiasaannya. Mana yang tepat?"
+    options: ["西蒂 不 喝 牛奶 。", "西蒂 没 喝 牛奶 。"]
+    answer: "西蒂 不 喝 牛奶 。"
+    why: { id: "Kebiasaan atau keinginan memakai **不**. **没喝** berarti tidak minum pada suatu waktu.", en: "Habits and choices take **不**. **没喝** means didn't drink on some occasion." }
+  - id: e1-t-29
+    from: easy1-13-tidak-belum
+    type: order
+    cue: "Aku belum pergi ke rumah sakit."
+    tiles: ["去", "还", "我", "医院", "没"]
+    answer: ["我", "还", "没", "去", "医院"]
+    why: { id: "*Belum* = **还没**, sebelum kata kerja: **还没去医院**.", en: "*Not yet* = **还没**, before the verb: **还没去医院**." }
+
+  # 14 Bisa
+  - id: e1-t-30
+    from: easy1-14-bisa
+    type: gap
+    cue: "Budi bisa berbahasa Mandarin. Dia sudah belajar."
+    prompt: "布迪 ___ 说 中文 。"
+    options: ["会", "能"]
+    answer: "会"
+    why: { id: "Kemampuan hasil belajar memakai **会**. **能** untuk bisa karena keadaan.", en: "A learned skill takes **会**. **能** is for can because circumstances allow." }
+  - id: e1-t-31
+    from: easy1-14-bisa
+    type: tone
+    audio: "汉语"
+    audio_py: "Hànyǔ"
+    options: [[4, 3], [4, 2], [3, 3]]
+    answer: [4, 3]
+    why: { id: "**Hàn** turun tajam, lalu **yǔ** rendah: 4 + 3.", en: "**Hàn** falls sharply, then **yǔ** is low: 4 + 3." }
+
+  # 15 Pergi dan datang
+  - id: e1-t-32
+    from: easy1-15-pergi-datang
+    type: fix
+    wrong: "我 去 学校 坐 汽车 。"
+    options: ["我 坐 汽车 去 学校 。", "我 去 坐 汽车 学校 。"]
+    answer: "我 坐 汽车 去 学校 。"
+    why: { id: "Cara pergi dulu, lalu tujuannya: **坐汽车** + **去学校**.", en: "How you travel comes first, then where: **坐汽车** + **去学校**." }
+  - id: e1-t-33
+    from: easy1-15-pergi-datang
+    type: listen
+    audio: "我 从 棉兰 来 。"
+    options: ["Aku dari Medan.", "Aku pergi ke Medan.", "Aku tinggal di Medan."]
+    answer: "Aku dari Medan."
+    why: { id: "**从** + tempat + **来**: datang dari tempat itu.", en: "**从** + place + **来**: to come from that place." }
+
+  # 16 Sudah terjadi
+  - id: e1-t-34
+    from: easy1-16-sudah-terjadi
+    type: fix
+    wrong: "她 昨天 没 来 了 。"
+    options: ["她 昨天 没 来 。", "她 昨天 没 了 来 。"]
+    answer: "她 昨天 没 来 。"
+    why: { id: "**没** dan **了** tidak dipakai bersama. Yang tidak terjadi cukup dengan **没**.", en: "**没** and **了** don't go together. What didn't happen takes **没** alone." }
+  - id: e1-t-35
+    from: easy1-16-sudah-terjadi
+    type: order
+    cue: "Kemarin aku minum dua gelas teh."
+    tiles: ["两", "喝", "我", "了", "杯", "昨天", "茶"]
+    answer: ["昨天", "我", "喝", "了", "两", "杯", "茶"]
+    accept: [["我", "昨天", "喝", "了", "两", "杯", "茶"]]
+    why: { id: "**了** langsung sesudah kata kerja, sebelum jumlahnya: **喝了两杯茶**.", en: "**了** comes right after the verb, before the amount: **喝了两杯茶**." }
+  - id: e1-t-36
+    from: easy1-16-sudah-terjadi
+    type: choice
+    prompt: "Kamu ditanya **你 买 票 了 吗 ？** Kamu sudah membelinya. Jawabannya…"
+    options: ["买 了 。", "没 买 。", "不 买 。"]
+    answer: "买 了 。"
+    why: { id: "Jawab dengan kata kerjanya dan **了**: **买了**. **没买** berarti belum atau tidak membeli.", en: "Answer with the verb and **了**: **买了**. **没买** means you didn't buy it." }
+
+  # 17 Cuaca dan perasaan
+  - id: e1-t-37
+    from: easy1-17-cuaca-perasaan
+    type: gap
+    cue: "Masakan ini enak sekali."
+    prompt: "这 个 菜 太 好吃 ___ 。"
+    options: ["了", "吧", "吗"]
+    answer: "了"
+    why: { id: "**太** … **了** berpasangan: **太好吃了**.", en: "**太** … **了** go together: **太好吃了**." }
+  - id: e1-t-38
+    from: easy1-17-cuaca-perasaan
+    type: listen
+    audio: "我 有点儿 饿 。"
+    options: ["Aku agak lapar.", "Aku lapar sekali.", "Aku agak haus."]
+    answer: "Aku agak lapar."
+    why: { id: "**有点儿** berarti *agak*. **饿** lapar, **渴** haus.", en: "**有点儿** means *a bit*. **饿** is hungry, **渴** thirsty." }
+
+  # 18 Di kafe
+  - id: e1-t-39
+    from: easy1-18-di-kafe
+    type: order
+    cue: "Sekarang jangan minum kopi."
+    tiles: ["喝", "别", "你", "咖啡", "现在"]
+    answer: ["你", "现在", "别", "喝", "咖啡"]
+    accept: [["现在", "你", "别", "喝", "咖啡"]]
+    why: { id: "**别** (jangan) berdiri sebelum kata kerja: **别喝咖啡**.", en: "**别** (don't) goes before the verb: **别喝咖啡**." }
+  - id: e1-t-40
+    from: easy1-18-di-kafe
+    type: gap
+    cue: "Tolong beri aku secangkir teh."
+    prompt: "请 ___ 我 一 杯 茶 。"
+    options: ["给", "用", "等"]
+    answer: "给"
+    why: { id: "**请给我** + benda: cara sopan memesan. **用** memakai, **等** menunggu.", en: "**请给我** + item: a polite way to order. **用** is use, **等** is wait." }
