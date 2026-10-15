@@ -1,0 +1,14 @@
+# Fixes to the machine-readable HSK transcription (krmanik/HSK-3.0), applied by data:import.
+# Each was checked against the standard's PDF (GF 0025—2021) or the list's pinyin order; see SOURCE.md.
+#   replace:   the transcription has the wrong word
+#   pinyin:    the transcription's pinyin is wrong (stored with citation tones, as everywhere in our data)
+#   homograph: the standard lists the same word and reading twice, as numbered senses (面¹ 面²);
+#              the transcription merged them. The second gets sense 2 (its own word id).
+- { op: replace, hsk: "2", from: "示", to: "表示", reason: "PDF: L2 #29 is 表示 biǎoshì; the transcription split it after 表" }
+- { op: homograph, hsk: "2", zh: "面", py: "miàn", sense: 2, en: "noodles; flour", reason: "PDF: L2 #377 面¹ (名、量) and #378 面² (名)" }
+- { op: pinyin, hsk: "2", zh: "不一会儿", py: "bù yīhuìr", reason: "transcription has a stray digit (yīhuǐr5); PDF: bù yíhuìr (spoken 一, stored citation)" }
+- { op: replace, hsk: "7-9", from: "鑾", to: "攀", reason: "OCR slip: sits between 派遣 pàiqiǎn and 攀升 pānshēng; 攀 pān fits the order" }
+- { op: replace, hsk: "7-9", from: "恰然自得", to: "怡然自得", reason: "恰 for 怡: the idiom is 怡然自得 yírán zìdé, between 仪表 yíbiǎo and 姨 yí" }
+- { op: replace, hsk: "7-9", from: "引人人胜", to: "引人入胜", reason: "人 for 入: the idiom is 引人入胜 yǐnrénrùshèng" }
+- { op: char, hsk: "2", from: "人", to: "入", reason: "人 is already HSK 1; the L2 list runs 如 rú, ?, 色 sè, and L2 words 入口, 收入, 进入 need 入 rù, which no list has" }
+- { op: pinyin, hsk: "6", zh: "铺", py: "pū", reason: "PDF p. 102: L6 #634 铺 pū (to spread), after 扑 pū; the import had picked pù (shop)" }

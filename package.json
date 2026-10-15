@@ -5,9 +5,12 @@
   "description": "A calm, levelled Mandarin course for Indonesian speakers, from zero to HSK 9.",
   "scripts": {
     "dev": "next dev",
-    "prebuild": "npm run content:check",
+    "prebuild": "npm run data:check && npm run content:check",
     "build": "next build",
     "preview": "node scripts/serve.mjs",
+    "data:fetch": "tsx scripts/data-fetch.ts",
+    "data:import": "tsx scripts/data-import.ts",
+    "data:check": "tsx scripts/data-check.ts",
     "content:check": "tsx scripts/content-check.ts",
     "audio:list": "tsx scripts/audio-list.ts",
     "audio:ingest": "tsx scripts/audio-ingest.ts",
