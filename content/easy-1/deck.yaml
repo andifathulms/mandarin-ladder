@@ -1,0 +1,504 @@
+# Indonesian meanings for the HSK 1 word deck (Kartu kata). Draft: written by Claude, to be checked by a Mandarin teacher.
+rung: easy-1
+words:
+  "爱 ài": { id: "cinta; suka, sayang" }
+  "爱好 àihào": { id: "hobi, kegemaran; gemar" }
+  "八 bā": { id: "delapan" }
+  "爸爸 bàba": { id: "ayah, bapak" }
+  "吧 ba": { id: "partikel ajakan atau dugaan (…ya, …kan)" }
+  "白 bái": { id: "putih" }
+  "白天 báitian": { id: "siang hari" }
+  "百 bǎi": { id: "seratus" }
+  "班 bān": { id: "kelas (rombongan belajar)" }
+  "半 bàn": { id: "setengah, separuh" }
+  "半年 bànnián": { id: "setengah tahun" }
+  "半天 bàntiān": { id: "setengah hari; lama sekali" }
+  "帮 bāng": { id: "membantu, menolong" }
+  "帮忙 bāng máng": { id: "membantu, menolong" }
+  "包 bāo": { id: "membungkus; tas, bungkusan" }
+  "包子 bāozi": { id: "bakpao" }
+  "杯 bēi": { id: "gelas, cangkir (penggolong)" }
+  "杯子 bēizi": { id: "gelas, cangkir" }
+  "北 běi": { id: "utara" }
+  "北边 běibian": { id: "sebelah utara" }
+  "北京 Běijīng": { id: "Beijing" }
+  "本 běn": { id: "penggolong buku (sebuah, sejilid)" }
+  "本子 běnzi": { id: "buku tulis" }
+  "比 bǐ": { id: "dibanding, daripada; membandingkan" }
+  "别 bié": { id: "jangan" }
+  "别的 biéde": { id: "yang lain" }
+  "别人 biéren": { id: "orang lain" }
+  "病 bìng": { id: "penyakit; sakit" }
+  "病人 bìngrén": { id: "orang sakit, pasien" }
+  "不大 bùdà": { id: "tidak terlalu, kurang" }
+  "不对 bù duì": { id: "salah, tidak benar" }
+  "不客气 bù kèqì": { id: "sama-sama, kembali" }
+  "不用 bùyòng": { id: "tidak perlu, tak usah" }
+  "不 bù": { id: "tidak, bukan" }
+  "菜 cài": { id: "sayur; lauk, masakan" }
+  "茶 chá": { id: "teh" }
+  "差 chà": { id: "kurang; buruk, jelek" }
+  "常 cháng": { id: "sering" }
+  "常常 chángcháng": { id: "sering" }
+  "唱 chàng": { id: "menyanyi" }
+  "唱歌 chàng gē": { id: "menyanyi (lagu)" }
+  "车 chē": { id: "kendaraan, mobil" }
+  "车票 chēpiào": { id: "tiket (bus, kereta)" }
+  "车上 chē shàng": { id: "di dalam kendaraan" }
+  "车站 chēzhàn": { id: "stasiun, halte" }
+  "吃 chī": { id: "makan" }
+  "吃饭 chī fàn": { id: "makan (nasi)" }
+  "出 chū": { id: "keluar" }
+  "出来 chū lai": { id: "keluar (ke arah pembicara)" }
+  "出去 chū qu": { id: "keluar (menjauhi pembicara)" }
+  "穿 chuān": { id: "memakai (baju, sepatu)" }
+  "床 chuáng": { id: "tempat tidur, ranjang" }
+  "次 cì": { id: "kali (penggolong frekuensi)" }
+  "从 cóng": { id: "dari (sejak)" }
+  "错 cuò": { id: "salah, keliru" }
+  "打 dǎ": { id: "memukul; bermain; menelepon" }
+  "打车 dǎchē": { id: "naik taksi" }
+  "打电话 dǎ diànhuà": { id: "menelepon" }
+  "打开 dǎ kāi": { id: "membuka; menyalakan" }
+  "打球 dǎqiú": { id: "main bola" }
+  "大 dà": { id: "besar; tua (umur)" }
+  "大学 dàxué": { id: "universitas" }
+  "大学生 dàxuéshēng": { id: "mahasiswa" }
+  "到 dào": { id: "sampai, tiba; ke" }
+  "得到 dé dào": { id: "mendapat, memperoleh" }
+  "地 de": { id: "partikel keterangan cara (dengan …)" }
+  "的 de": { id: "partikel kepemilikan (…nya, milik)" }
+  "等 děng": { id: "menunggu" }
+  "地 dì": { id: "tanah, bumi; lantai" }
+  "地点 dìdiǎn": { id: "tempat, lokasi" }
+  "地方 dìfang": { id: "tempat, daerah" }
+  "地上 dìshang": { id: "di lantai, di tanah" }
+  "地图 dìtú": { id: "peta" }
+  "弟弟 dìdi": { id: "adik laki-laki" }
+  "第 dì": { id: "ke- (penanda urutan)" }
+  "点 diǎn": { id: "jam, pukul; titik; memesan" }
+  "电 diàn": { id: "listrik" }
+  "电话 diànhuà": { id: "telepon" }
+  "电脑 diànnǎo": { id: "komputer" }
+  "电视 diànshì": { id: "televisi" }
+  "电视机 diànshìjī": { id: "pesawat televisi" }
+  "电影 diànyǐng": { id: "film" }
+  "电影院 diànyǐng yuàn": { id: "bioskop" }
+  "东 dōng": { id: "timur" }
+  "东边 dōngbiān": { id: "sebelah timur" }
+  "东西 dōngxi": { id: "barang, benda" }
+  "动 dòng": { id: "bergerak" }
+  "动作 dòngzuò": { id: "gerakan" }
+  "都 dōu": { id: "semua, semuanya" }
+  "读 dú": { id: "membaca" }
+  "读书 dú shū": { id: "membaca buku; bersekolah" }
+  "对 duì": { id: "benar; terhadap, kepada" }
+  "对不起 duìbuqǐ": { id: "maaf" }
+  "多 duō": { id: "banyak" }
+  "多少 duōshao": { id: "berapa" }
+  "饿 è": { id: "lapar" }
+  "儿子 érzi": { id: "anak laki-laki" }
+  "二 èr": { id: "dua" }
+  "饭 fàn": { id: "nasi; makanan" }
+  "饭店 fàndiàn": { id: "restoran; hotel" }
+  "房间 fángjiān": { id: "kamar" }
+  "房子 fángzi": { id: "rumah" }
+  "放 fàng": { id: "menaruh, meletakkan" }
+  "放假 fàng jià": { id: "libur" }
+  "放学 fàng xué": { id: "pulang sekolah" }
+  "飞 fēi": { id: "terbang" }
+  "飞机 fēijī": { id: "pesawat terbang" }
+  "非常 fēicháng": { id: "sangat, sekali" }
+  "分 fēn": { id: "menit; membagi; sen (1/100 yuan)" }
+  "风 fēng": { id: "angin" }
+  "干 gàn": { id: "melakukan, mengerjakan" }
+  "干净 gānjìng": { id: "bersih" }
+  "干 gān": { id: "kering" }
+  "干什么 gànshénme": { id: "sedang apa, untuk apa" }
+  "高 gāo": { id: "tinggi" }
+  "高兴 gāoxìng": { id: "senang, gembira" }
+  "告诉 gàosu": { id: "memberi tahu" }
+  "哥哥 gēge": { id: "kakak laki-laki" }
+  "歌 gē": { id: "lagu" }
+  "个 gè": { id: "penggolong umum (sebuah, seorang)" }
+  "给 gěi": { id: "memberi; untuk, kepada" }
+  "跟 gēn": { id: "dengan, bersama; mengikuti" }
+  "工人 gōngren": { id: "buruh, pekerja" }
+  "工作 gōngzuò": { id: "bekerja; pekerjaan" }
+  "关 guān": { id: "menutup; mematikan" }
+  "关上 guānshàng": { id: "menutup; mematikan" }
+  "贵 guì": { id: "mahal" }
+  "国 guó": { id: "negara" }
+  "国家 guójiā": { id: "negara" }
+  "国外 guówài": { id: "luar negeri" }
+  "过 guò": { id: "melewati; merayakan (hari besar)" }
+  "还 hái": { id: "masih; juga" }
+  "还是 háishi": { id: "atau (dalam pertanyaan); masih; lebih baik" }
+  "还有 háiyǒu": { id: "masih ada; selain itu" }
+  "孩子 háizi": { id: "anak" }
+  "汉语 Hànyǔ": { id: "bahasa Mandarin" }
+  "汉字 Hànzì": { id: "aksara Han (hanzi)" }
+  "好 hǎo": { id: "baik, bagus" }
+  "好吃 hǎochī": { id: "enak" }
+  "好看 hǎokàn": { id: "cantik, bagus (dilihat)" }
+  "好听 hǎotīng": { id: "merdu, enak didengar" }
+  "好玩儿 hǎowánr": { id: "asyik, menyenangkan" }
+  "号 hào": { id: "tanggal; nomor" }
+  "喝 hē": { id: "minum" }
+  "和 hé": { id: "dan; dengan" }
+  "很 hěn": { id: "sangat" }
+  "后 hòu": { id: "belakang; setelah" }
+  "后边 hòubian": { id: "sebelah belakang" }
+  "后天 hòutiān": { id: "lusa" }
+  "花 huā": { id: "bunga; menghabiskan (uang, waktu)" }
+  "话 huà": { id: "kata-kata, ucapan" }
+  "坏 huài": { id: "rusak; jahat, buruk" }
+  "还 huán": { id: "mengembalikan" }
+  "回 huí": { id: "kembali, pulang" }
+  "回答 huídá": { id: "menjawab; jawaban" }
+  "回到 huídào": { id: "kembali ke" }
+  "回家 huí jiā": { id: "pulang ke rumah" }
+  "回来 huí lai": { id: "kembali (ke sini)" }
+  "回去 huí qu": { id: "kembali (ke sana)" }
+  "会 huì": { id: "bisa (karena belajar); akan" }
+  "火车 huǒchē": { id: "kereta api" }
+  "机场 jīchǎng": { id: "bandara" }
+  "机票 jīpiào": { id: "tiket pesawat" }
+  "鸡蛋 jīdàn": { id: "telur ayam" }
+  "几 jǐ": { id: "berapa (jumlah kecil); beberapa" }
+  "记 jì": { id: "mencatat; mengingat" }
+  "记得 jì de": { id: "ingat" }
+  "记住 jì zhu": { id: "mengingat, menghafal" }
+  "家 jiā": { id: "rumah; keluarga" }
+  "家里 jiālǐ": { id: "di rumah" }
+  "家人 jiārén": { id: "anggota keluarga" }
+  "间 jiān": { id: "penggolong ruangan; antara" }
+  "见 jiàn": { id: "melihat; bertemu" }
+  "见面 jiàn miàn": { id: "bertemu, berjumpa" }
+  "教 jiào": { id: "mengajar" }
+  "叫 jiào": { id: "bernama; memanggil" }
+  "教学楼 jiàoxuélóu": { id: "gedung kuliah, gedung sekolah" }
+  "姐姐 jiějie": { id: "kakak perempuan" }
+  "介绍 jièshào": { id: "memperkenalkan" }
+  "今年 jīnnián": { id: "tahun ini" }
+  "今天 jīntiān": { id: "hari ini" }
+  "进 jìn": { id: "masuk" }
+  "进来 jìn lai": { id: "masuk (ke sini)" }
+  "进去 jìn qu": { id: "masuk (ke sana)" }
+  "九 jiǔ": { id: "sembilan" }
+  "就 jiù": { id: "langsung, segera; justru" }
+  "觉得 juéde": { id: "merasa" }
+  "开 kāi": { id: "membuka; menyalakan; menyetir" }
+  "开车 kāi chē": { id: "menyetir mobil" }
+  "开会 kāi huì": { id: "rapat" }
+  "开玩笑 kāi wánxiào": { id: "bercanda" }
+  "看 kàn": { id: "melihat, menonton; membaca" }
+  "看病 kàn bìng": { id: "berobat; memeriksa pasien" }
+  "看到 kàn dào": { id: "melihat" }
+  "看见 kàn jian": { id: "melihat" }
+  "考 kǎo": { id: "ujian; menguji" }
+  "考试 kǎoshì": { id: "ujian" }
+  "渴 kě": { id: "haus" }
+  "课 kè": { id: "pelajaran, kelas" }
+  "课本 kèběn": { id: "buku pelajaran" }
+  "课文 kèwén": { id: "teks bacaan pelajaran" }
+  "口 kǒu": { id: "mulut; penggolong anggota keluarga" }
+  "块 kuài": { id: "yuan (uang, lisan); potong" }
+  "快 kuài": { id: "cepat" }
+  "来 lái": { id: "datang" }
+  "来到 láidào": { id: "tiba, datang ke" }
+  "老 lǎo": { id: "tua; lama" }
+  "老人 lǎoren": { id: "orang tua, lansia" }
+  "老师 lǎoshī": { id: "guru" }
+  "了 le": { id: "partikel: sudah terjadi / perubahan" }
+  "累 lèi": { id: "lelah, capek" }
+  "冷 lěng": { id: "dingin" }
+  "里 lǐ": { id: "dalam, di dalam" }
+  "里边 lǐbian": { id: "sebelah dalam" }
+  "两 liǎng": { id: "dua (sebelum penggolong)" }
+  "零 líng": { id: "nol" }
+  "六 liù": { id: "enam" }
+  "楼 lóu": { id: "gedung bertingkat; lantai" }
+  "楼上 lóushàng": { id: "lantai atas" }
+  "楼下 lóuxià": { id: "lantai bawah" }
+  "路 lù": { id: "jalan" }
+  "路口 lùkǒu": { id: "persimpangan jalan" }
+  "路上 lùshang": { id: "di jalan, dalam perjalanan" }
+  "妈妈 māma": { id: "ibu, mama" }
+  "马路 mǎlù": { id: "jalan raya" }
+  "马上 mǎshàng": { id: "segera" }
+  "吗 ma": { id: "partikel tanya (…kah?)" }
+  "买 mǎi": { id: "membeli" }
+  "慢 màn": { id: "lambat, pelan" }
+  "忙 máng": { id: "sibuk" }
+  "毛 máo": { id: "sepuluh sen (lisan, 1/10 yuan); bulu" }
+  "没 méi": { id: "tidak (belum); tidak punya" }
+  "没关系 méiguānxi": { id: "tidak apa-apa" }
+  "没什么 méishénme": { id: "tidak apa-apa; bukan apa-apa" }
+  "没事儿 méishìr": { id: "tidak apa-apa; tidak ada urusan" }
+  "没有 méiyou": { id: "tidak punya, tidak ada; belum" }
+  "妹妹 mèimei": { id: "adik perempuan" }
+  "门 mén": { id: "pintu" }
+  "门口 ménkǒu": { id: "depan pintu, pintu masuk" }
+  "门票 ménpiào": { id: "tiket masuk" }
+  "们 men": { id: "penanda jamak (para, kalian)" }
+  "米饭 mǐfàn": { id: "nasi" }
+  "面包 miànbāo": { id: "roti" }
+  "面条儿 miàntiáor": { id: "mi" }
+  "名字 míngzi": { id: "nama" }
+  "明白 míngbai": { id: "mengerti, paham; jelas" }
+  "明年 míngnián": { id: "tahun depan" }
+  "明天 míngtiān": { id: "besok" }
+  "拿 ná": { id: "mengambil, membawa" }
+  "哪 nǎ": { id: "mana, yang mana" }
+  "哪里 nǎli": { id: "di mana" }
+  "哪儿 nǎr": { id: "di mana" }
+  "哪些 nǎxiē": { id: "yang mana saja" }
+  "那 nà": { id: "itu" }
+  "那边 nàbian": { id: "sebelah sana" }
+  "那里 nàlǐ": { id: "di sana" }
+  "那儿 nàr": { id: "di sana" }
+  "那些 nàxiē": { id: "itu semua (jamak)" }
+  "奶 nǎi": { id: "susu" }
+  "奶奶 nǎinai": { id: "nenek (dari pihak ayah)" }
+  "男 nán": { id: "laki-laki" }
+  "男孩儿 nánháir": { id: "anak laki-laki" }
+  "男朋友 nánpéngyou": { id: "pacar (laki-laki)" }
+  "男人 nánren": { id: "pria, laki-laki" }
+  "男生 nánshēng": { id: "siswa laki-laki" }
+  "南 nán": { id: "selatan" }
+  "南边 nánbian": { id: "sebelah selatan" }
+  "难 nán": { id: "sulit, sukar" }
+  "呢 ne": { id: "partikel tanya (bagaimana dengan…?); sedang" }
+  "能 néng": { id: "bisa, dapat; boleh" }
+  "你 nǐ": { id: "kamu, engkau" }
+  "你们 nǐmen": { id: "kalian" }
+  "年 nián": { id: "tahun" }
+  "您 nín": { id: "Anda" }
+  "牛奶 niúnǎi": { id: "susu sapi" }
+  "女 nǚ": { id: "perempuan" }
+  "女儿 nǚér": { id: "anak perempuan" }
+  "女孩儿 nǚháir": { id: "anak perempuan" }
+  "女朋友 nǚpéngyou": { id: "pacar (perempuan)" }
+  "女人 nǚren": { id: "wanita, perempuan" }
+  "女生 nǚshēng": { id: "siswi" }
+  "旁边 pángbiān": { id: "samping, sebelah" }
+  "跑 pǎo": { id: "berlari" }
+  "朋友 péngyou": { id: "teman, kawan" }
+  "票 piào": { id: "tiket, karcis" }
+  "七 qī": { id: "tujuh" }
+  "起 qǐ": { id: "bangun; mulai" }
+  "起床 qǐ chuáng": { id: "bangun tidur" }
+  "起来 qǐ lai": { id: "bangun, berdiri; (pelengkap arah ke atas)" }
+  "汽车 qìchē": { id: "mobil" }
+  "前 qián": { id: "depan; sebelum" }
+  "前边 qiánbian": { id: "sebelah depan" }
+  "前天 qiántiān": { id: "kemarin lusa" }
+  "钱 qián": { id: "uang" }
+  "钱包 qiánbāo": { id: "dompet" }
+  "请 qǐng": { id: "silakan; tolong; mengundang, mentraktir" }
+  "请假 qǐng jià": { id: "minta izin (cuti)" }
+  "请进 qǐngjìn": { id: "silakan masuk" }
+  "请问 qǐngwèn": { id: "numpang tanya, permisi" }
+  "请坐 qǐng zuò": { id: "silakan duduk" }
+  "球 qiú": { id: "bola" }
+  "去 qù": { id: "pergi" }
+  "去年 qùnián": { id: "tahun lalu" }
+  "热 rè": { id: "panas" }
+  "人 rén": { id: "orang, manusia" }
+  "认识 rènshi": { id: "kenal, mengenal" }
+  "认真 rènzhēn": { id: "sungguh-sungguh, serius" }
+  "日 rì": { id: "tanggal, hari; matahari" }
+  "日期 rìqī": { id: "tanggal" }
+  "肉 ròu": { id: "daging" }
+  "三 sān": { id: "tiga" }
+  "山 shān": { id: "gunung" }
+  "商场 shāngchǎng": { id: "mal, pusat perbelanjaan" }
+  "商店 shāngdiàn": { id: "toko" }
+  "上 shàng": { id: "atas; naik; yang lalu" }
+  "上班 shàng bān": { id: "berangkat kerja, masuk kerja" }
+  "上边 shàngbian": { id: "sebelah atas" }
+  "上车 shàngchē": { id: "naik kendaraan" }
+  "上次 shàngcì": { id: "kali lalu" }
+  "上课 shàng kè": { id: "masuk kelas, mulai pelajaran" }
+  "上网 shàng wǎng": { id: "berinternet, online" }
+  "上午 shàngwǔ": { id: "pagi (sebelum tengah hari)" }
+  "上学 shàng xué": { id: "bersekolah, berangkat sekolah" }
+  "少 shǎo": { id: "sedikit" }
+  "谁 shéi": { id: "siapa" }
+  "身上 shēnshang": { id: "di badan" }
+  "身体 shēntǐ": { id: "badan, tubuh; kesehatan" }
+  "什么 shénme": { id: "apa" }
+  "生病 shēng bìng": { id: "sakit, jatuh sakit" }
+  "生气 shēng qì": { id: "marah" }
+  "生日 shēngri": { id: "ulang tahun" }
+  "十 shí": { id: "sepuluh" }
+  "时候 shíhou": { id: "waktu, saat (ketika)" }
+  "时间 shíjiān": { id: "waktu" }
+  "事 shì": { id: "urusan, hal" }
+  "试 shì": { id: "mencoba" }
+  "是 shì": { id: "adalah; ya, benar" }
+  "是不是 shìbùshì": { id: "apakah; bukankah" }
+  "手 shǒu": { id: "tangan" }
+  "手机 shǒujī": { id: "ponsel, HP" }
+  "书 shū": { id: "buku" }
+  "书包 shūbāo": { id: "tas sekolah" }
+  "书店 shūdiàn": { id: "toko buku" }
+  "树 shù": { id: "pohon" }
+  "水 shuǐ": { id: "air" }
+  "水果 shuǐguǒ": { id: "buah-buahan" }
+  "睡 shuì": { id: "tidur" }
+  "睡觉 shuì jiào": { id: "tidur" }
+  "说 shuō": { id: "berkata, berbicara" }
+  "说话 shuō huà": { id: "berbicara" }
+  "四 sì": { id: "empat" }
+  "送 sòng": { id: "mengantar; memberi (hadiah)" }
+  "岁 suì": { id: "umur, tahun (usia)" }
+  "他 tā": { id: "dia (laki-laki)" }
+  "他们 tāmen": { id: "mereka" }
+  "她 tā": { id: "dia (perempuan)" }
+  "她们 tāmen": { id: "mereka (perempuan)" }
+  "太 tài": { id: "terlalu; sangat" }
+  "天 tiān": { id: "hari; langit" }
+  "天气 tiānqì": { id: "cuaca" }
+  "听 tīng": { id: "mendengar, mendengarkan" }
+  "听到 tīngdào": { id: "mendengar" }
+  "听见 tīng jian": { id: "mendengar" }
+  "听写 tīngxiě": { id: "dikte" }
+  "同学 tóngxué": { id: "teman sekelas" }
+  "图书馆 túshūguǎn": { id: "perpustakaan" }
+  "外 wài": { id: "luar" }
+  "外边 wàibian": { id: "sebelah luar" }
+  "外国 wàiguó": { id: "luar negeri, asing" }
+  "外语 wàiyǔ": { id: "bahasa asing" }
+  "玩儿 wánr": { id: "bermain" }
+  "晚 wǎn": { id: "malam; terlambat" }
+  "晚饭 wǎnfàn": { id: "makan malam" }
+  "晚上 wǎnshang": { id: "malam" }
+  "网上 wǎngshàng": { id: "di internet, online" }
+  "网友 wǎngyǒu": { id: "teman online, warganet" }
+  "忘 wàng": { id: "lupa" }
+  "忘记 wàngjì": { id: "lupa" }
+  "问 wèn": { id: "bertanya" }
+  "我 wǒ": { id: "saya, aku" }
+  "我们 wǒmen": { id: "kami, kita" }
+  "五 wǔ": { id: "lima" }
+  "午饭 wǔfàn": { id: "makan siang" }
+  "西 xī": { id: "barat" }
+  "西边 xībian": { id: "sebelah barat" }
+  "洗 xǐ": { id: "mencuci" }
+  "洗手间 xǐshǒujiān": { id: "toilet, kamar kecil" }
+  "喜欢 xǐhuan": { id: "suka, senang" }
+  "下 xià": { id: "bawah; turun; yang berikutnya" }
+  "下班 xià bān": { id: "pulang kerja" }
+  "下边 xiàbian": { id: "sebelah bawah" }
+  "下车 xiàchē": { id: "turun dari kendaraan" }
+  "下次 xiàcì": { id: "lain kali, kali berikutnya" }
+  "下课 xià kè": { id: "selesai pelajaran" }
+  "下午 xiàwǔ": { id: "sore, siang (setelah tengah hari)" }
+  "下雨 xiàyǔ": { id: "hujan, turun hujan" }
+  "先 xiān": { id: "dulu, terlebih dahulu" }
+  "先生 xiānsheng": { id: "tuan, bapak; suami" }
+  "现在 xiànzài": { id: "sekarang" }
+  "想 xiǎng": { id: "ingin, mau; memikirkan; rindu" }
+  "小 xiǎo": { id: "kecil; muda" }
+  "小孩儿 xiǎoháir": { id: "anak kecil" }
+  "小姐 xiǎojiě": { id: "nona" }
+  "小朋友 xiǎopéngyǒu": { id: "anak-anak; adik (sapaan untuk anak)" }
+  "小时 xiǎoshí": { id: "jam (durasi)" }
+  "小学 xiǎoxué": { id: "sekolah dasar" }
+  "小学生 xiǎo xuésheng": { id: "murid SD" }
+  "笑 xiào": { id: "tertawa, tersenyum" }
+  "写 xiě": { id: "menulis" }
+  "谢谢 xièxie": { id: "terima kasih" }
+  "新 xīn": { id: "baru" }
+  "新年 xīnnián": { id: "tahun baru" }
+  "星期 xīngqī": { id: "minggu (pekan); hari (dalam sepekan)" }
+  "星期日 Xīngqīrì": { id: "hari Minggu" }
+  "星期天 xīngqītiān": { id: "hari Minggu" }
+  "行 xíng": { id: "boleh, oke, bisa" }
+  "休息 xiūxi": { id: "istirahat" }
+  "学 xué": { id: "belajar" }
+  "学生 xuésheng": { id: "murid, pelajar" }
+  "学习 xuéxí": { id: "belajar" }
+  "学校 xuéxiào": { id: "sekolah" }
+  "学院 xuéyuàn": { id: "akademi, fakultas" }
+  "要 yào": { id: "mau, ingin; perlu; akan" }
+  "爷爷 yéye": { id: "kakek (dari pihak ayah)" }
+  "也 yě": { id: "juga" }
+  "页 yè": { id: "halaman" }
+  "一 yī": { id: "satu" }
+  "衣服 yīfu": { id: "baju, pakaian" }
+  "医生 yīshēng": { id: "dokter" }
+  "医院 yīyuàn": { id: "rumah sakit" }
+  "一半 yībàn": { id: "setengah, separuh" }
+  "一会儿 yīhuìr": { id: "sebentar" }
+  "一块儿 yīkuàir": { id: "bersama-sama" }
+  "一下儿 yīxiàr": { id: "sebentar, sejenak (coba …)" }
+  "一样 yīyàng": { id: "sama" }
+  "一边 yībiān": { id: "satu sisi; sambil" }
+  "一点儿 yīdiǎnr": { id: "sedikit" }
+  "一起 yīqǐ": { id: "bersama-sama" }
+  "一些 yīxiē": { id: "beberapa, sedikit" }
+  "用 yòng": { id: "memakai, menggunakan" }
+  "有 yǒu": { id: "punya, ada" }
+  "有的 yǒude": { id: "ada yang, sebagian" }
+  "有名 yǒu míng": { id: "terkenal" }
+  "有时候 yǒushíhou": { id: "kadang-kadang" }
+  "有些 yǒuxiē": { id: "beberapa; agak" }
+  "有用 yǒuyòng": { id: "berguna" }
+  "右 yòu": { id: "kanan" }
+  "右边 yòubian": { id: "sebelah kanan" }
+  "雨 yǔ": { id: "hujan" }
+  "元 yuán": { id: "yuan (satuan uang)" }
+  "远 yuǎn": { id: "jauh" }
+  "月 yuè": { id: "bulan" }
+  "再 zài": { id: "lagi" }
+  "再见 zàijiàn": { id: "sampai jumpa" }
+  "在 zài": { id: "di; sedang; berada" }
+  "在家 zàijiā": { id: "di rumah" }
+  "早 zǎo": { id: "pagi; awal, dini" }
+  "早饭 zǎofàn": { id: "sarapan" }
+  "早上 zǎoshang": { id: "pagi hari" }
+  "怎么 zěnme": { id: "bagaimana; kenapa" }
+  "站 zhàn": { id: "berdiri; stasiun, halte" }
+  "找 zhǎo": { id: "mencari" }
+  "找到 zhǎodào": { id: "menemukan" }
+  "这 zhè": { id: "ini" }
+  "这边 zhèbiān": { id: "sebelah sini" }
+  "这里 zhèlǐ": { id: "di sini" }
+  "这儿 zhèr": { id: "di sini" }
+  "这些 zhèxiē": { id: "ini semua (jamak)" }
+  "着 zhe": { id: "partikel: keadaan berlangsung (sedang …)" }
+  "真 zhēn": { id: "sungguh, benar-benar" }
+  "真的 zhēn de": { id: "sungguh, benar-benar" }
+  "正 zhèng": { id: "sedang; tepat; lurus" }
+  "正在 zhèngzài": { id: "sedang" }
+  "知道 zhīdao": { id: "tahu" }
+  "知识 zhīshi": { id: "pengetahuan" }
+  "中 zhōng": { id: "tengah; dalam" }
+  "中国 Zhōngguó": { id: "Tiongkok, Cina" }
+  "中间 zhōngjiān": { id: "tengah, di antara" }
+  "中文 Zhōngwén": { id: "bahasa Mandarin (Tionghoa)" }
+  "中午 zhōngwǔ": { id: "tengah hari, siang" }
+  "中学 zhōngxué": { id: "sekolah menengah" }
+  "中学生 zhōngxuéshēng": { id: "siswa sekolah menengah" }
+  "重 zhòng": { id: "berat" }
+  "重要 zhòngyào": { id: "penting" }
+  "住 zhù": { id: "tinggal" }
+  "准备 zhǔnbèi": { id: "menyiapkan; bersiap" }
+  "桌子 zhuōzi": { id: "meja" }
+  "字 zì": { id: "huruf, aksara" }
+  "子 zi": { id: "akhiran kata benda (-zi)" }
+  "走 zǒu": { id: "berjalan; pergi" }
+  "走路 zǒu lù": { id: "berjalan kaki" }
+  "最 zuì": { id: "paling" }
+  "最好 zuìhǎo": { id: "paling baik; sebaiknya" }
+  "最后 zuìhòu": { id: "terakhir; akhirnya" }
+  "昨天 zuótiān": { id: "kemarin" }
+  "左 zuǒ": { id: "kiri" }
+  "左边 zuǒbian": { id: "sebelah kiri" }
+  "坐 zuò": { id: "duduk; naik (kendaraan)" }
+  "坐下 zuòxià": { id: "duduk" }
+  "做 zuò": { id: "membuat; melakukan, mengerjakan" }
+examples: []
