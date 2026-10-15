@@ -12,6 +12,11 @@ describe('service worker', () => {
   it('precaches the v1 rungs and the placement check', () => {
     for (const p of ['rung/dasar-1/', 'rung/dasar-2/', 'rung/easy-1/', 'placement/', 'words/']) expect(sw).toContain(`'${p}'`);
   });
+  it('serves stroke files cache-first, without precaching them', () => {
+    const shell = sw.slice(sw.indexOf('const SHELL'), sw.indexOf('];', sw.indexOf('const SHELL')));
+    expect(shell).not.toMatch(/strokes/);
+    expect(sw).toMatch(/\/strokes\/.*\.json/s);
+  });
   it('never precaches audio files, and serves them cache-first', () => {
     const shell = sw.slice(sw.indexOf('const SHELL'), sw.indexOf('];', sw.indexOf('const SHELL')));
     expect(shell).not.toMatch(/\.mp3/);

@@ -1,9 +1,10 @@
 /* Mandarin Ladder service worker. Bump CACHE_VERSION on every release. */
-const CACHE_VERSION = 'v0.1.0';
+const CACHE_VERSION = 'v1.0.0';
 const CACHE = `mandarin-ladder-${CACHE_VERSION}`;
 // Works under any base path: everything is relative to the registration scope.
 const SCOPE = self.registration.scope;
-// The shell plus the v1 rungs and the placement check. Audio is never precached (CLAUDE.md §7.9).
+// The shell plus the v1 rungs, the placement check and My words. Audio and stroke files are never
+// precached; the subset fonts and fonts-zh.css are hashed build assets, cached on first use (CLAUDE.md §7.9).
 const SHELL = [
   '',
   'rung/dasar-1/',
@@ -46,6 +47,21 @@ self.addEventListener('fetch', (event) => {
 
   // Recorded audio is cache-first, stored on first play. File names carry a content hash.
   if (url.pathname.includes('/audio/') && url.pathname.endsWith('.mp3')) {
+    event.respondWith(
+      caches.match(req).then(
+        (hit) =>
+          hit ||
+          fetch(req).then((res) => {
+            if (res.ok) caches.open(CACHE).then((c) => c.put(req, res.clone()));
+            return res;
+          }),
+      ),
+    );
+    return;
+  }
+
+  // Stroke data is cache-first, stored when a character is first opened (never precached).
+  if (url.pathname.includes('/strokes/') && url.pathname.endsWith('.json')) {
     event.respondWith(
       caches.match(req).then(
         (hit) =>
