@@ -112,8 +112,9 @@ function lintTexts(texts: ZhText[], ctx: Ctx, opts: { vocab: boolean; grammar: b
       continue;
     }
     a.forEach((w, i) => {
-      for (const p of pinyinProblems(w, a[i + 1])) ctx.findings.push({ level: 'error', message: `${ctx.where}: ${t.where}: ${p}` });
+      // Lines that are wrong on purpose (pair.off, fix items) may misread on purpose; they still align.
       if (t.off || w.kind !== 'han') return;
+      for (const p of pinyinProblems(w, a[i + 1])) ctx.findings.push({ level: 'error', message: `${ctx.where}: ${t.where}: ${p}` });
       if (opts.vocab && !ctx.known(w.text)) unknown.add(w.text);
       if (opts.grammar) {
         for (const d of DETECTORS) {
@@ -147,7 +148,8 @@ function lintToneItems(items: CheckItem[], where: string, findings: Finding[]) {
 
 export function lintLessons(rungs: Rung[], byRung: Map<string, Lesson[]>): Finding[] {
   const findings: Finding[] = [];
-  const names = new Set(getNames().map((n) => n.zh));
+  // Names written as two words (王 明) make each part a known word too.
+  const names = new Set(getNames().flatMap((n) => [n.zh, ...n.zh.split(/\s+/)]));
   const grammarIds = new Set(getGrammar().map((g) => g.id));
   const dasarIds = new Set(getDasarPoints().map((d) => d.id));
   const hokkien = getHokkien();

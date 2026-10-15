@@ -64,6 +64,12 @@ export function wordReading(zh: string, glossary: GlossaryEntry[], names: Names)
   if (g) return g.py.replace(/\s+/g, '');
   const n = names.find((x) => x.zh === zh);
   if (n) return n.py.replace(/\s+/g, '');
+  // A part of a two-word name (王 of 王 明).
+  for (const x of names) {
+    const zs = x.zh.split(/\s+/);
+    const ps = x.py.split(/\s+/);
+    if (zs.length === ps.length && zs.includes(zh)) return ps[zs.indexOf(zh)];
+  }
   if (DEFAULT_READING[zh]) return DEFAULT_READING[zh];
   if ([...zh].every((c) => DIGITS[c])) return [...zh].map((c) => DIGITS[c]).join('');
   const r = readings().get(zh);

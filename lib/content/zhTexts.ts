@@ -13,10 +13,12 @@ const isLatinLine = (s: string) => /[A-Za-z]/.test(s.replace(/\*\*|\*|\[\[|\]\]/
  */
 export function itemTexts(c: CheckItem, where = c.id): ZhText[] {
   const out: ZhText[] = [];
+  // A fix item's wrong sentence and wrong options are mistakes on purpose, like pair.off.
+  const off = (s: string) => c.type === 'fix' && s !== c.answer;
   for (const s of itemChinese(c)) {
     if (isLatinLine(s)) {
-      for (const m of s.matchAll(/\p{Script=Han}+/gu)) if (c.py?.[m[0]]) out.push({ where, zh: m[0], py: c.py[m[0]] });
-    } else if (c.py?.[s]) out.push({ where, zh: s, py: c.py[s] });
+      for (const m of s.matchAll(/\p{Script=Han}+/gu)) if (c.py?.[m[0]]) out.push({ where, zh: m[0], py: c.py[m[0]], off: off(s) });
+    } else if (c.py?.[s]) out.push({ where, zh: s, py: c.py[s], off: off(s) });
   }
   return out;
 }

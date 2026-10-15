@@ -43,7 +43,7 @@ export function usedChars(): { ordered: string[]; strokes: Set<string> } {
   for (const r of rungs) for (const f of walk(path.join(ROOT, 'content', r.id), /\.(md|ya?ml)$/)) add(fs.readFileSync(f, 'utf8'), true);
   // Placement and the rest of content/: shown, but only lessons, tests and capstones need stroke order.
   // Data files (Hokkien forms, radicals, names) and the curriculum's topics are text, not characters to learn.
-  for (const f of walk(path.join(ROOT, 'content'), /\.(md|ya?ml)$/, ['hsk'])) {
+  for (const f of walk(path.join(ROOT, 'content'), /\.ya?ml$/, ['hsk'])) {
     add(fs.readFileSync(f, 'utf8'), !f.endsWith('curriculum.yaml') && !f.includes(`${path.sep}data${path.sep}`));
   }
   for (const dir of ['lib/i18n', 'components', 'app']) for (const f of walk(path.join(ROOT, dir), /\.(ts|tsx)$/)) add(fs.readFileSync(f, 'utf8'), false);

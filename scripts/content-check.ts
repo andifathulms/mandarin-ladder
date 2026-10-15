@@ -124,9 +124,11 @@ for (const rung of rungs) {
   }
 }
 
-for (const lessons of lessonsByRung.values()) {
+for (const [rungId, lessons] of lessonsByRung) {
+  const live = rungs.find((r) => r.id === rungId)?.status === 'live';
   for (const l of lessons) {
-    if (l.next && !allLessonIds.has(l.next)) err(`${l.rung}/${l.slug}: next "${l.next}" is not a lesson`);
+    // While a rung is being written its next lessons may not exist yet; once live they must.
+    if (l.next && !allLessonIds.has(l.next)) (live ? err : warn)(`${l.rung}/${l.slug}: next "${l.next}" is not a lesson`);
   }
 }
 
