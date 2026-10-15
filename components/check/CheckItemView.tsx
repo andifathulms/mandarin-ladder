@@ -4,6 +4,7 @@ import { useEffect, useRef, useState } from 'react';
 import type { CheckItem } from '@/lib/types';
 import { grade, parseTones, type Response } from '@/lib/check/grade';
 import { sfx } from '@/lib/speech/sfx';
+import * as store from '@/lib/progress/store';
 import { isSyllableKey } from '@/lib/speech/audio';
 import { hasHan } from '@/lib/zh/text';
 import { OptionPill, type PillState } from './OptionPill';
@@ -315,6 +316,7 @@ export function CheckItemView(props: Practice | Test) {
           solved={solved}
           onDone={(misses) => {
             const resp = `misses:${misses}`;
+            store.recordTrace(item.char, misses);
             if (!practice) (props as Test).onChange(resp);
             else {
               missesRef.current = misses > 2 ? 1 : 0;

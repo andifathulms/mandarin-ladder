@@ -25,6 +25,8 @@ export function emptyState(): ProgressState {
     placement: null,
     days: [],
     opened: [],
+    deck: {},
+    traces: {},
     settings: { ...DEFAULT_SETTINGS },
   };
 }

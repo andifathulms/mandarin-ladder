@@ -51,6 +51,8 @@ export type LessonSummary = {
   /** One line per check item, for resuming mid-check. */
   checkTexts: Quote[];
   glossary: GlossaryEntry[];
+  /** HSK word ids of the glossary words, for the word deck. */
+  wordIds: string[];
 };
 
 export type Reading = z.infer<typeof ReadingSchema>;

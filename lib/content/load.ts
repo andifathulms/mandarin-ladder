@@ -24,6 +24,8 @@ import { fillItemPinyin, type Names } from './autopy';
 import { itemText } from '../check/text';
 import { parseInline } from '../markup';
 import { plainZh } from '../zh/text';
+import { normPinyin } from '../zh/pinyin';
+import { getWords } from './hsk';
 import type {
   CheckItem,
   DasarPoint,
@@ -157,6 +159,19 @@ export function getLesson(rungId: string, slug: string): Lesson | undefined {
 const quoteOf = (e: { zh: string; py: string } | undefined, fallback: string): Quote =>
   e ? { text: plainZh(e.zh), zh: e.zh, py: e.py } : { text: fallback };
 
+/** The HSK word ids of glossary entries (same characters, same pinyin apart from spacing and neutral tones). */
+export function glossaryWordIds(glossary: GlossaryEntry[]): string[] {
+  const words = getWords();
+  const out: string[] = [];
+  for (const g of glossary) {
+    const want = normPinyin(g.py.replace(/\s+/g, ''));
+    const hits = words.filter((w) => w.zh === g.zh);
+    const hit = hits.find((w) => normPinyin(w.py.replace(/\s+/g, '')) === want) ?? (hits.length === 1 ? hits[0] : undefined);
+    if (hit && !out.includes(hit.id)) out.push(hit.id);
+  }
+  return out;
+}
+
 export function summarize(l: Lesson): LessonSummary {
   const first = l.examples[0];
   const focus = parseInline(first.zh).find((t) => t.t === 'focus')?.v.replace(/\s+/g, '') ?? l.hanzi?.[0] ?? null;
@@ -180,6 +195,7 @@ export function summarize(l: Lesson): LessonSummary {
     ],
     checkTexts: l.check.map((c) => ({ text: itemText(c) })),
     glossary: l.glossary,
+    wordIds: glossaryWordIds(l.glossary),
   };
 }
 

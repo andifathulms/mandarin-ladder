@@ -29,6 +29,23 @@ function validPlacement(v: unknown): PlacementRecord | null {
   return { ...(v as PlacementRecord), missed: Array.isArray(v.missed) ? v.missed.filter((x): x is string => typeof x === 'string') : [] };
 }
 
+function validDeck(d: Record<string, unknown>): ProgressState['deck'] {
+  const out: ProgressState['deck'] = {};
+  for (const [id, v] of Object.entries(d)) {
+    if (!isObj(v)) continue;
+    const box = v.box;
+    if (![1, 2, 3, 4, 5].includes(box as number) || typeof v.due !== 'number') continue;
+    out[id] = {
+      box: box as 1,
+      due: v.due,
+      learned: v.learned === true,
+      lastSeen: typeof v.lastSeen === 'number' ? v.lastSeen : 0,
+      first: typeof v.first === 'number' ? v.first : v.due,
+    };
+  }
+  return out;
+}
+
 export function migrate(input: unknown): ProgressState {
   if (!isObj(input)) throw new MigrationError('not an object');
   let s: Raw = { ...input };
@@ -58,6 +75,8 @@ function normalize(s: Raw): ProgressState {
     placement: validPlacement(s.placement),
     days: Array.isArray(s.days) ? s.days.filter((d): d is string => typeof d === 'string').slice(-60) : [],
     opened: Array.isArray(s.opened) ? s.opened.filter((d): d is string => typeof d === 'string') : [],
+    deck: isObj(s.deck) ? validDeck(s.deck) : {},
+    traces: isObj(s.traces) ? (Object.fromEntries(Object.entries(s.traces).filter(([, v]) => isObj(v) && typeof v.bestMisses === 'number')) as ProgressState['traces']) : {},
     settings: {
       uiLang: pick('uiLang', ['id', 'en']),
       voice: pick('voice', ['female', 'male']),

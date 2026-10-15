@@ -95,6 +95,7 @@ describe('derived state', () => {
     resume: ['s0', 's1', 's2', 's3', 's4', 's5'].map((s) => ({ text: `${s}-${n}` })),
     checkTexts: [{ text: `check-${n}` }],
     glossary: [],
+    wordIds: [],
   });
   const lessons = [mk(1), mk(2)];
 
@@ -193,5 +194,30 @@ describe('placement and capstones', () => {
     const s = migrate({ schemaVersion: 1, capstones: { 'dasar-2': { reading: 'd' } }, placement: { score: 'x' } });
     expect(s.capstones['dasar-2'].reading).toBe('d');
     expect(s.placement).toBeNull();
+  });
+});
+
+describe('word deck and traces in progress', () => {
+  it('adds a lesson\'s words to the deck when it is completed, and reviews them', () => {
+    store.__resetForTests();
+    store.completeLesson('L9', ['w-1-aaaa', 'w-1-bbbb']);
+    const s = store.getState();
+    expect(s.deck['w-1-aaaa']).toMatchObject({ box: 1, learned: true, lastSeen: 0 });
+    store.reviewCard('w-1-aaaa', true);
+    expect(store.getState().deck['w-1-aaaa'].box).toBe(2);
+    store.reviewCard('w-1-aaaa', false);
+    expect(store.getState().deck['w-1-aaaa'].box).toBe(1);
+  });
+  it('keeps the best trace per character', () => {
+    store.__resetForTests();
+    store.recordTrace('你', 3);
+    store.recordTrace('你', 1);
+    store.recordTrace('你', 2);
+    expect(store.getState().traces['你'].bestMisses).toBe(1);
+  });
+  it('drops malformed deck entries on load', () => {
+    const s = migrate({ schemaVersion: 1, deck: { a: { box: 9, due: 1 }, b: { box: 2, due: 5, learned: true, lastSeen: 3 } } });
+    expect(Object.keys(s.deck)).toEqual(['b']);
+    expect(s.deck.b.first).toBe(5);
   });
 });

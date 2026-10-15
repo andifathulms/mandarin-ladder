@@ -41,11 +41,13 @@ type Props = {
   /** Hanzi card data for the lesson's new characters. */
   hanzi: HanziCardData[];
   hokkien: HokkienEntry[];
+  /** HSK word ids of the glossary, which join the word deck when the lesson is done. */
+  wordIds: string[];
   /** Stroke order for a character, where available. */
   strokes?: (ch: string) => React.ReactNode;
 };
 
-export function LessonPlayer({ lesson, rung, rungLessons, next, hasTest, spiralRung, words, recent, hanzi, hokkien, strokes }: Props) {
+export function LessonPlayer({ lesson, rung, rungLessons, next, hasTest, spiralRung, words, recent, hanzi, hokkien, wordIds, strokes }: Props) {
   const { t, lang } = useT();
   const progress = useProgress();
   // Lesson-scoped supports (CLAUDE.md §7.2): plain state, so they reset when the lesson closes.
@@ -101,13 +103,13 @@ export function LessonPlayer({ lesson, rung, rungLessons, next, hasTest, spiralR
       setStep(to);
       if (to === 5) {
         const wasDone = store.getState().lessons[lesson.id]?.completed;
-        store.completeLesson(lesson.id);
+        store.completeLesson(lesson.id, wordIds);
         if (!wasDone) setFreshNotch(lesson.order - 1);
         sfx('lessonDone');
       }
       window.scrollTo({ top: 0 });
     },
-    [step, lesson.id, lesson.order],
+    [step, lesson.id, lesson.order, wordIds],
   );
 
   // Announce and move focus to the new step.

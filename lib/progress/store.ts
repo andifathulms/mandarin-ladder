@@ -2,6 +2,7 @@ import { STORAGE_KEY } from './constants';
 import { emptyState } from './defaults';
 import { migrate } from './migrations';
 import { nextBox } from '../check/leitner';
+import { dayNumber, review, teach } from '../deck/schedule';
 import type { CapstoneKind, PlacementRecord, PlacementResult, ProgressState, Settings, TestAttempt } from './types';
 
 // Single owner of localStorage. Everything else calls this API.
@@ -114,11 +115,16 @@ export function setLessonStep(lessonId: string, step: number, checkIndex?: numbe
   });
 }
 
-export function completeLesson(lessonId: string) {
+/** Completes a lesson; its HSK words join the word deck as learned (PRD §5.8). */
+export function completeLesson(lessonId: string, wordIds: string[] = []) {
   const s = getState();
   const prev = s.lessons[lessonId];
+  const today = dayNumber();
+  const deck = { ...s.deck };
+  for (const id of wordIds) deck[id] = teach(deck[id], today);
   commit({
     ...s,
+    deck,
     lessons: {
       ...s.lessons,
       [lessonId]: { step: 5, furthest: 5, completed: true, lastOpened: prev?.lastOpened ?? Date.now() },
@@ -193,6 +199,20 @@ export function completeCapstone(rungId: string, kind: CapstoneKind) {
   if (prev[kind]) return;
   commit({ ...s, capstones: { ...s.capstones, [rungId]: { ...prev, [kind]: new Date().toISOString() } } });
   markPracticedToday();
+}
+
+/** A word-deck review: Ingat (remembered) or Belum ingat. */
+export function reviewCard(wordId: string, remembered: boolean) {
+  const s = getState();
+  commit({ ...s, deck: { ...s.deck, [wordId]: review(s.deck[wordId], remembered, dayNumber()) } });
+  markPracticedToday();
+}
+
+/** A finished tracing attempt: keeps the best (fewest misses) per character. */
+export function recordTrace(char: string, misses: number) {
+  const s = getState();
+  const prev = s.traces[char];
+  commit({ ...s, traces: { ...s.traces, [char]: { bestMisses: Math.min(prev?.bestMisses ?? Infinity, misses), lastSeen: Date.now() } } });
 }
 
 export function getSettings(): Settings {

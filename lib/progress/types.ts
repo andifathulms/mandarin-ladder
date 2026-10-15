@@ -1,3 +1,5 @@
+import type { DeckCardState } from '../deck/schedule';
+
 export type Settings = {
   uiLang: 'id' | 'en';
   voice: 'female' | 'male';
@@ -58,6 +60,9 @@ export type PlacementRecord = {
   missed: string[];
 };
 
+/** Tracing results per character (CLAUDE.md §7.4). */
+export type TraceProgress = { bestMisses: number; lastSeen: number };
+
 export type ProgressState = {
   schemaVersion: number;
   lessons: Record<string, LessonProgress>;
@@ -69,5 +74,8 @@ export type ProgressState = {
   days: string[];
   /** Lessons whose glossary has been seen (for My words). */
   opened: string[];
+  /** Word-deck cards by word id (lib/deck/schedule.ts). */
+  deck: Record<string, DeckCardState>;
+  traces: Record<string, TraceProgress>;
   settings: Settings;
 };

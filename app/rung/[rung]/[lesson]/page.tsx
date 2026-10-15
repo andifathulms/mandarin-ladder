@@ -1,6 +1,6 @@
 import { notFound } from 'next/navigation';
 import type { Metadata } from 'next';
-import { getCurriculum, getHokkien, getLesson, getLessons, getRung, getTestPool, showDrafts, summarize } from '@/lib/content/load';
+import { getCurriculum, getHokkien, getLesson, getLessons, getRung, getTestPool, glossaryWordIds, showDrafts, summarize } from '@/lib/content/load';
 import { lessonHanzi, lessonWords, recentWords } from '@/lib/content/lessonData';
 import { LessonPlayer } from '@/components/lesson/LessonPlayer';
 import { VisualDataProvider } from '@/components/visuals/VisualData';
@@ -52,6 +52,7 @@ export default function LessonPage({ params }: Params) {
         recent={recentWords(lesson)}
         hanzi={lessonHanzi(lesson)}
         hokkien={hokkien}
+        wordIds={glossaryWordIds(lesson.glossary)}
       />
     </VisualDataProvider>
   );
