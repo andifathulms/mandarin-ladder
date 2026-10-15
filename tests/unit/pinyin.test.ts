@@ -139,3 +139,33 @@ describe('normPinyin (grading)', () => {
     expect(samePinyin('hello', 'hello')).toBe(false);
   });
 });
+
+import { spell } from '@/lib/zh/syllables';
+
+describe('spell (SyllableBuilder)', () => {
+  it.each([
+    ['m', 'a', 'ma'],
+    ['', 'i', 'yi'],
+    ['', 'ian', 'yan'],
+    ['', 'u', 'wu'],
+    ['', 'uo', 'wo'],
+    ['', 'ü', 'yu'],
+    ['', 'üan', 'yuan'],
+    ['', 'iu', 'you'],
+    ['', 'ui', 'wei'],
+    ['', 'un', 'wen'],
+    ['j', 'ü', 'ju'],
+    ['x', 'üe', 'xue'],
+    ['n', 'ü', 'nü'],
+    ['l', 'üe', 'lüe'],
+    ['zh', 'uang', 'zhuang'],
+    ['', 'er', 'er'],
+  ])('%s + %s → %s', (i, f, want) => {
+    expect(spell(i, f)).toBe(want);
+    expect(isValidSyllable(want)).toBe(true);
+  });
+  it('can spell syllables that do not exist', () => {
+    expect(isValidSyllable(spell('b', 'ü'))).toBe(false);
+    expect(isValidSyllable(spell('f', 'i'))).toBe(false);
+  });
+});

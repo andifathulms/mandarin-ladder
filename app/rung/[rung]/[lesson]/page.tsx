@@ -40,7 +40,7 @@ export default function LessonPage({ params }: Params) {
   const hokkien = getHokkien().filter((h) => lesson.hokkien?.includes(h.id_word) && (h.reviewed_by || showDrafts()));
 
   return (
-    <VisualDataProvider value={visualData(visualChars)}>
+    <VisualDataProvider value={visualData(visualChars, { examples: lesson.visual?.id === 'syllable-builder' })}>
       <LessonPlayer
         lesson={lesson}
         rung={rung}

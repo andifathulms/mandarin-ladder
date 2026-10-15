@@ -69,3 +69,40 @@ export function isValidSyllable(base: string): boolean {
 export function syllableParts(base: string): { initial: Initial; final: string } | null {
   return SYLLABLES.get(tableSpelling(base)) ?? null;
 }
+
+/** Finals as taught (SyllableBuilder), grouped. iou, uei, uen are written iu, ui, un after an initial. */
+export const FINAL_GROUPS: { id: string; finals: string[] }[] = [
+  { id: 'simple', finals: ['a', 'o', 'e', 'i', 'u', 'ü', 'er'] },
+  { id: 'compound', finals: ['ai', 'ei', 'ao', 'ou'] },
+  { id: 'nasal', finals: ['an', 'en', 'ang', 'eng', 'ong'] },
+  { id: 'i', finals: ['ia', 'ie', 'iao', 'iu', 'ian', 'in', 'iang', 'ing', 'iong'] },
+  { id: 'u', finals: ['ua', 'uo', 'uai', 'ui', 'uan', 'un', 'uang'] },
+  { id: 'ü', finals: ['üe', 'üan', 'ün'] },
+];
+
+/** Initials grouped by where they are made (MouthPlaces, SyllableBuilder). */
+export const INITIAL_GROUPS: { id: string; initials: string[] }[] = [
+  { id: 'lips', initials: ['b', 'p', 'm', 'f'] },
+  { id: 'tip', initials: ['d', 't', 'n', 'l'] },
+  { id: 'teeth', initials: ['z', 'c', 's'] },
+  { id: 'curled', initials: ['zh', 'ch', 'sh', 'r'] },
+  { id: 'flat', initials: ['j', 'q', 'x'] },
+  { id: 'back', initials: ['g', 'k', 'h'] },
+];
+
+/**
+ * Spells an initial and a final as pinyin writes them: y and w for syllables without an initial
+ * (i → yi, ian → yan, u → wu, ü → yu), ü written u after j q x (and y), and the full finals iou,
+ * uei, uen contracted to iu, ui, un. The result may not exist: check it with isValidSyllable.
+ */
+export function spell(initial: string, final: string): string {
+  if (!initial) {
+    const y: Record<string, string> = { i: 'yi', in: 'yin', ing: 'ying', u: 'wu', ü: 'yu', üe: 'yue', üan: 'yuan', ün: 'yun', iu: 'you', ui: 'wei', un: 'wen' };
+    if (y[final]) return y[final];
+    if (final.startsWith('i')) return `y${final.slice(1)}`;
+    if (final.startsWith('u')) return `w${final.slice(1)}`;
+    return final;
+  }
+  const f = /^[jqx]$/.test(initial) ? final.replace(/^ü/, 'u') : final;
+  return initial + f;
+}

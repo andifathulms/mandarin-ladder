@@ -461,3 +461,22 @@
 .hint-pulse {
   animation: hint-pulse 1200ms ease-in-out infinite;
 }
+
+/* sandhi (DESIGN §5): a changing tone mark lifts, swaps and settles. */
+@keyframes sandhi-swap {
+  0% {
+    transform: translateY(-10px);
+    opacity: 0;
+  }
+  60% {
+    transform: translateY(2px);
+    opacity: 1;
+  }
+  100% {
+    transform: none;
+  }
+}
+.sandhi-swap {
+  animation: sandhi-swap var(--m-object-d) var(--ease-object) both;
+  display: inline-block;
+}

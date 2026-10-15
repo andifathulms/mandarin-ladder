@@ -15,9 +15,13 @@ export type VisualDataValue = {
   hanzi: Record<string, HanziCard>;
   /** Authored stroke names (content/data/stroke-names.yaml), which win over the heuristic. */
   strokeNames: Record<string, StrokeName[]>;
+  /** A real word per syllable and tone ("ma3" → 马), for SyllableBuilder. */
+  examples: Record<string, { zh: string; py: string }>;
+  /** Other characters that share a component (女 → 妈 好 姐 她), for CharacterParts. */
+  family: Record<string, string[]>;
 };
 
-const EMPTY: VisualDataValue = { syllables: [], measureWords: [], radicals: [], hanzi: {}, strokeNames: {} };
+const EMPTY: VisualDataValue = { syllables: [], measureWords: [], radicals: [], hanzi: {}, strokeNames: {}, examples: {}, family: {} };
 const Ctx = createContext<VisualDataValue>(EMPTY);
 
 /** Data for visuals, read at build time and handed down by the page. */
