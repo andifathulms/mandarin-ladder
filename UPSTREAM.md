@@ -41,14 +41,14 @@ shared `ladder-core` package. Not before.
 | English Ladder file | Status | Mandarin Ladder counterpart |
 |---|---|---|
 | `.eslintrc.json` | verbatim | |
-| `.github/workflows/deploy.yml` | verbatim | |
+| `.github/workflows/deploy.yml` | adapted | |
 | `.gitignore` | adapted | |
 | `.prettierignore` | verbatim | |
 | `.prettierrc` | verbatim | |
 | `app/about/page.tsx` | verbatim | |
-| `app/font-files/AtkinsonNext-Italic-Variable.woff2` | verbatim | |
-| `app/font-files/AtkinsonNext-Variable.woff2` | verbatim | |
-| `app/font-files/README.md` | verbatim | |
+| `app/font-files/AtkinsonNext-Italic-Variable.woff2` | adapted | |
+| `app/font-files/AtkinsonNext-Variable.woff2` | adapted | |
+| `app/font-files/README.md` | adapted | |
 | `app/fonts.ts` | adapted | |
 | `app/layout.tsx` | adapted | |
 | `app/me/page.tsx` | verbatim | |
@@ -73,7 +73,7 @@ shared `ladder-core` package. Not before.
 | `components/check/OptionPill.tsx` | adapted | |
 | `components/check/ReviewRunner.tsx` | adapted | |
 | `components/check/TestRunner.tsx` | adapted | |
-| `components/check/TileTray.tsx` | verbatim | |
+| `components/check/TileTray.tsx` | adapted | |
 | `components/check/WhyLine.tsx` | adapted | |
 | `components/ladder/ContinueCard.tsx` | adapted | |
 | `components/ladder/HomeView.tsx` | adapted | |
@@ -101,7 +101,7 @@ shared `ladder-core` package. Not before.
 | `components/ui/AppShell.tsx` | verbatim | |
 | `components/ui/Badge.tsx` | verbatim | |
 | `components/ui/Contours.tsx` | replaced | components/ui/Grid.tsx |
-| `components/ui/Icon.tsx` | verbatim | |
+| `components/ui/Icon.tsx` | adapted | |
 | `components/ui/Mark.tsx` | adapted | |
 | `components/ui/PageShell.tsx` | verbatim | |
 | `components/ui/ProgressRing.tsx` | verbatim | |
@@ -163,7 +163,7 @@ shared `ladder-core` package. Not before.
 | `styles/tokens.css` | adapted | |
 | `tailwind.config.ts` | adapted | |
 | `tests/e2e/a11y.spec.ts` | adapted | |
-| `tests/e2e/flows.spec.ts` | replaced | (removed) |
+| `tests/e2e/flows.spec.ts` | adapted | |
 | `tests/e2e/helpers.ts` | adapted | |
 | `tests/setup.ts` | verbatim | |
 | `tests/unit/Sentence.test.tsx` | verbatim | |
@@ -175,7 +175,7 @@ shared `ladder-core` package. Not before.
 | `tests/unit/progress.test.ts` | adapted | |
 | `tests/unit/speech.test.ts` | adapted | |
 | `tests/unit/tier.test.ts` | adapted | |
-| `tests/unit/visuals.test.tsx` | replaced | (removed) |
+| `tests/unit/visuals.test.tsx` | adapted | |
 | `tsconfig.json` | verbatim | |
 | `vitest.config.ts` | verbatim | |
 <!-- /table -->
