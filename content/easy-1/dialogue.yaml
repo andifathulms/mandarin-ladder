@@ -1,0 +1,41 @@
+# Ngobrol (PRD §5.5): Easy 1 capstone dialogue. Draft; Easy 1 words and grammar only.
+rung: easy-1
+title: { id: "Minum kopi", en: "Over coffee", zh: "喝 咖啡", py: "hē kāfēi" }
+lines:
+  - { who: "张 丽", zh: "丽娜 ， 你 来 了 。 请 坐 。", py: "Lìnà , nǐ lái le . qǐng zuò .", id: "Rina, kamu sudah datang. Silakan duduk.", en: "Rina, you're here. Have a seat." }
+  - { who: "Rina", zh: "对不起 ， 路上 车 太 多 了 。", py: "duìbuqǐ , lùshang chē tài duō le .", id: "Maaf, di jalan banyak sekali mobil.", en: "Sorry, the traffic was terrible." }
+  - { who: "张 丽", zh: "没关系 。 你 想 喝 什么 ？", py: "méiguānxi . nǐ xiǎng hē shénme ?", id: "Tidak apa-apa. Kamu ingin minum apa?", en: "No problem. What would you like to drink?" }
+  - { who: "Rina", zh: "我 想 喝 茶 。 你 呢 ？", py: "wǒ xiǎng hē chá . nǐ ne ?", id: "Aku ingin minum teh. Kamu?", en: "I'd like tea. And you?" }
+  - { who: "张 丽", zh: "我 要 一 杯 咖啡 。 这儿 的 面包 也 很 好吃 。", py: "wǒ yào yì bēi kāfēi . zhèr de miànbāo yě hěn hǎochī .", id: "Aku mau secangkir kopi. Roti di sini juga enak.", en: "I'll have a coffee. The bread here is good too." }
+  - { who: "Rina", zh: "好 ， 我们 也 要 两 个 面包 吧 。", py: "hǎo , wǒmen yě yào liǎng gè miànbāo ba .", id: "Oke, kita pesan dua roti juga, ya.", en: "OK, let's get two pieces of bread too." }
+  - { who: "Pelayan", zh: "一 杯 茶 ， 一 杯 咖啡 ， 两 个 面包 ， 六十八 块 。", py: "yì bēi chá , yì bēi kāfēi , liǎng gè miànbāo , liùshíbā kuài .", id: "Satu teh, satu kopi, dua roti: 68 yuan.", en: "One tea, one coffee, two breads: 68 yuan." }
+  - { who: "Rina", zh: "今天 我 来 ， 我 用 微信 。", py: "jīntiān wǒ lái , wǒ yòng Wēixìn .", id: "Hari ini aku yang bayar, pakai WeChat.", en: "It's on me today, I'll pay with WeChat." }
+  - { who: "张 丽", zh: "谢谢 你 。 下次 我 来 。", py: "xièxie nǐ . xiàcì wǒ lái .", id: "Terima kasih. Lain kali aku yang bayar.", en: "Thank you. Next time it's on me." }
+note:
+  id: "**我来** biasanya berarti *aku datang*, tapi saat membayar artinya *biar aku saja*, *aku yang bayar*. **你来了** adalah sapaan hangat untuk orang yang baru tiba."
+  en: "**我来** usually means *I'm coming*, but when paying it means *let me*, *it's on me*. **你来了** is a warm greeting for someone who has just arrived."
+items:
+  - id: e1-d-c1
+    type: choice
+    prompt: "Kenapa Rina datang terlambat?"
+    options: ["Jalanan ramai sekali.", "Dia bangun terlambat.", "Dia naik kereta yang salah."]
+    answer: "Jalanan ramai sekali."
+    why: { id: "**路上车太多了**: di jalan mobilnya terlalu banyak.", en: "**路上车太多了**: too many cars on the road." }
+  - id: e1-d-c2
+    type: choice
+    prompt: "Apa yang diminum Rina?"
+    options: ["Teh", "Kopi", "Susu"]
+    answer: "Teh"
+    why: { id: "**我想喝茶**: Rina ingin teh. Kopinya untuk Zhang Li.", en: "**我想喝茶**: Rina wants tea. The coffee is Zhang Li's." }
+  - id: e1-d-c3
+    type: choice
+    prompt: "Berapa harga semuanya?"
+    options: ["68 yuan", "86 yuan", "60 yuan"]
+    answer: "68 yuan"
+    why: { id: "**六十八块**: 68 yuan.", en: "**六十八块**: 68 yuan." }
+  - id: e1-d-c4
+    type: choice
+    prompt: "**今天 我 来** di sini artinya…"
+    options: ["Hari ini aku yang bayar.", "Hari ini aku datang.", "Hari ini aku pergi dulu."]
+    answer: "Hari ini aku yang bayar."
+    why: { id: "Saat membayar, **我来** berarti *biar aku saja*.", en: "When paying, **我来** means *let me*." }

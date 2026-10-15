@@ -1,0 +1,46 @@
+# Baca dan dengar (PRD §5.5): Easy 1 capstone reading. Draft; Easy 1 words and grammar only.
+rung: easy-1
+title: { id: "Sehari Budi", en: "Budi's day", zh: "布迪 的 一 天", py: "Bùdí de yì tiān" }
+lines:
+  - { zh: "我 叫 布迪 ， 我 是 印尼人 。", py: "wǒ jiào Bùdí , wǒ shì Yìnnírén .", id: "Namaku Budi, aku orang Indonesia.", en: "My name is Budi, I'm Indonesian." }
+  - { zh: "我 在 上海 工作 。", py: "wǒ zài Shànghǎi gōngzuò .", id: "Aku bekerja di Shanghai.", en: "I work in Shanghai." }
+  - { zh: "我 早上 七 点 起床 ， 坐 汽车 去 上班 。", py: "wǒ zǎoshang qī diǎn qǐchuáng , zuò qìchē qù shàngbān .", id: "Aku bangun jam tujuh pagi, lalu naik mobil ke kantor.", en: "I get up at seven and go to work by car." }
+  - { zh: "中午 我 跟 王 明 一起 吃饭 。", py: "zhōngwǔ wǒ gēn Wáng Míng yìqǐ chīfàn .", id: "Siang hari aku makan bersama Wang Ming.", en: "At noon I have lunch with Wang Ming." }
+  - { zh: "他 是 中国 人 ， 他 会 说 一点儿 印尼语 。", py: "tā shì Zhōngguó rén , tā huì shuō yìdiǎnr Yìnníyǔ .", id: "Dia orang Tiongkok, dia bisa sedikit bahasa Indonesia.", en: "He's Chinese, and he speaks a little Indonesian." }
+  - { zh: "今天 下雨 了 ， 外边 有点儿 冷 。", py: "jīntiān xiàyǔ le , wàibian yǒudiǎnr lěng .", id: "Hari ini hujan, di luar agak dingin.", en: "It's raining today, and it's a bit cold outside." }
+  - { zh: "晚上 我 去 商店 ， 买 了 一 件 衣服 。", py: "wǎnshang wǒ qù shāngdiàn , mǎi le yí jiàn yīfu .", id: "Malam hari aku pergi ke toko dan membeli sehelai baju.", en: "In the evening I went to a shop and bought a top." }
+  - { zh: "衣服 不 贵 ， 九十 块 。", py: "yīfu bú guì , jiǔshí kuài .", id: "Bajunya tidak mahal, sembilan puluh yuan.", en: "It wasn't expensive, ninety yuan." }
+  - { zh: "今天 我 很 累 ， 也 很 高兴 。", py: "jīntiān wǒ hěn lèi , yě hěn gāoxìng .", id: "Hari ini aku capek, tapi juga senang.", en: "Today I'm tired, but happy too." }
+glossary:
+  - { zh: "工作", py: "gōngzuò", id: "bekerja", en: "to work", hsk: "1" }
+  - { zh: "起床", py: "qǐchuáng", id: "bangun tidur", en: "to get up", hsk: "1" }
+  - { zh: "上班", py: "shàngbān", id: "berangkat kerja, masuk kerja", en: "to go to work", hsk: "1" }
+  - { zh: "中午", py: "zhōngwǔ", id: "siang hari", en: "noon", hsk: "1" }
+  - { zh: "晚上", py: "wǎnshang", id: "malam hari", en: "evening", hsk: "1" }
+items:
+  - id: e1-r-c1
+    type: choice
+    show_pinyin: false
+    prompt: "Budi bekerja di mana?"
+    options: ["上海", "雅加达", "北京"]
+    answer: "上海"
+    why: { id: "**我在上海工作**: aku bekerja di Shanghai.", en: "**我在上海工作**: I work in Shanghai." }
+  - id: e1-r-c2
+    type: choice
+    prompt: "Budi makan siang bersama siapa?"
+    options: ["Wang Ming", "Li Hua", "Rina"]
+    answer: "Wang Ming"
+    why: { id: "**中午我跟王明一起吃饭**.", en: "**中午我跟王明一起吃饭**." }
+  - id: e1-r-c3
+    type: choice
+    prompt: "Bagaimana cuaca hari ini?"
+    options: ["Hujan dan agak dingin.", "Panas sekali.", "Cerah dan hangat."]
+    answer: "Hujan dan agak dingin."
+    why: { id: "**下雨了**: hujan. **有点儿冷**: agak dingin.", en: "**下雨了**: raining. **有点儿冷**: a bit cold." }
+  - id: e1-r-c4
+    type: gap
+    show_pinyin: false
+    prompt: "布迪 坐 ___ 去 上班 。"
+    options: ["汽车", "飞机", "火车"]
+    answer: "汽车"
+    why: { id: "**坐汽车去上班**: naik mobil ke kantor.", en: "**坐汽车去上班**: goes to work by car." }
