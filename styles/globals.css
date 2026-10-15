@@ -1,0 +1,312 @@
+@import './tokens.css';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    -webkit-text-size-adjust: 100%;
+  }
+  body {
+    background: var(--paper);
+    color: var(--ink);
+    font-family: var(--font-body), system-ui, sans-serif;
+    font-size: var(--t-body);
+    line-height: 1.6;
+    min-height: 100dvh;
+  }
+  h1,
+  h2,
+  h3 {
+    font-family: var(--font-display), Georgia, serif;
+    font-weight: 500;
+    letter-spacing: -0.01em;
+    text-wrap: balance;
+  }
+  :focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 2px;
+    border-radius: var(--r-sm);
+  }
+  a {
+    color: var(--accent);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+  button {
+    cursor: pointer;
+  }
+  button:disabled {
+    cursor: default;
+  }
+}
+
+@layer components {
+  /* Mono label: numbers, counters and codes like A1. */
+  .label {
+    font-family: var(--font-mono), ui-monospace, monospace;
+    font-weight: 500;
+    font-size: var(--t-label);
+    line-height: 1.3;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+  }
+  /* Section heading: tracked mono capitals, like a catalogue index. */
+  .eyebrow {
+    font-family: var(--font-mono), ui-monospace, monospace;
+    font-weight: 500;
+    font-size: var(--t-label);
+    line-height: 1.3;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+  .tnum {
+    font-variant-numeric: tabular-nums;
+  }
+  .id-text {
+    font-style: italic;
+    color: var(--muted);
+  }
+  .focus-word {
+    color: var(--accent);
+    font-weight: 700;
+    text-decoration: underline;
+    text-decoration-thickness: 2px;
+    text-underline-offset: 3px;
+  }
+  /* Arabic islands (ArIsland). Never italic, uppercased or letter-spaced (DESIGN §4.3). */
+  .ar {
+    letter-spacing: normal;
+    text-transform: none;
+    font-style: normal;
+    font-synthesis: none;
+    word-spacing: normal;
+    unicode-bidi: isolate;
+  }
+  div.ar,
+  p.ar,
+  li.ar,
+  h1.ar,
+  h2.ar,
+  h3.ar {
+    text-align: start;
+  }
+  /* Arabic focus: colour plus underline only, never bold, clear of kasrah and descenders. */
+  .ar-focus {
+    color: var(--accent);
+    text-decoration: underline;
+    text-decoration-thickness: 2px;
+    text-underline-offset: 6px;
+    text-decoration-skip-ink: none;
+  }
+  /* Transliteration: upright, muted, under the Arabic. */
+  .tr-text {
+    font-family: var(--font-ar-display), Georgia, serif;
+    font-style: normal;
+    color: var(--muted);
+  }
+  .tr-focus {
+    text-decoration: underline;
+    text-decoration-thickness: 1.5px;
+    text-underline-offset: 3px;
+  }
+  .off-text {
+    color: var(--off);
+    text-decoration: line-through;
+    text-decoration-thickness: 1.5px;
+  }
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--s-2);
+    min-height: 48px;
+    padding: 0 var(--s-5);
+    border-radius: 999px;
+    font-family: var(--font-body), system-ui, sans-serif;
+    font-weight: 700;
+    white-space: nowrap;
+    transition:
+      background-color var(--m-quick-d) var(--ease),
+      transform var(--m-quick-d) var(--ease),
+      opacity var(--m-quick-d) var(--ease);
+  }
+  .btn:active:not(:disabled) {
+    transform: scale(0.98);
+  }
+  .btn-primary {
+    background: var(--accent);
+    color: var(--accent-ink);
+  }
+  .btn-primary:disabled {
+    opacity: 0.45;
+  }
+  .btn-board {
+    background: var(--board-ink);
+    color: var(--board);
+  }
+  .btn-navy {
+    background: var(--board);
+    color: var(--board-ink);
+  }
+  .btn-ghost {
+    background: transparent;
+    color: var(--ink);
+    box-shadow: inset 0 0 0 1.5px var(--rule);
+  }
+  .btn-ghost:hover {
+    background: var(--paper-2);
+  }
+  .btn-good {
+    background: var(--good);
+    color: var(--good-bg);
+  }
+  .btn-quiet {
+    color: var(--accent);
+    background: transparent;
+  }
+  .btn-quiet:hover {
+    background: var(--accent-soft);
+  }
+  .card {
+    background: var(--surface);
+    border-radius: var(--r-lg);
+    box-shadow: var(--e-1);
+  }
+  /* The board: Mushaf-cover green, with the khatam lattice. One per screen, for the single next thing to do. */
+  .board {
+    position: relative;
+    overflow: hidden;
+    isolation: isolate;
+    background: var(--board);
+    color: var(--board-ink);
+    border-radius: var(--r-xl);
+    box-shadow: inset 0 0 0 1px var(--board-2);
+  }
+  .board > :not(svg) {
+    position: relative;
+  }
+  /* Document card: a cream sheet with a faint grid, like a printed workbook page. */
+  .doc-grid {
+    background-color: var(--paper-2);
+    background-image:
+      linear-gradient(color-mix(in srgb, var(--rule) 70%, transparent) 1px, transparent 1px),
+      linear-gradient(90deg, color-mix(in srgb, var(--rule) 70%, transparent) 1px, transparent 1px);
+    background-size: 14px 14px;
+    background-position: -1px -1px;
+  }
+  .page {
+    padding-inline: var(--gutter);
+    margin-inline: auto;
+    width: 100%;
+  }
+  /* Content area under the tab bar (phones) or beside the sidebar (wide screens). */
+  .shell {
+    min-height: 100dvh;
+    padding-bottom: calc(var(--tabbar-h) + env(safe-area-inset-bottom) + var(--s-5));
+  }
+  @media (min-width: 900px) {
+    .shell {
+      padding-left: var(--sidebar-w);
+      padding-bottom: var(--s-7);
+    }
+  }
+  .sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+  }
+}
+
+/* Step transitions (DESIGN §5.4) */
+@keyframes step-in-fwd {
+  from {
+    opacity: 0;
+    transform: translateX(var(--m-shift));
+  }
+}
+@keyframes step-in-back {
+  from {
+    opacity: 0;
+    transform: translateX(calc(var(--m-shift) * -1));
+  }
+}
+@keyframes sheet-up {
+  from {
+    opacity: 0;
+    transform: translateY(var(--m-shift));
+  }
+}
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+}
+@keyframes draw {
+  from {
+    stroke-dashoffset: 24;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+@keyframes notch-settle {
+  0%,
+  40% {
+    background: var(--rung);
+  }
+  100% {
+    background: var(--accent);
+  }
+}
+.step-fwd {
+  animation: step-in-fwd var(--m-base-d) var(--ease) both;
+}
+.step-back {
+  animation: step-in-back var(--m-base-d) var(--ease) both;
+}
+.sheet-up {
+  animation: sheet-up var(--m-base-d) var(--ease) both;
+}
+.fade-in {
+  animation: fade-in var(--m-base-d) var(--ease) both;
+}
+.check-draw {
+  stroke-dasharray: 24;
+  animation: draw var(--m-check-d) var(--ease) both;
+}
+.notch-settle {
+  animation: notch-settle var(--m-settle-d) var(--ease) both;
+}
+@keyframes tirukan-fill {
+  from {
+    transform: scaleX(0);
+  }
+}
+/* mark-drop (DESIGN §5): marks drop from 10px above; below-marks rise from 10px below */
+@keyframes mark-drop {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+}
+@keyframes mark-rise {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+}
+.mark-drop {
+  animation: mark-drop var(--m-base-d) var(--ease-object) both;
+}
+.mark-rise {
+  animation: mark-rise var(--m-base-d) var(--ease-object) both;
+}

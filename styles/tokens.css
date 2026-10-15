@@ -1,0 +1,234 @@
+/* Every token from DESIGN.md §3 (Mushaf green and cream). Components never use literal colours. */
+:root {
+  color-scheme: light;
+  --paper: #F6F2E9;
+  --paper-2: #EDE6D6;
+  --surface: #FFFDF8;
+  --ink: #14241E;
+  --muted: #56655E;
+  --rule: #E2D9C6;
+  --accent: #1E6B4F;
+  --accent-ink: #FFFFFF;
+  --accent-soft: #E0EEE6;
+  --board: #0F3B2E;
+  --board-2: #17503F;
+  --board-ink: #F6F2E9;
+  --board-muted: #B5CBBF;
+  --brass: #D2AE72;
+  --rung: #B8862E;
+  --rung-soft: #F7EBCF;
+  --good: #356F25;
+  --good-bg: #E7F0DA;
+  --off: #A84432;
+  --off-bg: #F8E4DD;
+  --easy: #2D7480;
+  --easy-soft: #E1EEF0;
+  --medium: #2A4A7F;
+  --medium-soft: #E4E9F2;
+  --hard: #6A4E8F;
+  --hard-soft: #EDE7F3;
+  --wood: #B98A5A;
+  --wood-dark: #8C6440;
+  --card: #D9C3A0;
+  --card-top: #E8D7BA;
+  --card-side: #B79E77;
+  --subject: #C2533A;
+  --shadow-rgb: 15 45 35;
+  --huruf: #865A22;
+  --huruf-soft: #F3E8D6;
+  --harakat: #1E6B4F;
+  --eg: #22668C;
+  --eg-soft: #E2EEF5;
+
+  /* Type scale (DESIGN §4.1), rem so the text-size setting scales everything */
+  --t-hero: 3rem;
+  --t-h1: 2.125rem;
+  --t-h2: 1.5rem;
+  --t-sentence: 1.6rem;
+  --t-sentence-lh: 1.3;
+  --t-body: 1.0625rem;
+  --t-small: 0.9rem;
+  --t-label: 0.74rem;
+  --t-tab: 0.72rem;
+  --t-card: 1.3rem;
+  --t-wordmark: 1.125rem;
+
+  /* Arabic type (DESIGN §4.2): larger and looser than Latin so harakat have room.
+     --ar-scale is the Arabic size setting (100 / 120 / 140); the general text size scales rem. */
+  --ar-scale: 1;
+  --t-ar-sentence-base: 2.125rem;
+  --t-ar-glyph-base: 5rem;
+  --t-ar-sentence: calc(var(--t-ar-sentence-base) * var(--ar-scale));
+  --t-ar-body: calc(1.5rem * var(--ar-scale));
+  --t-ar-small: calc(1.25rem * var(--ar-scale));
+  --t-ar-glyph: calc(var(--t-ar-glyph-base) * var(--ar-scale));
+  --t-ar-title: calc(1.75rem * var(--ar-scale));
+  /* Transliteration is set in Amiri's Latin, whose x-height is small: one step up from --t-small. */
+  --t-tr: calc(var(--t-small) * 1.12);
+
+  /* Space (DESIGN §5.1) */
+  --s-1: 4px;
+  --s-2: 8px;
+  --s-3: 12px;
+  --s-4: 16px;
+  --s-5: 24px;
+  --s-6: 32px;
+  --s-7: 48px;
+  --s-8: 64px;
+  --gutter: max(16px, env(safe-area-inset-left), env(safe-area-inset-right));
+
+  /* Layout chrome */
+  --tabbar-h: 64px;
+  --sidebar-w: 256px;
+
+  /* Shape and depth (DESIGN §5.2–5.3) */
+  --r-sm: 6px;
+  --r-md: 10px;
+  --r-lg: 18px;
+  --r-xl: 24px;
+  --e-1: 0 0 0 1px var(--rule), 0 1px 2px rgb(var(--shadow-rgb) / 0.04), 0 8px 24px -16px rgb(var(--shadow-rgb) / 0.18);
+  --e-2: 0 18px 40px -28px rgb(var(--shadow-rgb) / 0.45);
+
+  /* Motion (DESIGN §5.4) */
+  --ease: cubic-bezier(0.2, 0.7, 0.2, 1);
+  --ease-object: cubic-bezier(0.3, 1.25, 0.4, 1);
+  --ease-moment: cubic-bezier(0.2, 0.8, 0.2, 1);
+  --m-quick-d: 120ms;
+  --m-base-d: 220ms;
+  --m-object-d: 380ms;
+  --m-moment-d: 900ms;
+  --m-check-d: 250ms;
+  --m-shift: 12px;
+  --m-settle-d: 1400ms;
+
+  /* Illustration (DESIGN §10) */
+  --glass-opacity: 0.45;
+  --ground-opacity: 0.08;
+}
+
+@media (max-width: 480px) {
+  :root {
+    --t-sentence-lh: 1.4;
+    --t-hero: 2.25rem;
+    --t-ar-sentence-base: 1.875rem;
+    --t-ar-glyph-base: 4rem;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme='light']) {
+    color-scheme: dark;
+    --paper: #0B1914;
+    --paper-2: #10221B;
+    --surface: #142A21;
+    --ink: #ECE9DE;
+    --muted: #A2B4AB;
+    --rule: #22382E;
+    --accent: #7FCBA8;
+    --accent-ink: #0B1914;
+    --accent-soft: #173427;
+    --board: #123A2D;
+    --board-2: #1B4C3B;
+    --board-ink: #F2ECDF;
+    --board-muted: #A8C1B5;
+    --brass: #DDBA7E;
+    --rung: #E2B45A;
+    --rung-soft: #2C2516;
+    --good: #A6D68F;
+    --good-bg: #1B2A17;
+    --off: #EE9A84;
+    --off-bg: #331F1B;
+    --easy: #7CC4CF;
+    --easy-soft: #13282B;
+    --medium: #9DB8E6;
+    --medium-soft: #1E2C4B;
+    --hard: #C1A8E6;
+    --hard-soft: #251E37;
+    --wood: #9C7550;
+    --wood-dark: #6E5236;
+    --card: #B39C78;
+    --card-top: #C3AE8C;
+    --card-side: #8E7956;
+    --subject: #E06A4F;
+    --shadow-rgb: 0 0 0;
+    --huruf: #D9AE6E;
+    --huruf-soft: #2A2216;
+    --harakat: #7FCBA8;
+    --eg: #8EC3E0;
+    --eg-soft: #152836;
+  }
+}
+
+:root[data-theme='dark'] {
+  color-scheme: dark;
+  --paper: #0B1914;
+  --paper-2: #10221B;
+  --surface: #142A21;
+  --ink: #ECE9DE;
+  --muted: #A2B4AB;
+  --rule: #22382E;
+  --accent: #7FCBA8;
+  --accent-ink: #0B1914;
+  --accent-soft: #173427;
+  --board: #123A2D;
+  --board-2: #1B4C3B;
+  --board-ink: #F2ECDF;
+  --board-muted: #A8C1B5;
+  --brass: #DDBA7E;
+  --rung: #E2B45A;
+  --rung-soft: #2C2516;
+  --good: #A6D68F;
+  --good-bg: #1B2A17;
+  --off: #EE9A84;
+  --off-bg: #331F1B;
+  --easy: #7CC4CF;
+  --easy-soft: #13282B;
+  --medium: #9DB8E6;
+  --medium-soft: #1E2C4B;
+  --hard: #C1A8E6;
+  --hard-soft: #251E37;
+  --wood: #9C7550;
+  --wood-dark: #6E5236;
+  --card: #B39C78;
+  --card-top: #C3AE8C;
+  --card-side: #8E7956;
+  --subject: #E06A4F;
+  --shadow-rgb: 0 0 0;
+  --huruf: #D9AE6E;
+  --huruf-soft: #2A2216;
+  --harakat: #7FCBA8;
+  --eg: #8EC3E0;
+  --eg-soft: #152836;
+}
+
+/* Text-size setting (100 / 115 / 130) */
+:root[data-text-size='115'] {
+  font-size: 115%;
+}
+:root[data-text-size='130'] {
+  font-size: 130%;
+}
+
+/* Arabic text-size setting (Ukuran teks Arab): multiplies only the --t-ar-* tokens */
+:root[data-ar-size='120'] {
+  --ar-scale: 1.2;
+}
+:root[data-ar-size='140'] {
+  --ar-scale: 1.4;
+}
+
+/* Reduced motion: everything becomes a quick cross-fade */
+@media (prefers-reduced-motion: reduce) {
+  :root:not([data-motion='full']) {
+    --m-base-d: 120ms;
+    --m-object-d: 0ms;
+    --m-moment-d: 120ms;
+    --m-shift: 0px;
+  }
+}
+:root[data-motion='reduce'] {
+  --m-base-d: 120ms;
+  --m-object-d: 0ms;
+  --m-moment-d: 120ms;
+  --m-shift: 0px;
+}
