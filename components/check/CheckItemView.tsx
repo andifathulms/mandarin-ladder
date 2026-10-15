@@ -149,7 +149,7 @@ function BigPlay({
   const [playing, setPlaying] = useState(false);
   const run = async () => {
     setPlaying(true);
-    await play(stripMarkup(audio), variety);
+    await play(stripMarkup(audio));
     setPlaying(false);
   };
   return (
@@ -177,7 +177,7 @@ function ListenPrompt({
   variety: 'fusha' | 'eg';
 }) {
   const { t } = useT();
-  const canPlay = useCanPlay(audio, variety);
+  const canPlay = useCanPlay(audio);
   return (
     <div className="flex flex-col gap-3">
       <p className="text-small text-muted">{<Inline text={prompt ?? t('check.listenPrompt')} />}</p>

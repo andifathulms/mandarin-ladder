@@ -189,7 +189,9 @@ export const id = {
   'rung.testAlways': 'bisa dicoba kapan saja',
   'check.correctShort': 'Tepat',
   'words.subtitle': '{n} kata dari {l} pelajaran',
-  'words.searchPlaceholder': 'Cari: Arab, Latin atau Indonesia',
+  'words.searchPlaceholder': 'Cari: hanzi, pinyin atau Indonesia',
+  'words.mw': 'penggolong',
+  'words.trad': 'tradisional',
   'words.all': 'Semua',
 
   // Strands and listen items

@@ -190,7 +190,9 @@ export const en: Record<StringKey, string> = {
   'rung.testAlways': 'open any time',
   'check.correctShort': 'Correct',
   'words.subtitle': '{n} words from {l} lessons',
-  'words.searchPlaceholder': 'Search: Arabic, Latin or Indonesian',
+  'words.searchPlaceholder': 'Search: hanzi, pinyin or Indonesian',
+  'words.mw': 'measure word',
+  'words.trad': 'traditional',
   'words.all': 'All',
 
   // Strands and listen items

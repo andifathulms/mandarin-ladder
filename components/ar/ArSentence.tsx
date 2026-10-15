@@ -69,7 +69,7 @@ export function ArSentence({
 
   const onPlay = async () => {
     setPlaying(true);
-    await playText(plain, variety, (i) => setSpoken(i));
+    await playText(plain, (i) => setSpoken(i));
     setPlaying(false);
     setSpoken(null);
   };

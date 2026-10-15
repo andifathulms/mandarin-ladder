@@ -10,7 +10,7 @@ type Props = { text: string; variety?: Variety; onPlay: () => void; playing?: bo
 /** 44px icon-only play button. Renders nothing when there is no recording and no Arabic voice. */
 export function PlayButton({ text, variety = 'fusha', onPlay, playing, small, label }: Props) {
   const { t } = useT();
-  const ok = useCanPlay(text, variety);
+  const ok = useCanPlay(text);
   if (!ok) return null;
   return (
     <button
