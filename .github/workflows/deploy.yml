@@ -25,7 +25,14 @@ jobs:
           node-version: 22
           cache: npm
       - run: npm ci
+      - name: Cache source fonts
+        uses: actions/cache@v4
+        with:
+          path: fonts-src
+          key: fonts-src-${{ hashFiles('scripts/fonts-fetch.ts') }}
+      - run: npm run fonts:fetch
       - run: npm run lint
+      - run: npm run fonts:subset
       - run: npm run test
       - name: Build static site
         run: npm run build
@@ -46,6 +53,12 @@ jobs:
           node-version: 22
           cache: npm
       - run: npm ci
+      - name: Cache source fonts
+        uses: actions/cache@v4
+        with:
+          path: fonts-src
+          key: fonts-src-${{ hashFiles('scripts/fonts-fetch.ts') }}
+      - run: npm run fonts:fetch
       - run: npx playwright install --with-deps chromium
       - name: Build without base path for e2e
         run: npm run build
