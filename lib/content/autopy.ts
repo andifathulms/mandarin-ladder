@@ -157,10 +157,12 @@ export function pinyinFor(zh: string, glossary: GlossaryEntry[], names: Names): 
 }
 
 /** Pinyin for each hanzi run inside mostly-Latin text ("Apa arti **桌子**?"), keyed by the run. */
-export function runPinyin(text: string, glossary: GlossaryEntry[], names: Names): Record<string, string> | null {
+export function runPinyin(text: string, glossary: GlossaryEntry[], names: Names, given: Record<string, string> = {}): Record<string, string> | null {
   const out: Record<string, string> = {};
   for (const m of text.matchAll(/\p{Script=Han}+/gu)) {
     const run = m[0];
+    // An item's own py map wins (e.g. a bare component like 讠 that is no word).
+    if (given[run]) continue;
     const words = segment(run).map((w) => ({ zh: w, py: wordReading(w, glossary, names) }));
     if (words.some((w) => !w.py)) return null;
     // One token for the whole run, so it aligns as one ruby "word" inside Latin text.
@@ -226,7 +228,7 @@ export function fillItemPinyin(item: CheckItem, glossary: GlossaryEntry[], names
   for (const s of itemChinese(item)) {
     if (py[s]) continue;
     if (isLatinLine(s)) {
-      const runs = runPinyin(s.replace(/___/g, ' '), glossary, names);
+      const runs = runPinyin(s.replace(/___/g, ' '), glossary, names, py);
       if (!runs) missing.push(s);
       else for (const [k, v] of Object.entries(runs)) py[k] ??= v;
       continue;
