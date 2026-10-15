@@ -17,8 +17,8 @@ export const LOCALISER: Record<Place, { zh: string; py: string; id: string }> = 
   under: { zh: '下', py: 'xia', id: 'bawah' },
   in: { zh: '里', py: 'li', id: 'dalam' },
   'next to': { zh: '旁边', py: 'pángbiān', id: 'sebelah' },
-  behind: { zh: '后面', py: 'hòumiàn', id: 'belakang' },
-  'in front of': { zh: '前面', py: 'qiánmiàn', id: 'depan' },
+  behind: { zh: '后边', py: 'hòubian', id: 'belakang' },
+  'in front of': { zh: '前边', py: 'qiánbian', id: 'depan' },
 };
 
 /** 球在盒子上。 / 球在桌子下。: the sentence for a place, with the localiser in focus. */
@@ -93,7 +93,7 @@ type Props = VisualProps<Place> & { initial?: Place };
 
 /**
  * PlaceScene, Chinese (DESIGN §8.7): English Ladder's table, box and ball (the ball in jade) with the
- * localisers 上 下 里 旁边 后面 前面. "Bandingkan dengan Indonesia" aligns the sentence word by word
+ * localisers 上 下 里 旁边 后边 前边 (the HSK 1 forms). "Bandingkan dengan Indonesia" aligns the sentence word by word
  * with the Indonesian, so the localiser's jump to the end is visible.
  */
 export function PlaceSceneZh({ state, interactive = true, onStateChange, lang, initial }: Props) {
