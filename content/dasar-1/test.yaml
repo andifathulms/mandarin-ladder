@@ -1,0 +1,207 @@
+# Dasar 1 test pool: 14 items drawn, 11 to pass. At least one item from every lesson.
+rung: dasar-1
+draw: 14
+pass: 11
+items:
+  # 01 dekat
+  - id: d1-t-01
+    from: dasar1-01-dekat
+    type: choice
+    cue: "Apa artinya?"
+    prompt: "我 今天 去 。"
+    options: ["Aku pergi hari ini.", "Aku pergi besok.", "Aku sudah pergi."]
+    answer: "Aku pergi hari ini."
+    why: { id: "**今天** berarti hari ini. **去** tidak berubah: waktunya ada di **今天**.", en: "**今天** means today. **去** doesn't change: the time is in **今天**." }
+  - id: d1-t-02
+    from: dasar1-01-dekat
+    type: choice
+    prompt: "Suku kata **mā** terdiri dari…"
+    options: ["inisial **m**, final **a**, nada 1", "inisial **ma**, nada 1", "final **m**, inisial **a**"]
+    answer: "inisial **m**, final **a**, nada 1"
+    why: { id: "Setiap suku kata: awal (inisial), akhir (final), dan nada.", en: "Every syllable: an initial, a final and a tone." }
+  # 02 empat-nada
+  - id: d1-t-03
+    from: dasar1-02-empat-nada
+    type: tone
+    audio: "syl-ma4"
+    options: [[1], [2], [3], [4]]
+    answer: [4]
+    why: { id: "Turun tajam dari atas ke bawah: nada 4.", en: "A sharp fall from top to bottom: tone 4." }
+  - id: d1-t-04
+    from: dasar1-02-empat-nada
+    type: tone
+    audio: "syl-yi2"
+    options: [[1], [2], [3], [4]]
+    answer: [2]
+    why: { id: "Suaranya naik, seperti bertanya: nada 2.", en: "The voice rises, like a question: tone 2." }
+  - id: d1-t-05
+    from: dasar1-02-empat-nada
+    type: tone
+    audio: "syl-wu3"
+    options: [[1], [3], [4]]
+    answer: [3]
+    why: { id: "Turun rendah, lalu naik sedikit: nada 3.", en: "Dips low, then rises a little: tone 3." }
+  # 03 inisial-mudah
+  - id: d1-t-06
+    from: dasar1-03-inisial-mudah
+    type: pinyin
+    audio: "syl-la4"
+    answer: "là"
+    why: { id: "**l** seperti dalam bahasa Indonesia, lalu **a** dengan nada 4.", en: "**l** as in Indonesian, then **a** on tone 4." }
+  - id: d1-t-07
+    from: dasar1-03-inisial-mudah
+    type: pinyin
+    audio: "syl-mi3"
+    answer: "mǐ"
+    why: { id: "**m** dan **i** seperti bahasa Indonesia. Rendah: nada 3.", en: "**m** and **i** as in Indonesian. Low: tone 3." }
+  - id: d1-t-08
+    from: dasar1-03-inisial-mudah
+    type: choice
+    prompt: "Bagaimana **f** dalam **fàn** diucapkan?"
+    options: ["gigi atas menyentuh bibir bawah, seperti *foto*", "seperti *p* dalam *pagi*"]
+    answer: "gigi atas menyentuh bibir bawah, seperti *foto*"
+    why: { id: "**f** tetap **f**. **fàn** dan **pàn** adalah kata yang berbeda.", en: "**f** stays **f**. **fàn** and **pàn** are different words." }
+  # 04 hembusan
+  - id: d1-t-09
+    from: dasar1-04-hembusan
+    type: pinyin
+    audio: "syl-pao3"
+    answer: "pǎo"
+    why: { id: "Ada hembusan udara: **p**, bukan **b**. Nada 3.", en: "There's a puff of air: **p**, not **b**. Tone 3." }
+  - id: d1-t-10
+    from: dasar1-04-hembusan
+    type: pinyin
+    audio: "syl-ta1"
+    answer: "tā"
+    why: { id: "Hembusan udara berarti **t**. Tinggi datar: nada 1.", en: "A puff of air means **t**. High and level: tone 1." }
+  - id: d1-t-11
+    from: dasar1-04-hembusan
+    type: choice
+    prompt: "Mana yang diucapkan dengan hembusan udara?"
+    options: ["**k**", "**g**"]
+    answer: "**k**"
+    why: { id: "**p**, **t**, **k** punya hembusan. **b**, **d**, **g** tidak.", en: "**p**, **t**, **k** have a puff. **b**, **d**, **g** don't." }
+  # 05 jqx
+  - id: d1-t-12
+    from: dasar1-05-jqx
+    type: pinyin
+    audio: "syl-qu4"
+    answer: "qù"
+    why: { id: "**q** dengan hembusan, lalu **ü** yang ditulis **u**. Nada 4.", en: "**q** with a puff, then **ü** written **u**. Tone 4." }
+  - id: d1-t-13
+    from: dasar1-05-jqx
+    type: pinyin
+    audio: "syl-xia4"
+    answer: "xià"
+    why: { id: "Lidah datar seperti *sy*: **x**. Lalu **ia** dan nada 4.", en: "Flat tongue, like *sy*: **x**. Then **ia** and tone 4." }
+  - id: d1-t-14
+    from: dasar1-05-jqx
+    type: choice
+    prompt: "Setelah **n** dan **l**, vokal **ü** ditulis…"
+    options: ["dengan titik: **nǚ**, **lǜ**", "tanpa titik: **nǔ**, **lù**"]
+    answer: "dengan titik: **nǚ**, **lǜ**"
+    why: { id: "Setelah **n** dan **l** ada **u** dan **ü**, jadi titiknya perlu ditulis.", en: "After **n** and **l** both **u** and **ü** occur, so the dots must be written." }
+  # 06 lidah-melengkung
+  - id: d1-t-15
+    from: dasar1-06-lidah-melengkung
+    type: pinyin
+    audio: "syl-zhi1"
+    answer: "zhī"
+    why: { id: "Lidah melengkung tanpa hembusan: **zh**. Tinggi datar: nada 1.", en: "Curled tongue, no puff: **zh**. High and level: tone 1." }
+  - id: d1-t-16
+    from: dasar1-06-lidah-melengkung
+    type: pinyin
+    audio: "syl-ci2"
+    answer: "cí"
+    why: { id: "Lidah datar, *ts* dengan hembusan: **c**. Naik: nada 2.", en: "Flat tongue, *ts* with a puff: **c**. Rising: tone 2." }
+  - id: d1-t-17
+    from: dasar1-06-lidah-melengkung
+    type: listen
+    audio: "十"
+    options: ["sepuluh", "empat"]
+    answer: "sepuluh"
+    why: { id: "Lidah melengkung dan nada 2: **十** shí, sepuluh. **四** sì (empat) memakai lidah datar dan nada 4.", en: "Curled tongue and tone 2: **十** shí, ten. **四** sì (four) has a flat tongue and tone 4." }
+  # 07 final
+  - id: d1-t-18
+    from: dasar1-07-final
+    type: pinyin
+    audio: "syl-mang2"
+    answer: "máng"
+    why: { id: "Berakhir dengan **-ng**, seperti *datang*. Naik: nada 2.", en: "Ends in **-ng**, as in *datang*. Rising: tone 2." }
+  - id: d1-t-19
+    from: dasar1-07-final
+    type: pinyin
+    audio: "syl-dou1"
+    answer: "dōu"
+    why: { id: "**ou**: *o* lalu meluncur ke *u*. Tinggi datar: nada 1.", en: "**ou**: *o* gliding to *u*. High and level: tone 1." }
+  - id: d1-t-20
+    from: dasar1-07-final
+    type: pinyin
+    audio: "syl-pan2"
+    answer: "pán"
+    why: { id: "Hembusan: **p**. Berakhir dengan **-n**, bukan **-ng**. Nada 2.", en: "A puff: **p**. Ends in **-n**, not **-ng**. Tone 2." }
+  # 08 perubahan-nada
+  - id: d1-t-21
+    from: dasar1-08-perubahan-nada
+    type: tone
+    audio: "很 好"
+    audio_py: "hěn hǎo"
+    ask: spoken
+    options: [[3, 3], [2, 3]]
+    answer: [2, 3]
+    why: { id: "Dua nada 3 berurutan: yang pertama diucapkan naik, *hén hǎo*.", en: "Two third tones in a row: the first is said rising, *hén hǎo*." }
+  - id: d1-t-22
+    from: dasar1-08-perubahan-nada
+    type: tone
+    audio: "不 对"
+    audio_py: "bú duì"
+    ask: spoken
+    options: [[4, 4], [2, 4]]
+    answer: [2, 4]
+    why: { id: "**对** bernada 4, jadi **不** menjadi **bú**.", en: "**对** is tone 4, so **不** becomes **bú**." }
+  - id: d1-t-23
+    from: dasar1-08-perubahan-nada
+    type: choice
+    prompt: "Bagaimana **一** diucapkan saat berhitung: **一**, **二**, **三**?"
+    options: ["yī", "yí", "yì"]
+    answer: "yī"
+    why: { id: "Saat berhitung, **一** tidak berubah: **yī**.", en: "When counting, **一** doesn't change: **yī**." }
+  # 09 pasangan-nada
+  - id: d1-t-24
+    from: dasar1-09-pasangan-nada
+    type: tone
+    audio: "中国"
+    audio_py: "Zhōngguó"
+    options: [[1, 2], [2, 1], [1, 1]]
+    answer: [1, 2]
+    why: { id: "Tinggi datar, lalu naik: 1 + 2.", en: "High and level, then rising: 1 + 2." }
+  - id: d1-t-25
+    from: dasar1-09-pasangan-nada
+    type: tone
+    audio: "电脑"
+    audio_py: "diànnǎo"
+    options: [[4, 3], [4, 2], [3, 3]]
+    answer: [4, 3]
+    why: { id: "Turun tajam, lalu rendah: 4 + 3.", en: "A sharp fall, then low: 4 + 3." }
+  - id: d1-t-26
+    from: dasar1-09-pasangan-nada
+    type: tone
+    audio: "妈妈"
+    audio_py: "māma"
+    options: [[1, 0], [1, 1], [3, 0]]
+    answer: [1, 0]
+    why: { id: "Tinggi datar, lalu ringan dan pendek: 1 + netral.", en: "High and level, then light and short: 1 + neutral." }
+  # 10 membaca-pinyin
+  - id: d1-t-27
+    from: dasar1-10-membaca-pinyin
+    type: pinyin
+    audio: "六"
+    answer: "liù"
+    why: { id: "Dalam **iu**, tanda nada di atas vokal kedua: **liù**.", en: "In **iu**, the tone mark goes on the second vowel: **liù**." }
+  - id: d1-t-28
+    from: dasar1-10-membaca-pinyin
+    type: choice
+    prompt: "Bagaimana vokal **i** tanpa inisial ditulis?"
+    options: ["yi", "i", "wi"]
+    answer: "yi"
+    why: { id: "**i** sendiri ditulis **yi**, seperti dalam **yī** (satu).", en: "**i** on its own is written **yi**, as in **yī** (one)." }
