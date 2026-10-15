@@ -1,7 +1,7 @@
 'use client';
 
 import Link from 'next/link';
-import { Lattice } from '../ui/Lattice';
+import { Grid } from '../ui/Grid';
 import { IconArrowRight } from '../ui/Icon';
 import { ZhText } from '../zh/ZhText';
 import { useT } from '../ProgressProvider';
@@ -31,7 +31,7 @@ export function TwoDoorWelcome({ dasarHref, placementHref }: Props) {
   const { t } = useT();
   return (
     <section className="board flex flex-col gap-4 p-6 min-[900px]:gap-5 min-[900px]:p-9" aria-labelledby="welcome-title">
-      <Lattice />
+      <Grid />
       <div className="flex items-start justify-between gap-3">
         <p className="label text-brass">{t('home.startHere')}</p>
         <ZhText className="text-zh-body leading-none text-board-ink" aria-hidden>

@@ -7,7 +7,7 @@ import { lessonHref, testHref } from '@/lib/routes';
 import { IconArrowRight } from '../ui/Icon';
 import { useT } from '../ProgressProvider';
 import { STEP_KEYS } from '../lesson/steps';
-import { Lattice } from '../ui/Lattice';
+import { Grid } from '../ui/Grid';
 import type { Quote } from '@/lib/types';
 import { hasHan } from '@/lib/zh/text';
 import { ZhSentence } from '../zh/ZhSentence';
@@ -97,7 +97,7 @@ export function ContinueCard({ target, firstLessonHref, placementHref, rungs }: 
   if (target.kind === 'test') {
     return (
       <section className={shell} aria-labelledby="continue-title">
-        <Lattice />
+        <Grid />
         <p id="continue-title" className="label text-brass">
           {t('home.continue')} · {target.rung.name}
         </p>
@@ -118,7 +118,7 @@ export function ContinueCard({ target, firstLessonHref, placementHref, rungs }: 
   const rung = rungs.find((r) => r.id === lesson.rung);
   return (
     <section className={shell} aria-labelledby="continue-title">
-      <Lattice />
+      <Grid />
       <p id="continue-title" className="label tnum text-brass">
         {t('home.continue')} · {rung?.name} · {t('home.lessonN', { n: lesson.order })}
         <span aria-hidden> · {t(STEP_KEYS[step])}</span>

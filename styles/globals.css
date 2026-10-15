@@ -278,7 +278,7 @@
     border-radius: var(--r-lg);
     box-shadow: var(--e-1);
   }
-  /* The board: Mushaf-cover green, with the khatam lattice. One per screen, for the single next thing to do. */
+  /* The board: the red cover of the exercise book, with the 田字格 grid. One per screen, for the single next thing to do. */
   .board {
     position: relative;
     overflow: hidden;

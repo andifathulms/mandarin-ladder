@@ -7,7 +7,7 @@ import { sfx } from '@/lib/speech/sfx';
 import { rungHref } from '@/lib/routes';
 import { useReducedMotion, useT } from '../ProgressProvider';
 import { NotchBar } from '../ladder/NotchBar';
-import { Lattice } from '../ui/Lattice';
+import { Grid } from '../ui/Grid';
 import { ZhText } from '../zh/ZhText';
 import { Accented } from '../ladder/ContinueCard';
 
@@ -33,7 +33,7 @@ export function ClimbMoment({ rung, next, onReview }: Props) {
       aria-modal="true"
       aria-labelledby="climb-title"
     >
-      <Lattice />
+      <Grid />
       <div className="page relative flex min-h-full max-w-lesson flex-col justify-center gap-7 py-8">
         {/* Ladder fragment: this rung and the next */}
         <div className="relative mx-auto w-full max-w-[340px] px-[18px]" style={{ height: ROW * 2 + 16 }} aria-hidden>
