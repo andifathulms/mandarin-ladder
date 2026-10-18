@@ -1,5 +1,12 @@
 # Mandarin Ladder
 
+> **Development has moved.** Mandarin Ladder now lives in the Ladder monorepo, on the shared engine
+> (`apps/mandarin` in [english-ladder](https://github.com/andifathulms/english-ladder)). This
+> repository is the deploy target only: the monorepo builds the app and pushes it to this repo's
+> `gh-pages` branch, which GitHub Pages serves at <https://andifathulms.github.io/mandarin-ladder/>
+> (same URL, same progress storage). Please open issues and changes there. The code below is the
+> last standalone version (`dd8f5fa`), kept for reference.
+
 A calm, levelled Mandarin course for Indonesian speakers, from zero to HSK 9. Eleven rungs: **Dasar 1**
 (pinyin and tones), **Dasar 2** (strokes and radicals), then Easy 1–3 = HSK 1–3, Medium 1–3 = HSK 4–6
 and Hard 1–3 = HSK 7–9 (HSK 3.0, 2021).
