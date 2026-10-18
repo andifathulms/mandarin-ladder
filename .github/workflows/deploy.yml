@@ -1,9 +1,8 @@
 name: CI and deploy
 
+# Development moved to the Ladder monorepo, which deploys this site to the gh-pages branch.
+# This workflow runs only by hand, so a push here can't overwrite that deploy.
 on:
-  push:
-    branches: [main]
-  pull_request:
   workflow_dispatch:
 
 permissions:
