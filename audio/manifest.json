@@ -1,0 +1,6530 @@
+{
+ "syl-a1": {
+  "file": "syl-a1-2de92fde.mp3",
+  "dur": 863
+ },
+ "syl-a2": {
+  "file": "syl-a2-53faa92d.mp3",
+  "dur": 953
+ },
+ "syl-a3": {
+  "file": "syl-a3-4558cb2e.mp3",
+  "dur": 1085
+ },
+ "syl-a4": {
+  "file": "syl-a4-0da755f2.mp3",
+  "dur": 594
+ },
+ "syl-ai1": {
+  "file": "syl-ai1-ff6fc787.mp3",
+  "dur": 912
+ },
+ "syl-ai2": {
+  "file": "syl-ai2-3b230ffc.mp3",
+  "dur": 946
+ },
+ "syl-ai3": {
+  "file": "syl-ai3-c6bef24b.mp3",
+  "dur": 1084
+ },
+ "syl-ai4": {
+  "file": "syl-ai4-b239c050.mp3",
+  "dur": 592
+ },
+ "syl-an1": {
+  "file": "syl-an1-b36bcb30.mp3",
+  "dur": 748
+ },
+ "syl-an2": {
+  "file": "syl-an2-a5dceee7.mp3",
+  "dur": 998
+ },
+ "syl-an3": {
+  "file": "syl-an3-87d64605.mp3",
+  "dur": 1266
+ },
+ "syl-an4": {
+  "file": "syl-an4-0988c265.mp3",
+  "dur": 626
+ },
+ "syl-ang1": {
+  "file": "syl-ang1-efeb6e45.mp3",
+  "dur": 928
+ },
+ "syl-ang2": {
+  "file": "syl-ang2-593e7265.mp3",
+  "dur": 1002
+ },
+ "syl-ang3": {
+  "file": "syl-ang3-65555460.mp3",
+  "dur": 1037
+ },
+ "syl-ang4": {
+  "file": "syl-ang4-351813f9.mp3",
+  "dur": 611
+ },
+ "syl-ao1": {
+  "file": "syl-ao1-f441eae3.mp3",
+  "dur": 658
+ },
+ "syl-ao2": {
+  "file": "syl-ao2-638346c6.mp3",
+  "dur": 873
+ },
+ "syl-ao3": {
+  "file": "syl-ao3-1d29ee79.mp3",
+  "dur": 1083
+ },
+ "syl-ao4": {
+  "file": "syl-ao4-1d4e279d.mp3",
+  "dur": 623
+ },
+ "syl-ba1": {
+  "file": "syl-ba1-4c23860b.mp3",
+  "dur": 877
+ },
+ "syl-ba2": {
+  "file": "syl-ba2-dc3291dc.mp3",
+  "dur": 886
+ },
+ "syl-ba3": {
+  "file": "syl-ba3-ecad7d33.mp3",
+  "dur": 1115
+ },
+ "syl-ba4": {
+  "file": "syl-ba4-826e31e2.mp3",
+  "dur": 592
+ },
+ "syl-bai1": {
+  "file": "syl-bai1-cb1e5697.mp3",
+  "dur": 931
+ },
+ "syl-bai2": {
+  "file": "syl-bai2-78b413de.mp3",
+  "dur": 915
+ },
+ "syl-bai3": {
+  "file": "syl-bai3-9d83608c.mp3",
+  "dur": 1084
+ },
+ "syl-bai4": {
+  "file": "syl-bai4-1b2f8565.mp3",
+  "dur": 629
+ },
+ "syl-ban1": {
+  "file": "syl-ban1-cca0ca9c.mp3",
+  "dur": 675
+ },
+ "syl-ban2": {
+  "file": "syl-ban2-b3db3f45.mp3",
+  "dur": 991
+ },
+ "syl-ban3": {
+  "file": "syl-ban3-544ce873.mp3",
+  "dur": 881
+ },
+ "syl-ban4": {
+  "file": "syl-ban4-c9810d7d.mp3",
+  "dur": 599
+ },
+ "syl-bang1": {
+  "file": "syl-bang1-c6763208.mp3",
+  "dur": 941
+ },
+ "syl-bang2": {
+  "file": "syl-bang2-870a9d7f.mp3",
+  "dur": 605
+ },
+ "syl-bang3": {
+  "file": "syl-bang3-52c102f4.mp3",
+  "dur": 916
+ },
+ "syl-bang4": {
+  "file": "syl-bang4-04ebedee.mp3",
+  "dur": 560
+ },
+ "syl-bao1": {
+  "file": "syl-bao1-8e7160ce.mp3",
+  "dur": 893
+ },
+ "syl-bao2": {
+  "file": "syl-bao2-ae1d94ce.mp3",
+  "dur": 712
+ },
+ "syl-bao3": {
+  "file": "syl-bao3-99870438.mp3",
+  "dur": 871
+ },
+ "syl-bao4": {
+  "file": "syl-bao4-8ea2cc78.mp3",
+  "dur": 636
+ },
+ "syl-bei1": {
+  "file": "syl-bei1-ce93e5cb.mp3",
+  "dur": 961
+ },
+ "syl-bei2": {
+  "file": "syl-bei2-a2a8d23b.mp3",
+  "dur": 884
+ },
+ "syl-bei3": {
+  "file": "syl-bei3-19bc9bbd.mp3",
+  "dur": 862
+ },
+ "syl-bei4": {
+  "file": "syl-bei4-2287b4d4.mp3",
+  "dur": 633
+ },
+ "syl-ben1": {
+  "file": "syl-ben1-b288575e.mp3",
+  "dur": 604
+ },
+ "syl-ben2": {
+  "file": "syl-ben2-970a4b1d.mp3",
+  "dur": 761
+ },
+ "syl-ben3": {
+  "file": "syl-ben3-709693aa.mp3",
+  "dur": 949
+ },
+ "syl-ben4": {
+  "file": "syl-ben4-58ce4381.mp3",
+  "dur": 627
+ },
+ "syl-beng1": {
+  "file": "syl-beng1-d3207704.mp3",
+  "dur": 878
+ },
+ "syl-beng2": {
+  "file": "syl-beng2-8cacb3e0.mp3",
+  "dur": 924
+ },
+ "syl-beng3": {
+  "file": "syl-beng3-a3b81e22.mp3",
+  "dur": 902
+ },
+ "syl-beng4": {
+  "file": "syl-beng4-3bc388dd.mp3",
+  "dur": 653
+ },
+ "syl-bi1": {
+  "file": "syl-bi1-5f769126.mp3",
+  "dur": 901
+ },
+ "syl-bi2": {
+  "file": "syl-bi2-76a86d3c.mp3",
+  "dur": 899
+ },
+ "syl-bi3": {
+  "file": "syl-bi3-9f90bd0a.mp3",
+  "dur": 1105
+ },
+ "syl-bi4": {
+  "file": "syl-bi4-1b8e76c0.mp3",
+  "dur": 578
+ },
+ "syl-bian1": {
+  "file": "syl-bian1-ced83501.mp3",
+  "dur": 702
+ },
+ "syl-bian2": {
+  "file": "syl-bian2-d360b79e.mp3",
+  "dur": 909
+ },
+ "syl-bian3": {
+  "file": "syl-bian3-101e582a.mp3",
+  "dur": 771
+ },
+ "syl-bian4": {
+  "file": "syl-bian4-a45160b1.mp3",
+  "dur": 614
+ },
+ "syl-biao1": {
+  "file": "syl-biao1-013f31f5.mp3",
+  "dur": 951
+ },
+ "syl-biao2": {
+  "file": "syl-biao2-bb0ab5f8.mp3",
+  "dur": 956
+ },
+ "syl-biao3": {
+  "file": "syl-biao3-fcd86e2d.mp3",
+  "dur": 919
+ },
+ "syl-biao4": {
+  "file": "syl-biao4-83444fda.mp3",
+  "dur": 542
+ },
+ "syl-bie1": {
+  "file": "syl-bie1-300bd66f.mp3",
+  "dur": 819
+ },
+ "syl-bie2": {
+  "file": "syl-bie2-26dc2890.mp3",
+  "dur": 1042
+ },
+ "syl-bie3": {
+  "file": "syl-bie3-e758bef8.mp3",
+  "dur": 1159
+ },
+ "syl-bie4": {
+  "file": "syl-bie4-145f6722.mp3",
+  "dur": 602
+ },
+ "syl-bin1": {
+  "file": "syl-bin1-c1afa3a0.mp3",
+  "dur": 802
+ },
+ "syl-bin2": {
+  "file": "syl-bin2-5ccbc730.mp3",
+  "dur": 941
+ },
+ "syl-bin3": {
+  "file": "syl-bin3-046cbf1b.mp3",
+  "dur": 891
+ },
+ "syl-bin4": {
+  "file": "syl-bin4-53829db8.mp3",
+  "dur": 625
+ },
+ "syl-bing1": {
+  "file": "syl-bing1-8e6ced47.mp3",
+  "dur": 723
+ },
+ "syl-bing2": {
+  "file": "syl-bing2-883d4f6a.mp3",
+  "dur": 988
+ },
+ "syl-bing3": {
+  "file": "syl-bing3-e3a39a3e.mp3",
+  "dur": 681
+ },
+ "syl-bing4": {
+  "file": "syl-bing4-3e90c465.mp3",
+  "dur": 617
+ },
+ "syl-bo1": {
+  "file": "syl-bo1-2213d6b8.mp3",
+  "dur": 830
+ },
+ "syl-bo2": {
+  "file": "syl-bo2-1e1aa5de.mp3",
+  "dur": 838
+ },
+ "syl-bo3": {
+  "file": "syl-bo3-716e8057.mp3",
+  "dur": 816
+ },
+ "syl-bo4": {
+  "file": "syl-bo4-4b31cf9c.mp3",
+  "dur": 589
+ },
+ "syl-bu1": {
+  "file": "syl-bu1-b94b6bf9.mp3",
+  "dur": 846
+ },
+ "syl-bu2": {
+  "file": "syl-bu2-fb72736a.mp3",
+  "dur": 959
+ },
+ "syl-bu3": {
+  "file": "syl-bu3-2abe0ad2.mp3",
+  "dur": 937
+ },
+ "syl-bu4": {
+  "file": "syl-bu4-38f43e2e.mp3",
+  "dur": 483
+ },
+ "syl-ca1": {
+  "file": "syl-ca1-128f1745.mp3",
+  "dur": 998
+ },
+ "syl-ca2": {
+  "file": "syl-ca2-a0f8002c.mp3",
+  "dur": 911
+ },
+ "syl-ca3": {
+  "file": "syl-ca3-b5c5a72f.mp3",
+  "dur": 1115
+ },
+ "syl-ca4": {
+  "file": "syl-ca4-e3bb313e.mp3",
+  "dur": 704
+ },
+ "syl-cai1": {
+  "file": "syl-cai1-cb96bb73.mp3",
+  "dur": 889
+ },
+ "syl-cai2": {
+  "file": "syl-cai2-f55e6c7d.mp3",
+  "dur": 1038
+ },
+ "syl-cai3": {
+  "file": "syl-cai3-da3b496b.mp3",
+  "dur": 962
+ },
+ "syl-cai4": {
+  "file": "syl-cai4-19ff2349.mp3",
+  "dur": 684
+ },
+ "syl-can1": {
+  "file": "syl-can1-8f7cc2bc.mp3",
+  "dur": 906
+ },
+ "syl-can2": {
+  "file": "syl-can2-86e0859d.mp3",
+  "dur": 1093
+ },
+ "syl-can3": {
+  "file": "syl-can3-4e720928.mp3",
+  "dur": 1089
+ },
+ "syl-can4": {
+  "file": "syl-can4-5ddc73b1.mp3",
+  "dur": 738
+ },
+ "syl-cang1": {
+  "file": "syl-cang1-f493e2ca.mp3",
+  "dur": 1046
+ },
+ "syl-cang2": {
+  "file": "syl-cang2-16797c1b.mp3",
+  "dur": 1098
+ },
+ "syl-cang3": {
+  "file": "syl-cang3-4dff9a14.mp3",
+  "dur": 1012
+ },
+ "syl-cang4": {
+  "file": "syl-cang4-cdd9171d.mp3",
+  "dur": 711
+ },
+ "syl-cao1": {
+  "file": "syl-cao1-5fea1382.mp3",
+  "dur": 1015
+ },
+ "syl-cao2": {
+  "file": "syl-cao2-c68863a4.mp3",
+  "dur": 1043
+ },
+ "syl-cao3": {
+  "file": "syl-cao3-4b4d7734.mp3",
+  "dur": 894
+ },
+ "syl-cao4": {
+  "file": "syl-cao4-cc1a9143.mp3",
+  "dur": 709
+ },
+ "syl-ce1": {
+  "file": "syl-ce1-6e989a78.mp3",
+  "dur": 1042
+ },
+ "syl-ce2": {
+  "file": "syl-ce2-b11c7e9a.mp3",
+  "dur": 1060
+ },
+ "syl-ce3": {
+  "file": "syl-ce3-ceda0a54.mp3",
+  "dur": 879
+ },
+ "syl-ce4": {
+  "file": "syl-ce4-95023f71.mp3",
+  "dur": 680
+ },
+ "syl-cen1": {
+  "file": "syl-cen1-4c5a6641.mp3",
+  "dur": 939
+ },
+ "syl-cen2": {
+  "file": "syl-cen2-28216f13.mp3",
+  "dur": 1088
+ },
+ "syl-cen3": {
+  "file": "syl-cen3-94c5a58c.mp3",
+  "dur": 863
+ },
+ "syl-cen4": {
+  "file": "syl-cen4-8ec434a9.mp3",
+  "dur": 734
+ },
+ "syl-ceng1": {
+  "file": "syl-ceng1-da83ff28.mp3",
+  "dur": 1058
+ },
+ "syl-ceng2": {
+  "file": "syl-ceng2-58eb21f2.mp3",
+  "dur": 953
+ },
+ "syl-ceng3": {
+  "file": "syl-ceng3-2c8f69fe.mp3",
+  "dur": 1034
+ },
+ "syl-ceng4": {
+  "file": "syl-ceng4-8519122d.mp3",
+  "dur": 595
+ },
+ "syl-cha1": {
+  "file": "syl-cha1-99f1c5bb.mp3",
+  "dur": 1008
+ },
+ "syl-cha2": {
+  "file": "syl-cha2-92b617cd.mp3",
+  "dur": 1149
+ },
+ "syl-cha3": {
+  "file": "syl-cha3-83a21f6e.mp3",
+  "dur": 959
+ },
+ "syl-cha4": {
+  "file": "syl-cha4-bec85caf.mp3",
+  "dur": 683
+ },
+ "syl-chai1": {
+  "file": "syl-chai1-2bc4e149.mp3",
+  "dur": 1010
+ },
+ "syl-chai2": {
+  "file": "syl-chai2-45b1109a.mp3",
+  "dur": 1137
+ },
+ "syl-chai3": {
+  "file": "syl-chai3-5e8086ee.mp3",
+  "dur": 690
+ },
+ "syl-chai4": {
+  "file": "syl-chai4-13330cfe.mp3",
+  "dur": 586
+ },
+ "syl-chan1": {
+  "file": "syl-chan1-4f05bffc.mp3",
+  "dur": 1045
+ },
+ "syl-chan2": {
+  "file": "syl-chan2-e6c9284e.mp3",
+  "dur": 1142
+ },
+ "syl-chan3": {
+  "file": "syl-chan3-d836f768.mp3",
+  "dur": 1038
+ },
+ "syl-chan4": {
+  "file": "syl-chan4-aee59240.mp3",
+  "dur": 721
+ },
+ "syl-chang1": {
+  "file": "syl-chang1-8ebf63ac.mp3",
+  "dur": 1089
+ },
+ "syl-chang2": {
+  "file": "syl-chang2-23823f65.mp3",
+  "dur": 1000
+ },
+ "syl-chang3": {
+  "file": "syl-chang3-9fbb784b.mp3",
+  "dur": 1014
+ },
+ "syl-chang4": {
+  "file": "syl-chang4-f42b7a5e.mp3",
+  "dur": 692
+ },
+ "syl-chao1": {
+  "file": "syl-chao1-75511239.mp3",
+  "dur": 1020
+ },
+ "syl-chao2": {
+  "file": "syl-chao2-e2a9b190.mp3",
+  "dur": 1145
+ },
+ "syl-chao3": {
+  "file": "syl-chao3-47f40141.mp3",
+  "dur": 1014
+ },
+ "syl-chao4": {
+  "file": "syl-chao4-d682557f.mp3",
+  "dur": 648
+ },
+ "syl-che1": {
+  "file": "syl-che1-74b5834e.mp3",
+  "dur": 997
+ },
+ "syl-che2": {
+  "file": "syl-che2-602fe128.mp3",
+  "dur": 957
+ },
+ "syl-che3": {
+  "file": "syl-che3-514bee8b.mp3",
+  "dur": 779
+ },
+ "syl-che4": {
+  "file": "syl-che4-6f854601.mp3",
+  "dur": 676
+ },
+ "syl-chen1": {
+  "file": "syl-chen1-000ec227.mp3",
+  "dur": 1039
+ },
+ "syl-chen2": {
+  "file": "syl-chen2-97754286.mp3",
+  "dur": 1073
+ },
+ "syl-chen3": {
+  "file": "syl-chen3-6081970f.mp3",
+  "dur": 770
+ },
+ "syl-chen4": {
+  "file": "syl-chen4-df7fd9e0.mp3",
+  "dur": 688
+ },
+ "syl-cheng1": {
+  "file": "syl-cheng1-0b3cd2ec.mp3",
+  "dur": 893
+ },
+ "syl-cheng2": {
+  "file": "syl-cheng2-db8c48f6.mp3",
+  "dur": 1083
+ },
+ "syl-cheng3": {
+  "file": "syl-cheng3-07a31cd8.mp3",
+  "dur": 907
+ },
+ "syl-cheng4": {
+  "file": "syl-cheng4-d89ad177.mp3",
+  "dur": 756
+ },
+ "syl-chi1": {
+  "file": "syl-chi1-b330d9b1.mp3",
+  "dur": 945
+ },
+ "syl-chi2": {
+  "file": "syl-chi2-565738fe.mp3",
+  "dur": 1001
+ },
+ "syl-chi3": {
+  "file": "syl-chi3-97ac1eed.mp3",
+  "dur": 1077
+ },
+ "syl-chi4": {
+  "file": "syl-chi4-2a07dadf.mp3",
+  "dur": 607
+ },
+ "syl-chong1": {
+  "file": "syl-chong1-4b792618.mp3",
+  "dur": 683
+ },
+ "syl-chong2": {
+  "file": "syl-chong2-7a625b11.mp3",
+  "dur": 984
+ },
+ "syl-chong3": {
+  "file": "syl-chong3-6ef0b975.mp3",
+  "dur": 877
+ },
+ "syl-chong4": {
+  "file": "syl-chong4-fa92ce2c.mp3",
+  "dur": 746
+ },
+ "syl-chou1": {
+  "file": "syl-chou1-8b17c25b.mp3",
+  "dur": 844
+ },
+ "syl-chou2": {
+  "file": "syl-chou2-6bf92cb6.mp3",
+  "dur": 752
+ },
+ "syl-chou3": {
+  "file": "syl-chou3-e382ed68.mp3",
+  "dur": 905
+ },
+ "syl-chou4": {
+  "file": "syl-chou4-dee0f1b5.mp3",
+  "dur": 690
+ },
+ "syl-chu1": {
+  "file": "syl-chu1-cef92250.mp3",
+  "dur": 848
+ },
+ "syl-chu2": {
+  "file": "syl-chu2-b566d0b2.mp3",
+  "dur": 1039
+ },
+ "syl-chu3": {
+  "file": "syl-chu3-04706197.mp3",
+  "dur": 1075
+ },
+ "syl-chu4": {
+  "file": "syl-chu4-705832c9.mp3",
+  "dur": 737
+ },
+ "syl-chua1": {
+  "file": "syl-chua1-5a02d194.mp3",
+  "dur": 1043
+ },
+ "syl-chua2": {
+  "file": "syl-chua2-21546dd7.mp3",
+  "dur": 1078
+ },
+ "syl-chua3": {
+  "file": "syl-chua3-7e19b469.mp3",
+  "dur": 983
+ },
+ "syl-chua4": {
+  "file": "syl-chua4-60ee0a56.mp3",
+  "dur": 688
+ },
+ "syl-chuai1": {
+  "file": "syl-chuai1-abd69d08.mp3",
+  "dur": 789
+ },
+ "syl-chuai2": {
+  "file": "syl-chuai2-4c9cf52d.mp3",
+  "dur": 995
+ },
+ "syl-chuai3": {
+  "file": "syl-chuai3-da7881bc.mp3",
+  "dur": 793
+ },
+ "syl-chuai4": {
+  "file": "syl-chuai4-00964f68.mp3",
+  "dur": 681
+ },
+ "syl-chuan1": {
+  "file": "syl-chuan1-cad11a6b.mp3",
+  "dur": 880
+ },
+ "syl-chuan2": {
+  "file": "syl-chuan2-0c007ae8.mp3",
+  "dur": 908
+ },
+ "syl-chuan3": {
+  "file": "syl-chuan3-0f97b8b5.mp3",
+  "dur": 947
+ },
+ "syl-chuan4": {
+  "file": "syl-chuan4-fe9bd487.mp3",
+  "dur": 741
+ },
+ "syl-chuang1": {
+  "file": "syl-chuang1-8c94d764.mp3",
+  "dur": 869
+ },
+ "syl-chuang2": {
+  "file": "syl-chuang2-c64a0a89.mp3",
+  "dur": 1026
+ },
+ "syl-chuang3": {
+  "file": "syl-chuang3-ed41f7d3.mp3",
+  "dur": 864
+ },
+ "syl-chuang4": {
+  "file": "syl-chuang4-0015f24f.mp3",
+  "dur": 654
+ },
+ "syl-chui1": {
+  "file": "syl-chui1-1c804a09.mp3",
+  "dur": 837
+ },
+ "syl-chui2": {
+  "file": "syl-chui2-feb44998.mp3",
+  "dur": 980
+ },
+ "syl-chui3": {
+  "file": "syl-chui3-fb6193b1.mp3",
+  "dur": 859
+ },
+ "syl-chui4": {
+  "file": "syl-chui4-97df2146.mp3",
+  "dur": 670
+ },
+ "syl-chun1": {
+  "file": "syl-chun1-df9b02ab.mp3",
+  "dur": 1031
+ },
+ "syl-chun2": {
+  "file": "syl-chun2-79a98dca.mp3",
+  "dur": 1102
+ },
+ "syl-chun3": {
+  "file": "syl-chun3-b506a269.mp3",
+  "dur": 889
+ },
+ "syl-chun4": {
+  "file": "syl-chun4-bf668348.mp3",
+  "dur": 653
+ },
+ "syl-chuo1": {
+  "file": "syl-chuo1-9c06e624.mp3",
+  "dur": 901
+ },
+ "syl-chuo2": {
+  "file": "syl-chuo2-f3b5f2e9.mp3",
+  "dur": 1003
+ },
+ "syl-chuo3": {
+  "file": "syl-chuo3-5d658944.mp3",
+  "dur": 1177
+ },
+ "syl-chuo4": {
+  "file": "syl-chuo4-877d01b7.mp3",
+  "dur": 669
+ },
+ "syl-ci1": {
+  "file": "syl-ci1-75b320fb.mp3",
+  "dur": 1047
+ },
+ "syl-ci2": {
+  "file": "syl-ci2-b18a1f7f.mp3",
+  "dur": 1094
+ },
+ "syl-ci3": {
+  "file": "syl-ci3-eb4abda2.mp3",
+  "dur": 1054
+ },
+ "syl-ci4": {
+  "file": "syl-ci4-40fe0ba1.mp3",
+  "dur": 729
+ },
+ "syl-cong1": {
+  "file": "syl-cong1-ed024be0.mp3",
+  "dur": 1139
+ },
+ "syl-cong2": {
+  "file": "syl-cong2-f8924b09.mp3",
+  "dur": 950
+ },
+ "syl-cong3": {
+  "file": "syl-cong3-1ef1e763.mp3",
+  "dur": 986
+ },
+ "syl-cong4": {
+  "file": "syl-cong4-c1a29dec.mp3",
+  "dur": 675
+ },
+ "syl-cou1": {
+  "file": "syl-cou1-0b4ba940.mp3",
+  "dur": 1004
+ },
+ "syl-cou2": {
+  "file": "syl-cou2-7ba28ebb.mp3",
+  "dur": 1044
+ },
+ "syl-cou3": {
+  "file": "syl-cou3-003d1872.mp3",
+  "dur": 860
+ },
+ "syl-cou4": {
+  "file": "syl-cou4-ba9f06f6.mp3",
+  "dur": 655
+ },
+ "syl-cu1": {
+  "file": "syl-cu1-c437af6c.mp3",
+  "dur": 991
+ },
+ "syl-cu2": {
+  "file": "syl-cu2-9d92e103.mp3",
+  "dur": 1055
+ },
+ "syl-cu3": {
+  "file": "syl-cu3-69a1fc2a.mp3",
+  "dur": 932
+ },
+ "syl-cu4": {
+  "file": "syl-cu4-d6bee613.mp3",
+  "dur": 731
+ },
+ "syl-cuan1": {
+  "file": "syl-cuan1-21bc166b.mp3",
+  "dur": 1106
+ },
+ "syl-cuan2": {
+  "file": "syl-cuan2-dee34877.mp3",
+  "dur": 1136
+ },
+ "syl-cuan3": {
+  "file": "syl-cuan3-afe88866.mp3",
+  "dur": 1161
+ },
+ "syl-cuan4": {
+  "file": "syl-cuan4-b68be6a1.mp3",
+  "dur": 754
+ },
+ "syl-cui1": {
+  "file": "syl-cui1-df0ca367.mp3",
+  "dur": 1095
+ },
+ "syl-cui2": {
+  "file": "syl-cui2-a9266788.mp3",
+  "dur": 992
+ },
+ "syl-cui3": {
+  "file": "syl-cui3-24a35e3a.mp3",
+  "dur": 1025
+ },
+ "syl-cui4": {
+  "file": "syl-cui4-d1f2a2d1.mp3",
+  "dur": 739
+ },
+ "syl-cun1": {
+  "file": "syl-cun1-d948512a.mp3",
+  "dur": 987
+ },
+ "syl-cun2": {
+  "file": "syl-cun2-8dffd60a.mp3",
+  "dur": 1177
+ },
+ "syl-cun3": {
+  "file": "syl-cun3-d568ae04.mp3",
+  "dur": 984
+ },
+ "syl-cun4": {
+  "file": "syl-cun4-5c8594e5.mp3",
+  "dur": 781
+ },
+ "syl-cuo1": {
+  "file": "syl-cuo1-905bbcca.mp3",
+  "dur": 931
+ },
+ "syl-cuo2": {
+  "file": "syl-cuo2-62f2d9e0.mp3",
+  "dur": 1079
+ },
+ "syl-cuo3": {
+  "file": "syl-cuo3-71f76110.mp3",
+  "dur": 1046
+ },
+ "syl-cuo4": {
+  "file": "syl-cuo4-c46ab514.mp3",
+  "dur": 602
+ },
+ "syl-da1": {
+  "file": "syl-da1-e9b9601c.mp3",
+  "dur": 644
+ },
+ "syl-da2": {
+  "file": "syl-da2-fd26c8bc.mp3",
+  "dur": 985
+ },
+ "syl-da3": {
+  "file": "syl-da3-e61a6693.mp3",
+  "dur": 817
+ },
+ "syl-da4": {
+  "file": "syl-da4-94c01c0c.mp3",
+  "dur": 550
+ },
+ "syl-dai1": {
+  "file": "syl-dai1-81dbcaef.mp3",
+  "dur": 697
+ },
+ "syl-dai2": {
+  "file": "syl-dai2-e03593bb.mp3",
+  "dur": 716
+ },
+ "syl-dai3": {
+  "file": "syl-dai3-35ca5b9d.mp3",
+  "dur": 876
+ },
+ "syl-dai4": {
+  "file": "syl-dai4-7564c989.mp3",
+  "dur": 586
+ },
+ "syl-dan1": {
+  "file": "syl-dan1-21bfa400.mp3",
+  "dur": 848
+ },
+ "syl-dan2": {
+  "file": "syl-dan2-9bdef39c.mp3",
+  "dur": 767
+ },
+ "syl-dan3": {
+  "file": "syl-dan3-c1cc2164.mp3",
+  "dur": 863
+ },
+ "syl-dan4": {
+  "file": "syl-dan4-314d0220.mp3",
+  "dur": 513
+ },
+ "syl-dang1": {
+  "file": "syl-dang1-e8273d51.mp3",
+  "dur": 719
+ },
+ "syl-dang2": {
+  "file": "syl-dang2-8252f7b0.mp3",
+  "dur": 816
+ },
+ "syl-dang3": {
+  "file": "syl-dang3-f164fe3c.mp3",
+  "dur": 1142
+ },
+ "syl-dang4": {
+  "file": "syl-dang4-faf52b58.mp3",
+  "dur": 590
+ },
+ "syl-dao1": {
+  "file": "syl-dao1-25bb713d.mp3",
+  "dur": 915
+ },
+ "syl-dao2": {
+  "file": "syl-dao2-47c380fb.mp3",
+  "dur": 976
+ },
+ "syl-dao3": {
+  "file": "syl-dao3-196e40c5.mp3",
+  "dur": 899
+ },
+ "syl-dao4": {
+  "file": "syl-dao4-69e50b3d.mp3",
+  "dur": 600
+ },
+ "syl-de1": {
+  "file": "syl-de1-d1421a77.mp3",
+  "dur": 949
+ },
+ "syl-de2": {
+  "file": "syl-de2-07c040f0.mp3",
+  "dur": 948
+ },
+ "syl-de3": {
+  "file": "syl-de3-88c6fe5c.mp3",
+  "dur": 759
+ },
+ "syl-de4": {
+  "file": "syl-de4-c6beda9f.mp3",
+  "dur": 598
+ },
+ "syl-dei1": {
+  "file": "syl-dei1-cac2d697.mp3",
+  "dur": 876
+ },
+ "syl-dei2": {
+  "file": "syl-dei2-15659382.mp3",
+  "dur": 842
+ },
+ "syl-dei3": {
+  "file": "syl-dei3-4d694322.mp3",
+  "dur": 840
+ },
+ "syl-dei4": {
+  "file": "syl-dei4-cfc5b5e8.mp3",
+  "dur": 520
+ },
+ "syl-den1": {
+  "file": "syl-den1-56a003d5.mp3",
+  "dur": 807
+ },
+ "syl-den2": {
+  "file": "syl-den2-d26c560b.mp3",
+  "dur": 912
+ },
+ "syl-den3": {
+  "file": "syl-den3-52e9d650.mp3",
+  "dur": 838
+ },
+ "syl-den4": {
+  "file": "syl-den4-1aacc8b7.mp3",
+  "dur": 594
+ },
+ "syl-deng1": {
+  "file": "syl-deng1-fd190f7b.mp3",
+  "dur": 623
+ },
+ "syl-deng2": {
+  "file": "syl-deng2-fd187907.mp3",
+  "dur": 935
+ },
+ "syl-deng3": {
+  "file": "syl-deng3-999a54ec.mp3",
+  "dur": 869
+ },
+ "syl-deng4": {
+  "file": "syl-deng4-29be218b.mp3",
+  "dur": 599
+ },
+ "syl-di1": {
+  "file": "syl-di1-388f7e0a.mp3",
+  "dur": 983
+ },
+ "syl-di2": {
+  "file": "syl-di2-de2f9140.mp3",
+  "dur": 956
+ },
+ "syl-di3": {
+  "file": "syl-di3-0e7c79ef.mp3",
+  "dur": 771
+ },
+ "syl-di4": {
+  "file": "syl-di4-4ac192e7.mp3",
+  "dur": 594
+ },
+ "syl-dian1": {
+  "file": "syl-dian1-5b6e2e4c.mp3",
+  "dur": 935
+ },
+ "syl-dian2": {
+  "file": "syl-dian2-375edabe.mp3",
+  "dur": 1056
+ },
+ "syl-dian3": {
+  "file": "syl-dian3-12e4bf34.mp3",
+  "dur": 912
+ },
+ "syl-dian4": {
+  "file": "syl-dian4-9abca699.mp3",
+  "dur": 637
+ },
+ "syl-diao1": {
+  "file": "syl-diao1-a4237320.mp3",
+  "dur": 1005
+ },
+ "syl-diao2": {
+  "file": "syl-diao2-41947f52.mp3",
+  "dur": 1081
+ },
+ "syl-diao3": {
+  "file": "syl-diao3-d8c19758.mp3",
+  "dur": 990
+ },
+ "syl-diao4": {
+  "file": "syl-diao4-1877e22e.mp3",
+  "dur": 718
+ },
+ "syl-die1": {
+  "file": "syl-die1-d26f234f.mp3",
+  "dur": 1020
+ },
+ "syl-die2": {
+  "file": "syl-die2-17c1778d.mp3",
+  "dur": 899
+ },
+ "syl-die3": {
+  "file": "syl-die3-6696f0b6.mp3",
+  "dur": 830
+ },
+ "syl-die4": {
+  "file": "syl-die4-c55f5390.mp3",
+  "dur": 604
+ },
+ "syl-ding1": {
+  "file": "syl-ding1-459dc777.mp3",
+  "dur": 524
+ },
+ "syl-ding2": {
+  "file": "syl-ding2-a70f5e7e.mp3",
+  "dur": 987
+ },
+ "syl-ding3": {
+  "file": "syl-ding3-0a5b5d42.mp3",
+  "dur": 970
+ },
+ "syl-ding4": {
+  "file": "syl-ding4-2cccc945.mp3",
+  "dur": 609
+ },
+ "syl-diu1": {
+  "file": "syl-diu1-def82714.mp3",
+  "dur": 966
+ },
+ "syl-diu2": {
+  "file": "syl-diu2-c668c505.mp3",
+  "dur": 955
+ },
+ "syl-diu3": {
+  "file": "syl-diu3-76dd9286.mp3",
+  "dur": 1025
+ },
+ "syl-diu4": {
+  "file": "syl-diu4-6b201982.mp3",
+  "dur": 519
+ },
+ "syl-dong1": {
+  "file": "syl-dong1-e6287045.mp3",
+  "dur": 877
+ },
+ "syl-dong2": {
+  "file": "syl-dong2-af5ce141.mp3",
+  "dur": 716
+ },
+ "syl-dong3": {
+  "file": "syl-dong3-84b7da25.mp3",
+  "dur": 912
+ },
+ "syl-dong4": {
+  "file": "syl-dong4-389258ec.mp3",
+  "dur": 608
+ },
+ "syl-dou1": {
+  "file": "syl-dou1-7d05a3fe.mp3",
+  "dur": 930
+ },
+ "syl-dou2": {
+  "file": "syl-dou2-71255f26.mp3",
+  "dur": 708
+ },
+ "syl-dou3": {
+  "file": "syl-dou3-f78fb142.mp3",
+  "dur": 708
+ },
+ "syl-dou4": {
+  "file": "syl-dou4-cf28fb83.mp3",
+  "dur": 591
+ },
+ "syl-du1": {
+  "file": "syl-du1-3be10969.mp3",
+  "dur": 951
+ },
+ "syl-du2": {
+  "file": "syl-du2-33271cca.mp3",
+  "dur": 971
+ },
+ "syl-du3": {
+  "file": "syl-du3-bce62063.mp3",
+  "dur": 865
+ },
+ "syl-du4": {
+  "file": "syl-du4-71587e2f.mp3",
+  "dur": 646
+ },
+ "syl-duan1": {
+  "file": "syl-duan1-b31d4e7d.mp3",
+  "dur": 1088
+ },
+ "syl-duan2": {
+  "file": "syl-duan2-f5a5248a.mp3",
+  "dur": 1000
+ },
+ "syl-duan3": {
+  "file": "syl-duan3-40d645ba.mp3",
+  "dur": 908
+ },
+ "syl-duan4": {
+  "file": "syl-duan4-5d8b4d4c.mp3",
+  "dur": 615
+ },
+ "syl-dui1": {
+  "file": "syl-dui1-2d7576f8.mp3",
+  "dur": 986
+ },
+ "syl-dui2": {
+  "file": "syl-dui2-96dbd03f.mp3",
+  "dur": 864
+ },
+ "syl-dui3": {
+  "file": "syl-dui3-b443620e.mp3",
+  "dur": 838
+ },
+ "syl-dui4": {
+  "file": "syl-dui4-e2c1943f.mp3",
+  "dur": 636
+ },
+ "syl-dun1": {
+  "file": "syl-dun1-7596883b.mp3",
+  "dur": 729
+ },
+ "syl-dun2": {
+  "file": "syl-dun2-d4cf54ea.mp3",
+  "dur": 885
+ },
+ "syl-dun3": {
+  "file": "syl-dun3-2606ba60.mp3",
+  "dur": 822
+ },
+ "syl-dun4": {
+  "file": "syl-dun4-3a2527c3.mp3",
+  "dur": 661
+ },
+ "syl-duo1": {
+  "file": "syl-duo1-b23c15c1.mp3",
+  "dur": 918
+ },
+ "syl-duo2": {
+  "file": "syl-duo2-6b666003.mp3",
+  "dur": 901
+ },
+ "syl-duo3": {
+  "file": "syl-duo3-a63aaeb5.mp3",
+  "dur": 812
+ },
+ "syl-duo4": {
+  "file": "syl-duo4-6bab57b1.mp3",
+  "dur": 597
+ },
+ "syl-e1": {
+  "file": "syl-e1-2c806cd2.mp3",
+  "dur": 608
+ },
+ "syl-e2": {
+  "file": "syl-e2-b6f2ec34.mp3",
+  "dur": 947
+ },
+ "syl-e3": {
+  "file": "syl-e3-38777475.mp3",
+  "dur": 883
+ },
+ "syl-e4": {
+  "file": "syl-e4-828c6eb2.mp3",
+  "dur": 586
+ },
+ "syl-ei1": {
+  "file": "syl-ei1-33711bc0.mp3",
+  "dur": 908
+ },
+ "syl-ei2": {
+  "file": "syl-ei2-ca69b16e.mp3",
+  "dur": 907
+ },
+ "syl-ei3": {
+  "file": "syl-ei3-52b3add9.mp3",
+  "dur": 763
+ },
+ "syl-ei4": {
+  "file": "syl-ei4-0c791e6e.mp3",
+  "dur": 614
+ },
+ "syl-en1": {
+  "file": "syl-en1-1196a32a.mp3",
+  "dur": 720
+ },
+ "syl-en2": {
+  "file": "syl-en2-f273f48f.mp3",
+  "dur": 844
+ },
+ "syl-en3": {
+  "file": "syl-en3-8f78b4bc.mp3",
+  "dur": 853
+ },
+ "syl-en4": {
+  "file": "syl-en4-3b62a315.mp3",
+  "dur": 578
+ },
+ "syl-eng1": {
+  "file": "syl-eng1-518ebfdf.mp3",
+  "dur": 1029
+ },
+ "syl-eng2": {
+  "file": "syl-eng2-e01d8f51.mp3",
+  "dur": 710
+ },
+ "syl-eng3": {
+  "file": "syl-eng3-78fa29bf.mp3",
+  "dur": 781
+ },
+ "syl-eng4": {
+  "file": "syl-eng4-98c06716.mp3",
+  "dur": 621
+ },
+ "syl-er1": {
+  "file": "syl-er1-394fad32.mp3",
+  "dur": 672
+ },
+ "syl-er2": {
+  "file": "syl-er2-88b571aa.mp3",
+  "dur": 714
+ },
+ "syl-er3": {
+  "file": "syl-er3-bc52bd90.mp3",
+  "dur": 859
+ },
+ "syl-er4": {
+  "file": "syl-er4-53e554e3.mp3",
+  "dur": 538
+ },
+ "syl-fa1": {
+  "file": "syl-fa1-c0e67f8e.mp3",
+  "dur": 899
+ },
+ "syl-fa2": {
+  "file": "syl-fa2-7c2f4f8b.mp3",
+  "dur": 557
+ },
+ "syl-fa3": {
+  "file": "syl-fa3-c5f7ca15.mp3",
+  "dur": 720
+ },
+ "syl-fa4": {
+  "file": "syl-fa4-0a3de404.mp3",
+  "dur": 659
+ },
+ "syl-fan1": {
+  "file": "syl-fan1-0c5114e3.mp3",
+  "dur": 903
+ },
+ "syl-fan2": {
+  "file": "syl-fan2-e540f9aa.mp3",
+  "dur": 813
+ },
+ "syl-fan3": {
+  "file": "syl-fan3-cc23b7d8.mp3",
+  "dur": 987
+ },
+ "syl-fan4": {
+  "file": "syl-fan4-ed302af8.mp3",
+  "dur": 712
+ },
+ "syl-fang1": {
+  "file": "syl-fang1-abb161e0.mp3",
+  "dur": 1046
+ },
+ "syl-fang2": {
+  "file": "syl-fang2-ef15133b.mp3",
+  "dur": 771
+ },
+ "syl-fang3": {
+  "file": "syl-fang3-d131add3.mp3",
+  "dur": 958
+ },
+ "syl-fang4": {
+  "file": "syl-fang4-d139a534.mp3",
+  "dur": 703
+ },
+ "syl-fei1": {
+  "file": "syl-fei1-e7e46a5e.mp3",
+  "dur": 954
+ },
+ "syl-fei2": {
+  "file": "syl-fei2-506927db.mp3",
+  "dur": 881
+ },
+ "syl-fei3": {
+  "file": "syl-fei3-cdfcd793.mp3",
+  "dur": 719
+ },
+ "syl-fei4": {
+  "file": "syl-fei4-3231d2bd.mp3",
+  "dur": 644
+ },
+ "syl-fen1": {
+  "file": "syl-fen1-43fdb3ff.mp3",
+  "dur": 850
+ },
+ "syl-fen2": {
+  "file": "syl-fen2-7a9ac421.mp3",
+  "dur": 826
+ },
+ "syl-fen3": {
+  "file": "syl-fen3-71fbb09f.mp3",
+  "dur": 1018
+ },
+ "syl-fen4": {
+  "file": "syl-fen4-d6dfa5ca.mp3",
+  "dur": 720
+ },
+ "syl-feng1": {
+  "file": "syl-feng1-d8746a31.mp3",
+  "dur": 907
+ },
+ "syl-feng2": {
+  "file": "syl-feng2-530b75e8.mp3",
+  "dur": 1054
+ },
+ "syl-feng3": {
+  "file": "syl-feng3-9e8638ed.mp3",
+  "dur": 1016
+ },
+ "syl-feng4": {
+  "file": "syl-feng4-9c2b326c.mp3",
+  "dur": 692
+ },
+ "syl-fo1": {
+  "file": "syl-fo1-19242798.mp3",
+  "dur": 869
+ },
+ "syl-fo2": {
+  "file": "syl-fo2-5ed66991.mp3",
+  "dur": 957
+ },
+ "syl-fo3": {
+  "file": "syl-fo3-2fca6b85.mp3",
+  "dur": 903
+ },
+ "syl-fo4": {
+  "file": "syl-fo4-d7704ba2.mp3",
+  "dur": 703
+ },
+ "syl-fou1": {
+  "file": "syl-fou1-e85dcf6c.mp3",
+  "dur": 919
+ },
+ "syl-fou2": {
+  "file": "syl-fou2-212364c1.mp3",
+  "dur": 956
+ },
+ "syl-fou3": {
+  "file": "syl-fou3-174f1fed.mp3",
+  "dur": 951
+ },
+ "syl-fou4": {
+  "file": "syl-fou4-60b6bd20.mp3",
+  "dur": 710
+ },
+ "syl-fu1": {
+  "file": "syl-fu1-77c38a1b.mp3",
+  "dur": 992
+ },
+ "syl-fu2": {
+  "file": "syl-fu2-5c9dc8e7.mp3",
+  "dur": 1005
+ },
+ "syl-fu3": {
+  "file": "syl-fu3-90fe1e6a.mp3",
+  "dur": 1080
+ },
+ "syl-fu4": {
+  "file": "syl-fu4-2139414b.mp3",
+  "dur": 743
+ },
+ "syl-ga1": {
+  "file": "syl-ga1-2a59d70b.mp3",
+  "dur": 934
+ },
+ "syl-ga2": {
+  "file": "syl-ga2-2aa76227.mp3",
+  "dur": 816
+ },
+ "syl-ga3": {
+  "file": "syl-ga3-7ed94a85.mp3",
+  "dur": 914
+ },
+ "syl-ga4": {
+  "file": "syl-ga4-0d90eb33.mp3",
+  "dur": 551
+ },
+ "syl-gai1": {
+  "file": "syl-gai1-3d02900b.mp3",
+  "dur": 897
+ },
+ "syl-gai2": {
+  "file": "syl-gai2-67a9707b.mp3",
+  "dur": 1046
+ },
+ "syl-gai3": {
+  "file": "syl-gai3-d755876a.mp3",
+  "dur": 869
+ },
+ "syl-gai4": {
+  "file": "syl-gai4-ee369667.mp3",
+  "dur": 577
+ },
+ "syl-gan1": {
+  "file": "syl-gan1-b1dd0db7.mp3",
+  "dur": 1017
+ },
+ "syl-gan2": {
+  "file": "syl-gan2-f876d6b5.mp3",
+  "dur": 1101
+ },
+ "syl-gan3": {
+  "file": "syl-gan3-2e05854a.mp3",
+  "dur": 899
+ },
+ "syl-gan4": {
+  "file": "syl-gan4-263e13e5.mp3",
+  "dur": 616
+ },
+ "syl-gang1": {
+  "file": "syl-gang1-96b92785.mp3",
+  "dur": 585
+ },
+ "syl-gang2": {
+  "file": "syl-gang2-dd2b7678.mp3",
+  "dur": 968
+ },
+ "syl-gang3": {
+  "file": "syl-gang3-b40cf691.mp3",
+  "dur": 739
+ },
+ "syl-gang4": {
+  "file": "syl-gang4-ace7753a.mp3",
+  "dur": 592
+ },
+ "syl-gao1": {
+  "file": "syl-gao1-b1df0934.mp3",
+  "dur": 982
+ },
+ "syl-gao2": {
+  "file": "syl-gao2-4a025f5b.mp3",
+  "dur": 900
+ },
+ "syl-gao3": {
+  "file": "syl-gao3-2f8799e1.mp3",
+  "dur": 936
+ },
+ "syl-gao4": {
+  "file": "syl-gao4-6f51ff2d.mp3",
+  "dur": 584
+ },
+ "syl-ge1": {
+  "file": "syl-ge1-ccf18dc1.mp3",
+  "dur": 892
+ },
+ "syl-ge2": {
+  "file": "syl-ge2-043c5181.mp3",
+  "dur": 998
+ },
+ "syl-ge3": {
+  "file": "syl-ge3-031ce7f4.mp3",
+  "dur": 896
+ },
+ "syl-ge4": {
+  "file": "syl-ge4-45eb8140.mp3",
+  "dur": 609
+ },
+ "syl-gei1": {
+  "file": "syl-gei1-657ef61f.mp3",
+  "dur": 983
+ },
+ "syl-gei2": {
+  "file": "syl-gei2-f04216b4.mp3",
+  "dur": 865
+ },
+ "syl-gei3": {
+  "file": "syl-gei3-c6472ccb.mp3",
+  "dur": 923
+ },
+ "syl-gei4": {
+  "file": "syl-gei4-4cea60d9.mp3",
+  "dur": 590
+ },
+ "syl-gen1": {
+  "file": "syl-gen1-8b6ec7a4.mp3",
+  "dur": 693
+ },
+ "syl-gen2": {
+  "file": "syl-gen2-92fd42a6.mp3",
+  "dur": 764
+ },
+ "syl-gen3": {
+  "file": "syl-gen3-a17240ea.mp3",
+  "dur": 837
+ },
+ "syl-gen4": {
+  "file": "syl-gen4-505c302a.mp3",
+  "dur": 581
+ },
+ "syl-geng1": {
+  "file": "syl-geng1-c3d0999e.mp3",
+  "dur": 742
+ },
+ "syl-geng2": {
+  "file": "syl-geng2-4bf2fa1b.mp3",
+  "dur": 937
+ },
+ "syl-geng3": {
+  "file": "syl-geng3-40b7ddc5.mp3",
+  "dur": 802
+ },
+ "syl-geng4": {
+  "file": "syl-geng4-1eca3570.mp3",
+  "dur": 639
+ },
+ "syl-gong1": {
+  "file": "syl-gong1-38e57257.mp3",
+  "dur": 600
+ },
+ "syl-gong2": {
+  "file": "syl-gong2-0312eaf7.mp3",
+  "dur": 1104
+ },
+ "syl-gong3": {
+  "file": "syl-gong3-cd9fde66.mp3",
+  "dur": 874
+ },
+ "syl-gong4": {
+  "file": "syl-gong4-6307885c.mp3",
+  "dur": 616
+ },
+ "syl-gou1": {
+  "file": "syl-gou1-7ebaa955.mp3",
+  "dur": 743
+ },
+ "syl-gou2": {
+  "file": "syl-gou2-0470b12d.mp3",
+  "dur": 990
+ },
+ "syl-gou3": {
+  "file": "syl-gou3-678c61a2.mp3",
+  "dur": 834
+ },
+ "syl-gou4": {
+  "file": "syl-gou4-25a1e99d.mp3",
+  "dur": 618
+ },
+ "syl-gu1": {
+  "file": "syl-gu1-3a795605.mp3",
+  "dur": 988
+ },
+ "syl-gu2": {
+  "file": "syl-gu2-8bf7ba80.mp3",
+  "dur": 891
+ },
+ "syl-gu3": {
+  "file": "syl-gu3-548d07dc.mp3",
+  "dur": 898
+ },
+ "syl-gu4": {
+  "file": "syl-gu4-1b123d1b.mp3",
+  "dur": 639
+ },
+ "syl-gua1": {
+  "file": "syl-gua1-54f0ab5d.mp3",
+  "dur": 968
+ },
+ "syl-gua2": {
+  "file": "syl-gua2-ed294407.mp3",
+  "dur": 922
+ },
+ "syl-gua3": {
+  "file": "syl-gua3-67956937.mp3",
+  "dur": 950
+ },
+ "syl-gua4": {
+  "file": "syl-gua4-f328bdcb.mp3",
+  "dur": 595
+ },
+ "syl-guai1": {
+  "file": "syl-guai1-a0abfc49.mp3",
+  "dur": 986
+ },
+ "syl-guai2": {
+  "file": "syl-guai2-8c33bc6c.mp3",
+  "dur": 1026
+ },
+ "syl-guai3": {
+  "file": "syl-guai3-04a42eb4.mp3",
+  "dur": 973
+ },
+ "syl-guai4": {
+  "file": "syl-guai4-2f1563f8.mp3",
+  "dur": 531
+ },
+ "syl-guan1": {
+  "file": "syl-guan1-ff3b6cd7.mp3",
+  "dur": 654
+ },
+ "syl-guan2": {
+  "file": "syl-guan2-92d6c10c.mp3",
+  "dur": 819
+ },
+ "syl-guan3": {
+  "file": "syl-guan3-73386a66.mp3",
+  "dur": 929
+ },
+ "syl-guan4": {
+  "file": "syl-guan4-e3ca8a97.mp3",
+  "dur": 628
+ },
+ "syl-guang1": {
+  "file": "syl-guang1-f8cf6fd3.mp3",
+  "dur": 974
+ },
+ "syl-guang2": {
+  "file": "syl-guang2-ba69b0e4.mp3",
+  "dur": 695
+ },
+ "syl-guang3": {
+  "file": "syl-guang3-5f957dab.mp3",
+  "dur": 918
+ },
+ "syl-guang4": {
+  "file": "syl-guang4-189697a9.mp3",
+  "dur": 664
+ },
+ "syl-gui1": {
+  "file": "syl-gui1-0b222e57.mp3",
+  "dur": 902
+ },
+ "syl-gui2": {
+  "file": "syl-gui2-f7d4da15.mp3",
+  "dur": 757
+ },
+ "syl-gui3": {
+  "file": "syl-gui3-d7445bfe.mp3",
+  "dur": 966
+ },
+ "syl-gui4": {
+  "file": "syl-gui4-c4a46110.mp3",
+  "dur": 661
+ },
+ "syl-gun1": {
+  "file": "syl-gun1-93112500.mp3",
+  "dur": 776
+ },
+ "syl-gun2": {
+  "file": "syl-gun2-27b3bf09.mp3",
+  "dur": 800
+ },
+ "syl-gun3": {
+  "file": "syl-gun3-bafa6083.mp3",
+  "dur": 720
+ },
+ "syl-gun4": {
+  "file": "syl-gun4-90420971.mp3",
+  "dur": 628
+ },
+ "syl-guo1": {
+  "file": "syl-guo1-67cead80.mp3",
+  "dur": 807
+ },
+ "syl-guo2": {
+  "file": "syl-guo2-90b0a345.mp3",
+  "dur": 977
+ },
+ "syl-guo3": {
+  "file": "syl-guo3-0a3613c4.mp3",
+  "dur": 998
+ },
+ "syl-guo4": {
+  "file": "syl-guo4-eddcc60f.mp3",
+  "dur": 502
+ },
+ "syl-ha1": {
+  "file": "syl-ha1-ae35ac0d.mp3",
+  "dur": 997
+ },
+ "syl-ha2": {
+  "file": "syl-ha2-fd34eb98.mp3",
+  "dur": 860
+ },
+ "syl-ha3": {
+  "file": "syl-ha3-70039ef1.mp3",
+  "dur": 1137
+ },
+ "syl-ha4": {
+  "file": "syl-ha4-afb3fb8b.mp3",
+  "dur": 719
+ },
+ "syl-hai1": {
+  "file": "syl-hai1-c2bc10c0.mp3",
+  "dur": 1061
+ },
+ "syl-hai2": {
+  "file": "syl-hai2-973fd313.mp3",
+  "dur": 1004
+ },
+ "syl-hai3": {
+  "file": "syl-hai3-8d4246b2.mp3",
+  "dur": 1098
+ },
+ "syl-hai4": {
+  "file": "syl-hai4-4ccb2f24.mp3",
+  "dur": 721
+ },
+ "syl-han1": {
+  "file": "syl-han1-160b0b57.mp3",
+  "dur": 949
+ },
+ "syl-han2": {
+  "file": "syl-han2-ab8f5c4d.mp3",
+  "dur": 947
+ },
+ "syl-han3": {
+  "file": "syl-han3-ad5a3213.mp3",
+  "dur": 818
+ },
+ "syl-han4": {
+  "file": "syl-han4-28f25636.mp3",
+  "dur": 772
+ },
+ "syl-hang1": {
+  "file": "syl-hang1-a0163fd6.mp3",
+  "dur": 771
+ },
+ "syl-hang2": {
+  "file": "syl-hang2-31a833f1.mp3",
+  "dur": 1048
+ },
+ "syl-hang3": {
+  "file": "syl-hang3-503599fa.mp3",
+  "dur": 1078
+ },
+ "syl-hang4": {
+  "file": "syl-hang4-45d2cc49.mp3",
+  "dur": 725
+ },
+ "syl-hao1": {
+  "file": "syl-hao1-3f0286c8.mp3",
+  "dur": 795
+ },
+ "syl-hao2": {
+  "file": "syl-hao2-34770e56.mp3",
+  "dur": 883
+ },
+ "syl-hao3": {
+  "file": "syl-hao3-1dcf9082.mp3",
+  "dur": 1068
+ },
+ "syl-hao4": {
+  "file": "syl-hao4-c8362998.mp3",
+  "dur": 682
+ },
+ "syl-he1": {
+  "file": "syl-he1-cc1c4621.mp3",
+  "dur": 1113
+ },
+ "syl-he2": {
+  "file": "syl-he2-c10f8b0d.mp3",
+  "dur": 900
+ },
+ "syl-he3": {
+  "file": "syl-he3-1534993f.mp3",
+  "dur": 1006
+ },
+ "syl-he4": {
+  "file": "syl-he4-cdb246bb.mp3",
+  "dur": 741
+ },
+ "syl-hei1": {
+  "file": "syl-hei1-9cea6558.mp3",
+  "dur": 948
+ },
+ "syl-hei2": {
+  "file": "syl-hei2-a5fe9bfe.mp3",
+  "dur": 932
+ },
+ "syl-hei3": {
+  "file": "syl-hei3-dea7dd20.mp3",
+  "dur": 744
+ },
+ "syl-hei4": {
+  "file": "syl-hei4-37f2f51d.mp3",
+  "dur": 686
+ },
+ "syl-hen1": {
+  "file": "syl-hen1-5665faf8.mp3",
+  "dur": 936
+ },
+ "syl-hen2": {
+  "file": "syl-hen2-6a6e9cb2.mp3",
+  "dur": 939
+ },
+ "syl-hen3": {
+  "file": "syl-hen3-791267bc.mp3",
+  "dur": 894
+ },
+ "syl-hen4": {
+  "file": "syl-hen4-0394855b.mp3",
+  "dur": 677
+ },
+ "syl-heng1": {
+  "file": "syl-heng1-f25f346a.mp3",
+  "dur": 724
+ },
+ "syl-heng2": {
+  "file": "syl-heng2-10799cc2.mp3",
+  "dur": 835
+ },
+ "syl-heng3": {
+  "file": "syl-heng3-768261f5.mp3",
+  "dur": 838
+ },
+ "syl-heng4": {
+  "file": "syl-heng4-f7976a67.mp3",
+  "dur": 669
+ },
+ "syl-hong1": {
+  "file": "syl-hong1-46e47cd9.mp3",
+  "dur": 645
+ },
+ "syl-hong2": {
+  "file": "syl-hong2-48c016cb.mp3",
+  "dur": 889
+ },
+ "syl-hong3": {
+  "file": "syl-hong3-49bbdb28.mp3",
+  "dur": 1122
+ },
+ "syl-hong4": {
+  "file": "syl-hong4-70216068.mp3",
+  "dur": 719
+ },
+ "syl-hou1": {
+  "file": "syl-hou1-c6524e95.mp3",
+  "dur": 777
+ },
+ "syl-hou2": {
+  "file": "syl-hou2-9f598ae5.mp3",
+  "dur": 989
+ },
+ "syl-hou3": {
+  "file": "syl-hou3-9e94cfad.mp3",
+  "dur": 1001
+ },
+ "syl-hou4": {
+  "file": "syl-hou4-f5e3df37.mp3",
+  "dur": 753
+ },
+ "syl-hu1": {
+  "file": "syl-hu1-51fe22f1.mp3",
+  "dur": 919
+ },
+ "syl-hu2": {
+  "file": "syl-hu2-852ecf4f.mp3",
+  "dur": 896
+ },
+ "syl-hu3": {
+  "file": "syl-hu3-d019a8fd.mp3",
+  "dur": 973
+ },
+ "syl-hu4": {
+  "file": "syl-hu4-d8cf8747.mp3",
+  "dur": 819
+ },
+ "syl-hua1": {
+  "file": "syl-hua1-32d6b996.mp3",
+  "dur": 1049
+ },
+ "syl-hua2": {
+  "file": "syl-hua2-71baf5c9.mp3",
+  "dur": 807
+ },
+ "syl-hua3": {
+  "file": "syl-hua3-c2c24be5.mp3",
+  "dur": 1125
+ },
+ "syl-hua4": {
+  "file": "syl-hua4-b8f8a316.mp3",
+  "dur": 731
+ },
+ "syl-huai1": {
+  "file": "syl-huai1-86087a68.mp3",
+  "dur": 790
+ },
+ "syl-huai2": {
+  "file": "syl-huai2-cb7ae39d.mp3",
+  "dur": 882
+ },
+ "syl-huai3": {
+  "file": "syl-huai3-58de22af.mp3",
+  "dur": 837
+ },
+ "syl-huai4": {
+  "file": "syl-huai4-d16edc5a.mp3",
+  "dur": 761
+ },
+ "syl-huan1": {
+  "file": "syl-huan1-53836e7a.mp3",
+  "dur": 750
+ },
+ "syl-huan2": {
+  "file": "syl-huan2-4b9bba1e.mp3",
+  "dur": 995
+ },
+ "syl-huan3": {
+  "file": "syl-huan3-b2f627be.mp3",
+  "dur": 1160
+ },
+ "syl-huan4": {
+  "file": "syl-huan4-e878ba18.mp3",
+  "dur": 625
+ },
+ "syl-huang1": {
+  "file": "syl-huang1-89c9fffe.mp3",
+  "dur": 839
+ },
+ "syl-huang2": {
+  "file": "syl-huang2-d44bd83d.mp3",
+  "dur": 807
+ },
+ "syl-huang3": {
+  "file": "syl-huang3-c096bb72.mp3",
+  "dur": 1173
+ },
+ "syl-huang4": {
+  "file": "syl-huang4-057be0e7.mp3",
+  "dur": 682
+ },
+ "syl-hui1": {
+  "file": "syl-hui1-760b10d8.mp3",
+  "dur": 1046
+ },
+ "syl-hui2": {
+  "file": "syl-hui2-5197d61d.mp3",
+  "dur": 931
+ },
+ "syl-hui3": {
+  "file": "syl-hui3-15fe8f7e.mp3",
+  "dur": 1156
+ },
+ "syl-hui4": {
+  "file": "syl-hui4-dedd06dc.mp3",
+  "dur": 786
+ },
+ "syl-hun1": {
+  "file": "syl-hun1-2f323442.mp3",
+  "dur": 1283
+ },
+ "syl-hun2": {
+  "file": "syl-hun2-66f55518.mp3",
+  "dur": 824
+ },
+ "syl-hun3": {
+  "file": "syl-hun3-320d1886.mp3",
+  "dur": 972
+ },
+ "syl-hun4": {
+  "file": "syl-hun4-149eb097.mp3",
+  "dur": 804
+ },
+ "syl-huo1": {
+  "file": "syl-huo1-2243608c.mp3",
+  "dur": 823
+ },
+ "syl-huo2": {
+  "file": "syl-huo2-bb380bbd.mp3",
+  "dur": 865
+ },
+ "syl-huo3": {
+  "file": "syl-huo3-44c1c6c1.mp3",
+  "dur": 1145
+ },
+ "syl-huo4": {
+  "file": "syl-huo4-664a89bc.mp3",
+  "dur": 759
+ },
+ "syl-ji1": {
+  "file": "syl-ji1-a18c4084.mp3",
+  "dur": 1002
+ },
+ "syl-ji2": {
+  "file": "syl-ji2-47ae7f81.mp3",
+  "dur": 976
+ },
+ "syl-ji3": {
+  "file": "syl-ji3-06cc4be2.mp3",
+  "dur": 1177
+ },
+ "syl-ji4": {
+  "file": "syl-ji4-1043d43e.mp3",
+  "dur": 669
+ },
+ "syl-jia1": {
+  "file": "syl-jia1-d090043e.mp3",
+  "dur": 1101
+ },
+ "syl-jia2": {
+  "file": "syl-jia2-57162457.mp3",
+  "dur": 887
+ },
+ "syl-jia3": {
+  "file": "syl-jia3-3f82b55c.mp3",
+  "dur": 1166
+ },
+ "syl-jia4": {
+  "file": "syl-jia4-ca5fa599.mp3",
+  "dur": 715
+ },
+ "syl-jian1": {
+  "file": "syl-jian1-7d031543.mp3",
+  "dur": 879
+ },
+ "syl-jian2": {
+  "file": "syl-jian2-932cc9c6.mp3",
+  "dur": 904
+ },
+ "syl-jian3": {
+  "file": "syl-jian3-4c579637.mp3",
+  "dur": 1052
+ },
+ "syl-jian4": {
+  "file": "syl-jian4-c844a025.mp3",
+  "dur": 715
+ },
+ "syl-jiang1": {
+  "file": "syl-jiang1-f8f042b0.mp3",
+  "dur": 1114
+ },
+ "syl-jiang2": {
+  "file": "syl-jiang2-9dca6b1c.mp3",
+  "dur": 774
+ },
+ "syl-jiang3": {
+  "file": "syl-jiang3-1c1ed361.mp3",
+  "dur": 1120
+ },
+ "syl-jiang4": {
+  "file": "syl-jiang4-60610add.mp3",
+  "dur": 562
+ },
+ "syl-jiao1": {
+  "file": "syl-jiao1-45bf594d.mp3",
+  "dur": 881
+ },
+ "syl-jiao2": {
+  "file": "syl-jiao2-ef4af9e1.mp3",
+  "dur": 897
+ },
+ "syl-jiao3": {
+  "file": "syl-jiao3-30bbdd12.mp3",
+  "dur": 1212
+ },
+ "syl-jiao4": {
+  "file": "syl-jiao4-13657e8e.mp3",
+  "dur": 651
+ },
+ "syl-jie1": {
+  "file": "syl-jie1-d1b5e4ee.mp3",
+  "dur": 1023
+ },
+ "syl-jie2": {
+  "file": "syl-jie2-49d15b7d.mp3",
+  "dur": 1001
+ },
+ "syl-jie3": {
+  "file": "syl-jie3-70618094.mp3",
+  "dur": 1029
+ },
+ "syl-jie4": {
+  "file": "syl-jie4-660faaf1.mp3",
+  "dur": 530
+ },
+ "syl-jin1": {
+  "file": "syl-jin1-ddb94f6f.mp3",
+  "dur": 905
+ },
+ "syl-jin2": {
+  "file": "syl-jin2-ceb0be5f.mp3",
+  "dur": 849
+ },
+ "syl-jin3": {
+  "file": "syl-jin3-edd785c4.mp3",
+  "dur": 904
+ },
+ "syl-jin4": {
+  "file": "syl-jin4-53a0c452.mp3",
+  "dur": 679
+ },
+ "syl-jing1": {
+  "file": "syl-jing1-3471ab7d.mp3",
+  "dur": 1043
+ },
+ "syl-jing2": {
+  "file": "syl-jing2-26b12e65.mp3",
+  "dur": 997
+ },
+ "syl-jing3": {
+  "file": "syl-jing3-064cf926.mp3",
+  "dur": 829
+ },
+ "syl-jing4": {
+  "file": "syl-jing4-37ac1e99.mp3",
+  "dur": 685
+ },
+ "syl-jiong1": {
+  "file": "syl-jiong1-c7f895ac.mp3",
+  "dur": 848
+ },
+ "syl-jiong2": {
+  "file": "syl-jiong2-8a0577e3.mp3",
+  "dur": 847
+ },
+ "syl-jiong3": {
+  "file": "syl-jiong3-0e0bb893.mp3",
+  "dur": 1201
+ },
+ "syl-jiong4": {
+  "file": "syl-jiong4-372974d6.mp3",
+  "dur": 709
+ },
+ "syl-jiu1": {
+  "file": "syl-jiu1-86077813.mp3",
+  "dur": 1017
+ },
+ "syl-jiu2": {
+  "file": "syl-jiu2-f0648162.mp3",
+  "dur": 845
+ },
+ "syl-jiu3": {
+  "file": "syl-jiu3-c7bee5c4.mp3",
+  "dur": 895
+ },
+ "syl-jiu4": {
+  "file": "syl-jiu4-d575add8.mp3",
+  "dur": 756
+ },
+ "syl-ju1": {
+  "file": "syl-ju1-8e427ad4.mp3",
+  "dur": 953
+ },
+ "syl-ju2": {
+  "file": "syl-ju2-25220ac5.mp3",
+  "dur": 729
+ },
+ "syl-ju3": {
+  "file": "syl-ju3-2a1db31c.mp3",
+  "dur": 1120
+ },
+ "syl-ju4": {
+  "file": "syl-ju4-517216e1.mp3",
+  "dur": 686
+ },
+ "syl-juan1": {
+  "file": "syl-juan1-b2f98bfa.mp3",
+  "dur": 850
+ },
+ "syl-juan2": {
+  "file": "syl-juan2-ea199dc1.mp3",
+  "dur": 961
+ },
+ "syl-juan3": {
+  "file": "syl-juan3-d0e67e2b.mp3",
+  "dur": 1174
+ },
+ "syl-juan4": {
+  "file": "syl-juan4-cc59b206.mp3",
+  "dur": 709
+ },
+ "syl-jue1": {
+  "file": "syl-jue1-109fbe38.mp3",
+  "dur": 949
+ },
+ "syl-jue2": {
+  "file": "syl-jue2-c85f7e17.mp3",
+  "dur": 618
+ },
+ "syl-jue3": {
+  "file": "syl-jue3-f6ba2e48.mp3",
+  "dur": 1118
+ },
+ "syl-jue4": {
+  "file": "syl-jue4-60ebd633.mp3",
+  "dur": 595
+ },
+ "syl-jun1": {
+  "file": "syl-jun1-bf0e7f4b.mp3",
+  "dur": 750
+ },
+ "syl-jun2": {
+  "file": "syl-jun2-df23d882.mp3",
+  "dur": 1092
+ },
+ "syl-jun3": {
+  "file": "syl-jun3-00f6528b.mp3",
+  "dur": 1124
+ },
+ "syl-jun4": {
+  "file": "syl-jun4-556b4189.mp3",
+  "dur": 740
+ },
+ "syl-ka1": {
+  "file": "syl-ka1-78d59b1b.mp3",
+  "dur": 746
+ },
+ "syl-ka2": {
+  "file": "syl-ka2-cb907077.mp3",
+  "dur": 985
+ },
+ "syl-ka3": {
+  "file": "syl-ka3-910ccb0e.mp3",
+  "dur": 809
+ },
+ "syl-ka4": {
+  "file": "syl-ka4-0c4e8b88.mp3",
+  "dur": 665
+ },
+ "syl-kai1": {
+  "file": "syl-kai1-1aba006a.mp3",
+  "dur": 684
+ },
+ "syl-kai2": {
+  "file": "syl-kai2-e3c45ec3.mp3",
+  "dur": 948
+ },
+ "syl-kai3": {
+  "file": "syl-kai3-71441bea.mp3",
+  "dur": 1114
+ },
+ "syl-kai4": {
+  "file": "syl-kai4-5f4bd8f7.mp3",
+  "dur": 697
+ },
+ "syl-kan1": {
+  "file": "syl-kan1-503e7397.mp3",
+  "dur": 715
+ },
+ "syl-kan2": {
+  "file": "syl-kan2-dcb1a486.mp3",
+  "dur": 1049
+ },
+ "syl-kan3": {
+  "file": "syl-kan3-5df42c33.mp3",
+  "dur": 928
+ },
+ "syl-kan4": {
+  "file": "syl-kan4-5ada2382.mp3",
+  "dur": 671
+ },
+ "syl-kang1": {
+  "file": "syl-kang1-ed50cee0.mp3",
+  "dur": 822
+ },
+ "syl-kang2": {
+  "file": "syl-kang2-d82a2703.mp3",
+  "dur": 879
+ },
+ "syl-kang3": {
+  "file": "syl-kang3-8436dfaa.mp3",
+  "dur": 1123
+ },
+ "syl-kang4": {
+  "file": "syl-kang4-0526b3af.mp3",
+  "dur": 520
+ },
+ "syl-kao1": {
+  "file": "syl-kao1-77b4ee2a.mp3",
+  "dur": 822
+ },
+ "syl-kao2": {
+  "file": "syl-kao2-6172df2f.mp3",
+  "dur": 726
+ },
+ "syl-kao3": {
+  "file": "syl-kao3-48a22710.mp3",
+  "dur": 1034
+ },
+ "syl-kao4": {
+  "file": "syl-kao4-0b9865b8.mp3",
+  "dur": 698
+ },
+ "syl-ke1": {
+  "file": "syl-ke1-2a93d821.mp3",
+  "dur": 975
+ },
+ "syl-ke2": {
+  "file": "syl-ke2-54cde1b9.mp3",
+  "dur": 958
+ },
+ "syl-ke3": {
+  "file": "syl-ke3-155c2f91.mp3",
+  "dur": 991
+ },
+ "syl-ke4": {
+  "file": "syl-ke4-033f7c7d.mp3",
+  "dur": 697
+ },
+ "syl-kei1": {
+  "file": "syl-kei1-c839e19b.mp3",
+  "dur": 1040
+ },
+ "syl-kei2": {
+  "file": "syl-kei2-bfe447d1.mp3",
+  "dur": 1051
+ },
+ "syl-kei3": {
+  "file": "syl-kei3-e90355c8.mp3",
+  "dur": 882
+ },
+ "syl-kei4": {
+  "file": "syl-kei4-9437aebb.mp3",
+  "dur": 652
+ },
+ "syl-ken1": {
+  "file": "syl-ken1-88b1f806.mp3",
+  "dur": 889
+ },
+ "syl-ken2": {
+  "file": "syl-ken2-a1457aad.mp3",
+  "dur": 1040
+ },
+ "syl-ken3": {
+  "file": "syl-ken3-157af88d.mp3",
+  "dur": 968
+ },
+ "syl-ken4": {
+  "file": "syl-ken4-d111e283.mp3",
+  "dur": 713
+ },
+ "syl-keng1": {
+  "file": "syl-keng1-84d2d1c7.mp3",
+  "dur": 1032
+ },
+ "syl-keng2": {
+  "file": "syl-keng2-bf0443f6.mp3",
+  "dur": 987
+ },
+ "syl-keng3": {
+  "file": "syl-keng3-0381fe04.mp3",
+  "dur": 989
+ },
+ "syl-keng4": {
+  "file": "syl-keng4-766cd9f8.mp3",
+  "dur": 598
+ },
+ "syl-kong1": {
+  "file": "syl-kong1-eefb14d5.mp3",
+  "dur": 654
+ },
+ "syl-kong2": {
+  "file": "syl-kong2-b30b008d.mp3",
+  "dur": 946
+ },
+ "syl-kong3": {
+  "file": "syl-kong3-9c9550b3.mp3",
+  "dur": 987
+ },
+ "syl-kong4": {
+  "file": "syl-kong4-6a5ff5cc.mp3",
+  "dur": 673
+ },
+ "syl-kou1": {
+  "file": "syl-kou1-0c507975.mp3",
+  "dur": 765
+ },
+ "syl-kou2": {
+  "file": "syl-kou2-58462a7d.mp3",
+  "dur": 875
+ },
+ "syl-kou3": {
+  "file": "syl-kou3-47d7af70.mp3",
+  "dur": 849
+ },
+ "syl-kou4": {
+  "file": "syl-kou4-72821293.mp3",
+  "dur": 599
+ },
+ "syl-ku1": {
+  "file": "syl-ku1-393a4ff6.mp3",
+  "dur": 951
+ },
+ "syl-ku2": {
+  "file": "syl-ku2-cb8fbddb.mp3",
+  "dur": 983
+ },
+ "syl-ku3": {
+  "file": "syl-ku3-7c411a82.mp3",
+  "dur": 964
+ },
+ "syl-ku4": {
+  "file": "syl-ku4-7673f71a.mp3",
+  "dur": 591
+ },
+ "syl-kua1": {
+  "file": "syl-kua1-2c857792.mp3",
+  "dur": 1124
+ },
+ "syl-kua2": {
+  "file": "syl-kua2-649791aa.mp3",
+  "dur": 999
+ },
+ "syl-kua3": {
+  "file": "syl-kua3-e30bf433.mp3",
+  "dur": 1037
+ },
+ "syl-kua4": {
+  "file": "syl-kua4-c0a6eeb3.mp3",
+  "dur": 625
+ },
+ "syl-kuai1": {
+  "file": "syl-kuai1-afd6680f.mp3",
+  "dur": 952
+ },
+ "syl-kuai2": {
+  "file": "syl-kuai2-52992db8.mp3",
+  "dur": 930
+ },
+ "syl-kuai3": {
+  "file": "syl-kuai3-78723b65.mp3",
+  "dur": 832
+ },
+ "syl-kuai4": {
+  "file": "syl-kuai4-85e86dd0.mp3",
+  "dur": 726
+ },
+ "syl-kuan1": {
+  "file": "syl-kuan1-1b55eb3a.mp3",
+  "dur": 812
+ },
+ "syl-kuan2": {
+  "file": "syl-kuan2-25220211.mp3",
+  "dur": 1052
+ },
+ "syl-kuan3": {
+  "file": "syl-kuan3-15e300dc.mp3",
+  "dur": 1293
+ },
+ "syl-kuan4": {
+  "file": "syl-kuan4-70cf689b.mp3",
+  "dur": 778
+ },
+ "syl-kuang1": {
+  "file": "syl-kuang1-25733d63.mp3",
+  "dur": 630
+ },
+ "syl-kuang2": {
+  "file": "syl-kuang2-acf32e32.mp3",
+  "dur": 808
+ },
+ "syl-kuang3": {
+  "file": "syl-kuang3-d326b78e.mp3",
+  "dur": 805
+ },
+ "syl-kuang4": {
+  "file": "syl-kuang4-602a078b.mp3",
+  "dur": 527
+ },
+ "syl-kui1": {
+  "file": "syl-kui1-15ed240f.mp3",
+  "dur": 1010
+ },
+ "syl-kui2": {
+  "file": "syl-kui2-b441a579.mp3",
+  "dur": 1014
+ },
+ "syl-kui3": {
+  "file": "syl-kui3-206837f3.mp3",
+  "dur": 957
+ },
+ "syl-kui4": {
+  "file": "syl-kui4-6ff68709.mp3",
+  "dur": 768
+ },
+ "syl-kun1": {
+  "file": "syl-kun1-2f83286d.mp3",
+  "dur": 773
+ },
+ "syl-kun2": {
+  "file": "syl-kun2-a5385b46.mp3",
+  "dur": 1046
+ },
+ "syl-kun3": {
+  "file": "syl-kun3-c182ee41.mp3",
+  "dur": 994
+ },
+ "syl-kun4": {
+  "file": "syl-kun4-1164e5a0.mp3",
+  "dur": 717
+ },
+ "syl-kuo1": {
+  "file": "syl-kuo1-30bc02bf.mp3",
+  "dur": 1046
+ },
+ "syl-kuo2": {
+  "file": "syl-kuo2-d1995e22.mp3",
+  "dur": 882
+ },
+ "syl-kuo3": {
+  "file": "syl-kuo3-e6b71300.mp3",
+  "dur": 955
+ },
+ "syl-kuo4": {
+  "file": "syl-kuo4-51678bf0.mp3",
+  "dur": 561
+ },
+ "syl-la1": {
+  "file": "syl-la1-5390abf5.mp3",
+  "dur": 753
+ },
+ "syl-la2": {
+  "file": "syl-la2-6dddbdac.mp3",
+  "dur": 1041
+ },
+ "syl-la3": {
+  "file": "syl-la3-ec9db880.mp3",
+  "dur": 1013
+ },
+ "syl-la4": {
+  "file": "syl-la4-5ef06c96.mp3",
+  "dur": 632
+ },
+ "syl-lai1": {
+  "file": "syl-lai1-53833212.mp3",
+  "dur": 895
+ },
+ "syl-lai2": {
+  "file": "syl-lai2-725d7a3b.mp3",
+  "dur": 1090
+ },
+ "syl-lai3": {
+  "file": "syl-lai3-f02f10cf.mp3",
+  "dur": 925
+ },
+ "syl-lai4": {
+  "file": "syl-lai4-35b108af.mp3",
+  "dur": 669
+ },
+ "syl-lan1": {
+  "file": "syl-lan1-5653e7ff.mp3",
+  "dur": 780
+ },
+ "syl-lan2": {
+  "file": "syl-lan2-3dd07e83.mp3",
+  "dur": 999
+ },
+ "syl-lan3": {
+  "file": "syl-lan3-f8c991d9.mp3",
+  "dur": 719
+ },
+ "syl-lan4": {
+  "file": "syl-lan4-f84a739e.mp3",
+  "dur": 730
+ },
+ "syl-lang1": {
+  "file": "syl-lang1-ff4cdd4f.mp3",
+  "dur": 694
+ },
+ "syl-lang2": {
+  "file": "syl-lang2-bfa34c44.mp3",
+  "dur": 908
+ },
+ "syl-lang3": {
+  "file": "syl-lang3-be520d97.mp3",
+  "dur": 980
+ },
+ "syl-lang4": {
+  "file": "syl-lang4-506699b8.mp3",
+  "dur": 562
+ },
+ "syl-lao1": {
+  "file": "syl-lao1-d0f6a0b1.mp3",
+  "dur": 741
+ },
+ "syl-lao2": {
+  "file": "syl-lao2-65fdf9d3.mp3",
+  "dur": 1027
+ },
+ "syl-lao3": {
+  "file": "syl-lao3-48c5faba.mp3",
+  "dur": 989
+ },
+ "syl-lao4": {
+  "file": "syl-lao4-08fd49a2.mp3",
+  "dur": 690
+ },
+ "syl-le1": {
+  "file": "syl-le1-46790c07.mp3",
+  "dur": 834
+ },
+ "syl-le2": {
+  "file": "syl-le2-f5424ed7.mp3",
+  "dur": 957
+ },
+ "syl-le3": {
+  "file": "syl-le3-6709d67c.mp3",
+  "dur": 946
+ },
+ "syl-le4": {
+  "file": "syl-le4-c409c941.mp3",
+  "dur": 653
+ },
+ "syl-lei1": {
+  "file": "syl-lei1-5096b9e3.mp3",
+  "dur": 604
+ },
+ "syl-lei2": {
+  "file": "syl-lei2-cf6cf471.mp3",
+  "dur": 1078
+ },
+ "syl-lei3": {
+  "file": "syl-lei3-b5cc6c13.mp3",
+  "dur": 1033
+ },
+ "syl-lei4": {
+  "file": "syl-lei4-b52589d1.mp3",
+  "dur": 699
+ },
+ "syl-leng1": {
+  "file": "syl-leng1-34902850.mp3",
+  "dur": 730
+ },
+ "syl-leng2": {
+  "file": "syl-leng2-9da19cd3.mp3",
+  "dur": 671
+ },
+ "syl-leng3": {
+  "file": "syl-leng3-84d78702.mp3",
+  "dur": 1049
+ },
+ "syl-leng4": {
+  "file": "syl-leng4-8a19abcd.mp3",
+  "dur": 693
+ },
+ "syl-li1": {
+  "file": "syl-li1-786c910b.mp3",
+  "dur": 711
+ },
+ "syl-li2": {
+  "file": "syl-li2-573742eb.mp3",
+  "dur": 926
+ },
+ "syl-li3": {
+  "file": "syl-li3-2251b18e.mp3",
+  "dur": 870
+ },
+ "syl-li4": {
+  "file": "syl-li4-e5bcb86e.mp3",
+  "dur": 682
+ },
+ "syl-lia1": {
+  "file": "syl-lia1-58442ee5.mp3",
+  "dur": 707
+ },
+ "syl-lia2": {
+  "file": "syl-lia2-f48be518.mp3",
+  "dur": 989
+ },
+ "syl-lia3": {
+  "file": "syl-lia3-2c2b4758.mp3",
+  "dur": 1112
+ },
+ "syl-lia4": {
+  "file": "syl-lia4-d34fe509.mp3",
+  "dur": 693
+ },
+ "syl-lian1": {
+  "file": "syl-lian1-276026cf.mp3",
+  "dur": 689
+ },
+ "syl-lian2": {
+  "file": "syl-lian2-667bf45f.mp3",
+  "dur": 963
+ },
+ "syl-lian3": {
+  "file": "syl-lian3-0dc72380.mp3",
+  "dur": 1136
+ },
+ "syl-lian4": {
+  "file": "syl-lian4-bc333248.mp3",
+  "dur": 542
+ },
+ "syl-liang1": {
+  "file": "syl-liang1-bd467ee2.mp3",
+  "dur": 757
+ },
+ "syl-liang2": {
+  "file": "syl-liang2-47c4583c.mp3",
+  "dur": 942
+ },
+ "syl-liang3": {
+  "file": "syl-liang3-c28b0aa7.mp3",
+  "dur": 871
+ },
+ "syl-liang4": {
+  "file": "syl-liang4-b8c87bf0.mp3",
+  "dur": 622
+ },
+ "syl-liao1": {
+  "file": "syl-liao1-8fab3fa2.mp3",
+  "dur": 765
+ },
+ "syl-liao2": {
+  "file": "syl-liao2-6c9b199e.mp3",
+  "dur": 917
+ },
+ "syl-liao3": {
+  "file": "syl-liao3-71d3939c.mp3",
+  "dur": 1026
+ },
+ "syl-liao4": {
+  "file": "syl-liao4-ac72c924.mp3",
+  "dur": 616
+ },
+ "syl-lie1": {
+  "file": "syl-lie1-7b7b5c70.mp3",
+  "dur": 849
+ },
+ "syl-lie2": {
+  "file": "syl-lie2-858685c3.mp3",
+  "dur": 763
+ },
+ "syl-lie3": {
+  "file": "syl-lie3-64de93cb.mp3",
+  "dur": 963
+ },
+ "syl-lie4": {
+  "file": "syl-lie4-a4b1ec51.mp3",
+  "dur": 694
+ },
+ "syl-lin1": {
+  "file": "syl-lin1-4738b64b.mp3",
+  "dur": 766
+ },
+ "syl-lin2": {
+  "file": "syl-lin2-e2f0e817.mp3",
+  "dur": 1052
+ },
+ "syl-lin3": {
+  "file": "syl-lin3-e59289e9.mp3",
+  "dur": 1088
+ },
+ "syl-lin4": {
+  "file": "syl-lin4-c80eed08.mp3",
+  "dur": 721
+ },
+ "syl-ling1": {
+  "file": "syl-ling1-bb6c4b04.mp3",
+  "dur": 813
+ },
+ "syl-ling2": {
+  "file": "syl-ling2-842e2ab2.mp3",
+  "dur": 1077
+ },
+ "syl-ling3": {
+  "file": "syl-ling3-c95b536b.mp3",
+  "dur": 984
+ },
+ "syl-ling4": {
+  "file": "syl-ling4-5d208354.mp3",
+  "dur": 667
+ },
+ "syl-liu1": {
+  "file": "syl-liu1-32e2f30e.mp3",
+  "dur": 957
+ },
+ "syl-liu2": {
+  "file": "syl-liu2-ce574407.mp3",
+  "dur": 738
+ },
+ "syl-liu3": {
+  "file": "syl-liu3-eb89cf70.mp3",
+  "dur": 1076
+ },
+ "syl-liu4": {
+  "file": "syl-liu4-8cefb73c.mp3",
+  "dur": 730
+ },
+ "syl-lo1": {
+  "file": "syl-lo1-9a2e61d4.mp3",
+  "dur": 777
+ },
+ "syl-lo2": {
+  "file": "syl-lo2-42c64fd3.mp3",
+  "dur": 814
+ },
+ "syl-lo3": {
+  "file": "syl-lo3-4ca09769.mp3",
+  "dur": 1103
+ },
+ "syl-lo4": {
+  "file": "syl-lo4-e0d1224f.mp3",
+  "dur": 737
+ },
+ "syl-long1": {
+  "file": "syl-long1-c736544e.mp3",
+  "dur": 759
+ },
+ "syl-long2": {
+  "file": "syl-long2-08221a08.mp3",
+  "dur": 775
+ },
+ "syl-long3": {
+  "file": "syl-long3-d41c09d2.mp3",
+  "dur": 1002
+ },
+ "syl-long4": {
+  "file": "syl-long4-44e23d88.mp3",
+  "dur": 713
+ },
+ "syl-lou1": {
+  "file": "syl-lou1-4296df9d.mp3",
+  "dur": 718
+ },
+ "syl-lou2": {
+  "file": "syl-lou2-a156c15a.mp3",
+  "dur": 811
+ },
+ "syl-lou3": {
+  "file": "syl-lou3-cc3a38ad.mp3",
+  "dur": 923
+ },
+ "syl-lou4": {
+  "file": "syl-lou4-c447c6ec.mp3",
+  "dur": 720
+ },
+ "syl-lu1": {
+  "file": "syl-lu1-6e1d64c2.mp3",
+  "dur": 774
+ },
+ "syl-lü1": {
+  "file": "syl-lv1-6a1052df.mp3",
+  "dur": 984
+ },
+ "syl-lu2": {
+  "file": "syl-lu2-930926b9.mp3",
+  "dur": 992
+ },
+ "syl-lü2": {
+  "file": "syl-lv2-8bddea89.mp3",
+  "dur": 1066
+ },
+ "syl-lu3": {
+  "file": "syl-lu3-8522b901.mp3",
+  "dur": 916
+ },
+ "syl-lü3": {
+  "file": "syl-lv3-89ded58b.mp3",
+  "dur": 1083
+ },
+ "syl-lu4": {
+  "file": "syl-lu4-212206e3.mp3",
+  "dur": 673
+ },
+ "syl-lü4": {
+  "file": "syl-lv4-41b73719.mp3",
+  "dur": 701
+ },
+ "syl-luan1": {
+  "file": "syl-luan1-f513a732.mp3",
+  "dur": 1040
+ },
+ "syl-luan2": {
+  "file": "syl-luan2-2e1afa4c.mp3",
+  "dur": 1185
+ },
+ "syl-luan3": {
+  "file": "syl-luan3-5c9b851c.mp3",
+  "dur": 1160
+ },
+ "syl-luan4": {
+  "file": "syl-luan4-ebec020f.mp3",
+  "dur": 659
+ },
+ "syl-lüe1": {
+  "file": "syl-lve1-365f9804.mp3",
+  "dur": 706
+ },
+ "syl-lüe2": {
+  "file": "syl-lve2-ba6867d3.mp3",
+  "dur": 774
+ },
+ "syl-lüe3": {
+  "file": "syl-lve3-e7405bc5.mp3",
+  "dur": 948
+ },
+ "syl-lüe4": {
+  "file": "syl-lve4-7e89c18f.mp3",
+  "dur": 653
+ },
+ "syl-lun1": {
+  "file": "syl-lun1-4082992f.mp3",
+  "dur": 943
+ },
+ "syl-lun2": {
+  "file": "syl-lun2-71b7afac.mp3",
+  "dur": 746
+ },
+ "syl-lun3": {
+  "file": "syl-lun3-5eb92759.mp3",
+  "dur": 1123
+ },
+ "syl-lun4": {
+  "file": "syl-lun4-a4c9a3ca.mp3",
+  "dur": 711
+ },
+ "syl-luo1": {
+  "file": "syl-luo1-2e51e646.mp3",
+  "dur": 979
+ },
+ "syl-luo2": {
+  "file": "syl-luo2-376715c1.mp3",
+  "dur": 893
+ },
+ "syl-luo3": {
+  "file": "syl-luo3-dd56945d.mp3",
+  "dur": 873
+ },
+ "syl-luo4": {
+  "file": "syl-luo4-71a5ef12.mp3",
+  "dur": 621
+ },
+ "syl-ma1": {
+  "file": "syl-ma1-6c2ce547.mp3",
+  "dur": 843
+ },
+ "syl-ma2": {
+  "file": "syl-ma2-a35171f5.mp3",
+  "dur": 939
+ },
+ "syl-ma3": {
+  "file": "syl-ma3-8c8e7891.mp3",
+  "dur": 1075
+ },
+ "syl-ma4": {
+  "file": "syl-ma4-58e51f8f.mp3",
+  "dur": 620
+ },
+ "syl-mai1": {
+  "file": "syl-mai1-2854552a.mp3",
+  "dur": 730
+ },
+ "syl-mai2": {
+  "file": "syl-mai2-ea5bee13.mp3",
+  "dur": 1090
+ },
+ "syl-mai3": {
+  "file": "syl-mai3-3879bd8c.mp3",
+  "dur": 1012
+ },
+ "syl-mai4": {
+  "file": "syl-mai4-821562e1.mp3",
+  "dur": 548
+ },
+ "syl-man1": {
+  "file": "syl-man1-e8fb87c8.mp3",
+  "dur": 738
+ },
+ "syl-man2": {
+  "file": "syl-man2-85c505d0.mp3",
+  "dur": 1029
+ },
+ "syl-man3": {
+  "file": "syl-man3-3fd62734.mp3",
+  "dur": 968
+ },
+ "syl-man4": {
+  "file": "syl-man4-7e5dc633.mp3",
+  "dur": 736
+ },
+ "syl-mang1": {
+  "file": "syl-mang1-880c8fda.mp3",
+  "dur": 683
+ },
+ "syl-mang2": {
+  "file": "syl-mang2-dfc501ac.mp3",
+  "dur": 748
+ },
+ "syl-mang3": {
+  "file": "syl-mang3-d1eaf5da.mp3",
+  "dur": 1181
+ },
+ "syl-mang4": {
+  "file": "syl-mang4-bf4eb0d0.mp3",
+  "dur": 630
+ },
+ "syl-mao1": {
+  "file": "syl-mao1-14841fe9.mp3",
+  "dur": 737
+ },
+ "syl-mao2": {
+  "file": "syl-mao2-1b80b11b.mp3",
+  "dur": 849
+ },
+ "syl-mao3": {
+  "file": "syl-mao3-fac319a0.mp3",
+  "dur": 1012
+ },
+ "syl-mao4": {
+  "file": "syl-mao4-6a2511fa.mp3",
+  "dur": 706
+ },
+ "syl-me1": {
+  "file": "syl-me1-a48a11a7.mp3",
+  "dur": 688
+ },
+ "syl-me2": {
+  "file": "syl-me2-6b00cd79.mp3",
+  "dur": 796
+ },
+ "syl-me3": {
+  "file": "syl-me3-856b0bf0.mp3",
+  "dur": 785
+ },
+ "syl-me4": {
+  "file": "syl-me4-55163c50.mp3",
+  "dur": 683
+ },
+ "syl-mei1": {
+  "file": "syl-mei1-35482052.mp3",
+  "dur": 745
+ },
+ "syl-mei2": {
+  "file": "syl-mei2-ad77b58c.mp3",
+  "dur": 1014
+ },
+ "syl-mei3": {
+  "file": "syl-mei3-b0351be9.mp3",
+  "dur": 1004
+ },
+ "syl-mei4": {
+  "file": "syl-mei4-990ebbca.mp3",
+  "dur": 694
+ },
+ "syl-men1": {
+  "file": "syl-men1-c68d845d.mp3",
+  "dur": 1002
+ },
+ "syl-men2": {
+  "file": "syl-men2-540fdcbf.mp3",
+  "dur": 950
+ },
+ "syl-men3": {
+  "file": "syl-men3-8ea4ad45.mp3",
+  "dur": 1012
+ },
+ "syl-men4": {
+  "file": "syl-men4-c552b2a2.mp3",
+  "dur": 594
+ },
+ "syl-meng1": {
+  "file": "syl-meng1-76b980e4.mp3",
+  "dur": 552
+ },
+ "syl-meng2": {
+  "file": "syl-meng2-7815b23e.mp3",
+  "dur": 741
+ },
+ "syl-meng3": {
+  "file": "syl-meng3-b0db9560.mp3",
+  "dur": 963
+ },
+ "syl-meng4": {
+  "file": "syl-meng4-462ea8c0.mp3",
+  "dur": 686
+ },
+ "syl-mi1": {
+  "file": "syl-mi1-b1fae517.mp3",
+  "dur": 722
+ },
+ "syl-mi2": {
+  "file": "syl-mi2-291290f6.mp3",
+  "dur": 647
+ },
+ "syl-mi3": {
+  "file": "syl-mi3-faa40489.mp3",
+  "dur": 1230
+ },
+ "syl-mi4": {
+  "file": "syl-mi4-dc30b04f.mp3",
+  "dur": 685
+ },
+ "syl-mian1": {
+  "file": "syl-mian1-88992ca9.mp3",
+  "dur": 846
+ },
+ "syl-mian2": {
+  "file": "syl-mian2-597eea7e.mp3",
+  "dur": 873
+ },
+ "syl-mian3": {
+  "file": "syl-mian3-a75da8bf.mp3",
+  "dur": 933
+ },
+ "syl-mian4": {
+  "file": "syl-mian4-4028a45d.mp3",
+  "dur": 623
+ },
+ "syl-miao1": {
+  "file": "syl-miao1-4f9a197d.mp3",
+  "dur": 1031
+ },
+ "syl-miao2": {
+  "file": "syl-miao2-1fea17c9.mp3",
+  "dur": 1003
+ },
+ "syl-miao3": {
+  "file": "syl-miao3-8bad629f.mp3",
+  "dur": 1103
+ },
+ "syl-miao4": {
+  "file": "syl-miao4-9b0908ec.mp3",
+  "dur": 647
+ },
+ "syl-mie1": {
+  "file": "syl-mie1-4ffb8cb5.mp3",
+  "dur": 731
+ },
+ "syl-mie2": {
+  "file": "syl-mie2-94cb9cdd.mp3",
+  "dur": 959
+ },
+ "syl-mie3": {
+  "file": "syl-mie3-bae01cf7.mp3",
+  "dur": 958
+ },
+ "syl-mie4": {
+  "file": "syl-mie4-7f3b79d5.mp3",
+  "dur": 634
+ },
+ "syl-min1": {
+  "file": "syl-min1-66cb6faa.mp3",
+  "dur": 710
+ },
+ "syl-min2": {
+  "file": "syl-min2-8d34e4c9.mp3",
+  "dur": 856
+ },
+ "syl-min3": {
+  "file": "syl-min3-b3671593.mp3",
+  "dur": 775
+ },
+ "syl-min4": {
+  "file": "syl-min4-c257f78d.mp3",
+  "dur": 741
+ },
+ "syl-ming1": {
+  "file": "syl-ming1-0f112886.mp3",
+  "dur": 781
+ },
+ "syl-ming2": {
+  "file": "syl-ming2-c590f082.mp3",
+  "dur": 669
+ },
+ "syl-ming3": {
+  "file": "syl-ming3-01f0a9e1.mp3",
+  "dur": 837
+ },
+ "syl-ming4": {
+  "file": "syl-ming4-37d5a29b.mp3",
+  "dur": 745
+ },
+ "syl-miu1": {
+  "file": "syl-miu1-cc80004f.mp3",
+  "dur": 723
+ },
+ "syl-miu2": {
+  "file": "syl-miu2-a63ac054.mp3",
+  "dur": 1009
+ },
+ "syl-miu3": {
+  "file": "syl-miu3-4fd05aa3.mp3",
+  "dur": 888
+ },
+ "syl-miu4": {
+  "file": "syl-miu4-577994b2.mp3",
+  "dur": 629
+ },
+ "syl-mo1": {
+  "file": "syl-mo1-0c1444e4.mp3",
+  "dur": 670
+ },
+ "syl-mo2": {
+  "file": "syl-mo2-887e27a8.mp3",
+  "dur": 990
+ },
+ "syl-mo3": {
+  "file": "syl-mo3-cffc1c4f.mp3",
+  "dur": 1100
+ },
+ "syl-mo4": {
+  "file": "syl-mo4-39080d40.mp3",
+  "dur": 722
+ },
+ "syl-mou1": {
+  "file": "syl-mou1-780fc9e5.mp3",
+  "dur": 718
+ },
+ "syl-mou2": {
+  "file": "syl-mou2-8f9f5711.mp3",
+  "dur": 909
+ },
+ "syl-mou3": {
+  "file": "syl-mou3-c076998a.mp3",
+  "dur": 1041
+ },
+ "syl-mou4": {
+  "file": "syl-mou4-2ec4e59a.mp3",
+  "dur": 704
+ },
+ "syl-mu1": {
+  "file": "syl-mu1-6c835deb.mp3",
+  "dur": 657
+ },
+ "syl-mu2": {
+  "file": "syl-mu2-5a9b13ad.mp3",
+  "dur": 994
+ },
+ "syl-mu3": {
+  "file": "syl-mu3-18171c8e.mp3",
+  "dur": 1008
+ },
+ "syl-mu4": {
+  "file": "syl-mu4-8c181f29.mp3",
+  "dur": 733
+ },
+ "syl-na1": {
+  "file": "syl-na1-2cb3afaf.mp3",
+  "dur": 764
+ },
+ "syl-na2": {
+  "file": "syl-na2-20c7f555.mp3",
+  "dur": 975
+ },
+ "syl-na3": {
+  "file": "syl-na3-a8ea1935.mp3",
+  "dur": 946
+ },
+ "syl-na4": {
+  "file": "syl-na4-d18850ac.mp3",
+  "dur": 521
+ },
+ "syl-nai1": {
+  "file": "syl-nai1-858a6b60.mp3",
+  "dur": 734
+ },
+ "syl-nai2": {
+  "file": "syl-nai2-50210785.mp3",
+  "dur": 924
+ },
+ "syl-nai3": {
+  "file": "syl-nai3-4a43f3d8.mp3",
+  "dur": 1009
+ },
+ "syl-nai4": {
+  "file": "syl-nai4-b68f8e3b.mp3",
+  "dur": 801
+ },
+ "syl-nan1": {
+  "file": "syl-nan1-ad12e23d.mp3",
+  "dur": 790
+ },
+ "syl-nan2": {
+  "file": "syl-nan2-c292cb96.mp3",
+  "dur": 1023
+ },
+ "syl-nan3": {
+  "file": "syl-nan3-e831028a.mp3",
+  "dur": 872
+ },
+ "syl-nan4": {
+  "file": "syl-nan4-413e32cf.mp3",
+  "dur": 775
+ },
+ "syl-nang1": {
+  "file": "syl-nang1-68645d73.mp3",
+  "dur": 817
+ },
+ "syl-nang2": {
+  "file": "syl-nang2-3b567ae1.mp3",
+  "dur": 913
+ },
+ "syl-nang3": {
+  "file": "syl-nang3-282ba079.mp3",
+  "dur": 787
+ },
+ "syl-nang4": {
+  "file": "syl-nang4-fd929f88.mp3",
+  "dur": 713
+ },
+ "syl-nao1": {
+  "file": "syl-nao1-2be8854e.mp3",
+  "dur": 664
+ },
+ "syl-nao2": {
+  "file": "syl-nao2-67a6ee8b.mp3",
+  "dur": 901
+ },
+ "syl-nao3": {
+  "file": "syl-nao3-a02aeda6.mp3",
+  "dur": 1113
+ },
+ "syl-nao4": {
+  "file": "syl-nao4-2376f7c7.mp3",
+  "dur": 717
+ },
+ "syl-ne1": {
+  "file": "syl-ne1-4a5babf6.mp3",
+  "dur": 796
+ },
+ "syl-ne2": {
+  "file": "syl-ne2-c0674431.mp3",
+  "dur": 710
+ },
+ "syl-ne3": {
+  "file": "syl-ne3-7d638b0d.mp3",
+  "dur": 1088
+ },
+ "syl-ne4": {
+  "file": "syl-ne4-61843efd.mp3",
+  "dur": 732
+ },
+ "syl-nei1": {
+  "file": "syl-nei1-9152afd3.mp3",
+  "dur": 1020
+ },
+ "syl-nei2": {
+  "file": "syl-nei2-e00fdfa3.mp3",
+  "dur": 774
+ },
+ "syl-nei3": {
+  "file": "syl-nei3-e3add98e.mp3",
+  "dur": 1058
+ },
+ "syl-nei4": {
+  "file": "syl-nei4-f75b31de.mp3",
+  "dur": 734
+ },
+ "syl-nen1": {
+  "file": "syl-nen1-daf09e05.mp3",
+  "dur": 809
+ },
+ "syl-nen2": {
+  "file": "syl-nen2-d4bb3c15.mp3",
+  "dur": 843
+ },
+ "syl-nen3": {
+  "file": "syl-nen3-4a46e06a.mp3",
+  "dur": 919
+ },
+ "syl-nen4": {
+  "file": "syl-nen4-85c6ae5a.mp3",
+  "dur": 571
+ },
+ "syl-neng1": {
+  "file": "syl-neng1-93069def.mp3",
+  "dur": 901
+ },
+ "syl-neng2": {
+  "file": "syl-neng2-d0418377.mp3",
+  "dur": 805
+ },
+ "syl-neng3": {
+  "file": "syl-neng3-9ce5b833.mp3",
+  "dur": 1201
+ },
+ "syl-neng4": {
+  "file": "syl-neng4-90da52e1.mp3",
+  "dur": 771
+ },
+ "syl-ni1": {
+  "file": "syl-ni1-f75a0af7.mp3",
+  "dur": 673
+ },
+ "syl-ni2": {
+  "file": "syl-ni2-f85f2570.mp3",
+  "dur": 730
+ },
+ "syl-ni3": {
+  "file": "syl-ni3-2be3cb50.mp3",
+  "dur": 983
+ },
+ "syl-ni4": {
+  "file": "syl-ni4-ded31cdc.mp3",
+  "dur": 668
+ },
+ "syl-nian1": {
+  "file": "syl-nian1-be578e22.mp3",
+  "dur": 780
+ },
+ "syl-nian2": {
+  "file": "syl-nian2-8ea16174.mp3",
+  "dur": 1069
+ },
+ "syl-nian3": {
+  "file": "syl-nian3-64a00e0f.mp3",
+  "dur": 1140
+ },
+ "syl-nian4": {
+  "file": "syl-nian4-69915f5f.mp3",
+  "dur": 662
+ },
+ "syl-niang1": {
+  "file": "syl-niang1-8a500cef.mp3",
+  "dur": 844
+ },
+ "syl-niang2": {
+  "file": "syl-niang2-de355c26.mp3",
+  "dur": 1093
+ },
+ "syl-niang3": {
+  "file": "syl-niang3-d89ceb9f.mp3",
+  "dur": 1032
+ },
+ "syl-niang4": {
+  "file": "syl-niang4-255e39da.mp3",
+  "dur": 759
+ },
+ "syl-niao1": {
+  "file": "syl-niao1-8163e9d2.mp3",
+  "dur": 691
+ },
+ "syl-niao2": {
+  "file": "syl-niao2-5b8c6cef.mp3",
+  "dur": 1129
+ },
+ "syl-niao3": {
+  "file": "syl-niao3-b317cd87.mp3",
+  "dur": 911
+ },
+ "syl-niao4": {
+  "file": "syl-niao4-2e0b5f21.mp3",
+  "dur": 717
+ },
+ "syl-nie1": {
+  "file": "syl-nie1-3e3037ee.mp3",
+  "dur": 723
+ },
+ "syl-nie2": {
+  "file": "syl-nie2-1d66c4bc.mp3",
+  "dur": 622
+ },
+ "syl-nie3": {
+  "file": "syl-nie3-33998add.mp3",
+  "dur": 1029
+ },
+ "syl-nie4": {
+  "file": "syl-nie4-edec9335.mp3",
+  "dur": 733
+ },
+ "syl-nin1": {
+  "file": "syl-nin1-d771d780.mp3",
+  "dur": 748
+ },
+ "syl-nin2": {
+  "file": "syl-nin2-52a9d5e4.mp3",
+  "dur": 961
+ },
+ "syl-nin3": {
+  "file": "syl-nin3-6afa76f0.mp3",
+  "dur": 830
+ },
+ "syl-nin4": {
+  "file": "syl-nin4-c8ab61a2.mp3",
+  "dur": 765
+ },
+ "syl-ning1": {
+  "file": "syl-ning1-f447f3e0.mp3",
+  "dur": 833
+ },
+ "syl-ning2": {
+  "file": "syl-ning2-2c510d01.mp3",
+  "dur": 987
+ },
+ "syl-ning3": {
+  "file": "syl-ning3-edff4094.mp3",
+  "dur": 968
+ },
+ "syl-ning4": {
+  "file": "syl-ning4-0bb6b3aa.mp3",
+  "dur": 739
+ },
+ "syl-niu1": {
+  "file": "syl-niu1-e9b1afaa.mp3",
+  "dur": 735
+ },
+ "syl-niu2": {
+  "file": "syl-niu2-04d0022f.mp3",
+  "dur": 698
+ },
+ "syl-niu3": {
+  "file": "syl-niu3-4f03cdbc.mp3",
+  "dur": 1006
+ },
+ "syl-niu4": {
+  "file": "syl-niu4-0c213980.mp3",
+  "dur": 750
+ },
+ "syl-nong1": {
+  "file": "syl-nong1-873d0db4.mp3",
+  "dur": 759
+ },
+ "syl-nong2": {
+  "file": "syl-nong2-6e0d1411.mp3",
+  "dur": 841
+ },
+ "syl-nong3": {
+  "file": "syl-nong3-8dd01879.mp3",
+  "dur": 1101
+ },
+ "syl-nong4": {
+  "file": "syl-nong4-c1205bef.mp3",
+  "dur": 580
+ },
+ "syl-nou1": {
+  "file": "syl-nou1-479a764e.mp3",
+  "dur": 741
+ },
+ "syl-nou2": {
+  "file": "syl-nou2-5ce15eb3.mp3",
+  "dur": 751
+ },
+ "syl-nou3": {
+  "file": "syl-nou3-faf4846f.mp3",
+  "dur": 1125
+ },
+ "syl-nou4": {
+  "file": "syl-nou4-e31011f8.mp3",
+  "dur": 781
+ },
+ "syl-nu1": {
+  "file": "syl-nu1-2c8edb30.mp3",
+  "dur": 772
+ },
+ "syl-nü1": {
+  "file": "syl-nv1-71ca9681.mp3",
+  "dur": 625
+ },
+ "syl-nu2": {
+  "file": "syl-nu2-5bac48ea.mp3",
+  "dur": 893
+ },
+ "syl-nü2": {
+  "file": "syl-nv2-cac264bd.mp3",
+  "dur": 886
+ },
+ "syl-nu3": {
+  "file": "syl-nu3-168ce202.mp3",
+  "dur": 960
+ },
+ "syl-nü3": {
+  "file": "syl-nv3-81f016b3.mp3",
+  "dur": 1115
+ },
+ "syl-nu4": {
+  "file": "syl-nu4-1a830dff.mp3",
+  "dur": 769
+ },
+ "syl-nü4": {
+  "file": "syl-nv4-112d3908.mp3",
+  "dur": 701
+ },
+ "syl-nuan1": {
+  "file": "syl-nuan1-32b42838.mp3",
+  "dur": 808
+ },
+ "syl-nuan2": {
+  "file": "syl-nuan2-e9c79985.mp3",
+  "dur": 1089
+ },
+ "syl-nuan3": {
+  "file": "syl-nuan3-5aa47976.mp3",
+  "dur": 1209
+ },
+ "syl-nuan4": {
+  "file": "syl-nuan4-129df069.mp3",
+  "dur": 740
+ },
+ "syl-nüe1": {
+  "file": "syl-nve1-3e1aee9d.mp3",
+  "dur": 718
+ },
+ "syl-nüe2": {
+  "file": "syl-nve2-3f48785f.mp3",
+  "dur": 921
+ },
+ "syl-nüe3": {
+  "file": "syl-nve3-6c8f8c00.mp3",
+  "dur": 995
+ },
+ "syl-nüe4": {
+  "file": "syl-nve4-216b79f6.mp3",
+  "dur": 623
+ },
+ "syl-nuo1": {
+  "file": "syl-nuo1-392c0858.mp3",
+  "dur": 767
+ },
+ "syl-nuo2": {
+  "file": "syl-nuo2-1a7ca2bd.mp3",
+  "dur": 872
+ },
+ "syl-nuo3": {
+  "file": "syl-nuo3-8301a177.mp3",
+  "dur": 1152
+ },
+ "syl-nuo4": {
+  "file": "syl-nuo4-4093ca52.mp3",
+  "dur": 665
+ },
+ "syl-o1": {
+  "file": "syl-o1-6ae102b6.mp3",
+  "dur": 516
+ },
+ "syl-o2": {
+  "file": "syl-o2-dfc80278.mp3",
+  "dur": 895
+ },
+ "syl-o3": {
+  "file": "syl-o3-19b7b546.mp3",
+  "dur": 1061
+ },
+ "syl-o4": {
+  "file": "syl-o4-215fcb0d.mp3",
+  "dur": 561
+ },
+ "syl-ou1": {
+  "file": "syl-ou1-373f1271.mp3",
+  "dur": 625
+ },
+ "syl-ou2": {
+  "file": "syl-ou2-b6b1a5ec.mp3",
+  "dur": 938
+ },
+ "syl-ou3": {
+  "file": "syl-ou3-5f5065f9.mp3",
+  "dur": 945
+ },
+ "syl-ou4": {
+  "file": "syl-ou4-b3649d56.mp3",
+  "dur": 684
+ },
+ "syl-pa1": {
+  "file": "syl-pa1-2749a9d5.mp3",
+  "dur": 606
+ },
+ "syl-pa2": {
+  "file": "syl-pa2-0c06e212.mp3",
+  "dur": 899
+ },
+ "syl-pa3": {
+  "file": "syl-pa3-477d6364.mp3",
+  "dur": 1079
+ },
+ "syl-pa4": {
+  "file": "syl-pa4-39eb0d05.mp3",
+  "dur": 691
+ },
+ "syl-pai1": {
+  "file": "syl-pai1-c28b2ed8.mp3",
+  "dur": 745
+ },
+ "syl-pai2": {
+  "file": "syl-pai2-673691bf.mp3",
+  "dur": 1049
+ },
+ "syl-pai3": {
+  "file": "syl-pai3-36c5e9e9.mp3",
+  "dur": 1151
+ },
+ "syl-pai4": {
+  "file": "syl-pai4-05775e47.mp3",
+  "dur": 664
+ },
+ "syl-pan1": {
+  "file": "syl-pan1-0efdb0cc.mp3",
+  "dur": 690
+ },
+ "syl-pan2": {
+  "file": "syl-pan2-019c4ef5.mp3",
+  "dur": 1097
+ },
+ "syl-pan3": {
+  "file": "syl-pan3-eafc5e6d.mp3",
+  "dur": 1037
+ },
+ "syl-pan4": {
+  "file": "syl-pan4-47845175.mp3",
+  "dur": 680
+ },
+ "syl-pang1": {
+  "file": "syl-pang1-b78e0e36.mp3",
+  "dur": 732
+ },
+ "syl-pang2": {
+  "file": "syl-pang2-509643b2.mp3",
+  "dur": 1042
+ },
+ "syl-pang3": {
+  "file": "syl-pang3-c73f6fc4.mp3",
+  "dur": 825
+ },
+ "syl-pang4": {
+  "file": "syl-pang4-3acda39b.mp3",
+  "dur": 713
+ },
+ "syl-pao1": {
+  "file": "syl-pao1-f5988dec.mp3",
+  "dur": 552
+ },
+ "syl-pao2": {
+  "file": "syl-pao2-ed99e7e4.mp3",
+  "dur": 1033
+ },
+ "syl-pao3": {
+  "file": "syl-pao3-e02b8b85.mp3",
+  "dur": 1060
+ },
+ "syl-pao4": {
+  "file": "syl-pao4-766bdcd2.mp3",
+  "dur": 731
+ },
+ "syl-pei1": {
+  "file": "syl-pei1-e90aef13.mp3",
+  "dur": 874
+ },
+ "syl-pei2": {
+  "file": "syl-pei2-f7050ab1.mp3",
+  "dur": 960
+ },
+ "syl-pei3": {
+  "file": "syl-pei3-3aaa44f5.mp3",
+  "dur": 1075
+ },
+ "syl-pei4": {
+  "file": "syl-pei4-8635d966.mp3",
+  "dur": 723
+ },
+ "syl-pen1": {
+  "file": "syl-pen1-fc14eee6.mp3",
+  "dur": 654
+ },
+ "syl-pen2": {
+  "file": "syl-pen2-bd43b8d2.mp3",
+  "dur": 904
+ },
+ "syl-pen3": {
+  "file": "syl-pen3-fc4e8451.mp3",
+  "dur": 1031
+ },
+ "syl-pen4": {
+  "file": "syl-pen4-c87f8a79.mp3",
+  "dur": 697
+ },
+ "syl-peng1": {
+  "file": "syl-peng1-0079bee8.mp3",
+  "dur": 906
+ },
+ "syl-peng2": {
+  "file": "syl-peng2-52a98e21.mp3",
+  "dur": 994
+ },
+ "syl-peng3": {
+  "file": "syl-peng3-3948a122.mp3",
+  "dur": 952
+ },
+ "syl-peng4": {
+  "file": "syl-peng4-cb85bd13.mp3",
+  "dur": 613
+ },
+ "syl-pi1": {
+  "file": "syl-pi1-994ba890.mp3",
+  "dur": 1014
+ },
+ "syl-pi2": {
+  "file": "syl-pi2-eed62186.mp3",
+  "dur": 893
+ },
+ "syl-pi3": {
+  "file": "syl-pi3-47633d5d.mp3",
+  "dur": 1150
+ },
+ "syl-pi4": {
+  "file": "syl-pi4-f1663bed.mp3",
+  "dur": 650
+ },
+ "syl-pian1": {
+  "file": "syl-pian1-3023b6cd.mp3",
+  "dur": 812
+ },
+ "syl-pian2": {
+  "file": "syl-pian2-6c63dd2f.mp3",
+  "dur": 931
+ },
+ "syl-pian3": {
+  "file": "syl-pian3-1fab1ea0.mp3",
+  "dur": 1140
+ },
+ "syl-pian4": {
+  "file": "syl-pian4-06daf961.mp3",
+  "dur": 720
+ },
+ "syl-piao1": {
+  "file": "syl-piao1-8d4c82c1.mp3",
+  "dur": 830
+ },
+ "syl-piao2": {
+  "file": "syl-piao2-e22ad7ab.mp3",
+  "dur": 923
+ },
+ "syl-piao3": {
+  "file": "syl-piao3-45503ce9.mp3",
+  "dur": 1040
+ },
+ "syl-piao4": {
+  "file": "syl-piao4-3bb52687.mp3",
+  "dur": 751
+ },
+ "syl-pie1": {
+  "file": "syl-pie1-8ed35a6f.mp3",
+  "dur": 770
+ },
+ "syl-pie2": {
+  "file": "syl-pie2-30d99458.mp3",
+  "dur": 1097
+ },
+ "syl-pie3": {
+  "file": "syl-pie3-27059cbb.mp3",
+  "dur": 1016
+ },
+ "syl-pie4": {
+  "file": "syl-pie4-a9b955c2.mp3",
+  "dur": 724
+ },
+ "syl-pin1": {
+  "file": "syl-pin1-0e78d50a.mp3",
+  "dur": 684
+ },
+ "syl-pin2": {
+  "file": "syl-pin2-4db04176.mp3",
+  "dur": 987
+ },
+ "syl-pin3": {
+  "file": "syl-pin3-bf4f7094.mp3",
+  "dur": 976
+ },
+ "syl-pin4": {
+  "file": "syl-pin4-cd9282e6.mp3",
+  "dur": 755
+ },
+ "syl-ping1": {
+  "file": "syl-ping1-6175b035.mp3",
+  "dur": 743
+ },
+ "syl-ping2": {
+  "file": "syl-ping2-8cb2f8a3.mp3",
+  "dur": 878
+ },
+ "syl-ping3": {
+  "file": "syl-ping3-4cf012bb.mp3",
+  "dur": 1374
+ },
+ "syl-ping4": {
+  "file": "syl-ping4-b6d39a14.mp3",
+  "dur": 756
+ },
+ "syl-po1": {
+  "file": "syl-po1-4b844597.mp3",
+  "dur": 751
+ },
+ "syl-po2": {
+  "file": "syl-po2-a3740e89.mp3",
+  "dur": 1029
+ },
+ "syl-po3": {
+  "file": "syl-po3-15e58a93.mp3",
+  "dur": 1070
+ },
+ "syl-po4": {
+  "file": "syl-po4-cad27b13.mp3",
+  "dur": 698
+ },
+ "syl-pou1": {
+  "file": "syl-pou1-012f7547.mp3",
+  "dur": 794
+ },
+ "syl-pou2": {
+  "file": "syl-pou2-b0726ded.mp3",
+  "dur": 951
+ },
+ "syl-pou3": {
+  "file": "syl-pou3-9b1c6f04.mp3",
+  "dur": 874
+ },
+ "syl-pou4": {
+  "file": "syl-pou4-a4fea801.mp3",
+  "dur": 608
+ },
+ "syl-pu1": {
+  "file": "syl-pu1-8faf36cc.mp3",
+  "dur": 945
+ },
+ "syl-pu2": {
+  "file": "syl-pu2-0fec3f6e.mp3",
+  "dur": 1050
+ },
+ "syl-pu3": {
+  "file": "syl-pu3-54eb117c.mp3",
+  "dur": 1065
+ },
+ "syl-pu4": {
+  "file": "syl-pu4-044fed4d.mp3",
+  "dur": 763
+ },
+ "syl-qi1": {
+  "file": "syl-qi1-6bcf13ab.mp3",
+  "dur": 1099
+ },
+ "syl-qi2": {
+  "file": "syl-qi2-a6f36e62.mp3",
+  "dur": 1149
+ },
+ "syl-qi3": {
+  "file": "syl-qi3-6d571834.mp3",
+  "dur": 1173
+ },
+ "syl-qi4": {
+  "file": "syl-qi4-d1aa0023.mp3",
+  "dur": 812
+ },
+ "syl-qia1": {
+  "file": "syl-qia1-8b7bf295.mp3",
+  "dur": 906
+ },
+ "syl-qia2": {
+  "file": "syl-qia2-5aa83bb5.mp3",
+  "dur": 1131
+ },
+ "syl-qia3": {
+  "file": "syl-qia3-e6277cb0.mp3",
+  "dur": 1066
+ },
+ "syl-qia4": {
+  "file": "syl-qia4-7fd346a3.mp3",
+  "dur": 809
+ },
+ "syl-qian1": {
+  "file": "syl-qian1-6f1f5e1f.mp3",
+  "dur": 1040
+ },
+ "syl-qian2": {
+  "file": "syl-qian2-b2721a60.mp3",
+  "dur": 1095
+ },
+ "syl-qian3": {
+  "file": "syl-qian3-57cfd3a9.mp3",
+  "dur": 1199
+ },
+ "syl-qian4": {
+  "file": "syl-qian4-0afe2d1c.mp3",
+  "dur": 837
+ },
+ "syl-qiang1": {
+  "file": "syl-qiang1-e0b55186.mp3",
+  "dur": 938
+ },
+ "syl-qiang2": {
+  "file": "syl-qiang2-fd6ed474.mp3",
+  "dur": 1117
+ },
+ "syl-qiang3": {
+  "file": "syl-qiang3-db47f549.mp3",
+  "dur": 971
+ },
+ "syl-qiang4": {
+  "file": "syl-qiang4-a6ff5384.mp3",
+  "dur": 744
+ },
+ "syl-qiao1": {
+  "file": "syl-qiao1-1bc71de6.mp3",
+  "dur": 901
+ },
+ "syl-qiao2": {
+  "file": "syl-qiao2-aef741fa.mp3",
+  "dur": 1044
+ },
+ "syl-qiao3": {
+  "file": "syl-qiao3-6ed40b28.mp3",
+  "dur": 1033
+ },
+ "syl-qiao4": {
+  "file": "syl-qiao4-229ebf30.mp3",
+  "dur": 803
+ },
+ "syl-qie1": {
+  "file": "syl-qie1-151b7325.mp3",
+  "dur": 1148
+ },
+ "syl-qie2": {
+  "file": "syl-qie2-3adf7d69.mp3",
+  "dur": 1052
+ },
+ "syl-qie3": {
+  "file": "syl-qie3-64717a00.mp3",
+  "dur": 1122
+ },
+ "syl-qie4": {
+  "file": "syl-qie4-8f77db0d.mp3",
+  "dur": 826
+ },
+ "syl-qin1": {
+  "file": "syl-qin1-c1025e18.mp3",
+  "dur": 845
+ },
+ "syl-qin2": {
+  "file": "syl-qin2-a4560862.mp3",
+  "dur": 1038
+ },
+ "syl-qin3": {
+  "file": "syl-qin3-92ced0ac.mp3",
+  "dur": 1162
+ },
+ "syl-qin4": {
+  "file": "syl-qin4-42c74e94.mp3",
+  "dur": 835
+ },
+ "syl-qing1": {
+  "file": "syl-qing1-1eb06486.mp3",
+  "dur": 1158
+ },
+ "syl-qing2": {
+  "file": "syl-qing2-f7bb0e6f.mp3",
+  "dur": 904
+ },
+ "syl-qing3": {
+  "file": "syl-qing3-16bb8981.mp3",
+  "dur": 1190
+ },
+ "syl-qing4": {
+  "file": "syl-qing4-d0f6f098.mp3",
+  "dur": 846
+ },
+ "syl-qiong1": {
+  "file": "syl-qiong1-c3fca18c.mp3",
+  "dur": 1029
+ },
+ "syl-qiong2": {
+  "file": "syl-qiong2-009b036f.mp3",
+  "dur": 1095
+ },
+ "syl-qiong3": {
+  "file": "syl-qiong3-fe42f6b5.mp3",
+  "dur": 985
+ },
+ "syl-qiong4": {
+  "file": "syl-qiong4-bd581c06.mp3",
+  "dur": 843
+ },
+ "syl-qiu1": {
+  "file": "syl-qiu1-245e48e9.mp3",
+  "dur": 1084
+ },
+ "syl-qiu2": {
+  "file": "syl-qiu2-d82c419c.mp3",
+  "dur": 924
+ },
+ "syl-qiu3": {
+  "file": "syl-qiu3-68346a7a.mp3",
+  "dur": 1150
+ },
+ "syl-qiu4": {
+  "file": "syl-qiu4-8e94b103.mp3",
+  "dur": 857
+ },
+ "syl-qu1": {
+  "file": "syl-qu1-b8593c7f.mp3",
+  "dur": 1022
+ },
+ "syl-qu2": {
+  "file": "syl-qu2-315f908b.mp3",
+  "dur": 1093
+ },
+ "syl-qu3": {
+  "file": "syl-qu3-00a17fc6.mp3",
+  "dur": 977
+ },
+ "syl-qu4": {
+  "file": "syl-qu4-1a171b26.mp3",
+  "dur": 691
+ },
+ "syl-quan1": {
+  "file": "syl-quan1-b8fb8cb9.mp3",
+  "dur": 877
+ },
+ "syl-quan2": {
+  "file": "syl-quan2-0d7ab29c.mp3",
+  "dur": 824
+ },
+ "syl-quan3": {
+  "file": "syl-quan3-b5c06be0.mp3",
+  "dur": 998
+ },
+ "syl-quan4": {
+  "file": "syl-quan4-74a89519.mp3",
+  "dur": 822
+ },
+ "syl-que1": {
+  "file": "syl-que1-e1e7d0c0.mp3",
+  "dur": 926
+ },
+ "syl-que2": {
+  "file": "syl-que2-57648bcf.mp3",
+  "dur": 976
+ },
+ "syl-que3": {
+  "file": "syl-que3-caec8957.mp3",
+  "dur": 1208
+ },
+ "syl-que4": {
+  "file": "syl-que4-f538b984.mp3",
+  "dur": 737
+ },
+ "syl-qun1": {
+  "file": "syl-qun1-99959b9f.mp3",
+  "dur": 1069
+ },
+ "syl-qun2": {
+  "file": "syl-qun2-2f5e5152.mp3",
+  "dur": 1043
+ },
+ "syl-qun3": {
+  "file": "syl-qun3-a774530a.mp3",
+  "dur": 1211
+ },
+ "syl-qun4": {
+  "file": "syl-qun4-f7107292.mp3",
+  "dur": 865
+ },
+ "syl-ran1": {
+  "file": "syl-ran1-f287f143.mp3",
+  "dur": 824
+ },
+ "syl-ran2": {
+  "file": "syl-ran2-214d17dd.mp3",
+  "dur": 1075
+ },
+ "syl-ran3": {
+  "file": "syl-ran3-7f508238.mp3",
+  "dur": 1159
+ },
+ "syl-ran4": {
+  "file": "syl-ran4-3eddb6d8.mp3",
+  "dur": 677
+ },
+ "syl-rang1": {
+  "file": "syl-rang1-20978a6a.mp3",
+  "dur": 1013
+ },
+ "syl-rang2": {
+  "file": "syl-rang2-c155afe7.mp3",
+  "dur": 949
+ },
+ "syl-rang3": {
+  "file": "syl-rang3-90104d86.mp3",
+  "dur": 879
+ },
+ "syl-rang4": {
+  "file": "syl-rang4-b1c8eacc.mp3",
+  "dur": 777
+ },
+ "syl-rao1": {
+  "file": "syl-rao1-496c8e96.mp3",
+  "dur": 815
+ },
+ "syl-rao2": {
+  "file": "syl-rao2-2436dfe0.mp3",
+  "dur": 963
+ },
+ "syl-rao3": {
+  "file": "syl-rao3-adf892a3.mp3",
+  "dur": 1167
+ },
+ "syl-rao4": {
+  "file": "syl-rao4-3e2804cb.mp3",
+  "dur": 755
+ },
+ "syl-re1": {
+  "file": "syl-re1-db4dfaab.mp3",
+  "dur": 876
+ },
+ "syl-re2": {
+  "file": "syl-re2-265a87dd.mp3",
+  "dur": 1016
+ },
+ "syl-re3": {
+  "file": "syl-re3-561d3a12.mp3",
+  "dur": 1407
+ },
+ "syl-re4": {
+  "file": "syl-re4-67735747.mp3",
+  "dur": 555
+ },
+ "syl-ren1": {
+  "file": "syl-ren1-69d82efb.mp3",
+  "dur": 822
+ },
+ "syl-ren2": {
+  "file": "syl-ren2-1bc653aa.mp3",
+  "dur": 914
+ },
+ "syl-ren3": {
+  "file": "syl-ren3-1845ecb3.mp3",
+  "dur": 1205
+ },
+ "syl-ren4": {
+  "file": "syl-ren4-058bf622.mp3",
+  "dur": 715
+ },
+ "syl-reng1": {
+  "file": "syl-reng1-ce54f6c3.mp3",
+  "dur": 768
+ },
+ "syl-reng2": {
+  "file": "syl-reng2-77570490.mp3",
+  "dur": 844
+ },
+ "syl-reng3": {
+  "file": "syl-reng3-89624a98.mp3",
+  "dur": 1055
+ },
+ "syl-reng4": {
+  "file": "syl-reng4-f4795c25.mp3",
+  "dur": 693
+ },
+ "syl-ri1": {
+  "file": "syl-ri1-115ed0fa.mp3",
+  "dur": 945
+ },
+ "syl-ri2": {
+  "file": "syl-ri2-a1571204.mp3",
+  "dur": 1090
+ },
+ "syl-ri3": {
+  "file": "syl-ri3-b494f853.mp3",
+  "dur": 1262
+ },
+ "syl-ri4": {
+  "file": "syl-ri4-fe48b6eb.mp3",
+  "dur": 739
+ },
+ "syl-rong1": {
+  "file": "syl-rong1-e8464394.mp3",
+  "dur": 835
+ },
+ "syl-rong2": {
+  "file": "syl-rong2-69541be0.mp3",
+  "dur": 897
+ },
+ "syl-rong3": {
+  "file": "syl-rong3-551f4533.mp3",
+  "dur": 1052
+ },
+ "syl-rong4": {
+  "file": "syl-rong4-fe83ec0a.mp3",
+  "dur": 738
+ },
+ "syl-rou1": {
+  "file": "syl-rou1-7d2c97ed.mp3",
+  "dur": 940
+ },
+ "syl-rou2": {
+  "file": "syl-rou2-13ef82a9.mp3",
+  "dur": 922
+ },
+ "syl-rou3": {
+  "file": "syl-rou3-ce063450.mp3",
+  "dur": 956
+ },
+ "syl-rou4": {
+  "file": "syl-rou4-096821ad.mp3",
+  "dur": 712
+ },
+ "syl-ru1": {
+  "file": "syl-ru1-3e1bcd34.mp3",
+  "dur": 865
+ },
+ "syl-ru2": {
+  "file": "syl-ru2-60f270c7.mp3",
+  "dur": 1042
+ },
+ "syl-ru3": {
+  "file": "syl-ru3-edf8ef93.mp3",
+  "dur": 1097
+ },
+ "syl-ru4": {
+  "file": "syl-ru4-663a2130.mp3",
+  "dur": 767
+ },
+ "syl-rua1": {
+  "file": "syl-rua1-c8ff2a0b.mp3",
+  "dur": 884
+ },
+ "syl-rua2": {
+  "file": "syl-rua2-68435a77.mp3",
+  "dur": 811
+ },
+ "syl-rua3": {
+  "file": "syl-rua3-df7f3ca3.mp3",
+  "dur": 1102
+ },
+ "syl-rua4": {
+  "file": "syl-rua4-0c4dca46.mp3",
+  "dur": 836
+ },
+ "syl-ruan1": {
+  "file": "syl-ruan1-642ad848.mp3",
+  "dur": 760
+ },
+ "syl-ruan2": {
+  "file": "syl-ruan2-3b924e1e.mp3",
+  "dur": 1011
+ },
+ "syl-ruan3": {
+  "file": "syl-ruan3-d0e7ec8d.mp3",
+  "dur": 1139
+ },
+ "syl-ruan4": {
+  "file": "syl-ruan4-418118f7.mp3",
+  "dur": 862
+ },
+ "syl-rui1": {
+  "file": "syl-rui1-54ad3529.mp3",
+  "dur": 905
+ },
+ "syl-rui2": {
+  "file": "syl-rui2-365a5aac.mp3",
+  "dur": 845
+ },
+ "syl-rui3": {
+  "file": "syl-rui3-d28d38a3.mp3",
+  "dur": 778
+ },
+ "syl-rui4": {
+  "file": "syl-rui4-5340fcd3.mp3",
+  "dur": 716
+ },
+ "syl-run1": {
+  "file": "syl-run1-57e87d25.mp3",
+  "dur": 829
+ },
+ "syl-run2": {
+  "file": "syl-run2-ab578233.mp3",
+  "dur": 995
+ },
+ "syl-run3": {
+  "file": "syl-run3-349091ce.mp3",
+  "dur": 884
+ },
+ "syl-run4": {
+  "file": "syl-run4-c9400d58.mp3",
+  "dur": 867
+ },
+ "syl-ruo1": {
+  "file": "syl-ruo1-3e4f8546.mp3",
+  "dur": 1114
+ },
+ "syl-ruo2": {
+  "file": "syl-ruo2-a87228d8.mp3",
+  "dur": 1009
+ },
+ "syl-ruo3": {
+  "file": "syl-ruo3-ac6a08fd.mp3",
+  "dur": 1066
+ },
+ "syl-ruo4": {
+  "file": "syl-ruo4-ea3442c7.mp3",
+  "dur": 820
+ },
+ "syl-sa1": {
+  "file": "syl-sa1-76674443.mp3",
+  "dur": 733
+ },
+ "syl-sa2": {
+  "file": "syl-sa2-ffb50fe1.mp3",
+  "dur": 1042
+ },
+ "syl-sa3": {
+  "file": "syl-sa3-4c6277f5.mp3",
+  "dur": 951
+ },
+ "syl-sa4": {
+  "file": "syl-sa4-099228ea.mp3",
+  "dur": 868
+ },
+ "syl-sai1": {
+  "file": "syl-sai1-c503ea2f.mp3",
+  "dur": 1123
+ },
+ "syl-sai2": {
+  "file": "syl-sai2-ab10c3ec.mp3",
+  "dur": 875
+ },
+ "syl-sai3": {
+  "file": "syl-sai3-570d31db.mp3",
+  "dur": 981
+ },
+ "syl-sai4": {
+  "file": "syl-sai4-31545403.mp3",
+  "dur": 786
+ },
+ "syl-san1": {
+  "file": "syl-san1-529ec5e0.mp3",
+  "dur": 779
+ },
+ "syl-san2": {
+  "file": "syl-san2-d2d0b95d.mp3",
+  "dur": 1137
+ },
+ "syl-san3": {
+  "file": "syl-san3-d07f69b3.mp3",
+  "dur": 1242
+ },
+ "syl-san4": {
+  "file": "syl-san4-349f4d45.mp3",
+  "dur": 880
+ },
+ "syl-sang1": {
+  "file": "syl-sang1-67173886.mp3",
+  "dur": 826
+ },
+ "syl-sang2": {
+  "file": "syl-sang2-6699ecfc.mp3",
+  "dur": 1050
+ },
+ "syl-sang3": {
+  "file": "syl-sang3-c1493d36.mp3",
+  "dur": 1119
+ },
+ "syl-sang4": {
+  "file": "syl-sang4-c13b0053.mp3",
+  "dur": 906
+ },
+ "syl-sao1": {
+  "file": "syl-sao1-fca0f485.mp3",
+  "dur": 719
+ },
+ "syl-sao2": {
+  "file": "syl-sao2-11268214.mp3",
+  "dur": 1136
+ },
+ "syl-sao3": {
+  "file": "syl-sao3-2dd3ae65.mp3",
+  "dur": 797
+ },
+ "syl-sao4": {
+  "file": "syl-sao4-91d91558.mp3",
+  "dur": 632
+ },
+ "syl-se1": {
+  "file": "syl-se1-8fc97fa7.mp3",
+  "dur": 883
+ },
+ "syl-se2": {
+  "file": "syl-se2-e370ec37.mp3",
+  "dur": 1115
+ },
+ "syl-se3": {
+  "file": "syl-se3-3cfd19fa.mp3",
+  "dur": 920
+ },
+ "syl-se4": {
+  "file": "syl-se4-5e9bf84c.mp3",
+  "dur": 676
+ },
+ "syl-sen1": {
+  "file": "syl-sen1-a71b54e2.mp3",
+  "dur": 777
+ },
+ "syl-sen2": {
+  "file": "syl-sen2-53b44d5c.mp3",
+  "dur": 1031
+ },
+ "syl-sen3": {
+  "file": "syl-sen3-197f3d11.mp3",
+  "dur": 878
+ },
+ "syl-sen4": {
+  "file": "syl-sen4-80a9e467.mp3",
+  "dur": 766
+ },
+ "syl-seng1": {
+  "file": "syl-seng1-1a823e13.mp3",
+  "dur": 809
+ },
+ "syl-seng2": {
+  "file": "syl-seng2-2f9aa86d.mp3",
+  "dur": 1090
+ },
+ "syl-seng3": {
+  "file": "syl-seng3-cc2e5748.mp3",
+  "dur": 720
+ },
+ "syl-seng4": {
+  "file": "syl-seng4-d558e198.mp3",
+  "dur": 920
+ },
+ "syl-sha1": {
+  "file": "syl-sha1-5fc69eeb.mp3",
+  "dur": 858
+ },
+ "syl-sha2": {
+  "file": "syl-sha2-8fd4671d.mp3",
+  "dur": 1086
+ },
+ "syl-sha3": {
+  "file": "syl-sha3-021a511d.mp3",
+  "dur": 1175
+ },
+ "syl-sha4": {
+  "file": "syl-sha4-4c031458.mp3",
+  "dur": 759
+ },
+ "syl-shai1": {
+  "file": "syl-shai1-145d1739.mp3",
+  "dur": 965
+ },
+ "syl-shai2": {
+  "file": "syl-shai2-c1ca8bb1.mp3",
+  "dur": 1100
+ },
+ "syl-shai3": {
+  "file": "syl-shai3-90866328.mp3",
+  "dur": 1280
+ },
+ "syl-shai4": {
+  "file": "syl-shai4-2317baf7.mp3",
+  "dur": 826
+ },
+ "syl-shan1": {
+  "file": "syl-shan1-e4af8f7a.mp3",
+  "dur": 889
+ },
+ "syl-shan2": {
+  "file": "syl-shan2-06ef4e2b.mp3",
+  "dur": 968
+ },
+ "syl-shan3": {
+  "file": "syl-shan3-d1b4167c.mp3",
+  "dur": 1171
+ },
+ "syl-shan4": {
+  "file": "syl-shan4-5382ed1e.mp3",
+  "dur": 857
+ },
+ "syl-shang1": {
+  "file": "syl-shang1-2e1b1060.mp3",
+  "dur": 892
+ },
+ "syl-shang2": {
+  "file": "syl-shang2-32b2eb72.mp3",
+  "dur": 870
+ },
+ "syl-shang3": {
+  "file": "syl-shang3-653f4348.mp3",
+  "dur": 1172
+ },
+ "syl-shang4": {
+  "file": "syl-shang4-b94b8003.mp3",
+  "dur": 934
+ },
+ "syl-shao1": {
+  "file": "syl-shao1-de79ca15.mp3",
+  "dur": 1024
+ },
+ "syl-shao2": {
+  "file": "syl-shao2-3d0fad4c.mp3",
+  "dur": 1088
+ },
+ "syl-shao3": {
+  "file": "syl-shao3-8d0051da.mp3",
+  "dur": 1236
+ },
+ "syl-shao4": {
+  "file": "syl-shao4-971e874e.mp3",
+  "dur": 711
+ },
+ "syl-she1": {
+  "file": "syl-she1-7f4b3eb8.mp3",
+  "dur": 1113
+ },
+ "syl-she2": {
+  "file": "syl-she2-dbd248fb.mp3",
+  "dur": 1011
+ },
+ "syl-she3": {
+  "file": "syl-she3-cdf0a924.mp3",
+  "dur": 1102
+ },
+ "syl-she4": {
+  "file": "syl-she4-66312b5f.mp3",
+  "dur": 863
+ },
+ "syl-shei1": {
+  "file": "syl-shei1-bdc92ade.mp3",
+  "dur": 964
+ },
+ "syl-shei2": {
+  "file": "syl-shei2-31d6a576.mp3",
+  "dur": 1137
+ },
+ "syl-shei3": {
+  "file": "syl-shei3-b161e468.mp3",
+  "dur": 1412
+ },
+ "syl-shei4": {
+  "file": "syl-shei4-5ce625a8.mp3",
+  "dur": 843
+ },
+ "syl-shen1": {
+  "file": "syl-shen1-b2ce1fae.mp3",
+  "dur": 887
+ },
+ "syl-shen2": {
+  "file": "syl-shen2-f5c9982b.mp3",
+  "dur": 1183
+ },
+ "syl-shen3": {
+  "file": "syl-shen3-895606a6.mp3",
+  "dur": 1109
+ },
+ "syl-shen4": {
+  "file": "syl-shen4-eb74fe0c.mp3",
+  "dur": 864
+ },
+ "syl-sheng1": {
+  "file": "syl-sheng1-59c4aba6.mp3",
+  "dur": 858
+ },
+ "syl-sheng2": {
+  "file": "syl-sheng2-4bc1ca51.mp3",
+  "dur": 996
+ },
+ "syl-sheng3": {
+  "file": "syl-sheng3-dd9164a6.mp3",
+  "dur": 920
+ },
+ "syl-sheng4": {
+  "file": "syl-sheng4-96bea8e8.mp3",
+  "dur": 759
+ },
+ "syl-shi1": {
+  "file": "syl-shi1-448e658b.mp3",
+  "dur": 1072
+ },
+ "syl-shi2": {
+  "file": "syl-shi2-67ab2579.mp3",
+  "dur": 1191
+ },
+ "syl-shi3": {
+  "file": "syl-shi3-32f17147.mp3",
+  "dur": 1276
+ },
+ "syl-shi4": {
+  "file": "syl-shi4-3da48694.mp3",
+  "dur": 808
+ },
+ "syl-shou1": {
+  "file": "syl-shou1-1ff0b2db.mp3",
+  "dur": 938
+ },
+ "syl-shou2": {
+  "file": "syl-shou2-1c205f30.mp3",
+  "dur": 1095
+ },
+ "syl-shou3": {
+  "file": "syl-shou3-f398df54.mp3",
+  "dur": 1152
+ },
+ "syl-shou4": {
+  "file": "syl-shou4-4c6c5adc.mp3",
+  "dur": 845
+ },
+ "syl-shu1": {
+  "file": "syl-shu1-293d18c1.mp3",
+  "dur": 1101
+ },
+ "syl-shu2": {
+  "file": "syl-shu2-3b3c74ef.mp3",
+  "dur": 1048
+ },
+ "syl-shu3": {
+  "file": "syl-shu3-82cdb53d.mp3",
+  "dur": 1257
+ },
+ "syl-shu4": {
+  "file": "syl-shu4-c3a15746.mp3",
+  "dur": 689
+ },
+ "syl-shua1": {
+  "file": "syl-shua1-47d6b12d.mp3",
+  "dur": 802
+ },
+ "syl-shua2": {
+  "file": "syl-shua2-974d5a0e.mp3",
+  "dur": 1130
+ },
+ "syl-shua3": {
+  "file": "syl-shua3-4bfd015c.mp3",
+  "dur": 1298
+ },
+ "syl-shua4": {
+  "file": "syl-shua4-d037b28c.mp3",
+  "dur": 883
+ },
+ "syl-shuai1": {
+  "file": "syl-shuai1-a16b6211.mp3",
+  "dur": 887
+ },
+ "syl-shuai2": {
+  "file": "syl-shuai2-fea87a88.mp3",
+  "dur": 1064
+ },
+ "syl-shuai3": {
+  "file": "syl-shuai3-68582012.mp3",
+  "dur": 1126
+ },
+ "syl-shuai4": {
+  "file": "syl-shuai4-fe27ea02.mp3",
+  "dur": 721
+ },
+ "syl-shuan1": {
+  "file": "syl-shuan1-88981046.mp3",
+  "dur": 871
+ },
+ "syl-shuan2": {
+  "file": "syl-shuan2-106f43ce.mp3",
+  "dur": 1115
+ },
+ "syl-shuan3": {
+  "file": "syl-shuan3-d6560585.mp3",
+  "dur": 1311
+ },
+ "syl-shuan4": {
+  "file": "syl-shuan4-196e0b2d.mp3",
+  "dur": 874
+ },
+ "syl-shuang1": {
+  "file": "syl-shuang1-fd5202e2.mp3",
+  "dur": 956
+ },
+ "syl-shuang2": {
+  "file": "syl-shuang2-1e38002e.mp3",
+  "dur": 1096
+ },
+ "syl-shuang3": {
+  "file": "syl-shuang3-ef18b039.mp3",
+  "dur": 1068
+ },
+ "syl-shuang4": {
+  "file": "syl-shuang4-7e279111.mp3",
+  "dur": 847
+ },
+ "syl-shui1": {
+  "file": "syl-shui1-bf04a531.mp3",
+  "dur": 995
+ },
+ "syl-shui2": {
+  "file": "syl-shui2-7c7448c6.mp3",
+  "dur": 1027
+ },
+ "syl-shui3": {
+  "file": "syl-shui3-70419e93.mp3",
+  "dur": 1088
+ },
+ "syl-shui4": {
+  "file": "syl-shui4-7a9dc339.mp3",
+  "dur": 877
+ },
+ "syl-shun1": {
+  "file": "syl-shun1-6420a84a.mp3",
+  "dur": 1087
+ },
+ "syl-shun2": {
+  "file": "syl-shun2-0cca0b9e.mp3",
+  "dur": 1040
+ },
+ "syl-shun3": {
+  "file": "syl-shun3-4dcf9658.mp3",
+  "dur": 991
+ },
+ "syl-shun4": {
+  "file": "syl-shun4-2cb5c2a2.mp3",
+  "dur": 774
+ },
+ "syl-shuo1": {
+  "file": "syl-shuo1-41ccd99c.mp3",
+  "dur": 918
+ },
+ "syl-shuo2": {
+  "file": "syl-shuo2-2112f8b1.mp3",
+  "dur": 1064
+ },
+ "syl-shuo3": {
+  "file": "syl-shuo3-76d316d3.mp3",
+  "dur": 1208
+ },
+ "syl-shuo4": {
+  "file": "syl-shuo4-39f32a34.mp3",
+  "dur": 857
+ },
+ "syl-si1": {
+  "file": "syl-si1-1f7455cc.mp3",
+  "dur": 1143
+ },
+ "syl-si2": {
+  "file": "syl-si2-5f402a3e.mp3",
+  "dur": 1094
+ },
+ "syl-si3": {
+  "file": "syl-si3-cf0c1b6d.mp3",
+  "dur": 1149
+ },
+ "syl-si4": {
+  "file": "syl-si4-08fb68ce.mp3",
+  "dur": 845
+ },
+ "syl-song1": {
+  "file": "syl-song1-dce03af1.mp3",
+  "dur": 1136
+ },
+ "syl-song2": {
+  "file": "syl-song2-56959233.mp3",
+  "dur": 1136
+ },
+ "syl-song3": {
+  "file": "syl-song3-e18f4a19.mp3",
+  "dur": 1049
+ },
+ "syl-song4": {
+  "file": "syl-song4-7fbf4f75.mp3",
+  "dur": 770
+ },
+ "syl-sou1": {
+  "file": "syl-sou1-83a9a55c.mp3",
+  "dur": 1029
+ },
+ "syl-sou2": {
+  "file": "syl-sou2-72fd601e.mp3",
+  "dur": 1086
+ },
+ "syl-sou3": {
+  "file": "syl-sou3-584059bb.mp3",
+  "dur": 1123
+ },
+ "syl-sou4": {
+  "file": "syl-sou4-057e782f.mp3",
+  "dur": 690
+ },
+ "syl-su1": {
+  "file": "syl-su1-0d84dd2b.mp3",
+  "dur": 1103
+ },
+ "syl-su2": {
+  "file": "syl-su2-78d076c5.mp3",
+  "dur": 1124
+ },
+ "syl-su3": {
+  "file": "syl-su3-86241479.mp3",
+  "dur": 1142
+ },
+ "syl-su4": {
+  "file": "syl-su4-b737f46a.mp3",
+  "dur": 636
+ },
+ "syl-suan1": {
+  "file": "syl-suan1-ce588769.mp3",
+  "dur": 1028
+ },
+ "syl-suan2": {
+  "file": "syl-suan2-a7c8f32e.mp3",
+  "dur": 1101
+ },
+ "syl-suan3": {
+  "file": "syl-suan3-0a746b75.mp3",
+  "dur": 1036
+ },
+ "syl-suan4": {
+  "file": "syl-suan4-5d61f651.mp3",
+  "dur": 923
+ },
+ "syl-sui1": {
+  "file": "syl-sui1-254d6ec8.mp3",
+  "dur": 941
+ },
+ "syl-sui2": {
+  "file": "syl-sui2-37a630ae.mp3",
+  "dur": 1097
+ },
+ "syl-sui3": {
+  "file": "syl-sui3-d51b44aa.mp3",
+  "dur": 865
+ },
+ "syl-sui4": {
+  "file": "syl-sui4-ecf38bb3.mp3",
+  "dur": 869
+ },
+ "syl-sun1": {
+  "file": "syl-sun1-be23b4e2.mp3",
+  "dur": 1124
+ },
+ "syl-sun2": {
+  "file": "syl-sun2-01c07d59.mp3",
+  "dur": 1126
+ },
+ "syl-sun3": {
+  "file": "syl-sun3-12742afe.mp3",
+  "dur": 1154
+ },
+ "syl-sun4": {
+  "file": "syl-sun4-180e4cc5.mp3",
+  "dur": 869
+ },
+ "syl-suo1": {
+  "file": "syl-suo1-683f2209.mp3",
+  "dur": 1130
+ },
+ "syl-suo2": {
+  "file": "syl-suo2-75cddac2.mp3",
+  "dur": 1056
+ },
+ "syl-suo3": {
+  "file": "syl-suo3-678f91e6.mp3",
+  "dur": 1129
+ },
+ "syl-suo4": {
+  "file": "syl-suo4-9c56b195.mp3",
+  "dur": 706
+ },
+ "syl-ta1": {
+  "file": "syl-ta1-58d6c16e.mp3",
+  "dur": 903
+ },
+ "syl-ta2": {
+  "file": "syl-ta2-95a09970.mp3",
+  "dur": 1043
+ },
+ "syl-ta3": {
+  "file": "syl-ta3-2b0550e2.mp3",
+  "dur": 815
+ },
+ "syl-ta4": {
+  "file": "syl-ta4-8c8d4138.mp3",
+  "dur": 628
+ },
+ "syl-tai1": {
+  "file": "syl-tai1-47446070.mp3",
+  "dur": 1053
+ },
+ "syl-tai2": {
+  "file": "syl-tai2-b889d692.mp3",
+  "dur": 1046
+ },
+ "syl-tai3": {
+  "file": "syl-tai3-c1196a92.mp3",
+  "dur": 1061
+ },
+ "syl-tai4": {
+  "file": "syl-tai4-608b8720.mp3",
+  "dur": 697
+ },
+ "syl-tan1": {
+  "file": "syl-tan1-72c08105.mp3",
+  "dur": 1018
+ },
+ "syl-tan2": {
+  "file": "syl-tan2-5eaf0f81.mp3",
+  "dur": 1099
+ },
+ "syl-tan3": {
+  "file": "syl-tan3-b7effb34.mp3",
+  "dur": 1119
+ },
+ "syl-tan4": {
+  "file": "syl-tan4-04eadb1a.mp3",
+  "dur": 685
+ },
+ "syl-tang1": {
+  "file": "syl-tang1-1cf6a59e.mp3",
+  "dur": 776
+ },
+ "syl-tang2": {
+  "file": "syl-tang2-9dc172a4.mp3",
+  "dur": 995
+ },
+ "syl-tang3": {
+  "file": "syl-tang3-19efc05f.mp3",
+  "dur": 836
+ },
+ "syl-tang4": {
+  "file": "syl-tang4-3ccbc344.mp3",
+  "dur": 561
+ },
+ "syl-tao1": {
+  "file": "syl-tao1-d18fc343.mp3",
+  "dur": 1034
+ },
+ "syl-tao2": {
+  "file": "syl-tao2-6875d94d.mp3",
+  "dur": 1000
+ },
+ "syl-tao3": {
+  "file": "syl-tao3-8747d669.mp3",
+  "dur": 906
+ },
+ "syl-tao4": {
+  "file": "syl-tao4-2e9b5bba.mp3",
+  "dur": 747
+ },
+ "syl-te1": {
+  "file": "syl-te1-d07c8d09.mp3",
+  "dur": 1046
+ },
+ "syl-te2": {
+  "file": "syl-te2-1c4191bc.mp3",
+  "dur": 958
+ },
+ "syl-te3": {
+  "file": "syl-te3-6ae1db9c.mp3",
+  "dur": 1067
+ },
+ "syl-te4": {
+  "file": "syl-te4-ea6c6f36.mp3",
+  "dur": 614
+ },
+ "syl-teng1": {
+  "file": "syl-teng1-81ad3766.mp3",
+  "dur": 748
+ },
+ "syl-teng2": {
+  "file": "syl-teng2-f10ab40a.mp3",
+  "dur": 1002
+ },
+ "syl-teng3": {
+  "file": "syl-teng3-b6724435.mp3",
+  "dur": 871
+ },
+ "syl-teng4": {
+  "file": "syl-teng4-22ba61ce.mp3",
+  "dur": 715
+ },
+ "syl-ti1": {
+  "file": "syl-ti1-f6ef4807.mp3",
+  "dur": 896
+ },
+ "syl-ti2": {
+  "file": "syl-ti2-42b58885.mp3",
+  "dur": 1096
+ },
+ "syl-ti3": {
+  "file": "syl-ti3-b9e756d6.mp3",
+  "dur": 1102
+ },
+ "syl-ti4": {
+  "file": "syl-ti4-2db58e3d.mp3",
+  "dur": 520
+ },
+ "syl-tian1": {
+  "file": "syl-tian1-4db89a55.mp3",
+  "dur": 866
+ },
+ "syl-tian2": {
+  "file": "syl-tian2-1bdc3bb0.mp3",
+  "dur": 895
+ },
+ "syl-tian3": {
+  "file": "syl-tian3-5d898956.mp3",
+  "dur": 995
+ },
+ "syl-tian4": {
+  "file": "syl-tian4-ac57b288.mp3",
+  "dur": 666
+ },
+ "syl-tiao1": {
+  "file": "syl-tiao1-a318eb01.mp3",
+  "dur": 644
+ },
+ "syl-tiao2": {
+  "file": "syl-tiao2-5f201a1d.mp3",
+  "dur": 997
+ },
+ "syl-tiao3": {
+  "file": "syl-tiao3-337efd0b.mp3",
+  "dur": 1101
+ },
+ "syl-tiao4": {
+  "file": "syl-tiao4-57271147.mp3",
+  "dur": 827
+ },
+ "syl-tie1": {
+  "file": "syl-tie1-77d9a77f.mp3",
+  "dur": 1026
+ },
+ "syl-tie2": {
+  "file": "syl-tie2-42a23c50.mp3",
+  "dur": 881
+ },
+ "syl-tie3": {
+  "file": "syl-tie3-c1cae9b3.mp3",
+  "dur": 905
+ },
+ "syl-tie4": {
+  "file": "syl-tie4-e5153438.mp3",
+  "dur": 742
+ },
+ "syl-ting1": {
+  "file": "syl-ting1-d73c0bf6.mp3",
+  "dur": 1068
+ },
+ "syl-ting2": {
+  "file": "syl-ting2-4f9ef4ac.mp3",
+  "dur": 1121
+ },
+ "syl-ting3": {
+  "file": "syl-ting3-e847ac6d.mp3",
+  "dur": 1101
+ },
+ "syl-ting4": {
+  "file": "syl-ting4-b6b8b2db.mp3",
+  "dur": 738
+ },
+ "syl-tong1": {
+  "file": "syl-tong1-2464da08.mp3",
+  "dur": 1041
+ },
+ "syl-tong2": {
+  "file": "syl-tong2-fd6e7fc4.mp3",
+  "dur": 1003
+ },
+ "syl-tong3": {
+  "file": "syl-tong3-7a1a1e38.mp3",
+  "dur": 1057
+ },
+ "syl-tong4": {
+  "file": "syl-tong4-d93c49cd.mp3",
+  "dur": 705
+ },
+ "syl-tou1": {
+  "file": "syl-tou1-73808f96.mp3",
+  "dur": 1089
+ },
+ "syl-tou2": {
+  "file": "syl-tou2-4f4ce510.mp3",
+  "dur": 991
+ },
+ "syl-tou3": {
+  "file": "syl-tou3-380e4968.mp3",
+  "dur": 986
+ },
+ "syl-tou4": {
+  "file": "syl-tou4-a3791681.mp3",
+  "dur": 725
+ },
+ "syl-tu1": {
+  "file": "syl-tu1-48c973fb.mp3",
+  "dur": 1030
+ },
+ "syl-tu2": {
+  "file": "syl-tu2-334c2f1c.mp3",
+  "dur": 953
+ },
+ "syl-tu3": {
+  "file": "syl-tu3-f6c6f53e.mp3",
+  "dur": 1050
+ },
+ "syl-tu4": {
+  "file": "syl-tu4-f2a836ad.mp3",
+  "dur": 582
+ },
+ "syl-tuan1": {
+  "file": "syl-tuan1-2ad02198.mp3",
+  "dur": 1103
+ },
+ "syl-tuan2": {
+  "file": "syl-tuan2-81db1e90.mp3",
+  "dur": 1031
+ },
+ "syl-tuan3": {
+  "file": "syl-tuan3-040e41e0.mp3",
+  "dur": 972
+ },
+ "syl-tuan4": {
+  "file": "syl-tuan4-6b06de49.mp3",
+  "dur": 638
+ },
+ "syl-tui1": {
+  "file": "syl-tui1-0a9dc6bc.mp3",
+  "dur": 1091
+ },
+ "syl-tui2": {
+  "file": "syl-tui2-a6366f42.mp3",
+  "dur": 838
+ },
+ "syl-tui3": {
+  "file": "syl-tui3-ee3b9615.mp3",
+  "dur": 1148
+ },
+ "syl-tui4": {
+  "file": "syl-tui4-df285d7b.mp3",
+  "dur": 743
+ },
+ "syl-tun1": {
+  "file": "syl-tun1-cc523de3.mp3",
+  "dur": 1070
+ },
+ "syl-tun2": {
+  "file": "syl-tun2-425f5e1f.mp3",
+  "dur": 1134
+ },
+ "syl-tun3": {
+  "file": "syl-tun3-252ab39a.mp3",
+  "dur": 1071
+ },
+ "syl-tun4": {
+  "file": "syl-tun4-73b542a3.mp3",
+  "dur": 666
+ },
+ "syl-tuo1": {
+  "file": "syl-tuo1-28670ee8.mp3",
+  "dur": 979
+ },
+ "syl-tuo2": {
+  "file": "syl-tuo2-bc5a3c0a.mp3",
+  "dur": 1023
+ },
+ "syl-tuo3": {
+  "file": "syl-tuo3-50623268.mp3",
+  "dur": 969
+ },
+ "syl-tuo4": {
+  "file": "syl-tuo4-d97d1bd7.mp3",
+  "dur": 638
+ },
+ "syl-wa1": {
+  "file": "syl-wa1-3039ff02.mp3",
+  "dur": 776
+ },
+ "syl-wa2": {
+  "file": "syl-wa2-f562181d.mp3",
+  "dur": 922
+ },
+ "syl-wa3": {
+  "file": "syl-wa3-d2b31cba.mp3",
+  "dur": 1085
+ },
+ "syl-wa4": {
+  "file": "syl-wa4-ae884dd1.mp3",
+  "dur": 644
+ },
+ "syl-wai1": {
+  "file": "syl-wai1-2a1dc717.mp3",
+  "dur": 849
+ },
+ "syl-wai2": {
+  "file": "syl-wai2-8d8b1961.mp3",
+  "dur": 846
+ },
+ "syl-wai3": {
+  "file": "syl-wai3-e1c42e54.mp3",
+  "dur": 1071
+ },
+ "syl-wai4": {
+  "file": "syl-wai4-d86b2400.mp3",
+  "dur": 718
+ },
+ "syl-wan1": {
+  "file": "syl-wan1-9400e201.mp3",
+  "dur": 662
+ },
+ "syl-wan2": {
+  "file": "syl-wan2-c937e9f2.mp3",
+  "dur": 848
+ },
+ "syl-wan3": {
+  "file": "syl-wan3-9a629661.mp3",
+  "dur": 1042
+ },
+ "syl-wan4": {
+  "file": "syl-wan4-592e2fc3.mp3",
+  "dur": 811
+ },
+ "syl-wang1": {
+  "file": "syl-wang1-5d21f89b.mp3",
+  "dur": 818
+ },
+ "syl-wang2": {
+  "file": "syl-wang2-87b52486.mp3",
+  "dur": 1053
+ },
+ "syl-wang3": {
+  "file": "syl-wang3-70a5017b.mp3",
+  "dur": 902
+ },
+ "syl-wang4": {
+  "file": "syl-wang4-103fd8e7.mp3",
+  "dur": 778
+ },
+ "syl-wei1": {
+  "file": "syl-wei1-f7e0172c.mp3",
+  "dur": 1023
+ },
+ "syl-wei2": {
+  "file": "syl-wei2-80625d72.mp3",
+  "dur": 1139
+ },
+ "syl-wei3": {
+  "file": "syl-wei3-f83b7d3b.mp3",
+  "dur": 1011
+ },
+ "syl-wei4": {
+  "file": "syl-wei4-9979229d.mp3",
+  "dur": 648
+ },
+ "syl-wen1": {
+  "file": "syl-wen1-11c91bad.mp3",
+  "dur": 873
+ },
+ "syl-wen2": {
+  "file": "syl-wen2-d75a909d.mp3",
+  "dur": 845
+ },
+ "syl-wen3": {
+  "file": "syl-wen3-a42d4985.mp3",
+  "dur": 1098
+ },
+ "syl-wen4": {
+  "file": "syl-wen4-a3e2e810.mp3",
+  "dur": 669
+ },
+ "syl-weng1": {
+  "file": "syl-weng1-83aabe10.mp3",
+  "dur": 802
+ },
+ "syl-weng2": {
+  "file": "syl-weng2-c29c4a61.mp3",
+  "dur": 1047
+ },
+ "syl-weng3": {
+  "file": "syl-weng3-d47fb974.mp3",
+  "dur": 1022
+ },
+ "syl-weng4": {
+  "file": "syl-weng4-b7faccca.mp3",
+  "dur": 691
+ },
+ "syl-wo1": {
+  "file": "syl-wo1-c0907c5f.mp3",
+  "dur": 824
+ },
+ "syl-wo2": {
+  "file": "syl-wo2-ed8bca83.mp3",
+  "dur": 991
+ },
+ "syl-wo3": {
+  "file": "syl-wo3-f2a897ad.mp3",
+  "dur": 908
+ },
+ "syl-wo4": {
+  "file": "syl-wo4-c8395329.mp3",
+  "dur": 674
+ },
+ "syl-wu1": {
+  "file": "syl-wu1-606b73f0.mp3",
+  "dur": 992
+ },
+ "syl-wu2": {
+  "file": "syl-wu2-59159cd5.mp3",
+  "dur": 898
+ },
+ "syl-wu3": {
+  "file": "syl-wu3-c8e559cc.mp3",
+  "dur": 1417
+ },
+ "syl-wu4": {
+  "file": "syl-wu4-6d2549bb.mp3",
+  "dur": 740
+ },
+ "syl-xi1": {
+  "file": "syl-xi1-08345b96.mp3",
+  "dur": 978
+ },
+ "syl-xi2": {
+  "file": "syl-xi2-e9cee13e.mp3",
+  "dur": 1147
+ },
+ "syl-xi3": {
+  "file": "syl-xi3-edee6b85.mp3",
+  "dur": 1366
+ },
+ "syl-xi4": {
+  "file": "syl-xi4-b8a293e3.mp3",
+  "dur": 828
+ },
+ "syl-xia1": {
+  "file": "syl-xia1-d05b2707.mp3",
+  "dur": 688
+ },
+ "syl-xia2": {
+  "file": "syl-xia2-292e4ba1.mp3",
+  "dur": 1040
+ },
+ "syl-xia3": {
+  "file": "syl-xia3-7bff2a26.mp3",
+  "dur": 1155
+ },
+ "syl-xia4": {
+  "file": "syl-xia4-d61a8cc3.mp3",
+  "dur": 788
+ },
+ "syl-xian1": {
+  "file": "syl-xian1-812f1c86.mp3",
+  "dur": 931
+ },
+ "syl-xian2": {
+  "file": "syl-xian2-4fd3baf4.mp3",
+  "dur": 1154
+ },
+ "syl-xian3": {
+  "file": "syl-xian3-c6db9e65.mp3",
+  "dur": 1516
+ },
+ "syl-xian4": {
+  "file": "syl-xian4-a7600b87.mp3",
+  "dur": 827
+ },
+ "syl-xiang1": {
+  "file": "syl-xiang1-69a992d0.mp3",
+  "dur": 955
+ },
+ "syl-xiang2": {
+  "file": "syl-xiang2-dfc80dfb.mp3",
+  "dur": 1081
+ },
+ "syl-xiang3": {
+  "file": "syl-xiang3-8037859c.mp3",
+  "dur": 1239
+ },
+ "syl-xiang4": {
+  "file": "syl-xiang4-fcdcd954.mp3",
+  "dur": 863
+ },
+ "syl-xiao1": {
+  "file": "syl-xiao1-723897c4.mp3",
+  "dur": 1036
+ },
+ "syl-xiao2": {
+  "file": "syl-xiao2-d67c5c36.mp3",
+  "dur": 1234
+ },
+ "syl-xiao3": {
+  "file": "syl-xiao3-fd7cc43e.mp3",
+  "dur": 1204
+ },
+ "syl-xiao4": {
+  "file": "syl-xiao4-724297cb.mp3",
+  "dur": 754
+ },
+ "syl-xie1": {
+  "file": "syl-xie1-0297c108.mp3",
+  "dur": 1166
+ },
+ "syl-xie2": {
+  "file": "syl-xie2-bc3f4f1a.mp3",
+  "dur": 1126
+ },
+ "syl-xie3": {
+  "file": "syl-xie3-f2206ab1.mp3",
+  "dur": 1034
+ },
+ "syl-xie4": {
+  "file": "syl-xie4-adb36d33.mp3",
+  "dur": 873
+ },
+ "syl-xin1": {
+  "file": "syl-xin1-e714c0c3.mp3",
+  "dur": 1001
+ },
+ "syl-xin2": {
+  "file": "syl-xin2-9d4182fd.mp3",
+  "dur": 1097
+ },
+ "syl-xin3": {
+  "file": "syl-xin3-2ff390e7.mp3",
+  "dur": 945
+ },
+ "syl-xin4": {
+  "file": "syl-xin4-51f6d33f.mp3",
+  "dur": 877
+ },
+ "syl-xing1": {
+  "file": "syl-xing1-684f791e.mp3",
+  "dur": 1006
+ },
+ "syl-xing2": {
+  "file": "syl-xing2-2171b663.mp3",
+  "dur": 1025
+ },
+ "syl-xing3": {
+  "file": "syl-xing3-1d425edb.mp3",
+  "dur": 1286
+ },
+ "syl-xing4": {
+  "file": "syl-xing4-2f457a7e.mp3",
+  "dur": 947
+ },
+ "syl-xiong1": {
+  "file": "syl-xiong1-b84e2e8f.mp3",
+  "dur": 922
+ },
+ "syl-xiong2": {
+  "file": "syl-xiong2-438f50cf.mp3",
+  "dur": 1016
+ },
+ "syl-xiong3": {
+  "file": "syl-xiong3-0c8f4d57.mp3",
+  "dur": 1177
+ },
+ "syl-xiong4": {
+  "file": "syl-xiong4-9b1c7637.mp3",
+  "dur": 712
+ },
+ "syl-xiu1": {
+  "file": "syl-xiu1-d6ebf17e.mp3",
+  "dur": 1098
+ },
+ "syl-xiu2": {
+  "file": "syl-xiu2-98bcaa0a.mp3",
+  "dur": 854
+ },
+ "syl-xiu3": {
+  "file": "syl-xiu3-6fe3f832.mp3",
+  "dur": 1174
+ },
+ "syl-xiu4": {
+  "file": "syl-xiu4-e4e363c6.mp3",
+  "dur": 815
+ },
+ "syl-xu1": {
+  "file": "syl-xu1-d487fecb.mp3",
+  "dur": 1060
+ },
+ "syl-xu2": {
+  "file": "syl-xu2-640bb3a4.mp3",
+  "dur": 1095
+ },
+ "syl-xu3": {
+  "file": "syl-xu3-bd0e8e5c.mp3",
+  "dur": 1308
+ },
+ "syl-xu4": {
+  "file": "syl-xu4-3158dcd9.mp3",
+  "dur": 872
+ },
+ "syl-xuan1": {
+  "file": "syl-xuan1-a5c6fa40.mp3",
+  "dur": 1094
+ },
+ "syl-xuan2": {
+  "file": "syl-xuan2-5f442366.mp3",
+  "dur": 1030
+ },
+ "syl-xuan3": {
+  "file": "syl-xuan3-e2338b75.mp3",
+  "dur": 1368
+ },
+ "syl-xuan4": {
+  "file": "syl-xuan4-8ac6862a.mp3",
+  "dur": 897
+ },
+ "syl-xue1": {
+  "file": "syl-xue1-4d2b8184.mp3",
+  "dur": 1035
+ },
+ "syl-xue2": {
+  "file": "syl-xue2-bc57485f.mp3",
+  "dur": 989
+ },
+ "syl-xue3": {
+  "file": "syl-xue3-a23a25d7.mp3",
+  "dur": 1170
+ },
+ "syl-xue4": {
+  "file": "syl-xue4-e4b50136.mp3",
+  "dur": 691
+ },
+ "syl-xun1": {
+  "file": "syl-xun1-75358c8b.mp3",
+  "dur": 1047
+ },
+ "syl-xun2": {
+  "file": "syl-xun2-89be0899.mp3",
+  "dur": 1091
+ },
+ "syl-xun3": {
+  "file": "syl-xun3-ef469e7d.mp3",
+  "dur": 1382
+ },
+ "syl-xun4": {
+  "file": "syl-xun4-09fc4854.mp3",
+  "dur": 928
+ },
+ "syl-ya1": {
+  "file": "syl-ya1-7c5f1119.mp3",
+  "dur": 1048
+ },
+ "syl-ya2": {
+  "file": "syl-ya2-ccb96f0c.mp3",
+  "dur": 1093
+ },
+ "syl-ya3": {
+  "file": "syl-ya3-3703e36d.mp3",
+  "dur": 1164
+ },
+ "syl-ya4": {
+  "file": "syl-ya4-6e417831.mp3",
+  "dur": 763
+ },
+ "syl-yan1": {
+  "file": "syl-yan1-8e5662e7.mp3",
+  "dur": 762
+ },
+ "syl-yan2": {
+  "file": "syl-yan2-8d586134.mp3",
+  "dur": 754
+ },
+ "syl-yan3": {
+  "file": "syl-yan3-27e80b3d.mp3",
+  "dur": 823
+ },
+ "syl-yan4": {
+  "file": "syl-yan4-79a8c8e2.mp3",
+  "dur": 754
+ },
+ "syl-yang1": {
+  "file": "syl-yang1-ebe1e660.mp3",
+  "dur": 807
+ },
+ "syl-yang2": {
+  "file": "syl-yang2-a8fca766.mp3",
+  "dur": 926
+ },
+ "syl-yang3": {
+  "file": "syl-yang3-6e654d5d.mp3",
+  "dur": 1125
+ },
+ "syl-yang4": {
+  "file": "syl-yang4-7cd8eb45.mp3",
+  "dur": 747
+ },
+ "syl-yao1": {
+  "file": "syl-yao1-b0abd512.mp3",
+  "dur": 787
+ },
+ "syl-yao2": {
+  "file": "syl-yao2-2f0aeacc.mp3",
+  "dur": 824
+ },
+ "syl-yao3": {
+  "file": "syl-yao3-33a55f6b.mp3",
+  "dur": 882
+ },
+ "syl-yao4": {
+  "file": "syl-yao4-467003d1.mp3",
+  "dur": 823
+ },
+ "syl-ye1": {
+  "file": "syl-ye1-62112117.mp3",
+  "dur": 1011
+ },
+ "syl-ye2": {
+  "file": "syl-ye2-5c99a0f0.mp3",
+  "dur": 811
+ },
+ "syl-ye3": {
+  "file": "syl-ye3-23e153b0.mp3",
+  "dur": 979
+ },
+ "syl-ye4": {
+  "file": "syl-ye4-51e330fb.mp3",
+  "dur": 713
+ },
+ "syl-yi1": {
+  "file": "syl-yi1-1ca8b9a6.mp3",
+  "dur": 998
+ },
+ "syl-yi2": {
+  "file": "syl-yi2-19acfe28.mp3",
+  "dur": 1002
+ },
+ "syl-yi3": {
+  "file": "syl-yi3-d08217d9.mp3",
+  "dur": 1024
+ },
+ "syl-yi4": {
+  "file": "syl-yi4-f28bcb38.mp3",
+  "dur": 625
+ },
+ "syl-yin1": {
+  "file": "syl-yin1-23517c4f.mp3",
+  "dur": 708
+ },
+ "syl-yin2": {
+  "file": "syl-yin2-7d0445c8.mp3",
+  "dur": 1000
+ },
+ "syl-yin3": {
+  "file": "syl-yin3-2eeb1d66.mp3",
+  "dur": 1053
+ },
+ "syl-yin4": {
+  "file": "syl-yin4-b41c1233.mp3",
+  "dur": 719
+ },
+ "syl-ying1": {
+  "file": "syl-ying1-9a0ed28d.mp3",
+  "dur": 814
+ },
+ "syl-ying2": {
+  "file": "syl-ying2-f2823e84.mp3",
+  "dur": 869
+ },
+ "syl-ying3": {
+  "file": "syl-ying3-396f328a.mp3",
+  "dur": 956
+ },
+ "syl-ying4": {
+  "file": "syl-ying4-2f01b57c.mp3",
+  "dur": 588
+ },
+ "syl-yong1": {
+  "file": "syl-yong1-d9bde31d.mp3",
+  "dur": 1004
+ },
+ "syl-yong2": {
+  "file": "syl-yong2-8aa1610f.mp3",
+  "dur": 958
+ },
+ "syl-yong3": {
+  "file": "syl-yong3-341edea9.mp3",
+  "dur": 815
+ },
+ "syl-yong4": {
+  "file": "syl-yong4-f36a36d5.mp3",
+  "dur": 723
+ },
+ "syl-you1": {
+  "file": "syl-you1-8d078848.mp3",
+  "dur": 968
+ },
+ "syl-you2": {
+  "file": "syl-you2-7131212f.mp3",
+  "dur": 850
+ },
+ "syl-you3": {
+  "file": "syl-you3-b5cb5eb4.mp3",
+  "dur": 1005
+ },
+ "syl-you4": {
+  "file": "syl-you4-553dd863.mp3",
+  "dur": 746
+ },
+ "syl-yu1": {
+  "file": "syl-yu1-72a99f61.mp3",
+  "dur": 839
+ },
+ "syl-yu2": {
+  "file": "syl-yu2-3b32bb60.mp3",
+  "dur": 834
+ },
+ "syl-yu3": {
+  "file": "syl-yu3-7e70722e.mp3",
+  "dur": 810
+ },
+ "syl-yu4": {
+  "file": "syl-yu4-ba699237.mp3",
+  "dur": 741
+ },
+ "syl-yuan1": {
+  "file": "syl-yuan1-1e9a32c7.mp3",
+  "dur": 974
+ },
+ "syl-yuan2": {
+  "file": "syl-yuan2-bd75d73c.mp3",
+  "dur": 949
+ },
+ "syl-yuan3": {
+  "file": "syl-yuan3-e05aa89b.mp3",
+  "dur": 1122
+ },
+ "syl-yuan4": {
+  "file": "syl-yuan4-9e10ad22.mp3",
+  "dur": 642
+ },
+ "syl-yue1": {
+  "file": "syl-yue1-1dfd83b7.mp3",
+  "dur": 857
+ },
+ "syl-yue2": {
+  "file": "syl-yue2-cca71215.mp3",
+  "dur": 996
+ },
+ "syl-yue3": {
+  "file": "syl-yue3-4e4c53e5.mp3",
+  "dur": 1070
+ },
+ "syl-yue4": {
+  "file": "syl-yue4-499152dc.mp3",
+  "dur": 723
+ },
+ "syl-yun1": {
+  "file": "syl-yun1-0a00ff9d.mp3",
+  "dur": 978
+ },
+ "syl-yun2": {
+  "file": "syl-yun2-61a58b0f.mp3",
+  "dur": 904
+ },
+ "syl-yun3": {
+  "file": "syl-yun3-31de2dcb.mp3",
+  "dur": 959
+ },
+ "syl-yun4": {
+  "file": "syl-yun4-578e1894.mp3",
+  "dur": 730
+ },
+ "syl-za1": {
+  "file": "syl-za1-ba095a5f.mp3",
+  "dur": 1034
+ },
+ "syl-za2": {
+  "file": "syl-za2-0514a6d5.mp3",
+  "dur": 776
+ },
+ "syl-za3": {
+  "file": "syl-za3-3403613d.mp3",
+  "dur": 970
+ },
+ "syl-za4": {
+  "file": "syl-za4-2afcf531.mp3",
+  "dur": 718
+ },
+ "syl-zai1": {
+  "file": "syl-zai1-23af82a3.mp3",
+  "dur": 789
+ },
+ "syl-zai2": {
+  "file": "syl-zai2-6f7b2523.mp3",
+  "dur": 735
+ },
+ "syl-zai3": {
+  "file": "syl-zai3-23e42cbb.mp3",
+  "dur": 1133
+ },
+ "syl-zai4": {
+  "file": "syl-zai4-bb1fbe22.mp3",
+  "dur": 678
+ },
+ "syl-zan1": {
+  "file": "syl-zan1-7b9b33a0.mp3",
+  "dur": 815
+ },
+ "syl-zan2": {
+  "file": "syl-zan2-ec91bbcb.mp3",
+  "dur": 813
+ },
+ "syl-zan3": {
+  "file": "syl-zan3-37fb3663.mp3",
+  "dur": 966
+ },
+ "syl-zan4": {
+  "file": "syl-zan4-692295dd.mp3",
+  "dur": 693
+ },
+ "syl-zang1": {
+  "file": "syl-zang1-e414142b.mp3",
+  "dur": 954
+ },
+ "syl-zang2": {
+  "file": "syl-zang2-19b242ea.mp3",
+  "dur": 942
+ },
+ "syl-zang3": {
+  "file": "syl-zang3-d9540ca7.mp3",
+  "dur": 1053
+ },
+ "syl-zang4": {
+  "file": "syl-zang4-2f25ff7c.mp3",
+  "dur": 695
+ },
+ "syl-zao1": {
+  "file": "syl-zao1-f3fd6576.mp3",
+  "dur": 698
+ },
+ "syl-zao2": {
+  "file": "syl-zao2-98d12304.mp3",
+  "dur": 747
+ },
+ "syl-zao3": {
+  "file": "syl-zao3-482c5f4c.mp3",
+  "dur": 1007
+ },
+ "syl-zao4": {
+  "file": "syl-zao4-017f87cf.mp3",
+  "dur": 729
+ },
+ "syl-ze1": {
+  "file": "syl-ze1-c9d94471.mp3",
+  "dur": 948
+ },
+ "syl-ze2": {
+  "file": "syl-ze2-294af2c0.mp3",
+  "dur": 904
+ },
+ "syl-ze3": {
+  "file": "syl-ze3-a4503222.mp3",
+  "dur": 1124
+ },
+ "syl-ze4": {
+  "file": "syl-ze4-26bc52da.mp3",
+  "dur": 704
+ },
+ "syl-zei1": {
+  "file": "syl-zei1-ff3e0ec9.mp3",
+  "dur": 974
+ },
+ "syl-zei2": {
+  "file": "syl-zei2-69150935.mp3",
+  "dur": 1092
+ },
+ "syl-zei3": {
+  "file": "syl-zei3-60da1eca.mp3",
+  "dur": 894
+ },
+ "syl-zei4": {
+  "file": "syl-zei4-95a771d3.mp3",
+  "dur": 624
+ },
+ "syl-zen1": {
+  "file": "syl-zen1-20457b8a.mp3",
+  "dur": 968
+ },
+ "syl-zen2": {
+  "file": "syl-zen2-cc95f04d.mp3",
+  "dur": 889
+ },
+ "syl-zen3": {
+  "file": "syl-zen3-966bc382.mp3",
+  "dur": 1021
+ },
+ "syl-zen4": {
+  "file": "syl-zen4-80b02e92.mp3",
+  "dur": 753
+ },
+ "syl-zeng1": {
+  "file": "syl-zeng1-f719e069.mp3",
+  "dur": 665
+ },
+ "syl-zeng2": {
+  "file": "syl-zeng2-6910b426.mp3",
+  "dur": 935
+ },
+ "syl-zeng3": {
+  "file": "syl-zeng3-5ea6304f.mp3",
+  "dur": 1096
+ },
+ "syl-zeng4": {
+  "file": "syl-zeng4-d62cfbff.mp3",
+  "dur": 606
+ },
+ "syl-zha1": {
+  "file": "syl-zha1-163d9c34.mp3",
+  "dur": 813
+ },
+ "syl-zha2": {
+  "file": "syl-zha2-7c239ddf.mp3",
+  "dur": 791
+ },
+ "syl-zha3": {
+  "file": "syl-zha3-b951d369.mp3",
+  "dur": 1105
+ },
+ "syl-zha4": {
+  "file": "syl-zha4-297bc839.mp3",
+  "dur": 692
+ },
+ "syl-zhai1": {
+  "file": "syl-zhai1-b4c6799b.mp3",
+  "dur": 892
+ },
+ "syl-zhai2": {
+  "file": "syl-zhai2-982cb16f.mp3",
+  "dur": 847
+ },
+ "syl-zhai3": {
+  "file": "syl-zhai3-6c5cf1cf.mp3",
+  "dur": 1406
+ },
+ "syl-zhai4": {
+  "file": "syl-zhai4-479a518f.mp3",
+  "dur": 725
+ },
+ "syl-zhan1": {
+  "file": "syl-zhan1-e373c63e.mp3",
+  "dur": 769
+ },
+ "syl-zhan2": {
+  "file": "syl-zhan2-47534e75.mp3",
+  "dur": 986
+ },
+ "syl-zhan3": {
+  "file": "syl-zhan3-9cdc2842.mp3",
+  "dur": 1197
+ },
+ "syl-zhan4": {
+  "file": "syl-zhan4-18cbadea.mp3",
+  "dur": 756
+ },
+ "syl-zhang1": {
+  "file": "syl-zhang1-48d7d5b7.mp3",
+  "dur": 925
+ },
+ "syl-zhang2": {
+  "file": "syl-zhang2-401beaa9.mp3",
+  "dur": 808
+ },
+ "syl-zhang3": {
+  "file": "syl-zhang3-0f36fc7a.mp3",
+  "dur": 916
+ },
+ "syl-zhang4": {
+  "file": "syl-zhang4-ba3fe71c.mp3",
+  "dur": 709
+ },
+ "syl-zhao1": {
+  "file": "syl-zhao1-abd47293.mp3",
+  "dur": 994
+ },
+ "syl-zhao2": {
+  "file": "syl-zhao2-bf36306c.mp3",
+  "dur": 1074
+ },
+ "syl-zhao3": {
+  "file": "syl-zhao3-b6cb7aa1.mp3",
+  "dur": 1103
+ },
+ "syl-zhao4": {
+  "file": "syl-zhao4-c8400e86.mp3",
+  "dur": 565
+ },
+ "syl-zhe1": {
+  "file": "syl-zhe1-0ba3f917.mp3",
+  "dur": 853
+ },
+ "syl-zhe2": {
+  "file": "syl-zhe2-695fa3d6.mp3",
+  "dur": 944
+ },
+ "syl-zhe3": {
+  "file": "syl-zhe3-9bdb2694.mp3",
+  "dur": 1214
+ },
+ "syl-zhe4": {
+  "file": "syl-zhe4-31bcdaa1.mp3",
+  "dur": 602
+ },
+ "syl-zhei1": {
+  "file": "syl-zhei1-5a3e474b.mp3",
+  "dur": 942
+ },
+ "syl-zhei2": {
+  "file": "syl-zhei2-bb6e276f.mp3",
+  "dur": 839
+ },
+ "syl-zhei3": {
+  "file": "syl-zhei3-411a81ff.mp3",
+  "dur": 981
+ },
+ "syl-zhei4": {
+  "file": "syl-zhei4-cd8a6490.mp3",
+  "dur": 732
+ },
+ "syl-zhen1": {
+  "file": "syl-zhen1-43178019.mp3",
+  "dur": 790
+ },
+ "syl-zhen2": {
+  "file": "syl-zhen2-a221cf14.mp3",
+  "dur": 820
+ },
+ "syl-zhen3": {
+  "file": "syl-zhen3-7d7d60d0.mp3",
+  "dur": 1113
+ },
+ "syl-zhen4": {
+  "file": "syl-zhen4-9e4a6235.mp3",
+  "dur": 583
+ },
+ "syl-zheng1": {
+  "file": "syl-zheng1-d37306a0.mp3",
+  "dur": 873
+ },
+ "syl-zheng2": {
+  "file": "syl-zheng2-24825c4b.mp3",
+  "dur": 959
+ },
+ "syl-zheng3": {
+  "file": "syl-zheng3-ba4864af.mp3",
+  "dur": 1413
+ },
+ "syl-zheng4": {
+  "file": "syl-zheng4-2fa1036a.mp3",
+  "dur": 715
+ },
+ "syl-zhi1": {
+  "file": "syl-zhi1-ef74feb4.mp3",
+  "dur": 1007
+ },
+ "syl-zhi2": {
+  "file": "syl-zhi2-967989eb.mp3",
+  "dur": 1001
+ },
+ "syl-zhi3": {
+  "file": "syl-zhi3-cd8c0173.mp3",
+  "dur": 1033
+ },
+ "syl-zhi4": {
+  "file": "syl-zhi4-5f36686c.mp3",
+  "dur": 617
+ },
+ "syl-zhong1": {
+  "file": "syl-zhong1-ad8d3698.mp3",
+  "dur": 808
+ },
+ "syl-zhong2": {
+  "file": "syl-zhong2-ec39b991.mp3",
+  "dur": 1000
+ },
+ "syl-zhong3": {
+  "file": "syl-zhong3-29d06f1f.mp3",
+  "dur": 1011
+ },
+ "syl-zhong4": {
+  "file": "syl-zhong4-98fd6a34.mp3",
+  "dur": 622
+ },
+ "syl-zhou1": {
+  "file": "syl-zhou1-68b67c8f.mp3",
+  "dur": 663
+ },
+ "syl-zhou2": {
+  "file": "syl-zhou2-06765596.mp3",
+  "dur": 872
+ },
+ "syl-zhou3": {
+  "file": "syl-zhou3-524ae159.mp3",
+  "dur": 1122
+ },
+ "syl-zhou4": {
+  "file": "syl-zhou4-fa52bb95.mp3",
+  "dur": 779
+ },
+ "syl-zhu1": {
+  "file": "syl-zhu1-1ce9933e.mp3",
+  "dur": 830
+ },
+ "syl-zhu2": {
+  "file": "syl-zhu2-cd85e309.mp3",
+  "dur": 945
+ },
+ "syl-zhu3": {
+  "file": "syl-zhu3-e53293a5.mp3",
+  "dur": 1052
+ },
+ "syl-zhu4": {
+  "file": "syl-zhu4-46e5549e.mp3",
+  "dur": 599
+ },
+ "syl-zhua1": {
+  "file": "syl-zhua1-0847d848.mp3",
+  "dur": 845
+ },
+ "syl-zhua2": {
+  "file": "syl-zhua2-639832dc.mp3",
+  "dur": 788
+ },
+ "syl-zhua3": {
+  "file": "syl-zhua3-d7d10e21.mp3",
+  "dur": 934
+ },
+ "syl-zhua4": {
+  "file": "syl-zhua4-36581e32.mp3",
+  "dur": 682
+ },
+ "syl-zhuai1": {
+  "file": "syl-zhuai1-b0d707b3.mp3",
+  "dur": 762
+ },
+ "syl-zhuai2": {
+  "file": "syl-zhuai2-609d0c04.mp3",
+  "dur": 1136
+ },
+ "syl-zhuai3": {
+  "file": "syl-zhuai3-4c284050.mp3",
+  "dur": 1160
+ },
+ "syl-zhuai4": {
+  "file": "syl-zhuai4-31bf85b5.mp3",
+  "dur": 724
+ },
+ "syl-zhuan1": {
+  "file": "syl-zhuan1-e8e104ba.mp3",
+  "dur": 855
+ },
+ "syl-zhuan2": {
+  "file": "syl-zhuan2-30d20a6e.mp3",
+  "dur": 868
+ },
+ "syl-zhuan3": {
+  "file": "syl-zhuan3-68d1ebe3.mp3",
+  "dur": 1204
+ },
+ "syl-zhuan4": {
+  "file": "syl-zhuan4-550c075f.mp3",
+  "dur": 757
+ },
+ "syl-zhuang1": {
+  "file": "syl-zhuang1-2102c1ae.mp3",
+  "dur": 1124
+ },
+ "syl-zhuang2": {
+  "file": "syl-zhuang2-d08057d9.mp3",
+  "dur": 1070
+ },
+ "syl-zhuang3": {
+  "file": "syl-zhuang3-cefe0413.mp3",
+  "dur": 981
+ },
+ "syl-zhuang4": {
+  "file": "syl-zhuang4-43ab1021.mp3",
+  "dur": 599
+ },
+ "syl-zhui1": {
+  "file": "syl-zhui1-b9206af7.mp3",
+  "dur": 1013
+ },
+ "syl-zhui2": {
+  "file": "syl-zhui2-907eb84e.mp3",
+  "dur": 803
+ },
+ "syl-zhui3": {
+  "file": "syl-zhui3-3a2db558.mp3",
+  "dur": 1218
+ },
+ "syl-zhui4": {
+  "file": "syl-zhui4-e4e6416b.mp3",
+  "dur": 697
+ },
+ "syl-zhun1": {
+  "file": "syl-zhun1-925f619d.mp3",
+  "dur": 1098
+ },
+ "syl-zhun2": {
+  "file": "syl-zhun2-ec46fa9a.mp3",
+  "dur": 895
+ },
+ "syl-zhun3": {
+  "file": "syl-zhun3-a1157241.mp3",
+  "dur": 1157
+ },
+ "syl-zhun4": {
+  "file": "syl-zhun4-588ad359.mp3",
+  "dur": 734
+ },
+ "syl-zhuo1": {
+  "file": "syl-zhuo1-12d4d8a9.mp3",
+  "dur": 767
+ },
+ "syl-zhuo2": {
+  "file": "syl-zhuo2-9025dc96.mp3",
+  "dur": 976
+ },
+ "syl-zhuo3": {
+  "file": "syl-zhuo3-fcf8405d.mp3",
+  "dur": 878
+ },
+ "syl-zhuo4": {
+  "file": "syl-zhuo4-d35e7c33.mp3",
+  "dur": 719
+ },
+ "syl-zi1": {
+  "file": "syl-zi1-1dc1d14a.mp3",
+  "dur": 1005
+ },
+ "syl-zi2": {
+  "file": "syl-zi2-f383554c.mp3",
+  "dur": 1016
+ },
+ "syl-zi3": {
+  "file": "syl-zi3-ad46fb1f.mp3",
+  "dur": 1089
+ },
+ "syl-zi4": {
+  "file": "syl-zi4-d872be87.mp3",
+  "dur": 753
+ },
+ "syl-zong1": {
+  "file": "syl-zong1-44a5f760.mp3",
+  "dur": 762
+ },
+ "syl-zong2": {
+  "file": "syl-zong2-780da4b5.mp3",
+  "dur": 937
+ },
+ "syl-zong3": {
+  "file": "syl-zong3-f428b19a.mp3",
+  "dur": 1148
+ },
+ "syl-zong4": {
+  "file": "syl-zong4-2363a0c9.mp3",
+  "dur": 706
+ },
+ "syl-zou1": {
+  "file": "syl-zou1-3518e94e.mp3",
+  "dur": 786
+ },
+ "syl-zou2": {
+  "file": "syl-zou2-c2ddeec0.mp3",
+  "dur": 1075
+ },
+ "syl-zou3": {
+  "file": "syl-zou3-24a7323d.mp3",
+  "dur": 1094
+ },
+ "syl-zou4": {
+  "file": "syl-zou4-cd9a84f6.mp3",
+  "dur": 687
+ },
+ "syl-zu1": {
+  "file": "syl-zu1-074cd3c7.mp3",
+  "dur": 1086
+ },
+ "syl-zu2": {
+  "file": "syl-zu2-d2196608.mp3",
+  "dur": 1049
+ },
+ "syl-zu3": {
+  "file": "syl-zu3-0ea356a5.mp3",
+  "dur": 995
+ },
+ "syl-zu4": {
+  "file": "syl-zu4-c82065c8.mp3",
+  "dur": 696
+ },
+ "syl-zuan1": {
+  "file": "syl-zuan1-d3d73815.mp3",
+  "dur": 964
+ },
+ "syl-zuan2": {
+  "file": "syl-zuan2-d0fffe35.mp3",
+  "dur": 895
+ },
+ "syl-zuan3": {
+  "file": "syl-zuan3-c6db7ea1.mp3",
+  "dur": 833
+ },
+ "syl-zuan4": {
+  "file": "syl-zuan4-b06069a0.mp3",
+  "dur": 801
+ },
+ "syl-zui1": {
+  "file": "syl-zui1-04ec293a.mp3",
+  "dur": 816
+ },
+ "syl-zui2": {
+  "file": "syl-zui2-e2ee5b76.mp3",
+  "dur": 1046
+ },
+ "syl-zui3": {
+  "file": "syl-zui3-3c244d1d.mp3",
+  "dur": 1127
+ },
+ "syl-zui4": {
+  "file": "syl-zui4-6d787a39.mp3",
+  "dur": 691
+ },
+ "syl-zun1": {
+  "file": "syl-zun1-2c8780d1.mp3",
+  "dur": 1054
+ },
+ "syl-zun2": {
+  "file": "syl-zun2-2307f8f7.mp3",
+  "dur": 924
+ },
+ "syl-zun3": {
+  "file": "syl-zun3-7518a24c.mp3",
+  "dur": 1151
+ },
+ "syl-zun4": {
+  "file": "syl-zun4-3fbd8bf4.mp3",
+  "dur": 543
+ },
+ "syl-zuo1": {
+  "file": "syl-zuo1-971c0538.mp3",
+  "dur": 1023
+ },
+ "syl-zuo2": {
+  "file": "syl-zuo2-4b5a070a.mp3",
+  "dur": 982
+ },
+ "syl-zuo3": {
+  "file": "syl-zuo3-911ae954.mp3",
+  "dur": 846
+ },
+ "syl-zuo4": {
+  "file": "syl-zuo4-f8252488.mp3",
+  "dur": 635
+ }
+}
